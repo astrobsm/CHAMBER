@@ -1,0 +1,366 @@
+-- ============================================================================
+-- SURGERY 3 MCQ BATCH 1: Hirschsprung's Disease (Questions 1-60)
+-- Topic: Hirschsprung's Disease - Management
+-- ============================================================================
+
+INSERT INTO questions (topic_id, category_id, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, difficulty, cognitive_level) VALUES
+
+-- Basic Knowledge Questions (1-20)
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Hirschsprung''s disease is characterized by:',
+'Presence of extra ganglion cells', 'Absence of ganglion cells in the distal bowel', 'Hyperplasia of Meissner''s plexus', 'Malrotation of the gut', 'Duplication of the colon',
+'B', 'Hirschsprung''s disease is characterized by congenital absence of ganglion cells in the myenteric (Auerbach''s) and submucosal (Meissner''s) plexuses of the distal bowel. This results from failure of neural crest cell migration during fetal development. Reference: Amiel J et al. J Med Genet. 2008.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The incidence of Hirschsprung''s disease is approximately:',
+'1 in 500 live births', '1 in 1,000 live births', '1 in 5,000 live births', '1 in 10,000 live births', '1 in 50,000 live births',
+'C', 'Hirschsprung''s disease occurs in approximately 1 in 5,000 live births. It is more common in males (4:1 ratio) and has both sporadic and familial forms. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The male to female ratio in Hirschsprung''s disease is:',
+'1:1', '2:1', '4:1', '1:4', '10:1',
+'C', 'Hirschsprung''s disease shows a male predominance with a ratio of approximately 4:1. However, when the aganglionosis extends to more proximal segments, the sex ratio approaches 1:1. Reference: Heuckeroth RO. Nat Rev Gastroenterol Hepatol. 2018.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Neural crest cells that form enteric ganglia begin migration at:',
+'Week 3 of gestation', 'Week 5 of gestation', 'Week 10 of gestation', 'Week 15 of gestation', 'Week 20 of gestation',
+'B', 'Neural crest cells begin their craniocaudal migration at week 5 of gestation, reach the midgut by week 7, and complete migration to the rectum by week 12. Arrest at any point results in aganglionosis distal to that point. Reference: Amiel J et al. J Med Genet. 2008.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Which plexus is primarily affected in Hirschsprung''s disease?',
+'Auerbach''s plexus only', 'Meissner''s plexus only', 'Both Auerbach''s and Meissner''s plexus', 'Henle''s plexus only', 'None of the above',
+'C', 'Both the myenteric (Auerbach''s) plexus and the submucosal (Meissner''s) plexus are affected in Hirschsprung''s disease. The absence of ganglion cells in these plexuses results in failure of coordinated peristalsis and relaxation. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The most common segment involved in Hirschsprung''s disease is:',
+'Total colon', 'Rectosigmoid', 'Ascending colon', 'Small intestine', 'Transverse colon',
+'B', 'Rectosigmoid (short-segment) disease accounts for 80% of Hirschsprung''s disease cases. Long-segment disease (up to splenic flexure) accounts for 15-20%, and total colonic aganglionosis occurs in 3-8% of cases. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The RET proto-oncogene is located on which chromosome?',
+'Chromosome 5', 'Chromosome 10', 'Chromosome 13', 'Chromosome 21', 'Chromosome X',
+'B', 'The RET proto-oncogene is located on chromosome 10q11.2. Mutations in RET are found in approximately 50% of familial cases and 15-20% of sporadic cases of Hirschsprung''s disease. Reference: Amiel J et al. J Med Genet. 2008.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'What percentage of familial Hirschsprung''s disease cases have RET mutations?',
+'10%', '25%', '50%', '75%', '100%',
+'C', 'RET proto-oncogene mutations are found in approximately 50% of familial cases and 15-20% of sporadic cases. RET encodes a receptor tyrosine kinase essential for development of neural crest-derived cells. Reference: Heuckeroth RO. Nat Rev Gastroenterol Hepatol. 2018.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Which of the following is NOT a gene associated with Hirschsprung''s disease?',
+'RET', 'EDNRB', 'SOX10', 'BRCA1', 'PHOX2B',
+'D', 'BRCA1 is associated with breast and ovarian cancer, not Hirschsprung''s disease. Genes associated with HD include RET, EDNRB (endothelin receptor B), EDN3, SOX10, PHOX2B, and GDNF. Reference: Amiel J et al. J Med Genet. 2008.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The internal anal sphincter in Hirschsprung''s disease:',
+'Relaxes normally', 'Fails to relax with rectal distension', 'Is absent', 'Shows excessive relaxation', 'Has normal ganglion cells',
+'B', 'The internal anal sphincter fails to relax with rectal distension due to absence of inhibitory neurons (absent rectoanal inhibitory reflex - RAIR). This is the basis of anorectal manometry testing. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'easy', 'comprehension'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Delayed passage of meconium in Hirschsprung''s disease is defined as passage after:',
+'12 hours', '24 hours', '48 hours', '72 hours', '1 week',
+'C', 'Delayed passage of meconium beyond 48 hours of life is a classic presentation of Hirschsprung''s disease. Approximately 90% of normal full-term infants pass meconium within 24 hours. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The classic triad of neonatal Hirschsprung''s disease includes all EXCEPT:',
+'Delayed passage of meconium', 'Abdominal distension', 'Bilious vomiting', 'Bloody diarrhea', 'All are part of the triad',
+'D', 'The classic triad of neonatal Hirschsprung''s disease consists of: 1) Delayed passage of meconium, 2) Abdominal distension, and 3) Bilious vomiting. Bloody diarrhea suggests enterocolitis, a complication rather than initial presentation. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'What is the "squirt sign" in Hirschsprung''s disease?',
+'Projectile vomiting', 'Explosive passage of stool after rectal exam', 'Visible peristalsis', 'Palpable abdominal mass', 'Blood in stool',
+'B', 'The "squirt sign" refers to explosive passage of stool and gas following digital rectal examination. It occurs because the examining finger temporarily dilates the contracted aganglionic segment, allowing decompression of the proximal dilated bowel. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'comprehension'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'On digital rectal examination in Hirschsprung''s disease, the rectum is typically:',
+'Dilated and full of stool', 'Empty and tight', 'Normal caliber', 'Patulous and loose', 'Stenotic',
+'B', 'The rectum in Hirschsprung''s disease is characteristically empty and has a tight, gripping feel on digital examination. This is due to the tonic contraction of the aganglionic segment. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'comprehension'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Which syndrome is most commonly associated with Hirschsprung''s disease?',
+'Turner syndrome', 'Down syndrome', 'Marfan syndrome', 'Ehlers-Danlos syndrome', 'Williams syndrome',
+'B', 'Down syndrome (Trisomy 21) is associated with Hirschsprung''s disease in approximately 10% of cases. These children have a higher risk of developing Hirschsprung-associated enterocolitis (HAEC). Reference: Heuckeroth RO. Nat Rev Gastroenterol Hepatol. 2018.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'What percentage of Hirschsprung''s disease patients have Down syndrome?',
+'1%', '5%', '10%', '25%', '50%',
+'C', 'Approximately 10% of children with Hirschsprung''s disease also have Down syndrome. This is one of the most common syndromic associations. Other associations include Waardenburg syndrome and MEN2. Reference: Amiel J et al. J Med Genet. 2008.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Waardenburg syndrome associated with Hirschsprung''s disease is characterized by:',
+'Cardiac defects', 'Pigmentary abnormalities and deafness', 'Renal anomalies', 'Limb defects', 'Cleft palate',
+'B', 'Waardenburg syndrome is characterized by sensorineural deafness and pigmentary abnormalities (white forelock, heterochromia iridis, pale skin patches). It is associated with SOX10 and EDNRB mutations, which also cause Hirschsprung''s disease. Reference: Amiel J et al. J Med Genet. 2008.',
+'hard', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Plain abdominal radiograph in Hirschsprung''s disease typically shows:',
+'Free air under diaphragm', 'Multiple dilated loops with absent rectal gas', 'Apple-core lesion', 'Double bubble sign', 'Bird''s beak sign',
+'B', 'Plain abdominal X-ray in Hirschsprung''s disease shows multiple dilated loops of bowel with air-fluid levels and characteristically absent or reduced rectal gas. This distinguishes it from low intestinal obstruction. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The contrast enema finding pathognomonic of Hirschsprung''s disease is:',
+'Apple-core lesion', 'Transition zone', 'Bird''s beak sign', 'String sign', 'Target sign',
+'B', 'The transition zone is the pathognomonic finding on contrast enema, appearing as a cone-shaped area between the narrow aganglionic distal segment and the dilated proximal ganglionic bowel. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The rectosigmoid index in Hirschsprung''s disease is:',
+'Greater than 1', 'Less than 1', 'Equal to 1', 'Variable', 'Not applicable',
+'B', 'The rectosigmoid index (ratio of rectal to sigmoid diameter) is less than 1 in Hirschsprung''s disease. Normally the rectum is wider than the sigmoid, giving a ratio >1. In HD, the aganglionic rectum is narrow. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'comprehension'),
+
+-- Diagnostic Questions (21-35)
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The gold standard for definitive diagnosis of Hirschsprung''s disease is:',
+'Contrast enema', 'Anorectal manometry', 'Rectal biopsy', 'CT scan', 'MRI pelvis',
+'C', 'Rectal biopsy demonstrating absence of ganglion cells in the myenteric and submucosal plexuses is the gold standard for definitive diagnosis. Suction rectal biopsy is the preferred initial method. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Suction rectal biopsy should be taken at least how far above the dentate line?',
+'0.5 cm', '1 cm', '2 cm', '5 cm', '10 cm',
+'C', 'Suction rectal biopsy should be taken at least 2 cm above the dentate line because the distal 1-2 cm of rectum is normally hypoganglionic. Biopsies taken too close to the dentate line may give false positive results. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Histological features of Hirschsprung''s disease on rectal biopsy include all EXCEPT:',
+'Absence of ganglion cells', 'Hypertrophied nerve trunks', 'Increased acetylcholinesterase staining', 'Presence of Schwann cells', 'Submucosal edema',
+'E', 'Histological features of HD include: absent ganglion cells, hypertrophied nerve trunks (>40 micrometers), increased acetylcholinesterase (AChE) staining, and presence of Schwann cells. Submucosal edema is not a diagnostic feature. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Acetylcholinesterase staining in Hirschsprung''s disease shows:',
+'Decreased staining', 'Increased staining', 'Normal staining', 'Absent staining', 'Patchy staining',
+'B', 'Acetylcholinesterase (AChE) staining is increased in Hirschsprung''s disease due to the presence of hypertrophied nerve fibers. This can be demonstrated on frozen sections and aids rapid diagnosis. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The calretinin stain in Hirschsprung''s disease shows:',
+'Positive staining in aganglionic segment', 'Negative staining in aganglionic segment', 'Non-specific staining', 'Nuclear staining only', 'Cytoplasmic staining only',
+'B', 'Calretinin staining is negative in the aganglionic segment of Hirschsprung''s disease. Calretinin is a calcium-binding protein present in ganglion cells and intrinsic nerve fibers, so its absence supports the diagnosis. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'hard', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Anorectal manometry in Hirschsprung''s disease demonstrates:',
+'Normal rectoanal inhibitory reflex', 'Absent rectoanal inhibitory reflex', 'Exaggerated rectal contractions', 'Low resting anal pressure', 'Normal internal sphincter relaxation',
+'B', 'The rectoanal inhibitory reflex (RAIR) is absent in Hirschsprung''s disease. Normally, rectal distension causes reflex relaxation of the internal anal sphincter. This is mediated by intrinsic inhibitory neurons which are absent in HD. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The sensitivity of anorectal manometry for Hirschsprung''s disease is approximately:',
+'50-60%', '65-75%', '85-95%', '99-100%', 'Variable based on age',
+'C', 'Anorectal manometry has a sensitivity of 85-95% for detecting absent RAIR in Hirschsprung''s disease. False negatives may occur in premature infants and those with very short-segment disease. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Full-thickness rectal biopsy is indicated when:',
+'Suction biopsy is inconclusive', 'Patient is a neonate', 'Short-segment disease is suspected', 'For routine diagnosis', 'Patient has Down syndrome',
+'A', 'Full-thickness rectal biopsy, which requires general anesthesia, is reserved for cases where suction rectal biopsy is inconclusive or technically inadequate. It allows better visualization of the myenteric plexus. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'application'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Delayed 24-hour film after contrast enema in Hirschsprung''s disease shows:',
+'Complete evacuation', 'Retained contrast in the colon', 'Contrast in small bowel', 'Free contrast in peritoneum', 'Normal transit',
+'B', 'A 24-hour delayed film shows retained contrast in the colon in Hirschsprung''s disease due to functional obstruction at the aganglionic segment. This is an important diagnostic feature, especially when the transition zone is not clearly visible. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'comprehension'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Why should bowel preparation NOT be given before contrast enema for suspected Hirschsprung''s disease?',
+'Risk of perforation', 'Obscures transition zone', 'Causes dehydration', 'Interferes with biopsy', 'Causes enterocolitis',
+'B', 'Bowel preparation should not be given before contrast enema for suspected Hirschsprung''s disease because it may empty the dilated proximal bowel and obscure the transition zone, making diagnosis difficult. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'comprehension'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The contrast of choice for enema in suspected Hirschsprung''s disease is:',
+'Barium sulfate', 'Water-soluble contrast', 'Air', 'Oil-based contrast', 'Any contrast agent',
+'B', 'Water-soluble contrast is preferred because: 1) it is less harmful if perforation occurs, 2) it may have therapeutic effect by loosening inspissated meconium, and 3) it provides adequate visualization of the transition zone. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'In total colonic aganglionosis, contrast enema may show:',
+'Classic transition zone in sigmoid', 'Microcolon or unused colon appearance', 'Normal caliber throughout', 'Megacolon throughout', 'Apple-core lesion',
+'B', 'In total colonic aganglionosis, contrast enema may show a microcolon or "unused colon" appearance because the entire colon is aganglionic. There may be no visible transition zone, making diagnosis more challenging. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'hard', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Which view is essential when performing contrast enema for Hirschsprung''s disease?',
+'AP view', 'Lateral view', 'Oblique view', 'Decubitus view', 'Only frontal view needed',
+'B', 'A lateral view is essential as it best demonstrates the rectosigmoid transition zone and the rectosigmoid index. The transition zone may be missed on AP views alone. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'False negative contrast enema in Hirschsprung''s disease may occur in:',
+'Long-segment disease', 'Neonates and total colonic aganglionosis', 'Children over 5 years', 'Patients with enterocolitis', 'Males more than females',
+'B', 'False negative contrast enema may occur in neonates (transition zone not yet developed) and total colonic aganglionosis (no clear transition zone). This emphasizes the importance of rectal biopsy for definitive diagnosis. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'hard', 'comprehension'),
+
+-- Surgical Management Questions (36-50)
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The principle of surgical management of Hirschsprung''s disease involves:',
+'Resection of proximal dilated bowel', 'Resection of aganglionic segment and pull-through of ganglionic bowel', 'Colostomy only', 'Stricturoplasty', 'Bypass procedure',
+'B', 'The principle of surgery is to resect the aganglionic segment and bring ganglionic bowel down to the anus (pull-through procedure) while preserving the anal sphincter mechanism. Various techniques achieve this goal. Reference: De la Torre L. J Pediatr Surg. 2000.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Which surgeon first described the rectosigmoidectomy with end-to-end anastomosis for Hirschsprung''s disease?',
+'Duhamel', 'Soave', 'Swenson', 'De la Torre', 'Boley',
+'C', 'Orvar Swenson in 1948 first described the rectosigmoidectomy with end-to-end colorectal anastomosis. This was the original pull-through procedure for Hirschsprung''s disease. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The Swenson procedure involves:',
+'Retrorectal pull-through', 'Endorectal pull-through through muscular cuff', 'Full-thickness resection with colorectal anastomosis', 'Transanal approach only', 'Laparoscopic colectomy',
+'C', 'The Swenson procedure involves full-thickness resection of the aganglionic rectosigmoid with dissection close to the rectal wall and end-to-end anastomosis 1-2 cm above the dentate line. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'A major disadvantage of the Swenson procedure is:',
+'Spur formation', 'Risk of damage to pelvic nerves', 'Mucosal cuff complications', 'High stricture rate', 'Requires two stages',
+'B', 'The Swenson procedure involves dissection close to the rectal wall, which puts pelvic autonomic nerves (controlling bladder and sexual function) at risk of injury. This led to development of alternative techniques. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'comprehension'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The Duhamel procedure was first described in:',
+'1948', '1956', '1963', '1998', '2005',
+'B', 'The Duhamel procedure was described in 1956. It involves a retrorectal approach where ganglionic bowel is brought down behind the aganglionic rectum with a side-to-side anastomosis. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The Duhamel procedure involves:',
+'Endorectal dissection', 'Retrorectal pull-through with side-to-side anastomosis', 'Full-thickness resection', 'Transanal only approach', 'End-to-end anastomosis',
+'B', 'The Duhamel procedure involves bringing ganglionic bowel down behind (posterior to) the aganglionic rectum through the presacral space, with a side-to-side anastomosis creating a neorectum. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Spur syndrome is a complication specific to which procedure?',
+'Swenson', 'Duhamel', 'Soave', 'TERPT', 'All pull-through procedures',
+'B', 'Spur syndrome is specific to the Duhamel procedure. It occurs when the aganglionic septum (anterior aganglionic rectum) between the two lumens is not adequately divided, causing a shelf that can lead to fecal impaction and obstruction. Reference: Baillie CT. J Pediatr Surg. 1999.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The Soave procedure involves:',
+'Retrorectal dissection', 'Submucosal dissection with pull-through through muscular cuff', 'Full-thickness rectal resection', 'End-to-end anastomosis at dentate line', 'Only laparoscopic approach',
+'B', 'The Soave procedure (1963) involves submucosal dissection of the rectum, leaving the muscular sleeve (cuff) in place. Ganglionic bowel is then pulled through this muscular cuff, minimizing pelvic nerve injury. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'A complication specific to the Soave procedure is:',
+'Pelvic nerve injury', 'Spur syndrome', 'Cuff abscess or stricture', 'Retrorectal abscess', 'Anastomotic leak',
+'C', 'The Soave procedure can be complicated by cuff abscess or stricture formation within the retained muscular cuff. The Boley modification (primary anastomosis) was developed to reduce cuff-related complications. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The transanal endorectal pull-through (TERPT) was first described by:',
+'Swenson', 'Duhamel', 'Soave', 'De la Torre', 'Boley',
+'D', 'The transanal endorectal pull-through (TERPT) was described by De la Torre in 1998. It involves an entirely transanal approach without abdominal incision for short-segment disease. Reference: De la Torre L. J Pediatr Surg. 2000.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The main advantage of TERPT (transanal endorectal pull-through) is:',
+'Lower cost', 'No abdominal incision needed for short-segment disease', 'Faster operative time', 'Lower complication rate', 'Can be done without anesthesia',
+'B', 'The main advantage of TERPT is that for short-segment (rectosigmoid) disease, it can be performed entirely through a transanal approach without any abdominal incision, resulting in faster recovery and better cosmesis. Reference: De la Torre L. J Pediatr Surg. 2000.',
+'medium', 'comprehension'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'When is laparoscopic assistance required during pull-through for Hirschsprung''s disease?',
+'All cases', 'Only in males', 'Long-segment disease or to obtain frozen section biopsies', 'Only in infants', 'Never required',
+'C', 'Laparoscopic assistance is helpful in long-segment disease to mobilize the colon and in cases where frozen section biopsies are needed to confirm the level of ganglionated bowel before proceeding with pull-through. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'application'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Rectal washouts before definitive surgery should use:',
+'Hypertonic saline', 'Normal saline 10-20 mL/kg', 'Soap water', 'Phosphate enema', 'Mineral oil',
+'B', 'Rectal washouts using normal saline at 10-20 mL/kg, performed 2-3 times daily, are used to decompress the bowel before definitive surgery. This helps reduce enterocolitis risk and allows bowel preparation. Reference: Gosain A. Pediatr Surg Int. 2017.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Leveling colostomy in Hirschsprung''s disease should be placed at:',
+'The transition zone', 'Confirmed ganglionic bowel proximal to transition zone', 'Descending colon always', 'Transverse colon always', 'Cecum',
+'B', 'A leveling colostomy should be placed in confirmed ganglionic bowel proximal to the transition zone. Frozen section biopsy is used to confirm presence of ganglion cells before fashioning the stoma. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'hard', 'application'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Indications for staged procedure (initial colostomy) in Hirschsprung''s disease include all EXCEPT:',
+'Severe enterocolitis', 'Poor nutritional status', 'Very long-segment disease', 'Uncomplicated short-segment disease', 'Massive colonic dilation',
+'D', 'Uncomplicated short-segment Hirschsprung''s disease is typically managed with a primary single-stage pull-through. Staged procedures with initial colostomy are reserved for sick patients, severe enterocolitis, malnutrition, or very long segments. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'hard', 'application'),
+
+-- Complications and Follow-up Questions (51-60)
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'The most common complication of Hirschsprung''s disease (pre and post-operative) is:',
+'Anastomotic leak', 'Hirschsprung-associated enterocolitis', 'Constipation', 'Incontinence', 'Wound infection',
+'B', 'Hirschsprung-associated enterocolitis (HAEC) is the most common and serious complication, occurring in up to 30% of patients both before and after surgical correction. It can be life-threatening if not promptly treated. Reference: Gosain A. Pediatr Surg Int. 2017.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Clinical features of Hirschsprung-associated enterocolitis (HAEC) include all EXCEPT:',
+'Fever', 'Abdominal distension', 'Explosive diarrhea', 'Constipation', 'Lethargy',
+'D', 'HAEC presents with fever, abdominal distension, explosive diarrhea (often foul-smelling), and lethargy/sepsis. Constipation is a chronic feature of Hirschsprung''s disease but not of acute enterocolitis. Reference: Gosain A. Pediatr Surg Int. 2017.',
+'easy', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Treatment of Hirschsprung-associated enterocolitis includes all EXCEPT:',
+'IV fluids', 'IV antibiotics', 'Rectal irrigation/decompression', 'Antidiarrheal agents', 'NPO and NG decompression',
+'D', 'Antidiarrheal agents are contraindicated in HAEC as they may worsen bacterial overgrowth and toxin absorption. Treatment involves IV fluids, broad-spectrum antibiotics, rectal irrigation for decompression, and bowel rest. Reference: Gosain A. Pediatr Surg Int. 2017.',
+'medium', 'application'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Persistent obstructive symptoms after pull-through for Hirschsprung''s disease may be due to all EXCEPT:',
+'Anastomotic stricture', 'Residual aganglionosis', 'Mechanical twist of pull-through', 'Internal sphincter achalasia', 'Normal postoperative course',
+'E', 'Persistent obstructive symptoms after pull-through should prompt investigation for anastomotic stricture, residual or acquired aganglionosis, mechanical problems (twist/kink), or internal sphincter achalasia. This is not a normal postoperative course. Reference: Levitt MA. Semin Pediatr Surg. 2012.',
+'hard', 'analysis'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Long-term continence rates after surgical treatment of Hirschsprung''s disease are approximately:',
+'50-60%', '70-80%', '90-95%', '100%', '40-50%',
+'C', 'Long-term continence rates after surgical treatment are excellent, with 90-95% of patients achieving social continence by school age. Some patients may require bowel management programs. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Acquired aganglionosis after pull-through surgery refers to:',
+'Damage to ganglion cells during surgery', 'Ischemia-related ganglion cell loss in pulled-through segment', 'Spread of aganglionosis proximally', 'Congenital long-segment disease', 'Ganglion cell hyperplasia',
+'B', 'Acquired aganglionosis refers to loss of ganglion cells in the previously ganglionic pulled-through segment, usually due to ischemia from excessive tension or vascular compromise during surgery. Reference: Levitt MA. Semin Pediatr Surg. 2012.',
+'hard', 'comprehension'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Internal anal sphincter achalasia after Hirschsprung''s surgery may be treated with:',
+'Repeat pull-through', 'Botulinum toxin injection', 'Total colectomy', 'Permanent colostomy', 'Antibiotics',
+'B', 'Internal anal sphincter achalasia (failure to relax) may persist after surgery and can be treated with botulinum toxin injection or posterior internal sphincter myectomy (anorectal myomectomy). Reference: Levitt MA. Semin Pediatr Surg. 2012.',
+'hard', 'application'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'A child who continues to soil after apparently successful pull-through surgery should be evaluated for:',
+'Normal variation', 'Stricture, residual aganglionosis, or overflow incontinence', 'Only psychological causes', 'Lactose intolerance', 'Celiac disease',
+'B', 'Soiling after pull-through may indicate stricture, residual/acquired aganglionosis, or overflow incontinence from chronic constipation. Thorough evaluation with contrast study and possibly repeat biopsy is indicated. Reference: Levitt MA. Semin Pediatr Surg. 2012.',
+'hard', 'analysis'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'What is the risk of enterocolitis in Hirschsprung''s disease patients with Down syndrome compared to those without?',
+'Same risk', 'Higher risk', 'Lower risk', 'Risk depends on gender', 'Down syndrome patients don''t get enterocolitis',
+'B', 'Children with both Hirschsprung''s disease and Down syndrome have a significantly higher risk of developing HAEC compared to those with HD alone. Close monitoring and aggressive treatment are essential. Reference: Gosain A. Pediatr Surg Int. 2017.',
+'medium', 'knowledge'),
+
+('c0000001-0000-0000-0000-000000000001', 'a0000003-0000-0000-0000-000000000003',
+'Follow-up after Hirschsprung''s disease surgery should include assessment of:',
+'Only bowel function', 'Growth, development, and bowel function', 'Only growth parameters', 'Only school performance', 'No follow-up needed after 1 year',
+'B', 'Long-term follow-up should include assessment of growth, development, and bowel function (constipation, soiling, continence). Screening for enterocolitis should continue as it can occur years after surgery. Reference: Langer JC. Curr Opin Pediatr. 2013.',
+'medium', 'knowledge');
+
+SELECT 'Surgery 3 MCQ Batch 1 (Hirschsprung''s Disease): 60 questions inserted' as status;

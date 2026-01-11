@@ -1,0 +1,372 @@
+-- ============================================================================
+-- SURGERY 3 MCQ BATCH 2: Burns (Questions 61-120)
+-- Topic: Burns Management
+-- ============================================================================
+
+INSERT INTO questions (topic_id, category_id, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, difficulty, cognitive_level) VALUES
+
+-- Basic Knowledge (1-20)
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The most common cause of burn injuries in children under 5 years is:',
+'Flame burns', 'Scald burns', 'Electrical burns', 'Chemical burns', 'Radiation burns',
+'B', 'Scald burns from hot liquids account for approximately 80% of burns in children under 5 years. Toddlers are particularly vulnerable due to their developmental stage (pulling objects, exploring). Reference: Herndon DN. Total Burn Care, 5th ed. 2018.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'A first-degree burn affects:',
+'Epidermis only', 'Epidermis and papillary dermis', 'Epidermis and reticular dermis', 'Full thickness skin', 'Subcutaneous tissue',
+'A', 'First-degree (superficial) burns affect only the epidermis. They are characterized by erythema, pain, and no blistering. Sunburn is a classic example. They heal within 3-5 days without scarring. Reference: Jeschke MG. Lancet. 2020.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Superficial partial thickness burns involve:',
+'Epidermis only', 'Epidermis and papillary dermis', 'Entire dermis', 'Subcutaneous fat', 'Muscle',
+'B', 'Superficial partial thickness (second-degree superficial) burns involve the epidermis and papillary dermis. They are characterized by blistering, weeping, severe pain, and heal within 2-3 weeks with minimal scarring. Reference: Jeschke MG. Lancet. 2020.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Deep partial thickness burns involve:',
+'Epidermis only', 'Papillary dermis only', 'Epidermis and reticular dermis', 'Full thickness with subcutaneous', 'Muscle and fascia',
+'C', 'Deep partial thickness (second-degree deep) burns extend through the epidermis into the reticular dermis. They appear pale or mottled, have decreased sensation, and take 3-9 weeks to heal with significant scarring. Reference: Jeschke MG. Lancet. 2020.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Full thickness burns are characterized by all EXCEPT:',
+'Waxy white or leathery appearance', 'Absence of pain', 'Presence of blisters', 'Thrombosed vessels visible', 'No capillary refill',
+'C', 'Full thickness (third-degree) burns do NOT typically form blisters because the entire epidermis and dermis are destroyed. They appear waxy white, brown, or leathery, are painless (nerve destruction), and show thrombosed vessels. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The "Rule of Nines" estimates that each upper limb represents:',
+'9% TBSA', '18% TBSA', '4.5% TBSA', '1% TBSA', '14% TBSA',
+'A', 'In the Rule of Nines for adults, each upper limb represents 9% of total body surface area (TBSA). The head is 9%, each lower limb 18%, anterior trunk 18%, posterior trunk 18%, and perineum 1%. Reference: Jeschke MG. Lancet. 2020.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'In a 2-year-old child, the head represents approximately:',
+'9% TBSA', '18% TBSA', '14% TBSA', '7% TBSA', '4.5% TBSA',
+'B', 'In infants and young children, the head is proportionally larger (18% in infants) compared to adults (9%). The Lund and Browder chart accounts for these age-related differences more accurately. Reference: Herndon DN. Total Burn Care. 2018.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The Lund and Browder chart is more accurate for estimating burn surface area because:',
+'It is simpler to use', 'It accounts for age-related body proportion changes', 'It only measures partial thickness burns', 'It uses metric measurements', 'It includes first-degree burns',
+'B', 'The Lund and Browder chart accounts for age-related changes in body proportions, particularly the relatively larger head and smaller legs in children. This makes it more accurate than the Rule of Nines for pediatric burns. Reference: Herndon DN. Total Burn Care. 2018.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The palm of the patient''s hand represents approximately what percentage of TBSA?',
+'0.5%', '1%', '2%', '5%', '9%',
+'B', 'The patient''s palm (including fingers) represents approximately 1% of total body surface area. This is useful for estimating irregular or scattered burns and is sometimes called the "palmar method." Reference: Jeschke MG. Lancet. 2020.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'A major burn in an adult is defined as:',
+'Any burn requiring hospitalization', 'Burns >10% TBSA partial or full thickness', 'Burns >20% TBSA partial or full thickness', 'Any full thickness burn', 'Burns >50% TBSA',
+'C', 'Major burns in adults include: partial or full thickness burns >20% TBSA, any burn involving face/hands/feet/perineum/major joints, full thickness burns >5%, electrical/chemical burns, or burns with inhalation injury. Reference: ABA Burn Center Referral Criteria.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The Jackson burn wound model describes three zones. The outermost zone is the:',
+'Zone of coagulation', 'Zone of stasis', 'Zone of hyperemia', 'Zone of necrosis', 'Zone of regeneration',
+'C', 'Jackson''s burn wound model describes: 1) Zone of coagulation (central, irreversible damage), 2) Zone of stasis (surrounding, potentially salvageable), 3) Zone of hyperemia (outermost, minimal damage, will recover). Reference: Jackson DM. Br J Surg. 1953.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The zone of stasis in burn wounds:',
+'Has irreversible cell death', 'Is potentially salvageable with proper treatment', 'Always recovers spontaneously', 'Only occurs in electrical burns', 'Is the outermost zone',
+'B', 'The zone of stasis has compromised blood flow and may progress to necrosis or recover depending on treatment. Adequate resuscitation, wound care, and prevention of infection help preserve this zone. Reference: Jackson DM. Br J Surg. 1953.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Burn shock is primarily due to:',
+'Blood loss', 'Massive fluid shifts from increased capillary permeability', 'Cardiac failure', 'Sepsis', 'Adrenal insufficiency',
+'B', 'Burn shock is a distributive/hypovolemic shock caused by massive fluid shifts from the intravascular to interstitial space due to increased capillary permeability. Inflammatory mediators cause endothelial dysfunction. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Capillary leak in burns is maximal at:',
+'First 4 hours', '8-12 hours', '18-24 hours', '48-72 hours', '5-7 days',
+'C', 'Capillary leak is maximal during the first 18-24 hours post-burn, then gradually decreases. This is why fluid requirements are highest in the first 24 hours and decrease subsequently. Reference: Herndon DN. Total Burn Care. 2018.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The Parkland formula calculates fluid requirements as:',
+'2 mL/kg/% TBSA in first 24 hours', '4 mL/kg/% TBSA in first 24 hours', '6 mL/kg/% TBSA in first 24 hours', '2 mL/kg/% TBSA per hour', '4 mL/kg/% TBSA per hour',
+'B', 'The Parkland formula is: 4 mL × body weight (kg) × %TBSA burned = total crystalloid in first 24 hours. Half is given in the first 8 hours (from time of burn), half in the next 16 hours. Reference: Baxter CR. Surg Clin North Am. 1978.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'According to the Parkland formula, for a 70 kg patient with 30% TBSA burns, the total fluid requirement for the first 24 hours is:',
+'4,200 mL', '5,600 mL', '8,400 mL', '12,600 mL', '16,800 mL',
+'C', 'Using Parkland: 4 mL × 70 kg × 30% = 8,400 mL in first 24 hours. Half (4,200 mL) should be given in first 8 hours from time of burn, remainder over next 16 hours. Reference: Baxter CR. Surg Clin North Am. 1978.',
+'medium', 'application'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The target urine output for burn resuscitation in adults is:',
+'0.25 mL/kg/hour', '0.5-1 mL/kg/hour', '2-3 mL/kg/hour', '4-5 mL/kg/hour', '10 mL/kg/hour',
+'B', 'Target urine output for adults is 0.5-1 mL/kg/hour (30-50 mL/hour for average adult). For children, the target is 1-1.5 mL/kg/hour. Fluid rates should be titrated to maintain this output. Reference: Jeschke MG. Lancet. 2020.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The preferred initial resuscitation fluid for burn patients is:',
+'Normal saline', 'Lactated Ringer''s solution', 'Colloid (albumin)', 'Dextrose 5%', 'Hypertonic saline',
+'B', 'Lactated Ringer''s solution is the preferred crystalloid for initial resuscitation. Its composition is similar to plasma and avoids hyperchloremic acidosis that can occur with normal saline. Reference: Jeschke MG. Lancet. 2020.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Colloids may be considered in burn resuscitation after:',
+'Immediately', '8-12 hours', '24 hours when capillary permeability decreases', '72 hours', 'Never indicated',
+'C', 'Colloids (albumin) are generally avoided in the first 24 hours because they leak into the interstitium during the period of high capillary permeability. After 24 hours, they may help maintain intravascular volume. Reference: Herndon DN. Total Burn Care. 2018.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Over-resuscitation in burns (fluid creep) can lead to:',
+'Compartment syndrome', 'Pulmonary edema', 'Abdominal compartment syndrome', 'All of the above', 'None of the above',
+'D', 'Over-resuscitation (fluid creep) leads to: extremity compartment syndrome, pulmonary edema, abdominal compartment syndrome, and cerebral edema. Judicious fluid administration guided by physiological parameters is essential. Reference: Saffle JR. J Burn Care Res. 2007.',
+'medium', 'comprehension'),
+
+-- Clinical Assessment (21-35)
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Signs of inhalation injury include all EXCEPT:',
+'Singed nasal hairs', 'Soot in sputum', 'Hoarse voice', 'Cherry-red skin color only', 'Facial burns',
+'D', 'Signs of inhalation injury include: singed nasal hairs, carbonaceous sputum, hoarse voice, facial burns, stridor, and wheezing. Cherry-red skin suggests carbon monoxide poisoning but is not always present. Reference: Mlcak RP. Crit Care Med. 2007.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The initial management of suspected inhalation injury includes:',
+'Immediate tracheostomy', 'Early endotracheal intubation before airway edema worsens', 'Wait and observe for 24 hours', 'High-dose steroids', 'Antibiotics only',
+'B', 'Early endotracheal intubation is critical before progressive airway edema causes complete obstruction. Signs of upper airway injury (hoarseness, stridor) indicate need for immediate airway control. Reference: Mlcak RP. Crit Care Med. 2007.',
+'medium', 'application'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Carbon monoxide poisoning is confirmed by:',
+'Pulse oximetry showing low oxygen saturation', 'Arterial blood gas showing elevated carboxyhemoglobin', 'Cyanosis', 'Chest X-ray', 'ECG changes',
+'B', 'Carbon monoxide poisoning is confirmed by measuring carboxyhemoglobin (COHb) levels on arterial blood gas. Standard pulse oximetry cannot distinguish between oxyhemoglobin and carboxyhemoglobin, giving falsely normal readings. Reference: Weaver LK. N Engl J Med. 2009.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Treatment of carbon monoxide poisoning includes:',
+'High-flow 100% oxygen', 'Low-flow oxygen to prevent oxygen toxicity', 'Room air only', 'Hyperbaric oxygen in all cases immediately', 'Methylene blue',
+'A', 'Treatment is high-flow 100% oxygen via non-rebreather mask or endotracheal tube. This reduces the half-life of COHb from 4-5 hours (on room air) to approximately 1 hour. Hyperbaric oxygen is considered for severe cases. Reference: Weaver LK. N Engl J Med. 2009.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Cyanide toxicity in burns should be suspected when:',
+'Carboxyhemoglobin is elevated', 'Metabolic acidosis persists despite adequate resuscitation', 'Burn is less than 10% TBSA', 'Only in chemical burns', 'Urine output is good',
+'B', 'Cyanide toxicity should be suspected in burns involving synthetic materials (plastics, wool, silk) when there is persistent metabolic acidosis with elevated lactate despite adequate resuscitation. Treatment includes hydroxocobalamin. Reference: Herndon DN. Total Burn Care. 2018.',
+'hard', 'analysis'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Escharotomy is indicated for:',
+'All full thickness burns', 'Circumferential burns with signs of compartment syndrome', 'Superficial partial thickness burns', 'Burns less than 5% TBSA', 'Chemical burns only',
+'B', 'Escharotomy is indicated for circumferential full-thickness burns with signs of vascular compromise (compartment syndrome in extremities) or respiratory compromise (thorax). It releases constricting eschar. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'application'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Escharotomy incisions should be made:',
+'Through eschar only to subcutaneous fat', 'Through eschar and fascia (fasciotomy)', 'Only through epidermis', 'Through muscle', 'Using electrocautery always',
+'A', 'Escharotomy incisions extend through the eschar to the subcutaneous fat. This releases the constrictive effect. If compartment syndrome persists, deeper fasciotomy may be needed. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'In a circumferential chest burn with respiratory distress, escharotomy should be performed:',
+'Along the anterior axillary lines bilaterally', 'Only on one side', 'Vertically in the midline', 'Horizontally below the nipple line', 'None, only supportive care',
+'A', 'Chest escharotomies are performed along the anterior axillary lines bilaterally, connected by a horizontal incision below the clavicles and along the costal margins. This creates an "armor plate" release. Reference: Herndon DN. Total Burn Care. 2018.',
+'hard', 'application'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The 6 P''s of compartment syndrome include all EXCEPT:',
+'Pain', 'Pallor', 'Pulselessness', 'Pyrexia', 'Paresthesia',
+'D', 'The 6 P''s are: Pain (especially with passive stretch), Pressure, Paresthesia, Paralysis, Pallor, and Pulselessness. Pyrexia (fever) is not one of the classic signs of compartment syndrome. Reference: Mauffrey C. Acta Orthop Belg. 2011.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Electrical burns are classified as high voltage when:',
+'Greater than 100 volts', 'Greater than 500 volts', 'Greater than 1000 volts', 'Greater than 5000 volts', 'Any alternating current',
+'C', 'High-voltage electrical burns are defined as those involving >1000 volts. These cause more severe deep tissue injury along the current pathway and require careful evaluation for myocardial and musculoskeletal damage. Reference: Koumbourlis AC. Arch Dis Child. 2002.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'In electrical burns, the extent of visible injury:',
+'Accurately reflects deep tissue damage', 'Often underestimates deep tissue damage', 'Often overestimates deep tissue damage', 'Is not relevant', 'Only applies to low voltage injuries',
+'B', 'In electrical burns, surface injuries (entry and exit wounds) often underestimate the extent of deep tissue damage along the current pathway. The current travels through tissues of least resistance, causing internal injuries. Reference: Koumbourlis AC. Arch Dis Child. 2002.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Dark brown or red urine in electrical burn patients suggests:',
+'Dehydration', 'Myoglobinuria from rhabdomyolysis', 'Urinary tract infection', 'Normal finding', 'Hemolysis only',
+'B', 'Dark urine (tea-colored or port-wine) in electrical burns suggests myoglobinuria from muscle damage (rhabdomyolysis). Aggressive fluid resuscitation and monitoring for acute kidney injury are essential. Reference: Koumbourlis AC. Arch Dis Child. 2002.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Management of myoglobinuria in electrical burns includes:',
+'Fluid restriction', 'Aggressive hydration to maintain urine output >1 mL/kg/hr', 'Diuretics to decrease urine output', 'Antibiotics', 'Hemodialysis immediately',
+'B', 'Management of myoglobinuria includes aggressive crystalloid resuscitation to maintain urine output >1-2 mL/kg/hour, alkalinization of urine (sodium bicarbonate), and mannitol if needed. This helps prevent myoglobin-induced acute kidney injury. Reference: Herndon DN. Total Burn Care. 2018.',
+'medium', 'application'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'ECG monitoring is mandatory after electrical burns because:',
+'It is standard protocol', 'Arrhythmias may occur, especially with high voltage or current crossing the heart', 'To monitor fluid resuscitation', 'For legal documentation', 'Only in pediatric patients',
+'B', 'Cardiac arrhythmias (ventricular fibrillation, asystole, conduction abnormalities) can occur with electrical injuries, particularly when current crosses the heart. ECG monitoring for at least 24-48 hours is recommended for high-voltage injuries. Reference: Koumbourlis AC. Arch Dis Child. 2002.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'For hydrofluoric acid burns, the specific antidote is:',
+'Sodium bicarbonate', 'Calcium gluconate', 'Magnesium sulfate', 'Atropine', 'Pralidoxime',
+'B', 'Calcium gluconate is the specific antidote for hydrofluoric acid burns. It binds free fluoride ions, preventing tissue destruction and systemic toxicity (hypocalcemia, hyperkalemia). It can be applied topically or injected. Reference: Kirkpatrick JJR. Burns. 1995.',
+'medium', 'knowledge'),
+
+-- Wound Management (36-50)
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Silver sulfadiazine cream is contraindicated in:',
+'Full thickness burns', 'Newborns and patients with sulfa allergy', 'Partial thickness burns', 'Electrical burns', 'Burns on extremities',
+'B', 'Silver sulfadiazine is contraindicated in: newborns (risk of kernicterus), pregnancy (third trimester), sulfonamide allergy, and patients with G6PD deficiency. It should also be avoided near the eyes. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The mechanism of action of silver sulfadiazine includes:',
+'Antibiotic activity only', 'Both bacteriostatic and bactericidal activity against broad spectrum', 'Antiviral activity', 'Promotes eschar formation', 'Vasoconstriction',
+'B', 'Silver sulfadiazine has broad-spectrum antimicrobial activity through: silver ions disrupting bacterial cell membranes and sulfadiazine inhibiting bacterial folic acid synthesis. It is active against gram-positive, gram-negative bacteria, and yeasts. Reference: Monafo WW. Drugs. 1990.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Pseudoeschar formation is a characteristic side effect of:',
+'Bacitracin', 'Silver sulfadiazine', 'Mupirocin', 'Neomycin', 'Mafenide acetate',
+'B', 'Silver sulfadiazine forms a characteristic yellowish-gray pseudoeschar on the wound surface. This can be mistaken for infection or eschar but is a normal finding and should not prompt unnecessary debridement. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Mafenide acetate cream is particularly useful for:',
+'Face and perineal burns only', 'Burns with established or high risk of Pseudomonas infection', 'All burns as first-line therapy', 'Only superficial burns', 'Sunburns',
+'B', 'Mafenide acetate (Sulfamylon) penetrates eschar effectively, making it useful for burns with eschar and high-risk contaminated burns. It is particularly effective against Pseudomonas but can cause metabolic acidosis. Reference: Herndon DN. Total Burn Care. 2018.',
+'hard', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'A side effect specific to mafenide acetate is:',
+'Pseudoeschar formation', 'Carbonic anhydrase inhibition causing metabolic acidosis', 'Thrombocytopenia', 'Hepatotoxicity', 'Nephrotoxicity',
+'B', 'Mafenide acetate inhibits carbonic anhydrase, which can cause metabolic acidosis (especially with large burns) and compensatory tachypnea. Application can also cause pain/burning sensation. Reference: Herndon DN. Total Burn Care. 2018.',
+'hard', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Early excision and grafting for burns ideally should be performed within:',
+'24 hours', '3-5 days', '2 weeks', '1 month', 'After complete eschar separation',
+'B', 'Early excision and grafting (within 3-5 days of injury) for deep partial and full thickness burns reduces hospital stay, infection risk, and mortality compared to delayed grafting after spontaneous eschar separation. Reference: Herndon DN. Ann Surg. 1989.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The gold standard for wound coverage in burns is:',
+'Xenograft', 'Synthetic skin substitutes', 'Autograft', 'Allograft', 'Topical agents only',
+'C', 'Autograft (patient''s own skin) is the gold standard for definitive wound coverage. It provides permanent coverage with the best functional and cosmetic outcomes. Split-thickness skin grafts are most commonly used. Reference: Jeschke MG. Lancet. 2020.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'A split-thickness skin graft includes:',
+'Epidermis only', 'Epidermis and part of dermis', 'Full dermis only', 'Epidermis, full dermis, and subcutaneous tissue', 'Muscle and fascia',
+'B', 'Split-thickness skin grafts (STSG) include epidermis and a variable portion of dermis. They are harvested using a dermatome and the donor site heals by re-epithelialization. Reference: Jeschke MG. Lancet. 2020.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Meshing of skin grafts is done to:',
+'Improve cosmesis', 'Allow expansion and drainage of fluid', 'Decrease survival of graft', 'Only for donor site management', 'Reduce pain',
+'B', 'Meshing allows the graft to be expanded (various ratios like 1.5:1, 3:1), cover larger areas with limited donor skin, and permits drainage of blood/serum that could lift and separate the graft. Trade-off is less optimal cosmesis. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Cadaveric allograft in burns is used for:',
+'Permanent coverage', 'Temporary biological dressing until autograft available', 'Improving cosmesis', 'Only in superficial burns', 'First-degree burns',
+'B', 'Cadaveric allograft provides temporary biological coverage when autograft donor sites are insufficient. It reduces pain, fluid loss, and bacterial contamination while donor sites heal for re-harvesting. It will eventually be rejected. Reference: Herndon DN. Total Burn Care. 2018.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Xenograft for burn wounds is typically obtained from:',
+'Cadaveric human donors', 'Pigs', 'Cows', 'Horses', 'Fish',
+'B', 'Xenografts for burns are most commonly obtained from pigs (porcine). They provide temporary coverage similar to allograft but are more readily available and less expensive. They do not vascularize and must be replaced. Reference: Jeschke MG. Lancet. 2020.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Factors affecting skin graft survival include all EXCEPT:',
+'Adequate blood supply at recipient site', 'Immobilization of graft', 'Prevention of infection', 'Patient''s blood type', 'Absence of hematoma under graft',
+'D', 'Graft survival depends on: adequate blood supply at recipient site, absence of infection, immobilization, good graft-wound contact (no hematoma/seroma), and adequate nutrition. Blood type is relevant for allograft rejection, not autograft survival. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The process by which split-thickness skin grafts survive initially is:',
+'Immediate vascular anastomosis', 'Plasmatic imbibition followed by inosculation', 'Oxygen diffusion only', 'Lymphatic drainage', 'Nerve regeneration',
+'B', 'Initially (first 24-48 hours), grafts survive by plasmatic imbibition (absorption of plasma from wound bed). Inosculation (connection of graft and wound bed vessels) follows, then true revascularization occurs by day 4-5. Reference: Jeschke MG. Lancet. 2020.',
+'hard', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Cultured epithelial autografts (CEA) are indicated for:',
+'Any burn patient', 'Massive burns (>50% TBSA) with limited donor sites', 'Only pediatric patients', 'Superficial burns', 'First-degree burns',
+'B', 'CEA involves growing epithelial cells from a small skin biopsy in the laboratory. They are indicated for massive burns (>50-60% TBSA) when donor sites are severely limited. Disadvantage is fragility and high cost. Reference: Herndon DN. Total Burn Care. 2018.',
+'hard', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Negative pressure wound therapy (NPWT) in burns helps by:',
+'Increasing bacterial count', 'Improving graft take and reducing fluid accumulation', 'Delaying healing', 'Decreasing blood flow', 'Increasing edema',
+'B', 'NPWT improves graft take by removing fluid accumulation, increasing perfusion, promoting granulation tissue, and reducing bacterial colonization. It is useful for securing grafts, especially on difficult surfaces. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'comprehension'),
+
+-- Systemic Management and Complications (51-60)
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The hypermetabolic response in burns can last for:',
+'1-2 weeks', '1-2 months', 'Up to 2-3 years', 'Only during hospitalization', '24-48 hours',
+'C', 'The hypermetabolic response in severe burns can persist for up to 2-3 years post-injury. It is characterized by increased resting energy expenditure, protein catabolism, and altered glucose metabolism. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Nutritional support in burn patients should be:',
+'Withheld until stable', 'Started within 24 hours, preferably enteral', 'Only parenteral nutrition', 'Low calorie to prevent obesity', 'Delayed until wound healing complete',
+'B', 'Early enteral nutrition (within 24 hours) is preferred as it maintains gut mucosal integrity, reduces bacterial translocation, attenuates hypermetabolic response, and is associated with lower infection rates. Reference: Herndon DN. Total Burn Care. 2018.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Caloric requirements in burn patients can be estimated using the Curreri formula:',
+'25 kcal/kg/day', '25 kcal/kg + 40 kcal/% TBSA', 'Standard basal metabolic rate only', '10 kcal/kg/day', '100 kcal/kg/day for all burns',
+'B', 'The Curreri formula estimates caloric needs as: 25 kcal/kg/day + 40 kcal/%TBSA burned. Actual requirements may vary and should be adjusted based on metabolic monitoring and clinical response. Reference: Curreri PW. Surg Clin North Am. 1987.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Curling''s ulcer in burns is:',
+'A venous ulcer', 'A stress-related gastroduodenal ulcer', 'A burn wound ulcer', 'A pressure ulcer', 'A diabetic ulcer',
+'B', 'Curling''s ulcer is a stress-related gastroduodenal ulcer occurring in burn patients. It results from decreased mucosal blood flow, increased acid secretion, and breakdown of mucosal defense mechanisms. Prophylaxis with H2 blockers/PPIs is routine. Reference: Herndon DN. Total Burn Care. 2018.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Prophylaxis for Curling''s ulcer includes:',
+'Antibiotics', 'H2 receptor blockers or proton pump inhibitors', 'Antacids only', 'Laxatives', 'No prophylaxis recommended',
+'B', 'Stress ulcer prophylaxis with H2 receptor blockers (ranitidine) or proton pump inhibitors (omeprazole) is recommended for burn patients with >20% TBSA burns or those on mechanical ventilation. Early enteral feeding also helps. Reference: Herndon DN. Total Burn Care. 2018.',
+'easy', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'DVT prophylaxis in burn patients should include:',
+'Aspirin only', 'Compression stockings and anticoagulation when not contraindicated', 'Early mobilization only', 'No prophylaxis needed', 'Warfarin',
+'B', 'Burn patients are at high risk for DVT due to immobility, hypercoagulable state, and venous access complications. Prophylaxis includes mechanical measures (compression devices) and pharmacological anticoagulation when bleeding risk allows. Reference: Jeschke MG. Lancet. 2020.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'The most common organism causing burn wound infection is:',
+'Staphylococcus aureus initially, then Pseudomonas aeruginosa', 'E. coli', 'Candida albicans', 'Clostridium difficile', 'Streptococcus pyogenes',
+'A', 'Early burn wound infections are typically caused by gram-positive organisms (Staphylococcus aureus, Streptococcus). After 5-7 days, gram-negative organisms (especially Pseudomonas aeruginosa) become predominant. Reference: Church D. Clin Microbiol Rev. 2006.',
+'medium', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Burn wound sepsis is diagnosed when quantitative wound biopsy shows:',
+'Any bacterial count', '>10^3 organisms per gram of tissue', '>10^5 organisms per gram of tissue', '>10^7 organisms per gram of tissue', 'Only with positive blood culture',
+'C', 'Quantitative wound biopsy showing >10^5 (100,000) organisms per gram of tissue is diagnostic of burn wound sepsis. Clinical signs include conversion of partial-thickness to full-thickness burn, green discoloration (Pseudomonas), and rapid eschar separation. Reference: Church D. Clin Microbiol Rev. 2006.',
+'hard', 'knowledge'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Hypertrophic scarring after burns is more common in:',
+'Superficial burns healing within 2 weeks', 'Deep burns healing after 3 weeks or requiring grafting', 'First-degree burns', 'Burns in elderly patients', 'Small burns only',
+'B', 'Hypertrophic scarring is more common in deep burns that take >3 weeks to heal, burns requiring skin grafting, darker skin types, younger patients, and burns over joints. Early intervention with pressure garments and silicone therapy helps. Reference: Cubison TCS. Burns. 2006.',
+'medium', 'comprehension'),
+
+('c0000020-0000-0000-0000-000000000020', 'a0000003-0000-0000-0000-000000000003',
+'Post-burn scar management includes all EXCEPT:',
+'Pressure garments', 'Silicone gel sheets', 'Massage and moisturizing', 'Immediate sun exposure to promote healing', 'Physical therapy and splinting',
+'D', 'Sun exposure should be avoided on healing burns and scars as it can cause hyperpigmentation and worsen scarring. Scar management includes pressure therapy, silicone sheets, massage, moisturizing, splinting, and physical therapy. Reference: Engrav LH. J Burn Care Rehabil. 1987.',
+'medium', 'knowledge');
+
+SELECT 'Surgery 3 MCQ Batch 2 (Burns): 60 questions inserted' as status;

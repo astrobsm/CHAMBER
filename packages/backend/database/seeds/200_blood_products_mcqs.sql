@@ -1,0 +1,22 @@
+-- Blood Products MCQs
+INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation) VALUES
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 1, 'One unit PRBC raises Hb by approximately:', '0.5 g/dL', '1 g/dL', '2 g/dL', '3 g/dL', '5 g/dL', 'B', 'One unit PRBC raises Hb by approximately 1 g/dL.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 2, 'PRBC storage duration is:', '5 days', '21 days', '42 days', '90 days', '1 year', 'C', 'PRBCs can be stored for 42 days at 2-6C.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 3, 'Platelets are stored at:', '2-6C', '10-15C', '20-24C with agitation', '-20C frozen', '-80C frozen', 'C', 'Platelets stored at 20-24C with constant agitation.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 4, 'Platelet storage duration is:', '5 days', '21 days', '42 days', '90 days', '1 year', 'A', 'Platelets can only be stored for 5 days.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 5, 'Massive transfusion protocol ratio PRBC:FFP:Plt:', '1:0:0', '1:1:1', '2:1:0', '4:1:1', '10:1:1', 'B', 'Massive transfusion uses 1:1:1 ratio.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 6, 'Cryoprecipitate contains all EXCEPT:', 'Fibrinogen', 'Factor VIII', 'vWF', 'Factor V', 'Factor XIII', 'D', 'Cryoprecipitate contains fibrinogen, VIII, vWF, XIII. Not Factor V.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 7, 'TRALI presents within:', '15 minutes', '1 hour', '6 hours', '24 hours', '1 week', 'C', 'TRALI presents within 6 hours of transfusion.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 8, 'Acute hemolytic transfusion reaction is caused by:', 'Cytokines', 'ABO incompatibility', 'Bacterial contamination', 'Volume overload', 'Allergic reaction', 'B', 'ABO incompatibility causes acute hemolytic reaction.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 9, 'Treatment of TACO includes:', 'Epinephrine', 'Diuretics', 'More blood products', 'Antibiotics', 'Antihistamines', 'B', 'TACO is volume overload treated with diuretics.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 10, 'Hypocalcemia in massive transfusion is due to:', 'Blood loss', 'Citrate in stored blood', 'Infection', 'Hemolysis', 'Hypothermia', 'B', 'Citrate anticoagulant binds calcium causing hypocalcemia.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 11, 'FFP contains:', 'RBCs only', 'Platelets only', 'All clotting factors', 'Fibrinogen only', 'WBCs only', 'C', 'FFP contains all clotting factors.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 12, 'Restrictive transfusion trigger for stable patients:', '7-8 g/dL', '9-10 g/dL', '11-12 g/dL', '13-14 g/dL', '6 g/dL', 'A', 'Restrictive Hb trigger 7-8 g/dL is safe.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 13, 'One unit platelets raises count by:', '5000-10000', '30000-50000', '100000', '200000', '500000', 'B', 'One unit raises platelets 30,000-50,000.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 14, 'Febrile non-hemolytic reaction is treated with:', 'Epinephrine', 'Antipyretics', 'Diuretics', 'Antibiotics', 'Steroids', 'B', 'FNHTR treated with antipyretics.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 15, 'FFP is indicated for:', 'Anemia', 'Coagulopathy with bleeding', 'Thrombocytopenia', 'Hypovolemia', 'Infection', 'B', 'FFP for coagulopathy with bleeding.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 16, 'Platelet transfusion is indicated when count is:', '<100K with bleeding', '<50K with bleeding or surgery', '<150K prophylactic', '<200K always', '<300K in pregnancy', 'B', 'Transfuse platelets <50K with bleeding or surgery.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 17, 'Blood component with highest bacterial contamination risk:', 'PRBCs', 'FFP', 'Platelets', 'Cryoprecipitate', 'Whole blood', 'C', 'Platelets at room temp have highest bacterial risk.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 18, 'Cryoprecipitate is indicated for fibrinogen less than:', '300 mg/dL', '200 mg/dL', '100 mg/dL', '50 mg/dL', '400 mg/dL', 'C', 'Give cryo when fibrinogen <100 mg/dL.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 19, 'Universal donor for PRBCs is:', 'Type A', 'Type B', 'Type AB', 'Type O', 'Any type', 'D', 'Type O is universal PRBC donor.'),
+('d13a0557-d8dd-4b2c-82b4-7efcb515a471'::uuid, 20, 'Universal plasma donor is:', 'Type A', 'Type B', 'Type AB', 'Type O', 'Any type', 'C', 'Type AB is universal plasma donor.');

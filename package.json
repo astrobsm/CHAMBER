@@ -1,0 +1,33 @@
+{
+  "name": "clinical-rotation-platform",
+  "version": "1.0.0",
+  "description": "Clinical Rotation Platform - University of Nigeria Teaching Hospital, Ituku-Ozalla",
+  "private": true,
+  "workspaces": [
+    "packages/backend",
+    "packages/frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --workspace=packages/backend",
+    "dev:frontend": "npm run dev --workspace=packages/frontend",
+    "build": "npm run build --workspace=packages/backend && npm run build --workspace=packages/frontend",
+    "start": "npm run start --workspace=packages/backend",
+    "db:migrate": "npm run migrate --workspace=packages/backend",
+    "db:seed": "npm run seed --workspace=packages/backend",
+    "lint": "npm run lint --workspaces",
+    "test": "npm run test --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unth/clinical-rotation-platform.git"
+  },
+  "author": "UNTH IT Department",
+  "license": "UNLICENSED"
+}
