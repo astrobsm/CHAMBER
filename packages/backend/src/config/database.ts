@@ -1,5 +1,5 @@
 import { Pool, PoolConfig } from 'pg';
-import config from './index.js';
+import config from './index';
 
 const poolConfig: PoolConfig = config.database.url
   ? {

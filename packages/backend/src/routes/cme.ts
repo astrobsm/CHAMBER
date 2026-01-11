@@ -2,10 +2,10 @@ import { Router, Request, Response, NextFunction } from 'express';
 import { body, param, query, validationResult } from 'express-validator';
 import multer from 'multer';
 import path from 'path';
-import { authenticate, authorize } from '../middleware/auth.js';
-import { query as dbQuery, getClient } from '../config/database.js';
-import { UserRole, CMEContentType } from '../types/index.js';
-import { logger } from '../utils/logger.js';
+import { authenticate, authorize } from '../middleware/auth';
+import { query as dbQuery, getClient } from '../config/database';
+import { UserRole, CMEContentType } from '../types/index';
+import { logger } from '../utils/logger';
 
 const router = Router();
 

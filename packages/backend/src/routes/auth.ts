@@ -1,8 +1,8 @@
 import { Router, Request, Response } from 'express';
 import { body, query as queryValidator } from 'express-validator';
-import { authService } from '../services/index.js';
-import { handleValidationErrors, asyncHandler, authLimiter, authenticate } from '../middleware/index.js';
-import { ApiResponse, StudentLevel } from '../types/index.js';
+import { authService } from '../services/index';
+import { handleValidationErrors, asyncHandler, authLimiter, authenticate } from '../middleware/index';
+import { ApiResponse, StudentLevel } from '../types/index';
 
 const router = Router();
 

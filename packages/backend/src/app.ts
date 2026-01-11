@@ -2,24 +2,24 @@ import express, { Application, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
-import config from './config/index.js';
-import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
-import { rateLimiter } from './middleware/rateLimiter.js';
-import { requestLogger } from './middleware/requestLogger.js';
+import config from './config/index';
+import { errorHandler, notFoundHandler } from './middleware/errorHandler';
+import { rateLimiter } from './middleware/rateLimiter';
+import { requestLogger } from './middleware/requestLogger';
 
 // Import routes
-import authRoutes from './routes/auth.js';
-import studentRoutes from './routes/students.js';
-import attendanceRoutes from './routes/attendance.js';
-import participationRoutes from './routes/participation.js';
-import testRoutes from './routes/tests.js';
-import questionRoutes from './routes/questions.js';
-import rotationRoutes from './routes/rotations.js';
-import cmeRoutes from './routes/cme.js';
-import studyRoutes from './routes/study.js';
-import analyticsRoutes from './routes/analytics.js';
-import adminRoutes from './routes/admin.js';
-import syncRoutes from './routes/sync.js';
+import authRoutes from './routes/auth';
+import studentRoutes from './routes/students';
+import attendanceRoutes from './routes/attendance';
+import participationRoutes from './routes/participation';
+import testRoutes from './routes/tests';
+import questionRoutes from './routes/questions';
+import rotationRoutes from './routes/rotations';
+import cmeRoutes from './routes/cme';
+import studyRoutes from './routes/study';
+import analyticsRoutes from './routes/analytics';
+import adminRoutes from './routes/admin';
+import syncRoutes from './routes/sync';
 
 const app: Application = express();
 

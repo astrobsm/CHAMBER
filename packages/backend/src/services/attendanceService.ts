@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import QRCode from 'qrcode';
-import { query, getClient } from '../config/database.js';
-import config from '../config/index.js';
+import { query, getClient } from '../config/database';
+import config from '../config/index';
 import {
   AttendanceSession,
   AttendanceRecord,
@@ -9,7 +9,7 @@ import {
   AttendanceStatus,
   CreateAttendanceSessionRequest,
   MarkAttendanceRequest,
-} from '../types/index.js';
+} from '../types/index';
 
 export class AttendanceService {
   /**

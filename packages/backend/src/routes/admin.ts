@@ -1,12 +1,12 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { body, param, query, validationResult } from 'express-validator';
 import bcrypt from 'bcryptjs';
-import { authenticate, authorize } from '../middleware/auth.js';
-import { AuthService } from '../services/authService.js';
-import { PerformanceService } from '../services/performanceService.js';
-import { query as dbQuery, getClient } from '../config/database.js';
-import { UserRole, StudentLevel } from '../types/index.js';
-import { logger } from '../utils/logger.js';
+import { authenticate, authorize } from '../middleware/auth';
+import { AuthService } from '../services/authService';
+import { PerformanceService } from '../services/performanceService';
+import { query as dbQuery, getClient } from '../config/database';
+import { UserRole, StudentLevel } from '../types/index';
+import { logger } from '../utils/logger';
 
 const router = Router();
 const authService = new AuthService();

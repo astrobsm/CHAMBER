@@ -1,9 +1,9 @@
 import http from 'http';
-import app from './app.js';
-import config from './config/index.js';
-import { initializeDatabase } from './config/database.js';
-import { initializeWebSocket } from './websocket/index.js';
-import { logger } from './utils/logger.js';
+import app from './app';
+import config from './config/index';
+import { initializeDatabase } from './config/database';
+import { initializeWebSocket } from './websocket/index';
+import { logger } from './utils/logger';
 
 const server = http.createServer(app);
 

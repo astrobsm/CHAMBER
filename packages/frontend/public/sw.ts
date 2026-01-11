@@ -198,7 +198,8 @@ self.addEventListener('push', (event) => {
   if (!event.data) return;
 
   const data = event.data.json();
-  const options: NotificationOptions = {
+  // Extended notification options for service workers
+  const options = {
     body: data.body,
     icon: '/icons/icon-192x192.png',
     badge: '/icons/badge-72x72.png',
@@ -207,7 +208,7 @@ self.addEventListener('push', (event) => {
       url: data.url || '/',
     },
     actions: data.actions || [],
-  };
+  } as NotificationOptions;
 
   event.waitUntil(
     self.registration.showNotification(data.title || 'Clinical Rotation Platform', options)

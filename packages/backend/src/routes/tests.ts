@@ -1,10 +1,10 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { body, param, query, validationResult } from 'express-validator';
-import { authenticate, authorize } from '../middleware/auth.js';
-import { TestEngineService } from '../services/testEngineService.js';
-import { UserRole, TestType } from '../types/index.js';
-import { logger } from '../utils/logger.js';
-import { query as dbQuery } from '../config/database.js';
+import { authenticate, authorize } from '../middleware/auth';
+import { TestEngineService } from '../services/testEngineService';
+import { UserRole, TestType } from '../types/index';
+import { logger } from '../utils/logger';
+import { query as dbQuery } from '../config/database';
 
 const router = Router();
 const testService = new TestEngineService();

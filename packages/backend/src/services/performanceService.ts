@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
-import { query, getClient } from '../config/database.js';
-import config from '../config/index.js';
-import { PerformanceSummary, ClearanceStatus } from '../types/index.js';
+import { query, getClient } from '../config/database';
+import config from '../config/index';
+import { PerformanceSummary, ClearanceStatus } from '../types/index';
 
 export class PerformanceService {
   /**

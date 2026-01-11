@@ -1,9 +1,9 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { body, param, query, validationResult } from 'express-validator';
-import { authenticate, authorize } from '../middleware/auth.js';
-import { query as dbQuery, getClient } from '../config/database.js';
-import { UserRole } from '../types/index.js';
-import { logger } from '../utils/logger.js';
+import { authenticate, authorize } from '../middleware/auth';
+import { query as dbQuery, getClient } from '../config/database';
+import { UserRole } from '../types/index';
+import { logger } from '../utils/logger';
 
 const router = Router();
 

@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import config from '../config/index.js';
-import { query } from '../config/database.js';
-import { JWTPayload, UserRole, ApiResponse } from '../types/index.js';
+import config from '../config/index';
+import { query } from '../config/database';
+import { JWTPayload, UserRole, ApiResponse } from '../types/index';
 
 // Extend Express Request type
 declare global {

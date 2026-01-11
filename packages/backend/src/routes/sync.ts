@@ -1,9 +1,9 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { body, validationResult } from 'express-validator';
-import { authenticate } from '../middleware/auth.js';
-import { query as dbQuery, getClient } from '../config/database.js';
-import { logger } from '../utils/logger.js';
-import { validateIntegrityHash, generateOfflineId } from '../utils/helpers.js';
+import { authenticate } from '../middleware/auth';
+import { query as dbQuery, getClient } from '../config/database';
+import { logger } from '../utils/logger';
+import { validateIntegrityHash, generateOfflineId } from '../utils/helpers';
 
 const router = Router();
 

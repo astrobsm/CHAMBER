@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import crypto from 'crypto';
-import { query, getClient } from '../config/database.js';
-import config from '../config/index.js';
+import { query, getClient } from '../config/database';
+import config from '../config/index';
 import {
   Test,
   TestAnswer,
@@ -10,7 +10,7 @@ import {
   Question,
   SubmitAnswerRequest,
   TestActivityRequest,
-} from '../types/index.js';
+} from '../types/index';
 
 export class TestEngineService {
   /**

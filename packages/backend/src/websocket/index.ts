@@ -1,9 +1,9 @@
 import { Server as HttpServer } from 'http';
 import { Server, Socket } from 'socket.io';
 import jwt from 'jsonwebtoken';
-import config from '../config/index.js';
-import { logger } from '../utils/logger.js';
-import { JWTPayload } from '../types/index.js';
+import config from '../config/index';
+import { logger } from '../utils/logger';
+import { JWTPayload } from '../types/index';
 
 let io: Server;
 

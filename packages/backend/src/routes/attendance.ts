@@ -1,9 +1,9 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { body, param, query, validationResult } from 'express-validator';
-import { authenticate, authorize } from '../middleware/auth.js';
-import { AttendanceService } from '../services/attendanceService.js';
-import { UserRole, AttendanceType } from '../types/index.js';
-import { logger } from '../utils/logger.js';
+import { authenticate, authorize } from '../middleware/auth';
+import { AttendanceService } from '../services/attendanceService';
+import { UserRole, AttendanceType } from '../types/index';
+import { logger } from '../utils/logger';
 
 const router = Router();
 const attendanceService = new AttendanceService();

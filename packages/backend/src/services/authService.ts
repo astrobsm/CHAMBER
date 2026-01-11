@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { v4 as uuidv4 } from 'uuid';
-import { query, getClient } from '../config/database.js';
-import config from '../config/index.js';
+import { query, getClient } from '../config/database';
+import config from '../config/index';
 import {
   User,
   Student,
@@ -13,7 +13,7 @@ import {
   StudentLevel,
   RegisterStudentRequest,
   LoginRequest,
-} from '../types/index.js';
+} from '../types/index';
 
 export class AuthService {
   /**
