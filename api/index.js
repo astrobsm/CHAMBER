@@ -553,17 +553,27 @@ app.all('*', (req, res) => {
 
 // Export handler that fixes URL before passing to Express
 module.exports = (req, res) => {
-  console.log('[Vercel Handler] =============================');
-  console.log('[Vercel Handler] Full req.url:', req.url);
-  console.log('[Vercel Handler] req.query:', JSON.stringify(req.query));
-  console.log('[Vercel Handler] req.path:', req.path);
+  // Debug endpoint - return request details
+  if (req.url.includes('debug-request') || req.url === '/api' || req.url === '/api/') {
+    // For /api, just return without fixing
+    if (req.url === '/api' || req.url === '/api/') {
+      return app(req, res);
+    }
+    // For debug-request, return what we see
+    const urlObj = new URL(req.url, `http://${req.headers.host}`);
+    return res.end(JSON.stringify({
+      rawUrl: req.url,
+      parsedPathname: urlObj.pathname,
+      parsedSearch: urlObj.search,
+      searchParamsPath: urlObj.searchParams.get('path'),
+      allSearchParams: Object.fromEntries(urlObj.searchParams),
+      reqQuery: req.query,
+      reqPath: req.path,
+    }, null, 2));
+  }
   
   // Parse the URL to extract the path query parameter
   const urlObj = new URL(req.url, `http://${req.headers.host}`);
-  console.log('[Vercel Handler] Parsed pathname:', urlObj.pathname);
-  console.log('[Vercel Handler] Parsed search:', urlObj.search);
-  console.log('[Vercel Handler] SearchParams path:', urlObj.searchParams.get('path'));
-  
   const pathParam = urlObj.searchParams.get('path');
   
   if (pathParam) {
@@ -574,12 +584,7 @@ module.exports = (req, res) => {
     const newPath = '/api/' + pathParam;
     const newSearch = urlObj.search || '';
     req.url = newPath + newSearch;
-    
-    console.log('[Vercel Handler] Fixed URL:', req.url);
   }
-  
-  console.log('[Vercel Handler] Final req.url:', req.url);
-  console.log('[Vercel Handler] =============================');
   
   // Pass to Express
   return app(req, res);
