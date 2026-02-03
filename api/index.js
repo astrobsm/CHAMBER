@@ -5,10 +5,13 @@ const { Pool } = require('pg');
 
 const app = express();
 
-// Database connection
+// Database connection with timeout
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+  connectionTimeoutMillis: 10000,
+  idleTimeoutMillis: 10000,
+  max: 1,
 });
 
 // Middleware to restore original URL from Vercel catch-all route
