@@ -135,7 +135,27 @@ export const rotationsApi = {
   getAll: async (params?: { level?: string }) => {
     // Fetch all rotations with optional level filter
     const response = await api.get('/rotations', { params });
-    return response;
+    // API returns { success, data: { rotations: [...] } }
+    // Transform to { data: { data: [...] } } for frontend compatibility
+    const apiData = response.data?.data || response.data || {};
+    const rotations = apiData.rotations || (Array.isArray(apiData) ? apiData : []);
+    
+    // Transform camelCase to snake_case
+    const transformedRotations = rotations.map((r: Record<string, unknown>) => ({
+      id: r.id,
+      name: r.name,
+      category_id: r.categoryId || r.category_id,
+      category: r.category,
+      description: r.description,
+      level: r.level,
+      start_date: r.startDate || r.start_date,
+      end_date: r.endDate || r.end_date,
+      is_active: r.isActive !== undefined ? r.isActive : (r.is_active !== undefined ? r.is_active : (r.status === 'active')),
+      status: r.status,
+      student_count: r.studentCount || r.student_count || 0,
+    }));
+    
+    return { data: { data: transformedRotations } };
   },
   getCategories: async () => {
     // Fetch rotation categories for the question bank
@@ -265,7 +285,19 @@ export const participationApi = {
 // CME API
 export const cmeApi = {
   getActivities: () => api.get('/cme'),
-  getArticles: () => api.get('/cme/articles'),
+  getArticles: async () => {
+    const response = await api.get('/cme/admin/articles');
+    // API returns { success, data: { articles: [...] } }
+    const apiData = response.data?.data || response.data || {};
+    const articles = apiData.articles || (Array.isArray(apiData) ? apiData : []);
+    return { data: articles };
+  },
+  getAdminArticles: async () => {
+    const response = await api.get('/cme/admin/articles');
+    const apiData = response.data?.data || response.data || {};
+    const articles = apiData.articles || (Array.isArray(apiData) ? apiData : []);
+    return { data: articles };
+  },
   register: (activityId: string) => api.post(`/cme/${activityId}/register`),
   getMyRecords: () => api.get('/cme/student/progress'),
   getSummary: () => api.get('/cme/student/summary'),
