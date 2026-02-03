@@ -211,9 +211,34 @@ export const questionsApi = {
   getAll: async (params?: { rotation_id?: string; category_id?: string; difficulty?: string }) => {
     const response = await api.get('/questions', { params: { ...params, category_id: params?.rotation_id || params?.category_id, limit: 5000 } });
     // Transform backend response to frontend expected format
+    // API returns: { success, data: { questions: [...], total, limit, offset } }
+    const apiData = response.data?.data || response.data || {};
+    const questions = apiData.questions || [];
+    
+    // Transform camelCase to snake_case for frontend compatibility
+    const transformedQuestions = questions.map((q: Record<string, unknown>) => ({
+      id: q.id,
+      question_text: q.questionText || q.question_text,
+      option_a: q.optionA || q.option_a,
+      option_b: q.optionB || q.option_b,
+      option_c: q.optionC || q.option_c,
+      option_d: q.optionD || q.option_d,
+      option_e: q.optionE || q.option_e,
+      correct_option: q.correctOption || q.correct_option,
+      explanation: q.explanation,
+      difficulty: q.difficulty,
+      cognitive_level: q.cognitiveLevel || q.cognitive_level,
+      topic_id: q.topicId || q.topic_id,
+      topic_name: q.topicName || q.topic_name,
+      category_id: q.categoryId || q.category_id,
+      category_name: q.categoryName || q.category_name,
+      is_active: q.isActive !== undefined ? q.isActive : (q.is_active !== undefined ? q.is_active : true),
+    }));
+    
     return {
       data: {
-        questions: response.data.data || [],
+        questions: transformedQuestions,
+        total: apiData.total,
         pagination: response.data.pagination,
       }
     };
