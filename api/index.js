@@ -3,6 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
 
+// Allow self-signed certificates (DigitalOcean managed database)
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 // Create Express app
 const app = express();
 
@@ -13,7 +16,10 @@ function getPool() {
   if (!pool && process.env.DATABASE_URL) {
     pool = new Pool({
       connectionString: process.env.DATABASE_URL,
-      ssl: { rejectUnauthorized: false },
+      ssl: {
+        rejectUnauthorized: false,
+        require: true
+      },
       connectionTimeoutMillis: 5000,
       idleTimeoutMillis: 10000,
       max: 1,
