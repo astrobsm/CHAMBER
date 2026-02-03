@@ -31,9 +31,17 @@ app.use((req, res, next) => {
   // For Vercel catch-all routes [...path].js, the path comes in req.query.path as an array
   if (req.query && req.query.path) {
     const pathSegments = Array.isArray(req.query.path) ? req.query.path : [req.query.path];
-    req.url = '/api/' + pathSegments.join('/');
-    // Remove path from query to avoid confusion
-    delete req.query.path;
+    const newPath = '/api/' + pathSegments.join('/');
+    
+    // Build new query string WITHOUT the 'path' parameter
+    const queryParams = { ...req.query };
+    delete queryParams.path;
+    const queryString = Object.keys(queryParams).length > 0 
+      ? '?' + new URLSearchParams(queryParams).toString() 
+      : '';
+    
+    req.url = newPath + queryString;
+    req.query = queryParams;
   }
   console.log(`[Vercel] Final request: ${req.method} ${req.url}`);
   next();
