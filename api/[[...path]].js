@@ -554,30 +554,53 @@ app.all('/api/*', (req, res) => {
 
 // Absolute fallback
 app.all('*', (req, res) => {
-  res.status(404).json({ success: false, message: `Fallback: ${req.method} ${req.path}`, originalUrl: req.originalUrl, url: req.url });
+  res.status(404).json({ success: false, message: `Route ${req.method} ${req.path} not found`, originalUrl: req.originalUrl, url: req.url });
 });
 
 // Export handler that fixes URL before passing to Express
 module.exports = (req, res) => {
-  // Parse the URL to extract the path query parameter
+  // Parse the URL to extract the path
   const urlObj = new URL(req.url, `http://${req.headers.host}`);
   
-  // Vercel catch-all uses '...path' as the parameter name (with three dots)
-  const pathParam = urlObj.searchParams.get('...path') || urlObj.searchParams.get('path');
+  // Method 1: Check for Vercel catch-all parameter (three dots)
+  let pathParam = urlObj.searchParams.get('...path') || urlObj.searchParams.get('path');
+  
+  // Method 2: If using rewrites, the original path is in x-vercel-proxy-signature-ts header
+  // or we can use the x-matched-path header, or extract from pathname directly
+  if (!pathParam && req.headers['x-matched-path']) {
+    const matchedPath = req.headers['x-matched-path'];
+    if (matchedPath.startsWith('/api/')) {
+      pathParam = matchedPath.substring(5); // Remove '/api/'
+    }
+  }
+  
+  // Method 3: Use x-invoke-path or x-forwarded-path if available
+  if (!pathParam && req.headers['x-invoke-path']) {
+    const invokePath = req.headers['x-invoke-path'];
+    if (invokePath.startsWith('/api/')) {
+      pathParam = invokePath.substring(5);
+    }
+  }
   
   // Debug endpoint - return request details
-  if (pathParam === 'debug-request') {
+  if (pathParam === 'debug-request' || urlObj.pathname === '/api/debug-request') {
     return res.end(JSON.stringify({
       rawUrl: req.url,
       parsedPathname: urlObj.pathname,
       parsedSearch: urlObj.search,
       searchParamsPath: urlObj.searchParams.get('...path'),
       allSearchParams: Object.fromEntries(urlObj.searchParams),
+      headers: {
+        'x-matched-path': req.headers['x-matched-path'],
+        'x-invoke-path': req.headers['x-invoke-path'],
+        'x-vercel-forwarded-for': req.headers['x-vercel-forwarded-for'],
+      },
+      computedPath: pathParam,
     }, null, 2));
   }
   
   if (pathParam) {
-    // Remove both possible path params from search params
+    // Remove path params from search params
     urlObj.searchParams.delete('...path');
     urlObj.searchParams.delete('path');
     
