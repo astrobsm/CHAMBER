@@ -70,6 +70,18 @@ app.get('/api/debug-env', (req, res) => {
   });
 });
 
+// Also handle without /api prefix (Vercel may strip it)
+app.get('/debug-env', (req, res) => {
+  const dbUrl = process.env.DATABASE_URL;
+  res.json({
+    hasDbUrl: !!dbUrl,
+    dbUrlLength: dbUrl ? dbUrl.length : 0,
+    dbUrlStart: dbUrl ? dbUrl.substring(0, 30) + '...' : 'NOT SET',
+    nodeEnv: process.env.NODE_ENV || 'not set',
+    note: 'This is the /debug-env route without /api prefix'
+  });
+});
+
 // ============== AUTH ENDPOINTS ==============
 
 // Login endpoint
@@ -480,7 +492,7 @@ app.get('/api/sync/download', (req, res) => {
 
 // Catch-all for undefined routes
 app.all('/api/*', (req, res) => {
-  res.status(404).json({ success: false, message: `Route ${req.method} ${req.path} not found` });
+  res.status(404).json({ success: false, message: `Route ${req.method} ${req.path} not found`, originalUrl: req.originalUrl, url: req.url });
 });
 
 // Export for Vercel
