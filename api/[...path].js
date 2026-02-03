@@ -53,11 +53,30 @@ async function query(text, params) {
   }
 }
 
-// Health check
+// Health check - with timeout protection
 app.get('/api/health', async (req, res) => {
   let dbStatus = 'disconnected';
+  const dbUrl = process.env.DATABASE_URL;
+  
+  // Quick check - don't even try if no DATABASE_URL
+  if (!dbUrl) {
+    return res.json({
+      status: 'healthy',
+      timestamp: new Date().toISOString(),
+      version: '1.0.0',
+      service: 'Clinical Rotation Platform API',
+      database: 'not configured',
+      dbUrlSet: false,
+    });
+  }
+  
+  // Try database connection with 5 second timeout
+  const timeoutPromise = new Promise((_, reject) => 
+    setTimeout(() => reject(new Error('Connection timeout')), 5000)
+  );
+  
   try {
-    await query('SELECT 1');
+    await Promise.race([query('SELECT 1'), timeoutPromise]);
     dbStatus = 'connected';
   } catch (e) {
     dbStatus = 'error: ' + e.message;
@@ -69,6 +88,8 @@ app.get('/api/health', async (req, res) => {
     version: '1.0.0',
     service: 'Clinical Rotation Platform API',
     database: dbStatus,
+    dbUrlSet: true,
+    dbUrlHost: dbUrl.split('@')[1]?.split(':')[0] || 'unknown',
   });
 });
 
