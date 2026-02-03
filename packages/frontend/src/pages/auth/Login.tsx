@@ -50,8 +50,11 @@ export function Login() {
     setIsLoading(true);
     try {
       // Use relative path in production, localhost in development
-      const apiUrl = import.meta.env.VITE_API_URL || 
-        (window.location.hostname !== 'localhost' ? '/api' : 'http://localhost:3001/api');
+      // Only use env URL if it's a valid URL
+      const envUrl = import.meta.env.VITE_API_URL;
+      const apiUrl = (envUrl && (envUrl.startsWith('http') || envUrl.startsWith('/')))
+        ? envUrl
+        : (window.location.hostname !== 'localhost' ? '/api' : 'http://localhost:3001/api');
       const response = await fetch(`${apiUrl}/auth/demo-login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

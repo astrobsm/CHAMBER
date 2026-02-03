@@ -3,13 +3,18 @@ import { storage } from '../utils/storage';
 
 // In production (Vercel), use relative path /api; in development use localhost
 const getApiBaseUrl = () => {
-  if (import.meta.env.VITE_API_URL) {
-    return import.meta.env.VITE_API_URL;
+  const envUrl = import.meta.env.VITE_API_URL;
+  
+  // Only use env URL if it's a valid URL (starts with http or /)
+  if (envUrl && (envUrl.startsWith('http') || envUrl.startsWith('/'))) {
+    return envUrl;
   }
-  // Check if running on Vercel or production
+  
+  // Check if running on Vercel or production (not localhost)
   if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
     return '/api';
   }
+  
   return 'http://localhost:3001/api';
 };
 
