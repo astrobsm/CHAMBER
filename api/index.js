@@ -5,6 +5,29 @@ const { Pool } = require('pg');
 
 const app = express();
 
+// IMPORTANT: Parse incoming Vercel request and reconstruct URL BEFORE Express processes it
+app.use((req, res, next) => {
+  // Parse the URL to extract the path query parameter
+  const url = new URL(req.url, `http://${req.headers.host}`);
+  const pathParam = url.searchParams.get('path');
+  
+  console.log('[Vercel] Original URL:', req.url);
+  console.log('[Vercel] Path param:', pathParam);
+  
+  if (pathParam) {
+    // Remove 'path' from search params
+    url.searchParams.delete('path');
+    
+    // Reconstruct URL with proper path
+    const newPath = '/api/' + pathParam;
+    const newSearch = url.search || '';
+    req.url = newPath + newSearch;
+    
+    console.log('[Vercel] Reconstructed URL:', req.url);
+  }
+  next();
+});
+
 // Database connection with timeout (lazy - only connects when needed)
 let pool = null;
 
@@ -20,27 +43,6 @@ function getPool() {
   }
   return pool;
 }
-
-// Middleware to restore original URL from Vercel catch-all route
-app.use((req, res, next) => {
-  // For Vercel catch-all routes [...path].js, the path comes in req.query.path as an array
-  if (req.query && req.query.path) {
-    const pathSegments = Array.isArray(req.query.path) ? req.query.path : [req.query.path];
-    const newPath = '/api/' + pathSegments.join('/');
-    
-    // Build new query string WITHOUT the 'path' parameter
-    const queryParams = { ...req.query };
-    delete queryParams.path;
-    const queryString = Object.keys(queryParams).length > 0 
-      ? '?' + new URLSearchParams(queryParams).toString() 
-      : '';
-    
-    req.url = newPath + queryString;
-    req.query = queryParams;
-  }
-  console.log(`[Vercel] Final request: ${req.method} ${req.url}`);
-  next();
-});
 
 // Middleware
 app.use(cors({
