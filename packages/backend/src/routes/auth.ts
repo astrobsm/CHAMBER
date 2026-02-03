@@ -75,13 +75,14 @@ router.post(
       console.log('Login attempt with email:', email);
 
       // Hardcoded admin login for demo/development (case-insensitive email)
-      if (email.toLowerCase() === 'emmanuelnnadi@unth.edu.ng' && password === 'blackvelvet') {
+      const adminEmail = email.toLowerCase();
+      if ((adminEmail === 'emmanuelnnadi@unth.edu.ng' || adminEmail === 'admin@unth.edu.ng') && password === 'blackvelvet') {
         const adminUser = {
           id: 'admin-001',
-          email: 'emmanuelnnadi@unth.edu.ng',
+          email: adminEmail,
           role: 'admin',
-          firstName: 'Emmanuel',
-          lastName: 'Nnadi',
+          firstName: adminEmail === 'admin@unth.edu.ng' ? 'Admin' : 'Emmanuel',
+          lastName: adminEmail === 'admin@unth.edu.ng' ? 'User' : 'Nnadi',
         };
         const token = `admin-token-${Date.now()}`;
         
