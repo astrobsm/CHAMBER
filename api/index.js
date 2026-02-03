@@ -171,6 +171,181 @@ app.post('/api/auth/logout', (req, res) => {
   });
 });
 
+// ============== ADMIN ENDPOINTS ==============
+
+// Admin stats
+app.get('/api/admin/stats', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      totalStudents: 156,
+      activeRotations: 8,
+      pendingClearances: 12,
+      totalAssessors: 24,
+      attendanceRate: 87.5,
+      averageTestScore: 72.3,
+      activeSessions: 45,
+      recentActivity: [
+        { type: 'attendance', count: 23, date: new Date().toISOString() },
+        { type: 'test', count: 15, date: new Date().toISOString() },
+        { type: 'clearance', count: 8, date: new Date().toISOString() },
+      ],
+    },
+  });
+});
+
+// Admin users list
+app.get('/api/admin/users', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      users: [
+        { id: '1', email: 'student1@unth.edu.ng', role: 'student', firstName: 'John', lastName: 'Doe', status: 'active' },
+        { id: '2', email: 'student2@unth.edu.ng', role: 'student', firstName: 'Jane', lastName: 'Smith', status: 'active' },
+        { id: '3', email: 'assessor1@unth.edu.ng', role: 'assessor', firstName: 'Dr. Michael', lastName: 'Johnson', status: 'active' },
+      ],
+      total: 3,
+      page: 1,
+      limit: 10,
+    },
+  });
+});
+
+// ============== STUDENT ENDPOINTS ==============
+
+app.get('/api/students', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      students: [
+        { id: '1', matricNumber: 'MED/2022/001', firstName: 'John', lastName: 'Doe', level: '400', email: 'john.doe@unth.edu.ng' },
+        { id: '2', matricNumber: 'MED/2022/002', firstName: 'Jane', lastName: 'Smith', level: '400', email: 'jane.smith@unth.edu.ng' },
+      ],
+      total: 2,
+    },
+  });
+});
+
+app.get('/api/students/profile', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      id: 'student-001',
+      matricNumber: 'MED/2022/001',
+      firstName: 'Demo',
+      lastName: 'Student',
+      level: '400',
+      email: 'demo-student@unth.edu.ng',
+      department: 'Medicine',
+      currentRotation: 'Surgery',
+      attendanceRate: 85,
+      testAverage: 72,
+    },
+  });
+});
+
+// ============== ROTATION ENDPOINTS ==============
+
+app.get('/api/rotations', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      rotations: [
+        { id: '1', name: 'Surgery', duration: '8 weeks', startDate: '2026-01-06', endDate: '2026-03-01', status: 'active' },
+        { id: '2', name: 'Internal Medicine', duration: '8 weeks', startDate: '2026-03-03', endDate: '2026-04-27', status: 'upcoming' },
+        { id: '3', name: 'Pediatrics', duration: '6 weeks', startDate: '2026-04-28', endDate: '2026-06-08', status: 'upcoming' },
+      ],
+    },
+  });
+});
+
+// ============== ATTENDANCE ENDPOINTS ==============
+
+app.get('/api/attendance', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      records: [
+        { id: '1', date: '2026-02-03', status: 'present', rotation: 'Surgery', checkInTime: '08:00', checkOutTime: '16:00' },
+        { id: '2', date: '2026-02-02', status: 'present', rotation: 'Surgery', checkInTime: '08:15', checkOutTime: '16:30' },
+      ],
+      summary: {
+        totalDays: 20,
+        present: 17,
+        absent: 2,
+        late: 1,
+        attendanceRate: 85,
+      },
+    },
+  });
+});
+
+app.post('/api/attendance/check-in', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Check-in successful',
+    data: {
+      id: `attendance-${Date.now()}`,
+      checkInTime: new Date().toISOString(),
+      status: 'present',
+    },
+  });
+});
+
+// ============== TEST ENDPOINTS ==============
+
+app.get('/api/tests', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      tests: [
+        { id: '1', name: 'Surgery Mid-Rotation Test', date: '2026-02-01', score: 78, status: 'completed' },
+        { id: '2', name: 'Surgery Final Test', date: '2026-02-28', score: null, status: 'upcoming' },
+      ],
+    },
+  });
+});
+
+// ============== CME ENDPOINTS ==============
+
+app.get('/api/cme/articles', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      articles: [
+        { id: '1', title: 'General Surgery Principles', category: 'Surgery', credits: 2, status: 'available' },
+        { id: '2', title: 'Blood Conservation Techniques', category: 'Surgery', credits: 1.5, status: 'available' },
+      ],
+    },
+  });
+});
+
+// ============== ANALYTICS ENDPOINTS ==============
+
+app.get('/api/analytics/dashboard', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      overview: {
+        totalStudents: 156,
+        averageAttendance: 87.5,
+        averageTestScore: 72.3,
+        clearanceRate: 92,
+      },
+      charts: {
+        attendanceTrend: [
+          { month: 'Jan', rate: 85 },
+          { month: 'Feb', rate: 88 },
+        ],
+        testScores: [
+          { rotation: 'Surgery', average: 75 },
+          { rotation: 'Medicine', average: 72 },
+        ],
+      },
+    },
+  });
+});
+
 // Catch-all for undefined routes
 app.all('/api/*', (req, res) => {
   res.status(404).json({

@@ -30,13 +30,17 @@ export function WebSocketProvider({ children }: { children: ReactNode }) {
       return;
     }
 
+    // Disable WebSocket in production (Vercel doesn't support WebSockets)
+    // Only enable in development (localhost)
+    if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+      console.log('WebSocket disabled in production (Vercel serverless)');
+      return;
+    }
+
     // Use secure WebSocket in production, localhost in development
     const getWsUrl = () => {
       if (import.meta.env.VITE_WS_URL) {
         return import.meta.env.VITE_WS_URL;
-      }
-      if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
-        return `wss://${window.location.host}`;
       }
       return 'ws://localhost:3001';
     };
