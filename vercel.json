@@ -4,12 +4,6 @@
   "buildCommand": "npm run build --workspace=packages/frontend",
   "outputDirectory": "packages/frontend/dist",
   "installCommand": "npm install --include=dev",
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/api"
-    }
-  ],
   "headers": [
     {
       "source": "/api/:path*",
