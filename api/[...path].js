@@ -23,6 +23,11 @@ function getPool() {
 
 // Middleware to restore original URL from Vercel catch-all route
 app.use((req, res, next) => {
+  console.log('[Vercel Debug] Original req.url:', req.url);
+  console.log('[Vercel Debug] req.query:', JSON.stringify(req.query));
+  console.log('[Vercel Debug] req.path:', req.path);
+  console.log('[Vercel Debug] req.originalUrl:', req.originalUrl);
+  
   // For Vercel catch-all routes [...path].js, the path comes in req.query.path as an array
   if (req.query && req.query.path) {
     const pathSegments = Array.isArray(req.query.path) ? req.query.path : [req.query.path];
@@ -30,7 +35,7 @@ app.use((req, res, next) => {
     // Remove path from query to avoid confusion
     delete req.query.path;
   }
-  console.log(`[Vercel] Incoming request: ${req.method} ${req.url}`);
+  console.log(`[Vercel] Final request: ${req.method} ${req.url}`);
   next();
 });
 
@@ -556,6 +561,11 @@ app.get('/api/sync/download', (req, res) => {
 // Catch-all for undefined routes
 app.all('/api/*', (req, res) => {
   res.status(404).json({ success: false, message: `Route ${req.method} ${req.path} not found`, originalUrl: req.originalUrl, url: req.url });
+});
+
+// Absolute fallback
+app.all('*', (req, res) => {
+  res.status(404).json({ success: false, message: `Fallback: Route ${req.method} ${req.path} not found`, originalUrl: req.originalUrl, url: req.url, path: req.path });
 });
 
 // Export for Vercel
