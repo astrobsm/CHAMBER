@@ -59,6 +59,17 @@ app.get('/api', (req, res) => {
   });
 });
 
+// Debug endpoint - check environment
+app.get('/api/debug-env', (req, res) => {
+  const dbUrl = process.env.DATABASE_URL;
+  res.json({
+    hasDbUrl: !!dbUrl,
+    dbUrlLength: dbUrl ? dbUrl.length : 0,
+    dbUrlStart: dbUrl ? dbUrl.substring(0, 30) + '...' : 'NOT SET',
+    nodeEnv: process.env.NODE_ENV || 'not set',
+  });
+});
+
 // ============== AUTH ENDPOINTS ==============
 
 // Login endpoint
