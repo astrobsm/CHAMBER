@@ -1,7 +1,6 @@
 // Vercel Serverless API Entry Point
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import express, { Request, Response } from 'express';
-import cors from 'cors';
+const express = require('express');
+const cors = require('cors');
 
 const app = express();
 
@@ -15,7 +14,7 @@ app.use(cors({
 app.use(express.json());
 
 // Health check
-app.get('/api/health', (req: Request, res: Response) => {
+app.get('/api/health', (req, res) => {
   res.json({
     status: 'healthy',
     timestamp: new Date().toISOString(),
@@ -25,7 +24,7 @@ app.get('/api/health', (req: Request, res: Response) => {
 });
 
 // Root API info
-app.get('/api', (req: Request, res: Response) => {
+app.get('/api', (req, res) => {
   res.json({
     name: 'Clinical Rotation Platform API',
     version: '1.0.0',
@@ -34,7 +33,7 @@ app.get('/api', (req: Request, res: Response) => {
 });
 
 // Login endpoint
-app.post('/api/auth/login', (req: Request, res: Response) => {
+app.post('/api/auth/login', (req, res) => {
   const { email, password } = req.body;
   
   console.log('Login attempt:', email);
@@ -75,10 +74,10 @@ app.post('/api/auth/login', (req: Request, res: Response) => {
 });
 
 // Demo login endpoint
-app.post('/api/auth/demo-login', (req: Request, res: Response) => {
+app.post('/api/auth/demo-login', (req, res) => {
   const { role } = req.body;
   
-  const demoUsers: Record<string, any> = {
+  const demoUsers = {
     admin: {
       id: 'demo-admin-001',
       email: 'demo-admin@unth.edu.ng',
@@ -128,7 +127,7 @@ app.post('/api/auth/demo-login', (req: Request, res: Response) => {
 });
 
 // Token refresh
-app.post('/api/auth/refresh', (req: Request, res: Response) => {
+app.post('/api/auth/refresh', (req, res) => {
   const { refreshToken } = req.body;
   
   if (refreshToken) {
@@ -148,7 +147,7 @@ app.post('/api/auth/refresh', (req: Request, res: Response) => {
 });
 
 // Token verification
-app.get('/api/auth/verify', (req: Request, res: Response) => {
+app.get('/api/auth/verify', (req, res) => {
   const authHeader = req.headers.authorization;
   
   if (authHeader && authHeader.startsWith('Bearer ')) {
@@ -165,7 +164,7 @@ app.get('/api/auth/verify', (req: Request, res: Response) => {
 });
 
 // Logout
-app.post('/api/auth/logout', (req: Request, res: Response) => {
+app.post('/api/auth/logout', (req, res) => {
   res.json({
     success: true,
     message: 'Logged out successfully',
@@ -173,14 +172,12 @@ app.post('/api/auth/logout', (req: Request, res: Response) => {
 });
 
 // Catch-all for undefined routes
-app.all('/api/*', (req: Request, res: Response) => {
+app.all('/api/*', (req, res) => {
   res.status(404).json({
     success: false,
     message: `Route ${req.method} ${req.path} not found`,
   });
 });
 
-// Export handler for Vercel
-export default function handler(req: VercelRequest, res: VercelResponse) {
-  return app(req as any, res as any);
-}
+// Export for Vercel
+module.exports = app;

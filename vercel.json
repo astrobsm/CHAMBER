@@ -6,8 +6,8 @@
   "installCommand": "npm install --include=dev",
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "/api/index.ts"
+      "source": "/api/(.*)",
+      "destination": "/api"
     }
   ],
   "headers": [
@@ -59,7 +59,7 @@
     }
   ],
   "functions": {
-    "api/index.ts": {
+    "api/**/*.js": {
       "maxDuration": 10,
       "memory": 1024
     }
