@@ -3,30 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
 
+// Create Express app
 const app = express();
-
-// IMPORTANT: Parse incoming Vercel request and reconstruct URL BEFORE Express processes it
-app.use((req, res, next) => {
-  // Parse the URL to extract the path query parameter
-  const url = new URL(req.url, `http://${req.headers.host}`);
-  const pathParam = url.searchParams.get('path');
-  
-  console.log('[Vercel] Original URL:', req.url);
-  console.log('[Vercel] Path param:', pathParam);
-  
-  if (pathParam) {
-    // Remove 'path' from search params
-    url.searchParams.delete('path');
-    
-    // Reconstruct URL with proper path
-    const newPath = '/api/' + pathParam;
-    const newSearch = url.search || '';
-    req.url = newPath + newSearch;
-    
-    console.log('[Vercel] Reconstructed URL:', req.url);
-  }
-  next();
-});
 
 // Database connection with timeout (lazy - only connects when needed)
 let pool = null;
@@ -568,5 +546,31 @@ app.all('/api/*', (req, res) => {
   res.status(404).json({ success: false, message: `Route ${req.method} ${req.path} not found`, originalUrl: req.originalUrl, url: req.url });
 });
 
-// Export for Vercel
-module.exports = app;
+// Absolute fallback
+app.all('*', (req, res) => {
+  res.status(404).json({ success: false, message: `Fallback: ${req.method} ${req.path}`, originalUrl: req.originalUrl, url: req.url });
+});
+
+// Export handler that fixes URL before passing to Express
+module.exports = (req, res) => {
+  // Parse the URL to extract the path query parameter
+  const urlObj = new URL(req.url, `http://${req.headers.host}`);
+  const pathParam = urlObj.searchParams.get('path');
+  
+  console.log('[Vercel Handler] Original URL:', req.url);
+  
+  if (pathParam) {
+    // Remove 'path' from search params
+    urlObj.searchParams.delete('path');
+    
+    // Reconstruct URL with proper path
+    const newPath = '/api/' + pathParam;
+    const newSearch = urlObj.search || '';
+    req.url = newPath + newSearch;
+    
+    console.log('[Vercel Handler] Fixed URL:', req.url);
+  }
+  
+  // Pass to Express
+  return app(req, res);
+};
