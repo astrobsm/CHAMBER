@@ -11,20 +11,16 @@ const pool = new Pool({
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 });
 
-// Middleware to restore original URL from Vercel
+// Middleware to restore original URL from Vercel catch-all route
 app.use((req, res, next) => {
-  // Vercel passes the original path in x-vercel-forwarded-for or we can get it from x-vercel-proxy-signature-ts
-  // But the simplest way is to check the x-now-route-matches or use req.headers
-  const originalUrl = req.headers['x-vercel-proxy-path'] || req.headers['x-original-url'] || req.url;
-  
-  // If running on Vercel and URL is just /api, try to get original path from referer or other headers
-  if (req.url === '/api' || req.url === '/api/') {
-    // Check if there's a path in the query string (Vercel sometimes passes it there)
-    const pathMatch = req.headers['x-matched-path'];
-    if (pathMatch && pathMatch !== '/api') {
-      req.url = pathMatch;
-    }
+  // For Vercel catch-all routes [...path].js, the path comes in req.query.path as an array
+  if (req.query && req.query.path) {
+    const pathSegments = Array.isArray(req.query.path) ? req.query.path : [req.query.path];
+    req.url = '/api/' + pathSegments.join('/');
+    // Remove path from query to avoid confusion
+    delete req.query.path;
   }
+  console.log(`[Vercel] Incoming request: ${req.method} ${req.url}`);
   next();
 });
 
