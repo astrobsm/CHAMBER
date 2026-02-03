@@ -6,6 +6,7 @@ const { Pool } = require('pg');
 // Allow self-signed certificates (DigitalOcean managed database)
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
+// Create Express app
 const app = express();
 
 // Database connection with timeout (lazy - only connects when needed)
@@ -563,6 +564,17 @@ module.exports = (req, res) => {
   
   // Vercel catch-all uses '...path' as the parameter name (with three dots)
   const pathParam = urlObj.searchParams.get('...path') || urlObj.searchParams.get('path');
+  
+  // Debug endpoint - return request details
+  if (pathParam === 'debug-request') {
+    return res.end(JSON.stringify({
+      rawUrl: req.url,
+      parsedPathname: urlObj.pathname,
+      parsedSearch: urlObj.search,
+      searchParamsPath: urlObj.searchParams.get('...path'),
+      allSearchParams: Object.fromEntries(urlObj.searchParams),
+    }, null, 2));
+  }
   
   if (pathParam) {
     // Remove both possible path params from search params
