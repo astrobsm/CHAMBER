@@ -49,7 +49,10 @@ export function Login() {
   const handleDemoLogin = async (role: 'student' | 'assessor' | 'admin') => {
     setIsLoading(true);
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3001/api'}/auth/demo-login`, {
+      // Use relative path in production, localhost in development
+      const apiUrl = import.meta.env.VITE_API_URL || 
+        (window.location.hostname !== 'localhost' ? '/api' : 'http://localhost:3001/api');
+      const response = await fetch(`${apiUrl}/auth/demo-login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role }),

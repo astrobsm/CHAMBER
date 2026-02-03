@@ -30,7 +30,17 @@ export function WebSocketProvider({ children }: { children: ReactNode }) {
       return;
     }
 
-    const wsUrl = import.meta.env.VITE_WS_URL || 'ws://localhost:3001';
+    // Use secure WebSocket in production, localhost in development
+    const getWsUrl = () => {
+      if (import.meta.env.VITE_WS_URL) {
+        return import.meta.env.VITE_WS_URL;
+      }
+      if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+        return `wss://${window.location.host}`;
+      }
+      return 'ws://localhost:3001';
+    };
+    const wsUrl = getWsUrl();
     const token = localStorage.getItem('accessToken');
 
     const newSocket = io(wsUrl, {

@@ -196,68 +196,88 @@ See [database documentation](./docs/database.md) for complete schema.
 - Push notifications
 - Responsive (mobile-first)
 
-## 🚀 Deployment (Vercel + Supabase)
+## 🚀 Deployment
 
-### Step 1: Set up Supabase Database
+### ⚡ Automated Deployment
 
-1. Create a new project at [supabase.com](https://supabase.com)
-2. Go to **Project Settings > Database > Connection string**
-3. Copy the **URI** connection string
-4. Go to **SQL Editor** and run the schema:
-   ```sql
-   -- Copy contents of packages/backend/database/schema.sql
-   ```
-5. Run the seed files in order (01_surgery1_setup.sql, etc.)
-
-### Step 2: Deploy Backend to Vercel
-
-```bash
-# From the packages/backend directory
-cd packages/backend
-npm run build
-vercel --prod
+**One-command deployment:**
+```powershell
+.\scripts\deploy-all.ps1
 ```
 
-Set these environment variables in Vercel dashboard:
-- `DATABASE_URL` - Your Supabase connection string
-- `DB_SSL` - `true`
-- `JWT_SECRET` - Generate with: `openssl rand -base64 64`
-- `JWT_REFRESH_SECRET` - Generate with: `openssl rand -base64 64`
-- `CORS_ORIGIN` - Your frontend URL (e.g., `https://your-app.vercel.app`)
-- `NODE_ENV` - `production`
+This will automatically:
+- ✅ Configure environment variables
+- ✅ Set up database
+- ✅ Deploy to Vercel
 
-### Step 3: Deploy Frontend to Vercel
+**See [QUICK_DEPLOY.md](QUICK_DEPLOY.md) for detailed quick-start instructions.**
 
-```bash
-# From the packages/frontend directory  
-cd packages/frontend
-vercel --prod
+### Individual Scripts
+
+```powershell
+# Environment setup
+.\scripts\setup-env.ps1
+
+# Database setup
+.\scripts\setup-database.ps1 -DatabaseUrl "your-db-url"
+
+# Deploy to Vercel
+.\scripts\deploy-vercel.ps1
 ```
 
-Set these environment variables:
-- `VITE_API_URL` - Your backend URL (e.g., `https://your-backend.vercel.app/api`)
+### Comprehensive Guides
 
-### Step 4: Push to GitHub
+📚 **Complete documentation available:**
+- **[QUICK_DEPLOY.md](QUICK_DEPLOY.md)** - Fast automated deployment
+- **[DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md)** - Quick overview
+- **[VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md)** - Detailed instructions
+- **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** - Step-by-step checklist
 
-```bash
-git remote add origin https://github.com/astrobsm/CHAMBER.git
-git branch -M main
-git add .
-git commit -m "Production deployment"
-git push -u origin main
+### Key Configuration Files
+- `vercel.json` - Deployment configuration
+- `api/index.ts` - Serverless API entry point
+- `.env.example` - Environment variables template
+
+### Essential Environment Variables
+
+Set these in Vercel before deployment:
+- `DATABASE_URL` - PostgreSQL connection (Supabase/Neon)
+- `JWT_SECRET` - Secure token secret (min 32 chars)
+- `NODE_ENV` - Set to `production`
+- `CORS_ORIGIN` - Your deployment URL
+
+See [.env.example](.env.example) for complete list.
+
+### Database Setup
+
+**Option 1: Supabase (Recommended)**
+1. Create project at https://supabase.com
+2. Get connection string from Settings > Database
+3. Run migrations: Use the SQL files in `packages/backend/database/`
+
+**Option 2: Neon**
+1. Create project at https://neon.tech
+2. Copy connection string
+3. Run the same SQL migration files
+
+### Architecture
+
+```
+Deployment Architecture:
+├── Frontend (Static) → Vercel Edge Network
+├── API Routes (/api/*) → Vercel Serverless Functions
+└── Database → Supabase/Neon PostgreSQL
 ```
 
-### Vercel Project Settings
+### Post-Deployment Verification
 
-For the **Frontend** project:
-- Framework Preset: Vite
-- Build Command: `npm run build`
-- Output Directory: `dist`
-- Install Command: `npm install`
+✅ Frontend: `https://your-app.vercel.app`  
+✅ API Health: `https://your-app.vercel.app/api/health`  
+✅ API Info: `https://your-app.vercel.app/api`  
 
-For the **Backend** project:
-- Framework Preset: Other
-- Build Command: `npm run build`
+---
+
+**For fastest deployment, run: `.\scripts\deploy-all.ps1`**
 - Output Directory: `dist`
 - Install Command: `npm install`
 
