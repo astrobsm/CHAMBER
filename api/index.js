@@ -383,6 +383,80 @@ app.get('/api/analytics/dashboard', (req, res) => {
   res.json({ success: true, data: { overview: { totalStudents: 156, averageAttendance: 87.5, averageTestScore: 72.3, clearanceRate: 92 }, charts: { attendanceTrend: [{ month: 'Jan', rate: 85 }, { month: 'Feb', rate: 88 }], testScores: [{ rotation: 'Surgery', average: 75 }, { rotation: 'Medicine', average: 72 }] } } });
 });
 
+// ============== DATABASE STATUS ENDPOINT ==============
+
+app.get('/api/db-status', async (req, res) => {
+  try {
+    // Get all table counts
+    const tables = await query(`
+      SELECT table_name 
+      FROM information_schema.tables 
+      WHERE table_schema = 'public' 
+      ORDER BY table_name
+    `);
+    
+    const counts = {};
+    
+    // Count questions
+    try {
+      const questionsResult = await query('SELECT COUNT(*) FROM questions');
+      counts.questions = parseInt(questionsResult.rows[0].count);
+      
+      // Questions by rotation
+      const byRotation = await query('SELECT rotation_id, COUNT(*) as count FROM questions GROUP BY rotation_id ORDER BY rotation_id');
+      counts.questionsByRotation = byRotation.rows;
+    } catch (e) { counts.questions = 'Table not found'; }
+    
+    // Count CME articles
+    try {
+      const articlesResult = await query('SELECT COUNT(*) FROM cme_articles');
+      counts.cmeArticles = parseInt(articlesResult.rows[0].count);
+      
+      // Articles by rotation
+      const articlesByRotation = await query('SELECT rotation_id, COUNT(*) as count FROM cme_articles GROUP BY rotation_id ORDER BY rotation_id');
+      counts.articlesByRotation = articlesByRotation.rows;
+    } catch (e) { counts.cmeArticles = 'Table not found'; }
+    
+    // Count rotations
+    try {
+      const rotationsResult = await query('SELECT * FROM rotations ORDER BY id');
+      counts.rotations = rotationsResult.rows;
+    } catch (e) { counts.rotations = 'Table not found'; }
+    
+    // Count topics
+    try {
+      const topicsResult = await query('SELECT COUNT(*) FROM topics');
+      counts.topics = parseInt(topicsResult.rows[0].count);
+    } catch (e) { counts.topics = 'Table not found'; }
+    
+    // Count users
+    try {
+      const usersResult = await query('SELECT COUNT(*) FROM users');
+      counts.users = parseInt(usersResult.rows[0].count);
+    } catch (e) { counts.users = 'Table not found'; }
+    
+    // Count students
+    try {
+      const studentsResult = await query('SELECT COUNT(*) FROM students');
+      counts.students = parseInt(studentsResult.rows[0].count);
+    } catch (e) { counts.students = 'Table not found'; }
+    
+    res.json({
+      success: true,
+      data: {
+        tables: tables.rows.map(t => t.table_name),
+        counts: counts,
+        message: 'Database connected and inspected successfully'
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Database error: ' + error.message
+    });
+  }
+});
+
 // ============== SYNC ENDPOINTS ==============
 
 app.post('/api/sync/upload', (req, res) => {
