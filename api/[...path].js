@@ -5,14 +5,21 @@ const { Pool } = require('pg');
 
 const app = express();
 
-// Database connection with timeout
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
-  connectionTimeoutMillis: 10000,
-  idleTimeoutMillis: 10000,
-  max: 1,
-});
+// Database connection with timeout (lazy - only connects when needed)
+let pool = null;
+
+function getPool() {
+  if (!pool && process.env.DATABASE_URL) {
+    pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+      connectionTimeoutMillis: 5000,
+      idleTimeoutMillis: 10000,
+      max: 1,
+    });
+  }
+  return pool;
+}
 
 // Middleware to restore original URL from Vercel catch-all route
 app.use((req, res, next) => {
@@ -44,8 +51,12 @@ app.use((req, res, next) => {
 
 // Helper function to run queries
 async function query(text, params) {
+  const p = getPool();
+  if (!p) {
+    throw new Error('Database not configured');
+  }
   try {
-    const result = await pool.query(text, params);
+    const result = await p.query(text, params);
     return result;
   } catch (error) {
     console.error('Database query error:', error);
@@ -110,6 +121,15 @@ app.get('/api/debug-env', (req, res) => {
     dbUrlLength: dbUrl ? dbUrl.length : 0,
     dbUrlStart: dbUrl ? dbUrl.substring(0, 30) + '...' : 'NOT SET',
     nodeEnv: process.env.NODE_ENV || 'not set',
+  });
+});
+
+// Simple test endpoint - no database
+app.get('/api/test', (req, res) => {
+  res.json({
+    success: true,
+    message: 'API is working!',
+    timestamp: new Date().toISOString(),
   });
 });
 
