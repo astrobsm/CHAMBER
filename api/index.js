@@ -553,31 +553,26 @@ app.all('*', (req, res) => {
 
 // Export handler that fixes URL before passing to Express
 module.exports = (req, res) => {
+  // Parse the URL to extract the path query parameter
+  const urlObj = new URL(req.url, `http://${req.headers.host}`);
+  
+  // Vercel catch-all uses '...path' as the parameter name (with three dots)
+  const pathParam = urlObj.searchParams.get('...path') || urlObj.searchParams.get('path');
+  
   // Debug endpoint - return request details
-  if (req.url.includes('debug-request') || req.url === '/api' || req.url === '/api/') {
-    // For /api, just return without fixing
-    if (req.url === '/api' || req.url === '/api/') {
-      return app(req, res);
-    }
-    // For debug-request, return what we see
-    const urlObj = new URL(req.url, `http://${req.headers.host}`);
+  if (pathParam === 'debug-request') {
     return res.end(JSON.stringify({
       rawUrl: req.url,
       parsedPathname: urlObj.pathname,
       parsedSearch: urlObj.search,
-      searchParamsPath: urlObj.searchParams.get('path'),
+      searchParamsPath: urlObj.searchParams.get('...path'),
       allSearchParams: Object.fromEntries(urlObj.searchParams),
-      reqQuery: req.query,
-      reqPath: req.path,
     }, null, 2));
   }
   
-  // Parse the URL to extract the path query parameter
-  const urlObj = new URL(req.url, `http://${req.headers.host}`);
-  const pathParam = urlObj.searchParams.get('path');
-  
   if (pathParam) {
-    // Remove 'path' from search params
+    // Remove both possible path params from search params
+    urlObj.searchParams.delete('...path');
     urlObj.searchParams.delete('path');
     
     // Reconstruct URL with proper path

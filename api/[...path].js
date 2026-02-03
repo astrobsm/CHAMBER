@@ -554,20 +554,19 @@ app.all('*', (req, res) => {
 module.exports = (req, res) => {
   // Parse the URL to extract the path query parameter
   const urlObj = new URL(req.url, `http://${req.headers.host}`);
-  const pathParam = urlObj.searchParams.get('path');
   
-  console.log('[Vercel Handler] Original URL:', req.url);
+  // Vercel catch-all uses '...path' as the parameter name (with three dots)
+  const pathParam = urlObj.searchParams.get('...path') || urlObj.searchParams.get('path');
   
   if (pathParam) {
-    // Remove 'path' from search params
+    // Remove both possible path params from search params
+    urlObj.searchParams.delete('...path');
     urlObj.searchParams.delete('path');
     
     // Reconstruct URL with proper path
     const newPath = '/api/' + pathParam;
     const newSearch = urlObj.search || '';
     req.url = newPath + newSearch;
-    
-    console.log('[Vercel Handler] Fixed URL:', req.url);
   }
   
   // Pass to Express
