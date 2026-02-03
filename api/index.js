@@ -553,11 +553,18 @@ app.all('*', (req, res) => {
 
 // Export handler that fixes URL before passing to Express
 module.exports = (req, res) => {
+  console.log('[Vercel Handler] =============================');
+  console.log('[Vercel Handler] Full req.url:', req.url);
+  console.log('[Vercel Handler] req.query:', JSON.stringify(req.query));
+  console.log('[Vercel Handler] req.path:', req.path);
+  
   // Parse the URL to extract the path query parameter
   const urlObj = new URL(req.url, `http://${req.headers.host}`);
-  const pathParam = urlObj.searchParams.get('path');
+  console.log('[Vercel Handler] Parsed pathname:', urlObj.pathname);
+  console.log('[Vercel Handler] Parsed search:', urlObj.search);
+  console.log('[Vercel Handler] SearchParams path:', urlObj.searchParams.get('path'));
   
-  console.log('[Vercel Handler] Original URL:', req.url);
+  const pathParam = urlObj.searchParams.get('path');
   
   if (pathParam) {
     // Remove 'path' from search params
@@ -570,6 +577,9 @@ module.exports = (req, res) => {
     
     console.log('[Vercel Handler] Fixed URL:', req.url);
   }
+  
+  console.log('[Vercel Handler] Final req.url:', req.url);
+  console.log('[Vercel Handler] =============================');
   
   // Pass to Express
   return app(req, res);
