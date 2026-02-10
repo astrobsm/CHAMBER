@@ -36,8 +36,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        <OfflineProvider>
-          <AuthProvider>
+        <AuthProvider>
+          <OfflineProvider>
             <WebSocketProvider>
               <App />
               <Toaster
@@ -64,8 +64,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 }}
               />
             </WebSocketProvider>
-          </AuthProvider>
-        </OfflineProvider>
+          </OfflineProvider>
+        </AuthProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>
