@@ -548,7 +548,7 @@ app.get('/api/admin/users/bulk-template', (req, res) => {
 
 app.post('/api/admin/users', async (req, res) => {
   try {
-    const { email, role, first_name, last_name, password } = req.body;
+    const { email, role, first_name, last_name, password, matriculation_number, level, phone_number, staff_id, department } = req.body;
     if (!email || !role) {
       return res.status(400).json({ success: false, message: 'Email and role are required' });
     }
@@ -560,9 +560,25 @@ app.post('/api/admin/users', async (req, res) => {
     );
     const user = result.rows[0];
     if (role === 'student') {
-      await query('INSERT INTO students (user_id, first_name, last_name) VALUES ($1, $2, $3)', [user.id, first_name || '', last_name || '']);
+      const matric = matriculation_number || ('MAT/' + Date.now());
+      const lvl = level || 'surgery_1';
+      const phone = phone_number || '';
+      await query(
+        'INSERT INTO students (user_id, first_name, last_name, matriculation_number, level, phone_number) VALUES ($1, $2, $3, $4, $5, $6)',
+        [user.id, first_name || '', last_name || '', matric, lvl, phone]
+      );
     } else if (role === 'assessor') {
-      await query('INSERT INTO assessors (user_id, first_name, last_name) VALUES ($1, $2, $3)', [user.id, first_name || '', last_name || '']);
+      const sid = staff_id || ('STAFF/' + Date.now());
+      await query(
+        'INSERT INTO assessors (user_id, first_name, last_name, staff_id, department) VALUES ($1, $2, $3, $4, $5)',
+        [user.id, first_name || '', last_name || '', sid, department || '']
+      );
+    } else if (role === 'admin') {
+      const sid = staff_id || ('ADM/' + Date.now());
+      await query(
+        'INSERT INTO administrators (user_id, first_name, last_name, staff_id) VALUES ($1, $2, $3, $4)',
+        [user.id, first_name || '', last_name || '', sid]
+      );
     }
     res.json({ success: true, data: user });
   } catch (error) {
