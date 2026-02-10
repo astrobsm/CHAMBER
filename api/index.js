@@ -319,7 +319,7 @@ app.get('/api/admin/stats', async (req, res) => {
 
 app.get('/api/admin/users', async (req, res) => {
   try {
-    const result = await query(`SELECT u.id, u.email, u.role, u.is_active, COALESCE(s.first_name, a.first_name) as first_name, COALESCE(s.last_name, a.last_name) as last_name FROM users u LEFT JOIN students s ON u.id = s.user_id LEFT JOIN assessors a ON u.id = a.user_id ORDER BY u.created_at DESC LIMIT 50`);
+    const result = await query(`SELECT u.id, u.email, u.role, u.is_active, COALESCE(s.first_name, a.first_name) as first_name, COALESCE(s.last_name, a.last_name) as last_name, s.phone_number FROM users u LEFT JOIN students s ON u.id = s.user_id LEFT JOIN assessors a ON u.id = a.user_id ORDER BY u.created_at DESC LIMIT 50`);
     res.json({ success: true, data: { users: result.rows, total: result.rows.length, page: 1, limit: 50 } });
   } catch (error) {
     res.json({ success: true, data: { users: [], total: 0, page: 1, limit: 50 } });
@@ -611,16 +611,17 @@ app.post('/api/admin/users', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Email and role are required' });
     }
     const bcrypt = require('bcryptjs');
-    const hashed = await bcrypt.hash(password || 'changeme123', 10);
+    const tempPassword = password || 'changeme123';
+    const hashed = await bcrypt.hash(tempPassword, 10);
     const result = await query(
       'INSERT INTO users (email, password_hash, role, is_active) VALUES ($1, $2, $3, true) RETURNING id, email, role',
       [email.toLowerCase(), hashed, role]
     );
     const user = result.rows[0];
+    const phone = phone_number || '';
     if (role === 'student') {
       const matric = matriculation_number || ('MAT/' + Date.now());
       const lvl = level || 'surgery_1';
-      const phone = phone_number || '';
       await query(
         'INSERT INTO students (user_id, first_name, last_name, matriculation_number, level, phone_number) VALUES ($1, $2, $3, $4, $5, $6)',
         [user.id, first_name || '', last_name || '', matric, lvl, phone]
@@ -638,7 +639,7 @@ app.post('/api/admin/users', async (req, res) => {
         [user.id, first_name || '', last_name || '', sid]
       );
     }
-    res.json({ success: true, data: user });
+    res.json({ success: true, temporary_password: tempPassword, data: { ...user, first_name: first_name || '', last_name: last_name || '', phone_number: phone } });
   } catch (error) {
     if (error.message && error.message.includes('duplicate key')) {
       return res.status(409).json({ success: false, message: 'A user with this email already exists' });
@@ -691,17 +692,17 @@ app.post('/api/admin/users/:id/reset-password', async (req, res) => {
     if (result.rows.length === 0) {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
-    // Try to get the user's name from students or assessors table
-    let userName = { first_name: '', last_name: '' };
+    // Try to get the user's name and phone from students or assessors table
+    let userProfile = { first_name: '', last_name: '', phone_number: '' };
     try {
-      const studentResult = await query('SELECT first_name, last_name FROM students WHERE user_id = $1', [req.params.id]);
-      if (studentResult.rows.length > 0) { userName = studentResult.rows[0]; }
+      const studentResult = await query('SELECT first_name, last_name, phone_number FROM students WHERE user_id = $1', [req.params.id]);
+      if (studentResult.rows.length > 0) { userProfile = studentResult.rows[0]; }
       else {
         const assessorResult = await query('SELECT first_name, last_name FROM assessors WHERE user_id = $1', [req.params.id]);
-        if (assessorResult.rows.length > 0) { userName = assessorResult.rows[0]; }
+        if (assessorResult.rows.length > 0) { userProfile = { ...assessorResult.rows[0], phone_number: '' }; }
       }
-    } catch (e) { /* ignore - name is optional */ }
-    res.json({ success: true, message: 'Password reset successfully', temporary_password: tempPassword, data: { ...result.rows[0], ...userName } });
+    } catch (e) { /* ignore - profile is optional */ }
+    res.json({ success: true, message: 'Password reset successfully', temporary_password: tempPassword, data: { ...result.rows[0], ...userProfile } });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
