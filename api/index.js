@@ -266,7 +266,7 @@ app.post('/api/auth/forgot-password', async (req, res) => {
     if (!email) {
       return res.status(400).json({ success: false, message: 'Email is required' });
     }
-    const userResult = await query('SELECT id, email, first_name, last_name FROM users WHERE LOWER(email) = LOWER($1)', [email]);
+    const userResult = await query('SELECT id, email FROM users WHERE LOWER(email) = LOWER($1)', [email]);
     if (userResult.rows.length === 0) {
       // Don't reveal whether email exists - always show success
       return res.json({ success: true, message: 'If an account with that email exists, the password has been reset. Please contact your administrator for the new temporary password.' });
@@ -276,7 +276,7 @@ app.post('/api/auth/forgot-password', async (req, res) => {
     let tempPassword = '';
     for (let i = 0; i < 8; i++) tempPassword += chars.charAt(Math.floor(Math.random() * chars.length));
     const hashed = await bcrypt.hash(tempPassword, 10);
-    await query('UPDATE users SET password_hash = $1, password_reset_requested_at = NOW(), updated_at = NOW() WHERE id = $2', [hashed, userResult.rows[0].id]);
+    await query('UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2', [hashed, userResult.rows[0].id]);
     res.json({
       success: true,
       message: 'Your password has been reset.',
@@ -687,11 +687,21 @@ app.post('/api/admin/users/:id/reset-password', async (req, res) => {
     let tempPassword = '';
     for (let i = 0; i < 8; i++) tempPassword += chars.charAt(Math.floor(Math.random() * chars.length));
     const hashed = await bcrypt.hash(tempPassword, 10);
-    const result = await query('UPDATE users SET password_hash = $1, password_reset_requested_at = NULL, updated_at = NOW() WHERE id = $2 RETURNING id, email, first_name, last_name', [hashed, req.params.id]);
+    const result = await query('UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2 RETURNING id, email', [hashed, req.params.id]);
     if (result.rows.length === 0) {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
-    res.json({ success: true, message: 'Password reset successfully', temporary_password: tempPassword, data: result.rows[0] });
+    // Try to get the user's name from students or assessors table
+    let userName = { first_name: '', last_name: '' };
+    try {
+      const studentResult = await query('SELECT first_name, last_name FROM students WHERE user_id = $1', [req.params.id]);
+      if (studentResult.rows.length > 0) { userName = studentResult.rows[0]; }
+      else {
+        const assessorResult = await query('SELECT first_name, last_name FROM assessors WHERE user_id = $1', [req.params.id]);
+        if (assessorResult.rows.length > 0) { userName = assessorResult.rows[0]; }
+      }
+    } catch (e) { /* ignore - name is optional */ }
+    res.json({ success: true, message: 'Password reset successfully', temporary_password: tempPassword, data: { ...result.rows[0], ...userName } });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
