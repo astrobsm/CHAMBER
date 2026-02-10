@@ -151,17 +151,9 @@ registerRoute(
   'POST'
 );
 
-// Other API mutations — NetworkFirst (non-critical)
-const apiMutationStrategy = new NetworkFirst({
-  cacheName: CACHE_NAMES.apiMutations,
-  plugins: [
-    new CacheableResponsePlugin({ statuses: [0, 200] }),
-    new ExpirationPlugin({
-      maxEntries: 50,
-      maxAgeSeconds: 12 * 60 * 60,
-    }),
-    bgSyncPlugin,
-  ],
+// Other API mutations — NetworkOnly with BackgroundSync (POST bodies can't be cloned for caching)
+const apiMutationStrategy = new NetworkOnly({
+  plugins: [bgSyncPlugin],
 });
 
 for (const method of ['POST', 'PUT', 'DELETE', 'PATCH'] as const) {
