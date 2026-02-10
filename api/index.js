@@ -537,6 +537,69 @@ app.get('/api/db-status', async (req, res) => {
   }
 });
 
+// ============== ADMIN USERS MANAGEMENT ==============
+
+app.get('/api/admin/users/bulk-template', (req, res) => {
+  // Return CSV template for bulk user upload
+  const csv = 'email,role,first_name,last_name,matric_number,level\njohn@example.com,student,John,Doe,MED/2024/001,surgery_1\njane@example.com,assessor,Jane,Smith,,';
+  res.setHeader('Content-Type', 'text/csv');
+  res.setHeader('Content-Disposition', 'attachment; filename=bulk_users_template.csv');
+  res.send(csv);
+});
+
+app.post('/api/admin/users', async (req, res) => {
+  try {
+    const { email, role, first_name, last_name, password } = req.body;
+    if (!email || !role) {
+      return res.status(400).json({ success: false, message: 'Email and role are required' });
+    }
+    const bcrypt = require('bcryptjs');
+    const hashed = await bcrypt.hash(password || 'changeme123', 10);
+    const result = await query(
+      'INSERT INTO users (email, password_hash, role, is_active) VALUES ($1, $2, $3, true) RETURNING id, email, role',
+      [email.toLowerCase(), hashed, role]
+    );
+    const user = result.rows[0];
+    if (role === 'student') {
+      await query('INSERT INTO students (user_id, first_name, last_name) VALUES ($1, $2, $3)', [user.id, first_name || '', last_name || '']);
+    } else if (role === 'assessor') {
+      await query('INSERT INTO assessors (user_id, first_name, last_name) VALUES ($1, $2, $3)', [user.id, first_name || '', last_name || '']);
+    }
+    res.json({ success: true, data: user });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+app.put('/api/admin/users/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { email, role, is_active, first_name, last_name } = req.body;
+    await query('UPDATE users SET email = COALESCE($1, email), role = COALESCE($2, role), is_active = COALESCE($3, is_active) WHERE id = $4', [email, role, is_active, id]);
+    // Update profile if name provided
+    if (first_name || last_name) {
+      if (role === 'student' || !role) {
+        await query('UPDATE students SET first_name = COALESCE($1, first_name), last_name = COALESCE($2, last_name) WHERE user_id = $3', [first_name, last_name, id]);
+      }
+      if (role === 'assessor' || !role) {
+        await query('UPDATE assessors SET first_name = COALESCE($1, first_name), last_name = COALESCE($2, last_name) WHERE user_id = $3', [first_name, last_name, id]);
+      }
+    }
+    res.json({ success: true, message: 'User updated' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+app.delete('/api/admin/users/:id', async (req, res) => {
+  try {
+    await query('UPDATE users SET is_active = false WHERE id = $1', [req.params.id]);
+    res.json({ success: true, message: 'User deactivated' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 // ============== SYNC ENDPOINTS ==============
 
 app.post('/api/sync/upload', (req, res) => {
@@ -545,6 +608,104 @@ app.post('/api/sync/upload', (req, res) => {
 
 app.get('/api/sync/download', (req, res) => {
   res.json({ success: true, data: { questions: [], rotations: [], topics: [] } });
+});
+
+// POST /api/sync/push — receive offline changes from client
+app.post('/api/sync/push', (req, res) => {
+  const { data } = req.body;
+  const count = Array.isArray(data) ? data.length : 0;
+  // Return success for all items (simplified — full implementation in backend/src/routes/sync.ts)
+  const results = (data || []).map(item => ({
+    offline_id: item.offline_id || item.id,
+    status: 'synced',
+    server_id: null,
+  }));
+  res.json({
+    success: true,
+    data: {
+      synced: count,
+      conflicts: 0,
+      errors: 0,
+      details: { results, conflicts: [], errors: [] },
+      serverTime: new Date().toISOString(),
+      duration: 0,
+    },
+  });
+});
+
+// GET /api/sync/pull — send data to client for offline caching
+app.get('/api/sync/pull', async (req, res) => {
+  try {
+    const pool = getPool();
+    if (!pool) {
+      return res.json({
+        success: true,
+        data: {
+          studentData: {},
+          systemConfig: {},
+          participationTypes: [],
+          syncTimestamp: new Date().toISOString(),
+          isFullSync: true,
+          serverTime: new Date().toISOString(),
+        },
+      });
+    }
+
+    // Fetch categories, topics, and rotation data for offline use
+    const [categories, topics, rotations] = await Promise.all([
+      pool.query('SELECT id, name, code, level, description FROM rotation_categories WHERE is_active = true ORDER BY code'),
+      pool.query('SELECT id, category_id, name, description FROM topics WHERE is_active = true ORDER BY category_id, order_index'),
+      pool.query('SELECT id, category_id, name, start_date, end_date, is_active FROM rotations WHERE is_active = true ORDER BY start_date DESC LIMIT 20'),
+    ]);
+
+    res.json({
+      success: true,
+      data: {
+        studentData: {
+          categories: categories.rows,
+          topics: topics.rows,
+          rotations: rotations.rows,
+        },
+        systemConfig: {
+          testDuration: 60,
+          questionsPerTest: 50,
+          passingScore: 50,
+        },
+        participationTypes: [
+          { id: 'ward_round', name: 'Ward Round' },
+          { id: 'clinic', name: 'Clinic' },
+          { id: 'theater', name: 'Theater' },
+          { id: 'seminar', name: 'Seminar' },
+          { id: 'tutorial', name: 'Tutorial' },
+        ],
+        syncTimestamp: new Date().toISOString(),
+        isFullSync: !req.query.last_sync,
+        serverTime: new Date().toISOString(),
+      },
+    });
+  } catch (error) {
+    res.json({
+      success: true,
+      data: {
+        studentData: {},
+        syncTimestamp: new Date().toISOString(),
+        isFullSync: true,
+        serverTime: new Date().toISOString(),
+      },
+    });
+  }
+});
+
+// GET /api/sync/status — return sync health
+app.get('/api/sync/status', (req, res) => {
+  res.json({
+    success: true,
+    data: {
+      serverTime: new Date().toISOString(),
+      healthy: true,
+      version: '1.0.0',
+    },
+  });
 });
 
 // Catch-all for undefined routes
