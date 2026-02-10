@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00015-0000-0000-0000-000000000015',
-    'b0000015-0000-0000-0000-000000000001',
+    'a1100015-0000-0000-0000-000000000015',
+    'b0000015-0000-0000-0000-000000000015',
     'a0000001-0000-0000-0000-000000000001',
     'TPR Charts and Patient Monitoring in Surgical Care',
     'Principles of Vital Signs Documentation and Clinical Surveillance',
@@ -14,14 +14,14 @@ INSERT INTO cme_articles (
     'UNTH Surgery Department, Nursing Education Unit',
     40,
     2.0,
-    'basic',
+    'easy',
     1,
     true
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'introduction', 'Introduction',
 'Patient monitoring through regular observation and documentation of vital signs is a cornerstone of surgical care. The traditional TPR chart has evolved into comprehensive monitoring systems that capture multiple physiological parameters and trigger escalation when abnormalities are detected.
 
 **Historical Context:**
@@ -55,8 +55,8 @@ Modern healthcare has responded with track-and-trigger systems that:
 This article provides the knowledge foundation for effective patient monitoring in surgical practice.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. Describe the components of a comprehensive vital signs observation chart
@@ -80,8 +80,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Describe special monitoring requirements for postoperative patients', 2);
 
 -- Section 3: Components of Vital Signs
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'content', 'Components of Vital Signs',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'content', 'Components of Vital Signs',
 '## Temperature
 
 ### Normal Range
@@ -222,8 +222,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Requires investigation and potential escalation', 3);
 
 -- Section 4: TPR Chart Documentation
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'content', 'TPR Chart Documentation',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'content', 'TPR Chart Documentation',
 '## Components of the Modern Observation Chart
 
 ### Standard Elements
@@ -321,8 +321,8 @@ Graphical display allows recognition of:
 - May not capture clinical nuance', 4);
 
 -- Section 5: Early Warning Scores
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'content', 'Early Warning Scoring Systems',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'content', 'Early Warning Scoring Systems',
 '## Purpose of Early Warning Scores
 
 Early Warning Scores (EWS) aggregate vital sign abnormalities into a composite score that:
@@ -412,8 +412,8 @@ When escalating, use structured communication:
 - Support from leadership', 5);
 
 -- Section 6: Fluid Balance Monitoring
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'content', 'Fluid Balance Monitoring',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'content', 'Fluid Balance Monitoring',
 '## Importance of Fluid Balance
 
 Accurate fluid balance monitoring is essential for:
@@ -544,8 +544,8 @@ $$\text{Fluid Balance} = \text{Total Input} - \text{Total Output}$$
 **The fluid chart provides numbers; clinical assessment provides context.**', 6);
 
 -- Section 7: Postoperative Monitoring
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'content', 'Postoperative Monitoring',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'content', 'Postoperative Monitoring',
 '## Immediate Postoperative Period
 
 ### Recovery Room Standards
@@ -679,8 +679,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Severe pain out of proportion → compartment syndrome, ischemia', 7);
 
 -- Section 8: Recognizing Deterioration
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'content', 'Recognizing and Responding to Deterioration',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'content', 'Recognizing and Responding to Deterioration',
 '## The Problem of Deterioration
 
 ### Statistics
@@ -794,8 +794,8 @@ If a nurse or family member says "I''m worried about this patient" or "something
 - Response to interventions', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'key_points', 'Key Points',
 '1. **Respiratory Rate is Critical**: The most sensitive indicator of deterioration and the least accurately recorded. Always count for a full 30-60 seconds.
 
 2. **Complete Observations**: Never leave parameters blank. A complete set of observations is essential for calculating early warning scores and recognizing trends.
@@ -817,8 +817,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **ABCDE Approach**: Systematic assessment (Airway, Breathing, Circulation, Disability, Exposure) ensures comprehensive evaluation of the deteriorating patient.', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: Tachycardia is often the earliest sign of trouble—it compensates for hypovolemia, hypoxia, pain, fever, and sepsis. Never dismiss unexplained tachycardia.
 
 💡 **Pearl 2**: A normal SpO2 does not mean the patient is "fine." They may be receiving high-flow oxygen to maintain that saturation, or they may be retaining CO2 with normal O2.
@@ -840,20 +840,20 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: Young, fit patients can compensate for significant physiological insult. By the time their vital signs deteriorate markedly, they may be close to decompensation.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00015-0000-0000-0000-000000000015', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100015-0000-0000-0000-000000000015', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00015-0000-0000-0000-000000000015', 1, 'Royal College of Physicians. National Early Warning Score (NEWS) 2: Standardising the assessment of acute-illness severity in the NHS. 2017.', NULL, NULL, 'https://www.rcplondon.ac.uk/projects/outputs/national-early-warning-score-news-2'),
-('art00015-0000-0000-0000-000000000015', 2, 'Smith GB, et al. The ability of the National Early Warning Score (NEWS) to discriminate patients at risk of early cardiac arrest, unanticipated intensive care unit admission, and death. Resuscitation. 2013;84(4):465-470.', '10.1016/j.resuscitation.2012.12.016', '23295778', NULL),
-('art00015-0000-0000-0000-000000000015', 3, 'DeVita MA, et al. Findings of the first consensus conference on medical emergency teams. Crit Care Med. 2006;34(9):2463-2478.', '10.1097/01.CCM.0000235743.38172.6E', '16878033', NULL),
-('art00015-0000-0000-0000-000000000015', 4, 'Cretikos MA, et al. Respiratory rate: the neglected vital sign. Med J Aust. 2008;188(11):657-659.', '10.5694/j.1326-5377.2008.tb01825.x', '18513176', NULL),
-('art00015-0000-0000-0000-000000000015', 5, 'Odell M, et al. Nurses'' role in detecting deterioration in ward patients: systematic literature review. J Adv Nurs. 2009;65(10):1992-2006.', '10.1111/j.1365-2648.2009.05109.x', '20568317', NULL);
+('a1100015-0000-0000-0000-000000000015', 1, 'Royal College of Physicians. National Early Warning Score (NEWS) 2: Standardising the assessment of acute-illness severity in the NHS. 2017.', NULL, NULL, 'https://www.rcplondon.ac.uk/projects/outputs/national-early-warning-score-news-2'),
+('a1100015-0000-0000-0000-000000000015', 2, 'Smith GB, et al. The ability of the National Early Warning Score (NEWS) to discriminate patients at risk of early cardiac arrest, unanticipated intensive care unit admission, and death. Resuscitation. 2013;84(4):465-470.', '10.1016/j.resuscitation.2012.12.016', '23295778', NULL),
+('a1100015-0000-0000-0000-000000000015', 3, 'DeVita MA, et al. Findings of the first consensus conference on medical emergency teams. Crit Care Med. 2006;34(9):2463-2478.', '10.1097/01.CCM.0000235743.38172.6E', '16878033', NULL),
+('a1100015-0000-0000-0000-000000000015', 4, 'Cretikos MA, et al. Respiratory rate: the neglected vital sign. Med J Aust. 2008;188(11):657-659.', '10.5694/j.1326-5377.2008.tb01825.x', '18513176', NULL),
+('a1100015-0000-0000-0000-000000000015', 5, 'Odell M, et al. Nurses'' role in detecting deterioration in ward patients: systematic literature review. J Adv Nurs. 2009;65(10):1992-2006.', '10.1111/j.1365-2648.2009.05109.x', '20568317', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 1,
+('a1100015-0000-0000-0000-000000000015', 1,
 'The normal respiratory rate for an adult at rest is:',
 '6-10 breaths per minute',
 '12-20 breaths per minute',
@@ -861,11 +861,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '30-40 breaths per minute',
 '8-12 breaths per minute',
 'B',
-'The normal respiratory rate for adults at rest is 12-20 breaths per minute. Rates above 20 (tachypnea) or below 12 (bradypnea) require assessment for underlying causes.',
-'1,4');
+'The normal respiratory rate for adults at rest is 12-20 breaths per minute. Rates above 20 (tachypnea) or below 12 (bradypnea) require assessment for underlying causes.', '{1,4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 2,
+('a1100015-0000-0000-0000-000000000015', 2,
 'Which vital sign is considered the most sensitive indicator of clinical deterioration?',
 'Blood pressure',
 'Heart rate',
@@ -873,11 +872,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Temperature',
 'Oxygen saturation',
 'C',
-'Respiratory rate is considered the most sensitive indicator of clinical deterioration. Unfortunately, it is also the least accurately recorded vital sign. Changes in respiratory rate often precede changes in other parameters.',
-'1,4');
+'Respiratory rate is considered the most sensitive indicator of clinical deterioration. Unfortunately, it is also the least accurately recorded vital sign. Changes in respiratory rate often precede changes in other parameters.', '{1,4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 3,
+('a1100015-0000-0000-0000-000000000015', 3,
 'On the AVPU scale, a patient who opens their eyes and responds when you speak to them is classified as:',
 'Alert',
 'Voice',
@@ -885,11 +883,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Unresponsive',
 'Confused',
 'B',
-'AVPU: A = Alert (fully awake, eyes open spontaneously), V = Voice (responds to verbal stimuli), P = Pain (responds only to painful stimuli), U = Unresponsive. A patient who responds to voice is classified as "V."',
-'1');
+'AVPU: A = Alert (fully awake, eyes open spontaneously), V = Voice (responds to verbal stimuli), P = Pain (responds only to painful stimuli), U = Unresponsive. A patient who responds to voice is classified as "V."', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 4,
+('a1100015-0000-0000-0000-000000000015', 4,
 'A NEWS2 score of 7 or higher indicates:',
 'Low clinical risk',
 'Medium clinical risk',
@@ -897,11 +894,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'The patient is stable',
 'Normal variation',
 'C',
-'A NEWS2 score of 7 or higher indicates high clinical risk requiring emergency response. This should trigger continuous monitoring, immediate senior clinical review, and consideration of critical care assessment.',
-'1,2');
+'A NEWS2 score of 7 or higher indicates high clinical risk requiring emergency response. This should trigger continuous monitoring, immediate senior clinical review, and consideration of critical care assessment.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 5,
+('a1100015-0000-0000-0000-000000000015', 5,
 'In the NEWS2 system, a single parameter score of 3 requires:',
 'No special action',
 'Routine 12-hourly monitoring',
@@ -909,11 +905,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Discharge from hospital',
 'Only documentation',
 'C',
-'A single parameter score of 3 (extreme value) in NEWS2 requires urgent clinical review regardless of the total aggregate score. This is because any extreme physiological derangement warrants immediate attention.',
-'1');
+'A single parameter score of 3 (extreme value) in NEWS2 requires urgent clinical review regardless of the total aggregate score. This is because any extreme physiological derangement warrants immediate attention.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 6,
+('a1100015-0000-0000-0000-000000000015', 6,
 'The minimum acceptable urine output for an adult patient is:',
 '0.25 mL/kg/hour',
 '0.5 mL/kg/hour',
@@ -921,11 +916,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '2.0 mL/kg/hour',
 '3.0 mL/kg/hour',
 'B',
-'The minimum acceptable urine output is 0.5 mL/kg/hour. Output below this for 2 or more hours (oliguria) suggests hypovolemia, acute kidney injury, or urinary obstruction and requires investigation and intervention.',
-'1');
+'The minimum acceptable urine output is 0.5 mL/kg/hour. Output below this for 2 or more hours (oliguria) suggests hypovolemia, acute kidney injury, or urinary obstruction and requires investigation and intervention.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 7,
+('a1100015-0000-0000-0000-000000000015', 7,
 'A 1 kg weight change in a patient corresponds to approximately:',
 '100 mL of fluid',
 '500 mL of fluid',
@@ -933,11 +927,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '2 liters of fluid',
 '3 liters of fluid',
 'C',
-'A 1 kg (1000 g) weight change corresponds to approximately 1 liter (1000 mL) of fluid gain or loss. Daily weights are therefore one of the most reliable indicators of fluid balance.',
-'1');
+'A 1 kg (1000 g) weight change corresponds to approximately 1 liter (1000 mL) of fluid gain or loss. Daily weights are therefore one of the most reliable indicators of fluid balance.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 8,
+('a1100015-0000-0000-0000-000000000015', 8,
 'SBAR stands for:',
 'Signs, Blood pressure, Assessment, Response',
 'Situation, Background, Assessment, Recommendation',
@@ -945,11 +938,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Status, Breathing, Airway, Resuscitation',
 'Summary, Baseline, Action, Result',
 'B',
-'SBAR is a structured communication tool: Situation (what is happening), Background (relevant history), Assessment (your clinical impression), Recommendation (what you need). It improves communication during escalation.',
-'3');
+'SBAR is a structured communication tool: Situation (what is happening), Background (relevant history), Assessment (your clinical impression), Recommendation (what you need). It improves communication during escalation.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 9,
+('a1100015-0000-0000-0000-000000000015', 9,
 'Postoperative fever on days 1-2 is most commonly due to:',
 'Wound infection',
 'Urinary tract infection',
@@ -957,11 +949,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Deep vein thrombosis',
 'Drug reaction',
 'C',
-'Postoperative fever in the first 1-2 days is most commonly due to atelectasis (collapse of lung segments), often related to reduced mobility and shallow breathing post-anesthesia. Fever after day 3 should prompt investigation for infection.',
-'5');
+'Postoperative fever in the first 1-2 days is most commonly due to atelectasis (collapse of lung segments), often related to reduced mobility and shallow breathing post-anesthesia. Fever after day 3 should prompt investigation for infection.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 10,
+('a1100015-0000-0000-0000-000000000015', 10,
 'The ABCDE approach to assessing a deteriorating patient starts with:',
 'Assessment',
 'Airway',
@@ -969,11 +960,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Blood pressure',
 'Background',
 'B',
-'The ABCDE approach is: Airway, Breathing, Circulation, Disability, Exposure. It provides a systematic method for assessing and managing the deteriorating patient, addressing life-threatening problems in order of priority.',
-'3');
+'The ABCDE approach is: Airway, Breathing, Circulation, Disability, Exposure. It provides a systematic method for assessing and managing the deteriorating patient, addressing life-threatening problems in order of priority.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 11,
+('a1100015-0000-0000-0000-000000000015', 11,
 'What percentage of patients who have in-hospital cardiac arrests show warning signs in the preceding 24 hours?',
 '10-20%',
 '30-40%',
@@ -981,11 +971,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Up to 80%',
 '95-100%',
 'D',
-'Studies show that up to 80% of patients who have in-hospital cardiac arrests demonstrate warning signs (abnormal vital signs) in the preceding 24 hours. This highlights the importance of recognizing and responding to deterioration early.',
-'2,3');
+'Studies show that up to 80% of patients who have in-hospital cardiac arrests demonstrate warning signs (abnormal vital signs) in the preceding 24 hours. This highlights the importance of recognizing and responding to deterioration early.', '{2,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 12,
+('a1100015-0000-0000-0000-000000000015', 12,
 'For a stable postoperative patient on day 2, vital signs should be recorded at minimum:',
 'Every 15 minutes',
 'Every hour',
@@ -993,11 +982,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Once daily',
 'Every 12 hours',
 'C',
-'For routine stable postoperative patients, vital signs should be recorded at least every 4-6 hours. More frequent observations are needed in the immediate postoperative period, for higher-risk patients, or when abnormalities are detected.',
-'1');
+'For routine stable postoperative patients, vital signs should be recorded at least every 4-6 hours. More frequent observations are needed in the immediate postoperative period, for higher-risk patients, or when abnormalities are detected.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 13,
+('a1100015-0000-0000-0000-000000000015', 13,
 'Unexplained tachycardia (HR >100) in a postoperative patient should prompt evaluation for all EXCEPT:',
 'Hemorrhage',
 'Pain',
@@ -1005,11 +993,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Athletic conditioning',
 'Pulmonary embolism',
 'D',
-'Athletic conditioning would cause bradycardia, not tachycardia. Unexplained tachycardia is an important warning sign that may indicate hemorrhage, pain, hypovolemia, sepsis, fever, pulmonary embolism, or other complications requiring investigation.',
-'5');
+'Athletic conditioning would cause bradycardia, not tachycardia. Unexplained tachycardia is an important warning sign that may indicate hemorrhage, pain, hypovolemia, sepsis, fever, pulmonary embolism, or other complications requiring investigation.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 14,
+('a1100015-0000-0000-0000-000000000015', 14,
 'The "D" in the ABCDE assessment stands for:',
 'Diagnosis',
 'Drugs',
@@ -1017,11 +1004,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Drains',
 'Documentation',
 'C',
-'In the ABCDE approach, D stands for Disability, which involves neurological assessment including level of consciousness (AVPU or GCS), blood glucose check, and pupil responses.',
-'3');
+'In the ABCDE approach, D stands for Disability, which involves neurological assessment including level of consciousness (AVPU or GCS), blood glucose check, and pupil responses.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 15,
+('a1100015-0000-0000-0000-000000000015', 15,
 'When calculating fluid balance, insensible losses are approximately:',
 '100-200 mL/day',
 '400-800 mL/day',
@@ -1029,11 +1015,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '2500-3000 mL/day',
 'Negligible and can be ignored',
 'B',
-'Insensible losses (through respiration and skin) are approximately 400-800 mL/day under normal circumstances. These increase with fever (add ~500 mL per degree Celsius above 38°C), tachypnea, and diaphoresis.',
-'1');
+'Insensible losses (through respiration and skin) are approximately 400-800 mL/day under normal circumstances. These increase with fever (add ~500 mL per degree Celsius above 38°C), tachypnea, and diaphoresis.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 16,
+('a1100015-0000-0000-0000-000000000015', 16,
 'When recording respiratory rate, you should count for at least:',
 '10 seconds',
 '15 seconds',
@@ -1041,11 +1026,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '60 seconds',
 '5 seconds',
 'C',
-'Respiratory rate should be counted for at least 30 seconds (preferably 60 seconds for accuracy). This ensures accurate measurement of this critical vital sign. The patient should ideally be unaware they are being observed to avoid altered breathing patterns.',
-'4');
+'Respiratory rate should be counted for at least 30 seconds (preferably 60 seconds for accuracy). This ensures accurate measurement of this critical vital sign. The patient should ideally be unaware they are being observed to avoid altered breathing patterns.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 17,
+('a1100015-0000-0000-0000-000000000015', 17,
 'In NEWS2, what score is assigned if the patient requires supplemental oxygen?',
 '0',
 '1',
@@ -1053,11 +1037,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '3',
 'No score for oxygen',
 'C',
-'In NEWS2, the use of supplemental oxygen adds 2 points to the score. This recognizes that requiring oxygen to maintain saturation indicates respiratory compromise.',
-'1');
+'In NEWS2, the use of supplemental oxygen adds 2 points to the score. This recognizes that requiring oxygen to maintain saturation indicates respiratory compromise.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 18,
+('a1100015-0000-0000-0000-000000000015', 18,
 'A nurse expresses that a patient "just doesn''t look right" despite normal vital signs. The appropriate response is:',
 'Reassure the nurse and continue routine care',
 'Wait for the next scheduled observation',
@@ -1065,11 +1048,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Document that observations were normal',
 'Ask the nurse to clarify with specific parameters',
 'C',
-'Clinical intuition should be taken seriously. The "worried" observation from an experienced nurse often precedes measurable deterioration. Increase monitoring frequency and assess the patient clinically.',
-'5');
+'Clinical intuition should be taken seriously. The "worried" observation from an experienced nurse often precedes measurable deterioration. Increase monitoring frequency and assess the patient clinically.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 19,
+('a1100015-0000-0000-0000-000000000015', 19,
 'Normal mean arterial pressure (MAP) should be at least:',
 '45 mmHg',
 '55 mmHg',
@@ -1077,11 +1059,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '75 mmHg',
 '85 mmHg',
 'C',
-'Mean arterial pressure (MAP) should be maintained at least 65 mmHg to ensure adequate organ perfusion. MAP is calculated as: DBP + (SBP - DBP)/3. Values below 65 mmHg may indicate inadequate tissue perfusion.',
-'1');
+'Mean arterial pressure (MAP) should be maintained at least 65 mmHg to ensure adequate organ perfusion. MAP is calculated as: DBP + (SBP - DBP)/3. Values below 65 mmHg may indicate inadequate tissue perfusion.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00015-0000-0000-0000-000000000015', 20,
+('a1100015-0000-0000-0000-000000000015', 20,
 'Young, fit patients may show late deterioration of vital signs because:',
 'They are less likely to become ill',
 'Their vital signs are always normal',
@@ -1089,5 +1070,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'They recover faster',
 'They do not need close monitoring',
 'C',
-'Young, fit patients have significant physiological reserve and can compensate for insults (e.g., maintain blood pressure despite significant hypovolemia) until late stages. When they do deteriorate, it may be rapid and dramatic. They still require vigilant monitoring.',
-'3,5');
+'Young, fit patients have significant physiological reserve and can compensate for insults (e.g., maintain blood pressure despite significant hypovolemia) until late stages. When they do deteriorate, it may be rapid and dramatic. They still require vigilant monitoring.', '{3,5}');

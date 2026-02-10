@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00008-0000-0000-0000-000000000008',
-    'b0000008-0000-0000-0000-000000000001',
+    'a1100008-0000-0000-0000-000000000008',
+    'b0000008-0000-0000-0000-000000000008',
     'a0000001-0000-0000-0000-000000000001',
     'Abdominal Incisions: Surgical Approaches and Techniques',
     'Anatomy, Selection, and Closure Principles',
@@ -20,8 +20,8 @@ INSERT INTO cme_articles (
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'introduction', 'Introduction',
 'The abdominal incision is the gateway to abdominal surgery. A well-planned incision provides adequate exposure while minimizing complications such as wound infection, dehiscence, incisional hernia, and nerve damage.
 
 **Historical Context:**
@@ -47,8 +47,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 This article will provide the anatomical and technical foundation for optimal incision planning and closure.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. Describe the layered anatomy of the anterior abdominal wall and its regional variations
@@ -72,8 +72,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Discuss the role of prophylactic mesh in high-risk patients', 2);
 
 -- Section 3: Abdominal Wall Anatomy
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'content', 'Abdominal Wall Anatomy',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'content', 'Abdominal Wall Anatomy',
 '## Layers of the Anterior Abdominal Wall
 
 From superficial to deep:
@@ -176,8 +176,8 @@ From superficial to deep:
 - Sensory to groin, scrotum/labia', 3);
 
 -- Section 4: Midline Incisions
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'content', 'Midline Incision',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'content', 'Midline Incision',
 '## Midline (Median) Laparotomy
 
 The most commonly used incision for abdominal surgery.
@@ -264,8 +264,8 @@ The most commonly used incision for abdominal surgery.
 - Achieved by small bites close together', 4);
 
 -- Section 5: Other Vertical Incisions
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'content', 'Paramedian and Other Vertical Incisions',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'content', 'Paramedian and Other Vertical Incisions',
 '## Paramedian Incision
 
 ### Anatomy and Technique
@@ -357,8 +357,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Largely replaced by laparoscopy', 5);
 
 -- Section 6: Transverse Incisions
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'content', 'Transverse Incisions',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'content', 'Transverse Incisions',
 '## Transverse Incisions: Overview
 
 Transverse incisions follow the natural lines of skin tension (Langer''s lines) and the direction of muscle fibers.
@@ -493,8 +493,8 @@ Transverse incisions follow the natural lines of skin tension (Langer''s lines) 
 - Diaphragm division', 6);
 
 -- Section 7: Incisional Hernia Prevention
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'content', 'Incisional Hernia Prevention',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'content', 'Incisional Hernia Prevention',
 '## Risk Factors for Incisional Hernia
 
 ### Patient Factors
@@ -590,8 +590,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Wound care to prevent infection', 7);
 
 -- Section 8: Wound Complications
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'content', 'Abdominal Wound Complications',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'content', 'Abdominal Wound Complications',
 '## Surgical Site Infection (SSI)
 
 ### Classification
@@ -711,8 +711,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Consider mesh reinforcement', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'key_points', 'Key Points',
 '1. **Linea Alba Anatomy**: Fusion of lateral abdominal muscle aponeuroses; avascular and nerveless; widest above umbilicus (1-2 cm)
 
 2. **Arcuate Line**: Below this line (halfway between umbilicus and pubis), all aponeuroses pass anterior to rectus; posterior wall is only transversalis fascia
@@ -734,8 +734,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Prophylactic Mesh**: Consider in high-risk patients (obesity, prior hernia, AAA repair); reduces hernia rate with acceptable complication profile', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: Never incise through the umbilicus—it''s a natural weak point and source of contamination. Curve around it or excise it if necessary.
 
 💡 **Pearl 2**: The "pink fluid" or serosanguinous drainage from an abdominal wound around postoperative day 5-8 is a herald sign of fascial dehiscence until proven otherwise.
@@ -757,23 +757,23 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: When closing, approximate fascia—don''t strangulate it. Tissue necrosis from overtight sutures causes more dehiscence than loose closure.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00008-0000-0000-0000-000000000008', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100008-0000-0000-0000-000000000008', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00008-0000-0000-0000-000000000008', 1, 'Deerenberg TC, et al. Small bites versus large bites for closure of abdominal midline incisions (STITCH): a double-blind, multicentre, randomised controlled trial. Lancet. 2015;386(10000):1254-1260.', '10.1016/S0140-6736(15)60459-7', '26188742', NULL),
-('art00008-0000-0000-0000-000000000008', 2, 'Muysoms FE, et al. European Hernia Society guidelines on the closure of abdominal wall incisions. Hernia. 2015;19(1):1-24.', '10.1007/s10029-014-1342-5', '25618025', NULL),
-('art00008-0000-0000-0000-000000000008', 3, 'Diener MK, et al. Elective midline laparotomy closure: the INLINE systematic review and meta-analysis. Ann Surg. 2010;251(5):843-856.', '10.1097/SLA.0b013e3181d973e4', '20395846', NULL),
-('art00008-0000-0000-0000-000000000008', 4, 'Israelsson LA, Millbourn D. Prevention of incisional hernias: how to close a midline incision. Surg Clin North Am. 2013;93(5):1027-1040.', '10.1016/j.suc.2013.06.009', '24035074', NULL),
-('art00008-0000-0000-0000-000000000008', 5, 'Jairam AP, et al. Prevention of incisional hernia with prophylactic onlay and sublay mesh reinforcement versus primary suture only in midline laparotomies (PRIMA): 2-year follow-up. Lancet. 2017;390(10094):567-576.', '10.1016/S0140-6736(17)31332-6', '28641875', NULL),
-('art00008-0000-0000-0000-000000000008', 6, 'Fischer JP, et al. A systematic review of suture techniques and suture material for abdominal wall closure. Hernia. 2021;25(3):539-559.', '10.1007/s10029-020-02218-9', '32504227', NULL),
-('art00008-0000-0000-0000-000000000008', 7, 'Bickenbach KA, et al. Up and down or side to side? A systematic review and meta-analysis examining the impact of incision on outcomes after abdominal surgery. Am J Surg. 2013;206(3):400-409.', '10.1016/j.amjsurg.2012.11.008', '23570739', NULL),
-('art00008-0000-0000-0000-000000000008', 8, 'Williams NR, et al. Incisional hernia: risk factors, prevention, and management. World J Gastrointest Surg. 2020;12(1):1-10.', '10.4240/wjgs.v12.i1.1', '31998437', NULL);
+('a1100008-0000-0000-0000-000000000008', 1, 'Deerenberg TC, et al. Small bites versus large bites for closure of abdominal midline incisions (STITCH): a double-blind, multicentre, randomised controlled trial. Lancet. 2015;386(10000):1254-1260.', '10.1016/S0140-6736(15)60459-7', '26188742', NULL),
+('a1100008-0000-0000-0000-000000000008', 2, 'Muysoms FE, et al. European Hernia Society guidelines on the closure of abdominal wall incisions. Hernia. 2015;19(1):1-24.', '10.1007/s10029-014-1342-5', '25618025', NULL),
+('a1100008-0000-0000-0000-000000000008', 3, 'Diener MK, et al. Elective midline laparotomy closure: the INLINE systematic review and meta-analysis. Ann Surg. 2010;251(5):843-856.', '10.1097/SLA.0b013e3181d973e4', '20395846', NULL),
+('a1100008-0000-0000-0000-000000000008', 4, 'Israelsson LA, Millbourn D. Prevention of incisional hernias: how to close a midline incision. Surg Clin North Am. 2013;93(5):1027-1040.', '10.1016/j.suc.2013.06.009', '24035074', NULL),
+('a1100008-0000-0000-0000-000000000008', 5, 'Jairam AP, et al. Prevention of incisional hernia with prophylactic onlay and sublay mesh reinforcement versus primary suture only in midline laparotomies (PRIMA): 2-year follow-up. Lancet. 2017;390(10094):567-576.', '10.1016/S0140-6736(17)31332-6', '28641875', NULL),
+('a1100008-0000-0000-0000-000000000008', 6, 'Fischer JP, et al. A systematic review of suture techniques and suture material for abdominal wall closure. Hernia. 2021;25(3):539-559.', '10.1007/s10029-020-02218-9', '32504227', NULL),
+('a1100008-0000-0000-0000-000000000008', 7, 'Bickenbach KA, et al. Up and down or side to side? A systematic review and meta-analysis examining the impact of incision on outcomes after abdominal surgery. Am J Surg. 2013;206(3):400-409.', '10.1016/j.amjsurg.2012.11.008', '23570739', NULL),
+('a1100008-0000-0000-0000-000000000008', 8, 'Williams NR, et al. Incisional hernia: risk factors, prevention, and management. World J Gastrointest Surg. 2020;12(1):1-10.', '10.4240/wjgs.v12.i1.1', '31998437', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 1,
+('a1100008-0000-0000-0000-000000000008', 1,
 'The linea alba is formed by:',
 'The fusion of the aponeuroses of the external oblique, internal oblique, and transversus abdominis muscles',
 'The rectus abdominis muscle alone',
@@ -781,11 +781,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'The transversalis fascia',
 'The peritoneum',
 'A',
-'The linea alba is a fibrous structure formed by the fusion of the aponeuroses of the three lateral abdominal muscles: external oblique, internal oblique, and transversus abdominis. It extends from the xiphoid process to the pubic symphysis.',
-'2');
+'The linea alba is a fibrous structure formed by the fusion of the aponeuroses of the three lateral abdominal muscles: external oblique, internal oblique, and transversus abdominis. It extends from the xiphoid process to the pubic symphysis.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 2,
+('a1100008-0000-0000-0000-000000000008', 2,
 'Below the arcuate line, the posterior rectus sheath is composed of:',
 'All three lateral muscle aponeuroses',
 'Only the transversus abdominis aponeurosis',
@@ -793,11 +792,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'The internal oblique and transversus aponeuroses',
 'The peritoneum only',
 'C',
-'Below the arcuate line (approximately halfway between the umbilicus and pubic symphysis), all three aponeuroses pass anterior to the rectus muscle. The posterior wall of the rectus sheath is formed only by the transversalis fascia at this level.',
-'2');
+'Below the arcuate line (approximately halfway between the umbilicus and pubic symphysis), all three aponeuroses pass anterior to the rectus muscle. The posterior wall of the rectus sheath is formed only by the transversalis fascia at this level.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 3,
+('a1100008-0000-0000-0000-000000000008', 3,
 'According to the STITCH trial, what is the recommended suture technique for midline laparotomy closure?',
 'Large bites (1 cm from edge, 1 cm apart)',
 'Small bites (5 mm from edge, 5 mm apart) with SL:WL ratio ≥4:1',
@@ -805,11 +803,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Two-layer closure with running and interrupted sutures',
 'Horizontal mattress sutures',
 'B',
-'The STITCH trial demonstrated that small bites (5 mm from wound edge, 5 mm apart) with a suture-to-wound length ratio of at least 4:1 significantly reduced incisional hernia rates compared to traditional large bite technique.',
-'1');
+'The STITCH trial demonstrated that small bites (5 mm from wound edge, 5 mm apart) with a suture-to-wound length ratio of at least 4:1 significantly reduced incisional hernia rates compared to traditional large bite technique.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 4,
+('a1100008-0000-0000-0000-000000000008', 4,
 'Which abdominal incision provides the best exposure for emergency laparotomy with unknown intra-abdominal pathology?',
 'Pfannenstiel incision',
 'Right subcostal (Kocher) incision',
@@ -817,11 +814,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Midline laparotomy',
 'Right paramedian incision',
 'D',
-'The midline laparotomy provides the most versatile access for emergency surgery. It offers rapid entry, excellent exposure to all abdominal quadrants, and can be easily extended superiorly or inferiorly as needed.',
-'2,7');
+'The midline laparotomy provides the most versatile access for emergency surgery. It offers rapid entry, excellent exposure to all abdominal quadrants, and can be easily extended superiorly or inferiorly as needed.', '{2,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 5,
+('a1100008-0000-0000-0000-000000000008', 5,
 'The Pfannenstiel incision involves:',
 'Transverse division of the rectus muscles',
 'Transverse incision of anterior rectus sheath with midline separation of rectus muscles',
@@ -829,11 +825,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Oblique muscle-splitting technique',
 'Ligation of the inferior epigastric arteries',
 'B',
-'The Pfannenstiel incision involves a curved transverse skin incision above the pubis, transverse division of the anterior rectus sheath, separation (not division) of the rectus muscles in the midline, and vertical entry through the peritoneum.',
-'2');
+'The Pfannenstiel incision involves a curved transverse skin incision above the pubis, transverse division of the anterior rectus sheath, separation (not division) of the rectus muscles in the midline, and vertical entry through the peritoneum.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 6,
+('a1100008-0000-0000-0000-000000000008', 6,
 'A patient develops serosanguinous wound drainage on postoperative day 6 after midline laparotomy. What should be suspected?',
 'Normal healing',
 'Superficial surgical site infection',
@@ -841,11 +836,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Seroma formation',
 'Allergic reaction to sutures',
 'C',
-'Serosanguinous ("salmon-colored" or "pink") drainage from an abdominal wound around postoperative days 5-8 is a classic warning sign of impending fascial dehiscence. The wound should be carefully examined and urgent intervention may be needed.',
-'8');
+'Serosanguinous ("salmon-colored" or "pink") drainage from an abdominal wound around postoperative days 5-8 is a classic warning sign of impending fascial dehiscence. The wound should be carefully examined and urgent intervention may be needed.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 7,
+('a1100008-0000-0000-0000-000000000008', 7,
 'Which nerve is at greatest risk during a low transverse (Pfannenstiel) incision?',
 'Subcostal nerve (T12)',
 'Intercostal nerves (T10-T11)',
@@ -853,11 +847,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Femoral nerve',
 'Obturator nerve',
 'C',
-'The iliohypogastric nerve (from L1) passes through the abdominal wall in the region of low transverse incisions and provides sensory innervation to the suprapubic area. It is at risk of injury during Pfannenstiel and other low transverse incisions.',
-'2');
+'The iliohypogastric nerve (from L1) passes through the abdominal wall in the region of low transverse incisions and provides sensory innervation to the suprapubic area. It is at risk of injury during Pfannenstiel and other low transverse incisions.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 8,
+('a1100008-0000-0000-0000-000000000008', 8,
 'Which incision is most commonly used for open cholecystectomy?',
 'Midline laparotomy',
 'Right subcostal (Kocher) incision',
@@ -865,11 +858,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'McBurney incision',
 'Left paramedian incision',
 'B',
-'The right subcostal (Kocher) incision was the classic approach for open cholecystectomy, providing excellent exposure to the right upper quadrant and biliary structures. It has largely been replaced by laparoscopic surgery.',
-'2');
+'The right subcostal (Kocher) incision was the classic approach for open cholecystectomy, providing excellent exposure to the right upper quadrant and biliary structures. It has largely been replaced by laparoscopic surgery.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 9,
+('a1100008-0000-0000-0000-000000000008', 9,
 'The incidence of incisional hernia after midline laparotomy is approximately:',
 '1-2%',
 '5-7%',
@@ -877,11 +869,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '30-40%',
 '50%',
 'C',
-'Incisional hernia occurs in approximately 10-20% of patients after midline laparotomy. Risk is higher in emergency surgery, with wound infection, in obese patients, and with inadequate closure technique.',
-'3,4');
+'Incisional hernia occurs in approximately 10-20% of patients after midline laparotomy. Risk is higher in emergency surgery, with wound infection, in obese patients, and with inadequate closure technique.', '{3,4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 10,
+('a1100008-0000-0000-0000-000000000008', 10,
 'What is the recommended minimum suture-to-wound length ratio for midline abdominal closure?',
 '1:1',
 '2:1',
@@ -889,11 +880,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '6:1',
 '10:1',
 'C',
-'A minimum suture-to-wound length ratio of 4:1 is recommended for midline abdominal closure. This ensures adequate tissue incorporation without excessive tension and is associated with reduced incisional hernia rates.',
-'1,4');
+'A minimum suture-to-wound length ratio of 4:1 is recommended for midline abdominal closure. This ensures adequate tissue incorporation without excessive tension and is associated with reduced incisional hernia rates.', '{1,4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 11,
+('a1100008-0000-0000-0000-000000000008', 11,
 'The immediate management of abdominal wound evisceration includes:',
 'Pushing the bowel back into the abdomen at bedside',
 'Covering with saline-moistened sterile gauze and emergency return to OR',
@@ -901,11 +891,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Administration of oral antibiotics',
 'Observation for 24 hours',
 'B',
-'Evisceration is a surgical emergency. The exposed bowel should be covered with saline-moistened sterile gauze (never push back in at bedside), IV fluids and antibiotics started, and the patient taken urgently to the operating room for washout and closure.',
-'8');
+'Evisceration is a surgical emergency. The exposed bowel should be covered with saline-moistened sterile gauze (never push back in at bedside), IV fluids and antibiotics started, and the patient taken urgently to the operating room for washout and closure.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 12,
+('a1100008-0000-0000-0000-000000000008', 12,
 'According to the PRIMA trial, prophylactic mesh placement at primary midline laparotomy:',
 'Increases surgical site infection rates significantly',
 'Reduces incisional hernia rates in high-risk patients',
@@ -913,11 +902,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Shows no benefit compared to suture alone',
 'Should only be placed in the onlay position',
 'B',
-'The PRIMA trial demonstrated that prophylactic mesh reinforcement at the time of primary midline laparotomy reduced incisional hernia rates in high-risk patients from ~30% to ~17%, with an acceptable complication profile.',
-'5');
+'The PRIMA trial demonstrated that prophylactic mesh reinforcement at the time of primary midline laparotomy reduced incisional hernia rates in high-risk patients from ~30% to ~17%, with an acceptable complication profile.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 13,
+('a1100008-0000-0000-0000-000000000008', 13,
 'A transverse incision follows which anatomic feature?',
 'Blood vessels of the abdominal wall',
 'Dermatomal nerve distribution',
@@ -925,11 +913,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'The direction of the intestines',
 'Peritoneal reflections',
 'B',
-'Transverse incisions follow the dermatomal distribution of segmental nerves (T7-L1), which run in a roughly transverse direction around the abdominal wall. They also follow Langer''s lines (relaxed skin tension lines), resulting in better cosmesis.',
-'7');
+'Transverse incisions follow the dermatomal distribution of segmental nerves (T7-L1), which run in a roughly transverse direction around the abdominal wall. They also follow Langer''s lines (relaxed skin tension lines), resulting in better cosmesis.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 14,
+('a1100008-0000-0000-0000-000000000008', 14,
 'The McBurney point is located:',
 'At the umbilicus',
 '1/3 of the distance from the ASIS to the umbilicus',
@@ -937,11 +924,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '2 cm above the pubic symphysis',
 'Below the right costal margin',
 'B',
-'McBurney''s point is located at 1/3 of the distance from the anterior superior iliac spine (ASIS) to the umbilicus on the right side. It marks the surface landmark for the base of the appendix and is the location for the McBurney incision.',
-'2');
+'McBurney''s point is located at 1/3 of the distance from the anterior superior iliac spine (ASIS) to the umbilicus on the right side. It marks the surface landmark for the base of the appendix and is the location for the McBurney incision.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 15,
+('a1100008-0000-0000-0000-000000000008', 15,
 'Which blood vessel is at risk during a right paramedian incision and Maylard incision?',
 'Superior mesenteric artery',
 'Inferior epigastric artery',
@@ -949,11 +935,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Internal iliac artery',
 'Aorta',
 'B',
-'The inferior epigastric artery, a branch of the external iliac artery, runs within the rectus sheath and is at risk during paramedian incisions (where it must be retracted or ligated) and Maylard incisions (where it is deliberately ligated during rectus transection).',
-'2');
+'The inferior epigastric artery, a branch of the external iliac artery, runs within the rectus sheath and is at risk during paramedian incisions (where it must be retracted or ligated) and Maylard incisions (where it is deliberately ligated during rectus transection).', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 16,
+('a1100008-0000-0000-0000-000000000008', 16,
 'Mass closure of a midline laparotomy includes suturing:',
 'Only the peritoneum',
 'Peritoneum and posterior rectus sheath separately',
@@ -961,11 +946,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Skin, subcutaneous tissue, and fascia together',
 'Each layer individually (peritoneum, fascia, subcutaneous, skin)',
 'C',
-'Mass closure involves taking all fascial layers of the abdominal wall (the linea alba, which includes the combined aponeuroses) as a single layer, excluding peritoneum and fat. This is stronger than layered closure and is the standard of care.',
-'3');
+'Mass closure involves taking all fascial layers of the abdominal wall (the linea alba, which includes the combined aponeuroses) as a single layer, excluding peritoneum and fat. This is stronger than layered closure and is the standard of care.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 17,
+('a1100008-0000-0000-0000-000000000008', 17,
 'Which suture material is currently recommended for midline laparotomy closure?',
 'Rapidly absorbable suture (chromic gut)',
 'Braided non-absorbable suture (silk)',
@@ -973,11 +957,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Staples',
 'Any available suture',
 'C',
-'Current evidence supports slowly absorbable monofilament sutures (such as PDS or Maxon) or non-absorbable monofilament (such as nylon or polypropylene) for fascial closure. Slowly absorbable may be slightly preferred to reduce chronic suture-related complications.',
-'2,6');
+'Current evidence supports slowly absorbable monofilament sutures (such as PDS or Maxon) or non-absorbable monofilament (such as nylon or polypropylene) for fascial closure. Slowly absorbable may be slightly preferred to reduce chronic suture-related complications.', '{2,6}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 18,
+('a1100008-0000-0000-0000-000000000008', 18,
 'A Chevron (rooftop) incision is used primarily for:',
 'Appendectomy',
 'Cesarean section',
@@ -985,11 +968,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Inguinal hernia repair',
 'Pilonidal cyst excision',
 'C',
-'The Chevron (rooftop) incision provides excellent exposure of the upper abdomen and is used for liver transplantation, major hepatic resections, esophageal surgery, and other procedures requiring wide bilateral upper abdominal access.',
-'2');
+'The Chevron (rooftop) incision provides excellent exposure of the upper abdomen and is used for liver transplantation, major hepatic resections, esophageal surgery, and other procedures requiring wide bilateral upper abdominal access.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 19,
+('a1100008-0000-0000-0000-000000000008', 19,
 'What percentage of incisional hernias occur within the first year after surgery?',
 'Less than 10%',
 'About 30%',
@@ -997,11 +979,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'About 75-80%',
 '100%',
 'C',
-'Approximately 50-60% of incisional hernias develop within the first year after surgery, with the majority becoming clinically apparent within 3 years. However, hernias can develop many years later, emphasizing the importance of proper closure technique.',
-'8');
+'Approximately 50-60% of incisional hernias develop within the first year after surgery, with the majority becoming clinically apparent within 3 years. However, hernias can develop many years later, emphasizing the importance of proper closure technique.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00008-0000-0000-0000-000000000008', 20,
+('a1100008-0000-0000-0000-000000000008', 20,
 'Which patient factor most significantly increases the risk of incisional hernia?',
 'Female sex',
 'Young age',
@@ -1009,5 +990,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Left-sided incision',
 'Elective surgery',
 'C',
-'Obesity (BMI >30) is one of the most significant patient-related risk factors for incisional hernia. Other important risk factors include emergency surgery, wound infection, smoking, diabetes, malnutrition, and chronic steroid use.',
-'4,8');
+'Obesity (BMI >30) is one of the most significant patient-related risk factors for incisional hernia. Other important risk factors include emergency surgery, wound infection, smoking, diabetes, malnutrition, and chronic steroid use.', '{4,8}');

@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00009-0000-0000-0000-000000000009',
-    'b0000009-0000-0000-0000-000000000001',
+    'a1100009-0000-0000-0000-000000000009',
+    'b0000009-0000-0000-0000-000000000009',
     'a0000001-0000-0000-0000-000000000001',
     'Principles of Fracture Management for the General Surgeon',
     'Classification, Initial Management, and Basic Treatment Principles',
@@ -20,8 +20,8 @@ INSERT INTO cme_articles (
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'introduction', 'Introduction',
 'Fractures represent a significant portion of trauma presentations and require prompt recognition and appropriate management to optimize outcomes and minimize complications.
 
 **Epidemiology:**
@@ -47,8 +47,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 Understanding fracture principles enables surgeons to provide optimal initial care and facilitate timely definitive treatment.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. Describe the anatomy and physiology of bone, including fracture healing mechanisms
@@ -72,8 +72,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Recognize and manage common fracture complications including fat embolism and neurovascular injury', 2);
 
 -- Section 3: Bone Anatomy and Healing
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'content', 'Bone Anatomy and Fracture Healing',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'content', 'Bone Anatomy and Fracture Healing',
 '## Bone Structure
 
 ### Macroscopic Anatomy
@@ -161,8 +161,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Gap or interposed soft tissue', 3);
 
 -- Section 4: Fracture Description
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'content', 'Fracture Description and Classification',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'content', 'Fracture Description and Classification',
 '## Standardized Fracture Description
 
 A complete fracture description includes:
@@ -261,8 +261,8 @@ The most widely used classification for open fractures:
 - Grade correlates with infection risk: I (0-2%), II (2-5%), IIIA (5-10%), IIIB (10-25%), IIIC (25-50%)', 4);
 
 -- Section 5: Clinical Assessment
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'content', 'Clinical and Radiographic Assessment',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'content', 'Clinical and Radiographic Assessment',
 '## Clinical Examination
 
 ### History
@@ -351,8 +351,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 8. Comparison to prior studies if available', 5);
 
 -- Section 6: Open Fractures
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'content', 'Open Fracture Management',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'content', 'Open Fracture Management',
 '## Definition
 
 An open (compound) fracture has communication between the fracture site and the external environment through a skin wound.
@@ -438,8 +438,8 @@ An open (compound) fracture has communication between the fracture site and the 
 - Soft tissue coverage within 5-7 days (flap if needed)', 6);
 
 -- Section 7: Compartment Syndrome
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'content', 'Compartment Syndrome',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'content', 'Compartment Syndrome',
 '## Definition
 
 Compartment syndrome occurs when pressure within a closed fascial compartment rises to a level that compromises tissue perfusion, leading to ischemia and necrosis.
@@ -556,8 +556,8 @@ Compartment syndrome occurs when pressure within a closed fascial compartment ri
 - May require extensive reconstructive surgery', 7);
 
 -- Section 8: Splinting Principles
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'content', 'Splinting and Initial Stabilization',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'content', 'Splinting and Initial Stabilization',
 '## Purposes of Splinting
 
 1. **Pain relief**: Immobilization reduces pain
@@ -680,8 +680,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Femur fractures (operative fixation standard)', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'key_points', 'Key Points',
 '1. **Complete Fracture Description**: Include bone, location, pattern, displacement (translation, angulation, rotation, shortening), open vs. closed, neurovascular status
 
 2. **Gustilo-Anderson Classification**: I (<1cm), II (1-10cm), IIIA (>10cm, adequate soft tissue), IIIB (requires flap), IIIC (arterial injury)
@@ -703,8 +703,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Associated Nerve Injuries**: Humeral shaft → Radial nerve; Supracondylar humerus → Median/AIN; Hip dislocation → Sciatic; Fibular neck → Common peroneal', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: In compartment syndrome, the presence of a pulse does NOT rule out the diagnosis. Compartment pressure affects capillary perfusion long before arterial flow is compromised.
 
 💡 **Pearl 2**: Pain with passive stretch is the earliest and most sensitive sign of compartment syndrome. In the leg, pain with passive toe extension suggests anterior compartment involvement.
@@ -726,23 +726,23 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: The mnemonic for radial nerve injury with humeral shaft fractures: "Can''t extend wrist = WRIST drop = Radial nerve." Test by having patient extend wrist against resistance.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00009-0000-0000-0000-000000000009', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100009-0000-0000-0000-000000000009', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00009-0000-0000-0000-000000000009', 1, 'Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones. J Bone Joint Surg Am. 1976;58(4):453-458.', NULL, '773941', NULL),
-('art00009-0000-0000-0000-000000000009', 2, 'Gustilo RB, Mendoza RM, Williams DN. Problems in the management of type III (severe) open fractures. J Trauma. 1984;24(8):742-746.', '10.1097/00005373-198408000-00009', '6471139', NULL),
-('art00009-0000-0000-0000-000000000009', 3, 'Hak DJ, et al. Delayed union and nonunions: epidemiology, clinical issues, and financial aspects. Injury. 2014;45(Suppl 2):S3-S7.', '10.1016/j.injury.2014.04.002', '24857025', NULL),
-('art00009-0000-0000-0000-000000000009', 4, 'McQueen MM, et al. Acute compartment syndrome in tibial diaphyseal fractures. J Bone Joint Surg Br. 1996;78(1):95-98.', NULL, '8898136', NULL),
-('art00009-0000-0000-0000-000000000009', 5, 'Hauser CJ, et al. EAST Practice Management Guidelines Work Group: prophylactic antibiotic use in open fractures. J Trauma. 2006;60(6):1319-1334.', '10.1097/01.ta.0000211295.78768.e8', '16766956', NULL),
-('art00009-0000-0000-0000-000000000009', 6, 'Bhandari M, et al. A randomized trial of reamed and unreamed nailing for femoral shaft fractures. J Bone Joint Surg Am. 2008;90(Suppl 2 Pt 2):258-267.', '10.2106/JBJS.G.01694', '18310714', NULL),
-('art00009-0000-0000-0000-000000000009', 7, 'von Keudell AG, et al. Diagnosis and treatment of acute extremity compartment syndrome. Lancet. 2015;386(10000):1299-1310.', '10.1016/S0140-6736(15)00277-9', '26460664', NULL),
-('art00009-0000-0000-0000-000000000009', 8, 'AO Foundation. AO/OTA Fracture and Dislocation Classification. AO Foundation; 2018.', NULL, NULL, 'https://www.aofoundation.org/structure-and-classification');
+('a1100009-0000-0000-0000-000000000009', 1, 'Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones. J Bone Joint Surg Am. 1976;58(4):453-458.', NULL, '773941', NULL),
+('a1100009-0000-0000-0000-000000000009', 2, 'Gustilo RB, Mendoza RM, Williams DN. Problems in the management of type III (severe) open fractures. J Trauma. 1984;24(8):742-746.', '10.1097/00005373-198408000-00009', '6471139', NULL),
+('a1100009-0000-0000-0000-000000000009', 3, 'Hak DJ, et al. Delayed union and nonunions: epidemiology, clinical issues, and financial aspects. Injury. 2014;45(Suppl 2):S3-S7.', '10.1016/j.injury.2014.04.002', '24857025', NULL),
+('a1100009-0000-0000-0000-000000000009', 4, 'McQueen MM, et al. Acute compartment syndrome in tibial diaphyseal fractures. J Bone Joint Surg Br. 1996;78(1):95-98.', NULL, '8898136', NULL),
+('a1100009-0000-0000-0000-000000000009', 5, 'Hauser CJ, et al. EAST Practice Management Guidelines Work Group: prophylactic antibiotic use in open fractures. J Trauma. 2006;60(6):1319-1334.', '10.1097/01.ta.0000211295.78768.e8', '16766956', NULL),
+('a1100009-0000-0000-0000-000000000009', 6, 'Bhandari M, et al. A randomized trial of reamed and unreamed nailing for femoral shaft fractures. J Bone Joint Surg Am. 2008;90(Suppl 2 Pt 2):258-267.', '10.2106/JBJS.G.01694', '18310714', NULL),
+('a1100009-0000-0000-0000-000000000009', 7, 'von Keudell AG, et al. Diagnosis and treatment of acute extremity compartment syndrome. Lancet. 2015;386(10000):1299-1310.', '10.1016/S0140-6736(15)00277-9', '26460664', NULL),
+('a1100009-0000-0000-0000-000000000009', 8, 'AO Foundation. AO/OTA Fracture and Dislocation Classification. AO Foundation; 2018.', NULL, NULL, 'https://www.aofoundation.org/structure-and-classification');
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 1,
+('a1100009-0000-0000-0000-000000000009', 1,
 'A tibial fracture with a 12 cm wound, significant soft tissue loss requiring flap coverage, and no vascular injury is classified as Gustilo-Anderson:',
 'Type I',
 'Type II',
@@ -750,11 +750,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Type IIIB',
 'Type IIIC',
 'D',
-'Gustilo Type IIIB is characterized by extensive soft tissue injury with inadequate coverage requiring flap reconstruction. The wound size >10 cm with soft tissue loss makes this IIIB. Type IIIC would require arterial injury requiring repair.',
-'1,2');
+'Gustilo Type IIIB is characterized by extensive soft tissue injury with inadequate coverage requiring flap reconstruction. The wound size >10 cm with soft tissue loss makes this IIIB. Type IIIC would require arterial injury requiring repair.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 2,
+('a1100009-0000-0000-0000-000000000009', 2,
 'The earliest and most sensitive sign of compartment syndrome is:',
 'Pulselessness',
 'Pallor',
@@ -762,11 +761,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Pain with passive stretch',
 'Paresthesias',
 'D',
-'Pain with passive stretch of muscles in the affected compartment is the earliest and most sensitive clinical sign of compartment syndrome. The other "P''s" are later findings. Pulselessness and pallor are very late signs.',
-'4,7');
+'Pain with passive stretch of muscles in the affected compartment is the earliest and most sensitive clinical sign of compartment syndrome. The other "P''s" are later findings. Pulselessness and pallor are very late signs.', '{4,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 3,
+('a1100009-0000-0000-0000-000000000009', 3,
 'For a Gustilo Type III open tibial fracture, antibiotic therapy should include:',
 'Cefazolin only',
 'Cefazolin plus aminoglycoside',
@@ -774,11 +772,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Metronidazole only',
 'Vancomycin only',
 'B',
-'Gustilo Type III open fractures require broader coverage with a first-generation cephalosporin (Cefazolin) plus an aminoglycoside (Gentamicin) to cover gram-negative organisms. Penicillin G is added for farm/soil contamination (Clostridium coverage).',
-'5');
+'Gustilo Type III open fractures require broader coverage with a first-generation cephalosporin (Cefazolin) plus an aminoglycoside (Gentamicin) to cover gram-negative organisms. Penicillin G is added for farm/soil contamination (Clostridium coverage).', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 4,
+('a1100009-0000-0000-0000-000000000009', 4,
 'A compartment pressure of 45 mmHg in a patient with diastolic blood pressure of 70 mmHg indicates:',
 'Normal compartment pressure',
 'Elevated but acceptable pressure',
@@ -786,11 +783,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Need for repeat measurement in 1 hour',
 'No intervention needed',
 'C',
-'The delta P (ΔP) = Diastolic pressure minus Compartment pressure = 70 - 45 = 25 mmHg. A ΔP <30 mmHg indicates compartment syndrome requiring emergent fasciotomy. Absolute pressure alone is less reliable.',
-'4,7');
+'The delta P (ΔP) = Diastolic pressure minus Compartment pressure = 70 - 45 = 25 mmHg. A ΔP <30 mmHg indicates compartment syndrome requiring emergent fasciotomy. Absolute pressure alone is less reliable.', '{4,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 5,
+('a1100009-0000-0000-0000-000000000009', 5,
 'Antibiotics for open fractures should ideally be administered within:',
 '6 hours of injury',
 '3 hours of injury',
@@ -798,11 +794,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '24 hours of injury',
 '12 hours of injury',
 'C',
-'Antibiotics for open fractures should be administered within 1 hour of injury (ideally as soon as possible). Delayed antibiotic administration is associated with increased infection rates. This is a time-critical intervention.',
-'5');
+'Antibiotics for open fractures should be administered within 1 hour of injury (ideally as soon as possible). Delayed antibiotic administration is associated with increased infection rates. This is a time-critical intervention.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 6,
+('a1100009-0000-0000-0000-000000000009', 6,
 'A humeral shaft fracture is most commonly associated with injury to which nerve?',
 'Ulnar nerve',
 'Median nerve',
@@ -810,11 +805,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Musculocutaneous nerve',
 'Axillary nerve',
 'C',
-'The radial nerve spirals around the posterior humerus in the spiral groove and is at risk with humeral shaft fractures. Injury results in wrist drop (inability to extend wrist and fingers) and numbness in the first dorsal web space.',
-'8');
+'The radial nerve spirals around the posterior humerus in the spiral groove and is at risk with humeral shaft fractures. Injury results in wrist drop (inability to extend wrist and fingers) and numbness in the first dorsal web space.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 7,
+('a1100009-0000-0000-0000-000000000009', 7,
 'How many compartments are present in the lower leg that require release during fasciotomy for compartment syndrome?',
 '2',
 '3',
@@ -822,11 +816,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '5',
 '6',
 'C',
-'The lower leg has four compartments: anterior, lateral, superficial posterior, and deep posterior. All four must be released during fasciotomy for compartment syndrome, typically through a two-incision approach.',
-'7');
+'The lower leg has four compartments: anterior, lateral, superficial posterior, and deep posterior. All four must be released during fasciotomy for compartment syndrome, typically through a two-incision approach.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 8,
+('a1100009-0000-0000-0000-000000000009', 8,
 'The reparative phase of fracture healing is characterized by:',
 'Hematoma formation and inflammation',
 'Formation of soft callus followed by hard callus',
@@ -834,11 +827,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Restoration of medullary canal',
 'Resorption of excess callus',
 'B',
-'The reparative phase (weeks 2-6) involves soft callus formation (fibrocartilage) followed by hard callus formation (woven bone). This provides progressive mechanical stability. The inflammatory phase precedes this, and remodeling follows.',
-'3');
+'The reparative phase (weeks 2-6) involves soft callus formation (fibrocartilage) followed by hard callus formation (woven bone). This provides progressive mechanical stability. The inflammatory phase precedes this, and remodeling follows.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 9,
+('a1100009-0000-0000-0000-000000000009', 9,
 'When splinting a fracture, which joints should be immobilized?',
 'Only the joint proximal to the fracture',
 'Only the joint distal to the fracture',
@@ -846,11 +838,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'No joints need to be immobilized',
 'Only the fracture site itself',
 'C',
-'Proper splinting technique requires immobilization of the joint above and below the fracture to prevent motion at the fracture site. This reduces pain, prevents further injury, and maintains reduction.',
-'8');
+'Proper splinting technique requires immobilization of the joint above and below the fracture to prevent motion at the fracture site. This reduces pain, prevents further injury, and maintains reduction.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 10,
+('a1100009-0000-0000-0000-000000000009', 10,
 'The recommended volume of irrigation for a Gustilo Type II open fracture is:',
 '1 liter',
 '3 liters',
@@ -858,11 +849,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '9 liters',
 '12 liters',
 'C',
-'The recommended irrigation volumes are: Type I = 3 liters, Type II = 6 liters, Type III = 9 liters minimum. Low-pressure irrigation (bulb syringe) is preferred over high-pressure which may drive bacteria into tissues.',
-'5');
+'The recommended irrigation volumes are: Type I = 3 liters, Type II = 6 liters, Type III = 9 liters minimum. Low-pressure irrigation (bulb syringe) is preferred over high-pressure which may drive bacteria into tissues.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 11,
+('a1100009-0000-0000-0000-000000000009', 11,
 'A traction splint is contraindicated in which of the following situations?',
 'Closed midshaft femur fracture',
 'Open femur fracture',
@@ -870,11 +860,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Femur fracture with significant shortening',
 'Femur fracture with thigh swelling',
 'B',
-'Traction splints are contraindicated in open femur fractures (may draw contamination into wound), hip fractures/dislocations, and knee injuries. They are indicated for isolated closed femoral shaft fractures to restore length and reduce pain/bleeding.',
-'8');
+'Traction splints are contraindicated in open femur fractures (may draw contamination into wound), hip fractures/dislocations, and knee injuries. They are indicated for isolated closed femoral shaft fractures to restore length and reduce pain/bleeding.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 12,
+('a1100009-0000-0000-0000-000000000009', 12,
 'In the "safe position" for hand splinting, the MCP joints should be:',
 'Extended (0 degrees)',
 'Flexed 70-90 degrees',
@@ -882,11 +871,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Hyperextended',
 'Any comfortable position',
 'B',
-'The "safe position" or "intrinsic plus" position for hand splinting includes wrist extension 20-30°, MCP joints flexed 70-90°, and IP joints in extension. This position maintains collateral ligament length and prevents stiffness.',
-'8');
+'The "safe position" or "intrinsic plus" position for hand splinting includes wrist extension 20-30°, MCP joints flexed 70-90°, and IP joints in extension. This position maintains collateral ligament length and prevents stiffness.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 13,
+('a1100009-0000-0000-0000-000000000009', 13,
 'A transverse fracture pattern is most likely caused by:',
 'Torsional force',
 'Bending force',
@@ -894,11 +882,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Avulsion',
 'Shear force',
 'B',
-'A transverse fracture pattern (perpendicular to the long axis of the bone) is caused by a bending force applied to the bone. Torsional forces cause spiral fractures, and axial loading causes compression or comminuted fractures.',
-'8');
+'A transverse fracture pattern (perpendicular to the long axis of the bone) is caused by a bending force applied to the bone. Torsional forces cause spiral fractures, and axial loading causes compression or comminuted fractures.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 14,
+('a1100009-0000-0000-0000-000000000009', 14,
 'What is the time window after which fasciotomy for compartment syndrome provides minimal benefit?',
 '2 hours',
 '4 hours',
@@ -906,11 +893,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '12 hours',
 '24 hours',
 'D',
-'Muscle necrosis becomes irreversible at approximately 6-8 hours of ischemia. Fasciotomy performed after 12 hours of ischemia provides minimal benefit and may actually cause harm by releasing toxins (reperfusion syndrome). Emergent fasciotomy should be performed immediately upon diagnosis.',
-'7');
+'Muscle necrosis becomes irreversible at approximately 6-8 hours of ischemia. Fasciotomy performed after 12 hours of ischemia provides minimal benefit and may actually cause harm by releasing toxins (reperfusion syndrome). Emergent fasciotomy should be performed immediately upon diagnosis.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 15,
+('a1100009-0000-0000-0000-000000000009', 15,
 'In the AO/OTA classification system, a "42-B2" fracture refers to:',
 'Humerus, proximal, wedge fracture',
 'Tibia, diaphyseal, wedge fracture',
@@ -918,11 +904,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Radius, distal, complex fracture',
 'Tibia, proximal, simple fracture',
 'B',
-'In the AO/OTA system: 4 = Tibia, 2 = Diaphyseal segment, B = Wedge type fracture, 2 = Subgroup. So 42-B2 is a tibial diaphyseal wedge fracture.',
-'8');
+'In the AO/OTA system: 4 = Tibia, 2 = Diaphyseal segment, B = Wedge type fracture, 2 = Subgroup. So 42-B2 is a tibial diaphyseal wedge fracture.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 16,
+('a1100009-0000-0000-0000-000000000009', 16,
 'What distinguishes Gustilo Type IIIC from Types IIIA and IIIB?',
 'Wound size greater than 15 cm',
 'Bone loss',
@@ -930,11 +915,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Need for free flap coverage',
 'Associated spinal cord injury',
 'C',
-'Gustilo Type IIIC is defined by arterial injury requiring repair, regardless of wound size or other characteristics. This carries the highest risk of amputation and infection (25-50%).',
-'1,2');
+'Gustilo Type IIIC is defined by arterial injury requiring repair, regardless of wound size or other characteristics. This carries the highest risk of amputation and infection (25-50%).', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 17,
+('a1100009-0000-0000-0000-000000000009', 17,
 'The common peroneal nerve is at risk with fractures of the:',
 'Femoral shaft',
 'Tibial plateau',
@@ -942,11 +926,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Medial malleolus',
 'Calcaneus',
 'C',
-'The common peroneal nerve wraps around the fibular neck and is susceptible to injury with fibular neck fractures and knee dislocations. Injury results in foot drop (weakness of ankle dorsiflexion and toe extension) and sensory loss over the dorsum of the foot.',
-'8');
+'The common peroneal nerve wraps around the fibular neck and is susceptible to injury with fibular neck fractures and knee dislocations. Injury results in foot drop (weakness of ankle dorsiflexion and toe extension) and sensory loss over the dorsum of the foot.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 18,
+('a1100009-0000-0000-0000-000000000009', 18,
 'Primary (direct) bone healing occurs:',
 'With any fracture that is immobilized',
 'With rigid fixation and anatomic reduction',
@@ -954,11 +937,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Through visible callus formation',
 'With external fixation',
 'B',
-'Primary bone healing occurs when there is rigid internal fixation with anatomic reduction, allowing direct osteonal remodeling without visible callus formation. This is slower than secondary healing and is seen with compression plating.',
-'3');
+'Primary bone healing occurs when there is rigid internal fixation with anatomic reduction, allowing direct osteonal remodeling without visible callus formation. This is slower than secondary healing and is seen with compression plating.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 19,
+('a1100009-0000-0000-0000-000000000009', 19,
 'When describing fracture displacement, the position of which fragment is described?',
 'The proximal fragment relative to the body',
 'The distal fragment relative to the proximal fragment',
@@ -966,11 +948,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'The most displaced fragment',
 'Either fragment relative to the midline',
 'B',
-'By convention, fracture displacement is described by the position of the distal fragment relative to the proximal fragment. The proximal fragment is considered "fixed" to the body, so displacement describes where the distal fragment has moved.',
-'8');
+'By convention, fracture displacement is described by the position of the distal fragment relative to the proximal fragment. The proximal fragment is considered "fixed" to the body, so displacement describes where the distal fragment has moved.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00009-0000-0000-0000-000000000009', 20,
+('a1100009-0000-0000-0000-000000000009', 20,
 'A spiral fracture pattern is characteristic of which mechanism of injury?',
 'Direct blow',
 'Axial loading',
@@ -978,5 +959,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Bending force',
 'Avulsion',
 'C',
-'Spiral fractures are caused by torsional or rotational forces applied to the bone. The fracture line spirals around the shaft. In children, spiral fractures of long bones (especially in non-ambulatory children) should raise suspicion for non-accidental trauma.',
-'8');
+'Spiral fractures are caused by torsional or rotational forces applied to the bone. The fracture line spirals around the shaft. In children, spiral fractures of long bones (especially in non-ambulatory children) should raise suspicion for non-accidental trauma.', '{8}');

@@ -1,7 +1,7 @@
 -- Surgery 2 Article 1: Acute Abdomen - Sections (corrected)
 
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000001-0000-0000-0000-000000000001'::uuid, 'introduction', 1, 'Introduction to Acute Abdomen', 
+('d2000001-0000-0000-0000-000000000001'::uuid, 'introduction', 1, 'Introduction to Acute Abdomen', 
 'The acute abdomen represents one of the most challenging presentations in emergency surgery. It describes a syndrome characterized by abdominal pain of sudden onset requiring urgent evaluation and often surgical intervention. The term encompasses a wide spectrum of pathologies ranging from benign self-limiting conditions to life-threatening emergencies.
 
 Understanding the acute abdomen requires a systematic approach integrating clinical history, physical examination, and appropriate investigations. The goal is to identify patients requiring emergency surgery while avoiding unnecessary operations in those who can be managed conservatively.
@@ -16,7 +16,7 @@ Acute abdomen refers to sudden, severe abdominal pain that develops over hours t
 - In developing countries, intestinal obstruction and typhoid perforation are more common
 - In developed nations, appendicitis and biliary disease predominate'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'learning_objectives', 2, 'Learning Objectives',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'learning_objectives', 2, 'Learning Objectives',
 'After completing this module, you should be able to:
 
 1. Define acute abdomen and understand its clinical significance
@@ -30,7 +30,7 @@ Acute abdomen refers to sudden, severe abdominal pain that develops over hours t
 9. Differentiate surgical from medical causes of acute abdomen
 10. Apply appropriate resuscitation and management principles'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'content', 3, 'Clinical Presentation and History Taking',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'content', 3, 'Clinical Presentation and History Taking',
 'A thorough history is the cornerstone of evaluating acute abdomen. The character, location, and evolution of pain provide crucial diagnostic clues.
 
 **Pain Characteristics**
@@ -58,7 +58,7 @@ Acute abdomen refers to sudden, severe abdominal pain that develops over hours t
 - **E**xacerbating/relieving factors
 - **S**everity: Scale of 1-10'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'content', 4, 'Physical Examination',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'content', 4, 'Physical Examination',
 'Systematic examination is essential and should follow a structured approach.
 
 **General Inspection**
@@ -82,7 +82,7 @@ Acute abdomen refers to sudden, severe abdominal pain that develops over hours t
 - **Obturator sign**: Pain on internal rotation of flexed right hip (pelvic appendicitis)
 - **Psoas sign**: Pain on hip extension (retrocecal appendicitis)'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'content', 5, 'Differential Diagnosis and Investigations',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'content', 5, 'Differential Diagnosis and Investigations',
 '**Differential Diagnosis by Location**
 
 **Right Upper Quadrant**: Cholecystitis, biliary colic, hepatitis, hepatic abscess, pneumonia
@@ -105,7 +105,7 @@ Acute abdomen refers to sudden, severe abdominal pain that develops over hours t
 - CT Abdomen/Pelvis: Gold standard for most conditions
 - CT Angiography: Mesenteric ischemia, aortic pathology'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'content', 6, 'Management Principles',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'content', 6, 'Management Principles',
 '**Initial Resuscitation (ABCDE)**
 - Airway and Breathing: Supplemental oxygen
 - Circulation: Large-bore IV access, fluid resuscitation, urinary catheter
@@ -128,7 +128,7 @@ Acute abdomen refers to sudden, severe abdominal pain that develops over hours t
 **Urgent Surgery (24h)**: Appendicitis, cholecystitis, unresolved obstruction
 **Conservative**: Uncomplicated diverticulitis, mild pancreatitis, gastroenteritis'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'key_points', 7, 'Key Points',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'key_points', 7, 'Key Points',
 '1. **Definition**: Acute abdomen is sudden severe abdominal pain requiring urgent evaluation
 2. **Pain Types**: Visceral (dull, midline), Somatic (sharp, localized), Referred (distant site)
 3. **Red Flags**: Board-like rigidity, absent bowel sounds, signs of shock, peritonitis

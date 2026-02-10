@@ -19,6 +19,7 @@ export const config = {
     user: process.env.DB_USER || 'postgres',
     password: process.env.DB_PASSWORD || '',
     ssl: process.env.DB_SSL === 'true',
+    caCert: process.env.DB_CA_CERT || '',
   },
 
   // JWT

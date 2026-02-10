@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00016-0000-0000-0000-000000000016',
-    'b0000016-0000-0000-0000-000000000001',
+    'a1100016-0000-0000-0000-000000000016',
+    'b0000016-0000-0000-0000-000000000016',
     'a0000001-0000-0000-0000-000000000001',
     'Urethral Catheterization in Surgical Practice',
     'Techniques, Indications, and Prevention of Catheter-Associated Complications',
@@ -14,14 +14,14 @@ INSERT INTO cme_articles (
     'UNTH Urology Department, Infection Control Unit',
     45,
     2.5,
-    'basic',
+    'easy',
     1,
     true
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'introduction', 'Introduction',
 'Urethral catheterization involves the insertion of a catheter through the urethra into the bladder for drainage of urine. This fundamental procedure is performed millions of times annually worldwide and is essential in surgical, critical care, and acute medical settings.
 
 **Historical Perspective:**
@@ -51,8 +51,8 @@ Evidence-based catheter care bundles have been shown to reduce CAUTI rates by 50
 This article provides the knowledge foundation for safe, effective urethral catheterization.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. List appropriate indications for urethral catheterization in surgical and non-surgical patients
@@ -76,8 +76,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Document catheterization procedures completely and accurately', 2);
 
 -- Section 3: Indications and Contraindications
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'content', 'Indications and Contraindications',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'content', 'Indications and Contraindications',
 '## Indications for Urethral Catheterization
 
 ### Absolute Indications
@@ -137,8 +137,8 @@ In trauma, suspect urethral injury if:
 - Early urological consultation for repeated failure', 3);
 
 -- Section 4: Catheter Types and Selection
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'content', 'Catheter Types and Selection',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'content', 'Catheter Types and Selection',
 '## Catheter Types
 
 ### By Duration of Use
@@ -237,8 +237,8 @@ Example: 18 Fr catheter = 6 mm diameter
 - Selected patients only', 4);
 
 -- Section 5: Insertion Technique - Male
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'content', 'Male Urethral Catheterization Technique',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'content', 'Male Urethral Catheterization Technique',
 '## Preparation
 
 ### Equipment
@@ -336,8 +336,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 | Unable to pass catheter | Stop, urological referral, consider suprapubic |', 5);
 
 -- Section 6: Insertion Technique - Female
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'content', 'Female Urethral Catheterization Technique',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'content', 'Female Urethral Catheterization Technique',
 '## Anatomical Considerations
 
 The female urethra is:
@@ -452,8 +452,8 @@ Record:
 - Any difficulties encountered', 6);
 
 -- Section 7: Complications and Prevention
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'content', 'Complications and Prevention',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'content', 'Complications and Prevention',
 '## Immediate Complications
 
 ### Urethral Trauma
@@ -631,8 +631,8 @@ See separate section below.
 | Routine catheter changes | Only per manufacturer |', 7);
 
 -- Section 8: Catheter Care and Removal
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'content', 'Catheter Care and Removal',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'content', 'Catheter Care and Removal',
 '## Daily Catheter Care
 
 ### Meatal Care
@@ -792,8 +792,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - NEVER cut catheter at meatus', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'key_points', 'Key Points',
 '1. **Indication-Based Catheterization**: Only insert catheters when truly indicated. The most effective CAUTI prevention is avoiding unnecessary catheterization.
 
 2. **Rule Out Urethral Injury in Trauma**: Blood at meatus, perineal hematoma, or high-riding prostate are contraindications to urethral catheterization. Obtain urology consultation.
@@ -815,8 +815,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Inflate with Sterile Water**: Always use sterile water (not saline) for balloon inflation. Saline can crystallize and prevent balloon deflation.', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: If you cannot see the female urethral meatus, ask the patient to cough—a small urine leak will identify the meatus location.
 
 💡 **Pearl 2**: In difficult male catheterization, the coudé-tip catheter is your friend. Insert with the curved tip pointing upward (12 o''clock) to navigate the prostatic urethra.
@@ -838,20 +838,20 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: The question "Does this patient still need a catheter?" should be asked every day. If the answer is no, remove it immediately.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00016-0000-0000-0000-000000000016', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100016-0000-0000-0000-000000000016', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00016-0000-0000-0000-000000000016', 1, 'Loveday HP, et al. epic3: National Evidence-Based Guidelines for Preventing Healthcare-Associated Infections in NHS Hospitals in England. J Hosp Infect. 2014;86(Suppl 1):S1-S70.', '10.1016/S0195-6701(13)60012-2', '24330862', NULL),
-('art00016-0000-0000-0000-000000000016', 2, 'Gould CV, et al. Guideline for Prevention of Catheter-Associated Urinary Tract Infections 2009. CDC/HICPAC Guidelines. Infect Control Hosp Epidemiol. 2010;31(4):319-326.', '10.1086/651091', '20156062', NULL),
-('art00016-0000-0000-0000-000000000016', 3, 'Lo E, et al. Strategies to Prevent Catheter-Associated Urinary Tract Infections in Acute Care Hospitals: 2014 Update. Infect Control Hosp Epidemiol. 2014;35(5):464-479.', '10.1086/675718', '24709715', NULL),
-('art00016-0000-0000-0000-000000000016', 4, 'Holroyd S. The use of urinary catheters: aseptic technique. Nursing Times. 2019;115(10):58-62.', NULL, NULL, 'https://www.nursingtimes.net/clinical-archive/infection-control/the-use-of-urinary-catheters-aseptic-technique/'),
-('art00016-0000-0000-0000-000000000016', 5, 'Feneley RCL, Hopley IB, Wells PNT. Urinary catheters: history, current status, adverse events and research agenda. J Med Eng Technol. 2015;39(8):459-470.', '10.3109/03091902.2015.1085600', '26383168', NULL);
+('a1100016-0000-0000-0000-000000000016', 1, 'Loveday HP, et al. epic3: National Evidence-Based Guidelines for Preventing Healthcare-Associated Infections in NHS Hospitals in England. J Hosp Infect. 2014;86(Suppl 1):S1-S70.', '10.1016/S0195-6701(13)60012-2', '24330862', NULL),
+('a1100016-0000-0000-0000-000000000016', 2, 'Gould CV, et al. Guideline for Prevention of Catheter-Associated Urinary Tract Infections 2009. CDC/HICPAC Guidelines. Infect Control Hosp Epidemiol. 2010;31(4):319-326.', '10.1086/651091', '20156062', NULL),
+('a1100016-0000-0000-0000-000000000016', 3, 'Lo E, et al. Strategies to Prevent Catheter-Associated Urinary Tract Infections in Acute Care Hospitals: 2014 Update. Infect Control Hosp Epidemiol. 2014;35(5):464-479.', '10.1086/675718', '24709715', NULL),
+('a1100016-0000-0000-0000-000000000016', 4, 'Holroyd S. The use of urinary catheters: aseptic technique. Nursing Times. 2019;115(10):58-62.', NULL, NULL, 'https://www.nursingtimes.net/clinical-archive/infection-control/the-use-of-urinary-catheters-aseptic-technique/'),
+('a1100016-0000-0000-0000-000000000016', 5, 'Feneley RCL, Hopley IB, Wells PNT. Urinary catheters: history, current status, adverse events and research agenda. J Med Eng Technol. 2015;39(8):459-470.', '10.3109/03091902.2015.1085600', '26383168', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 1,
+('a1100016-0000-0000-0000-000000000016', 1,
 'Blood at the urethral meatus following pelvic trauma indicates:',
 'Need for immediate urethral catheterization',
 'Possible urethral injury - urethral catheterization contraindicated',
@@ -859,11 +859,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Normal finding that requires no action',
 'Indication for intermittent catheterization',
 'B',
-'Blood at the urethral meatus is a sign of possible urethral injury and is an absolute contraindication to urethral catheterization. A retrograde urethrogram should be performed before any attempt at urethral catheterization, and urology consultation is required.',
-'2,3');
+'Blood at the urethral meatus is a sign of possible urethral injury and is an absolute contraindication to urethral catheterization. A retrograde urethrogram should be performed before any attempt at urethral catheterization, and urology consultation is required.', '{2,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 2,
+('a1100016-0000-0000-0000-000000000016', 2,
 'The recommended catheter size for routine adult male urethral catheterization is:',
 '10-12 Fr',
 '14-16 Fr',
@@ -871,11 +870,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '22-24 Fr',
 '26-28 Fr',
 'B',
-'For routine adult male catheterization, a 14-16 Fr catheter is recommended. The principle is to use the smallest catheter that provides adequate drainage to minimize urethral trauma.',
-'1,4');
+'For routine adult male catheterization, a 14-16 Fr catheter is recommended. The principle is to use the smallest catheter that provides adequate drainage to minimize urethral trauma.', '{1,4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 3,
+('a1100016-0000-0000-0000-000000000016', 3,
 'The Foley catheter balloon should be inflated with:',
 'Normal saline',
 'Sterile water',
@@ -883,11 +881,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '5% dextrose',
 'Tap water',
 'B',
-'Foley catheter balloons should always be inflated with sterile water, not saline. Saline can crystallize within the balloon and prevent deflation when catheter removal is needed.',
-'1,4');
+'Foley catheter balloons should always be inflated with sterile water, not saline. Saline can crystallize within the balloon and prevent deflation when catheter removal is needed.', '{1,4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 4,
+('a1100016-0000-0000-0000-000000000016', 4,
 'A coudé-tip catheter is particularly useful for:',
 'Female patients with atrophic meatus',
 'Male patients with prostatic enlargement',
@@ -895,11 +892,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Patients requiring bladder irrigation',
 'Long-term catheterization',
 'B',
-'The coudé-tip catheter has a curved tip (15-degree bend) that helps navigate around an enlarged prostate. It should be inserted with the tip pointing toward 12 o''clock position.',
-'4,5');
+'The coudé-tip catheter has a curved tip (15-degree bend) that helps navigate around an enlarged prostate. It should be inserted with the tip pointing toward 12 o''clock position.', '{4,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 5,
+('a1100016-0000-0000-0000-000000000016', 5,
 'When should the catheter balloon be inflated during male catheterization?',
 'Immediately after the catheter enters the meatus',
 'When 10 cm of catheter has been inserted',
@@ -907,11 +903,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'After securing the catheter to the thigh',
 'When the patient reports a sensation of fullness',
 'C',
-'The balloon should only be inflated when urine is freely draining from the catheter, confirming that the catheter tip is in the bladder. Inflating the balloon in the urethra can cause significant trauma.',
-'1,4');
+'The balloon should only be inflated when urine is freely draining from the catheter, confirming that the catheter tip is in the bladder. Inflating the balloon in the urethra can cause significant trauma.', '{1,4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 6,
+('a1100016-0000-0000-0000-000000000016', 6,
 'During male catheterization, the penis should initially be held at what angle to the abdomen?',
 'Parallel to the abdomen (lying flat)',
 'At 45 degrees',
@@ -919,11 +914,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Toward the feet',
 'Any angle is acceptable',
 'C',
-'During male catheterization, the penis should initially be held perpendicular (90 degrees) to the abdomen to straighten the urethra. When navigating the prostatic urethra, the penis is then lowered toward the feet.',
-'4');
+'During male catheterization, the penis should initially be held perpendicular (90 degrees) to the abdomen to straighten the urethra. When navigating the prostatic urethra, the penis is then lowered toward the feet.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 7,
+('a1100016-0000-0000-0000-000000000016', 7,
 'The most common healthcare-associated infection is:',
 'Surgical site infection',
 'Catheter-associated urinary tract infection',
@@ -931,11 +925,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Ventilator-associated pneumonia',
 'Clostridioides difficile infection',
 'B',
-'Catheter-associated urinary tract infection (CAUTI) is the most common healthcare-associated infection, accounting for approximately 40% of all HAIs. 70-80% of hospital-acquired UTIs are catheter-associated.',
-'2,3');
+'Catheter-associated urinary tract infection (CAUTI) is the most common healthcare-associated infection, accounting for approximately 40% of all HAIs. 70-80% of hospital-acquired UTIs are catheter-associated.', '{2,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 8,
+('a1100016-0000-0000-0000-000000000016', 8,
 'The most important modifiable risk factor for CAUTI is:',
 'Patient age',
 'Female sex',
@@ -943,11 +936,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Catheter material',
 'Diabetes mellitus',
 'C',
-'Duration of catheterization is the most important modifiable risk factor for CAUTI. The risk of bacteriuria increases approximately 3-7% per day of catheterization. Early removal is the most effective prevention strategy.',
-'2,3');
+'Duration of catheterization is the most important modifiable risk factor for CAUTI. The risk of bacteriuria increases approximately 3-7% per day of catheterization. Early removal is the most effective prevention strategy.', '{2,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 9,
+('a1100016-0000-0000-0000-000000000016', 9,
 'After catheter insertion in an uncircumcised male, you must:',
 'Apply antibiotic ointment to the glans',
 'Replace the foreskin to its normal position',
@@ -955,11 +947,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Obtain a urine culture',
 'Irrigate the catheter with saline',
 'B',
-'It is critical to replace the foreskin to its normal position after catheterization in uncircumcised males. Failure to do so can cause paraphimosis, a urological emergency where the retracted foreskin causes venous congestion and swelling of the glans.',
-'4');
+'It is critical to replace the foreskin to its normal position after catheterization in uncircumcised males. Failure to do so can cause paraphimosis, a urological emergency where the retracted foreskin causes venous congestion and swelling of the glans.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 10,
+('a1100016-0000-0000-0000-000000000016', 10,
 'If the catheter accidentally enters the vagina during female catheterization, the correct action is:',
 'Remove it immediately and start over',
 'Leave it in place as a marker and insert a new sterile catheter into the urethra',
@@ -967,11 +958,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Inflate the balloon to secure it',
 'Wait 5 minutes and try again',
 'B',
-'If the catheter enters the vagina, leave it in place as a marker (it identifies where the urethra is NOT). Obtain a new sterile catheter and insert it into the opening above the misplaced catheter. Remove the vaginal catheter once the urethral catheter is secured.',
-'4');
+'If the catheter enters the vagina, leave it in place as a marker (it identifies where the urethra is NOT). Obtain a new sterile catheter and insert it into the opening above the misplaced catheter. Remove the vaginal catheter once the urethral catheter is secured.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 11,
+('a1100016-0000-0000-0000-000000000016', 11,
 'The female urethra is approximately:',
 '1-2 cm long',
 '3-5 cm long',
@@ -979,11 +969,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '15-20 cm long',
 '20-25 cm long',
 'B',
-'The female urethra is approximately 3-5 cm long (compared to 15-20 cm in males). This shorter length makes female catheterization generally easier but also contributes to higher UTI rates in women.',
-'4');
+'The female urethra is approximately 3-5 cm long (compared to 15-20 cm in males). This shorter length makes female catheterization generally easier but also contributes to higher UTI rates in women.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 12,
+('a1100016-0000-0000-0000-000000000016', 12,
 'How long should you wait after instilling lidocaine gel before inserting the catheter in male patients?',
 'No waiting required',
 '1-2 minutes',
@@ -991,11 +980,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '10-15 minutes',
 '20-30 minutes',
 'C',
-'After instilling lidocaine gel into the male urethra, wait 3-5 minutes for the anesthetic effect to develop. This significantly improves patient comfort and relaxes the urethral sphincter.',
-'4');
+'After instilling lidocaine gel into the male urethra, wait 3-5 minutes for the anesthetic effect to develop. This significantly improves patient comfort and relaxes the urethral sphincter.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 13,
+('a1100016-0000-0000-0000-000000000016', 13,
 'Bypassing (urine leaking around the catheter) is most commonly caused by:',
 'Catheter too small',
 'Catheter too large',
@@ -1003,11 +991,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Underinflated balloon',
 'Improper securing',
 'C',
-'Bypassing is most commonly caused by a blocked catheter (encrustation, debris, clots) or bladder spasm—not a catheter that is too small. The first step is to check for blockage. Upsizing the catheter is not the appropriate initial response.',
-'1');
+'Bypassing is most commonly caused by a blocked catheter (encrustation, debris, clots) or bladder spasm—not a catheter that is too small. The first step is to check for blockage. Upsizing the catheter is not the appropriate initial response.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 14,
+('a1100016-0000-0000-0000-000000000016', 14,
 'The drainage bag should be positioned:',
 'At or above bladder level for optimal flow',
 'Below bladder level at all times',
@@ -1015,11 +1002,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'On the floor to maximize capacity',
 'At chest level',
 'B',
-'The drainage bag should be positioned below bladder level at all times to allow gravity drainage. It should never be placed on the floor (infection risk) or above bladder level (which can cause reflux of urine into the bladder).',
-'1,2');
+'The drainage bag should be positioned below bladder level at all times to allow gravity drainage. It should never be placed on the floor (infection risk) or above bladder level (which can cause reflux of urine into the bladder).', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 15,
+('a1100016-0000-0000-0000-000000000016', 15,
 'Silicone catheters are preferred over latex catheters for:',
 'Short-term catheterization (<24 hours)',
 'Patients with latex allergy',
@@ -1027,11 +1013,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Pediatric patients only',
 'All routine catheterizations',
 'B',
-'Silicone catheters are preferred for patients with latex allergy (as latex catheters are contraindicated) and for long-term catheterization (>14 days) due to their biocompatibility and resistance to encrustation.',
-'1,5');
+'Silicone catheters are preferred for patients with latex allergy (as latex catheters are contraindicated) and for long-term catheterization (>14 days) due to their biocompatibility and resistance to encrustation.', '{1,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 16,
+('a1100016-0000-0000-0000-000000000016', 16,
 'If a patient experiences severe pain when you attempt to inflate the balloon, you should:',
 'Continue inflation slowly',
 'Use less water in the balloon',
@@ -1039,11 +1024,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Remove the catheter completely and try again',
 'Wait 5 minutes and try again',
 'C',
-'Pain during balloon inflation indicates the balloon is likely in the urethra, not the bladder. You should immediately stop inflation, deflate the balloon completely, advance the catheter further (until urine drains), and then attempt inflation again.',
-'4');
+'Pain during balloon inflation indicates the balloon is likely in the urethra, not the bladder. You should immediately stop inflation, deflate the balloon completely, advance the catheter further (until urine drains), and then attempt inflation again.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 17,
+('a1100016-0000-0000-0000-000000000016', 17,
 'Regarding daily catheter care, which statement is correct?',
 'The meatus should be cleaned with betadine daily',
 'The meatus should be cleaned with soap and water',
@@ -1051,11 +1035,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'The catheter should be irrigated daily with saline',
 'The drainage bag should be changed daily',
 'B',
-'Daily meatal care should be performed with soap and water during routine bathing. There is no evidence that routine use of antiseptics at the meatus reduces CAUTI rates, and they may cause irritation.',
-'1,2');
+'Daily meatal care should be performed with soap and water during routine bathing. There is no evidence that routine use of antiseptics at the meatus reduces CAUTI rates, and they may cause irritation.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 18,
+('a1100016-0000-0000-0000-000000000016', 18,
 'A suprapubic catheter is indicated in all the following situations EXCEPT:',
 'Urethral trauma',
 'Severe urethral stricture',
@@ -1063,11 +1046,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Routine postoperative care after appendectomy',
 'Failed urethral catheterization with urinary retention',
 'D',
-'Suprapubic catheterization is not indicated for routine postoperative care. Indications include urethral trauma/disruption, severe urethral stricture, failed urethral catheterization with retention, and sometimes patient preference for long-term management.',
-'4,5');
+'Suprapubic catheterization is not indicated for routine postoperative care. Indications include urethral trauma/disruption, severe urethral stricture, failed urethral catheterization with retention, and sometimes patient preference for long-term management.', '{4,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 19,
+('a1100016-0000-0000-0000-000000000016', 19,
 'For a trial without catheter (TWOC), the patient should void within:',
 '1-2 hours',
 '6-8 hours',
@@ -1075,11 +1057,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '24-48 hours',
 'There is no time limit',
 'B',
-'After catheter removal for a TWOC, patients should void within 6-8 hours. Morning removal is preferred as it allows daytime monitoring and recatheterization if needed without disturbing overnight sleep.',
-'4');
+'After catheter removal for a TWOC, patients should void within 6-8 hours. Morning removal is preferred as it allows daytime monitoring and recatheterization if needed without disturbing overnight sleep.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00016-0000-0000-0000-000000000016', 20,
+('a1100016-0000-0000-0000-000000000016', 20,
 'The single most effective strategy for preventing CAUTI is:',
 'Using silver-coated catheters',
 'Daily antiseptic meatal care',
@@ -1087,5 +1068,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Avoiding unnecessary catheterization and early removal',
 'Prophylactic antibiotics',
 'D',
-'The most effective CAUTI prevention strategy is avoiding unnecessary catheterization and removing catheters as soon as they are no longer indicated. Duration of catheterization is the most important modifiable risk factor.',
-'2,3');
+'The most effective CAUTI prevention strategy is avoiding unnecessary catheterization and removing catheters as soon as they are no longer indicated. Duration of catheterization is the most important modifiable risk factor.', '{2,3}');

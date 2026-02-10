@@ -355,10 +355,43 @@ export const adminApi = {
     api.post('/admin/reports/generate', { type, ...params }),
 };
 
-// Sync API
+// Sync API — full two-way push/pull
 export const syncApi = {
-  sync: (data: Record<string, unknown>[]) => api.post('/sync', { data }),
+  // PUSH: Send offline changes to server
+  push: (data: Array<{
+    type: string;
+    payload: Record<string, unknown>;
+    offline_id: string;
+    timestamp: string;
+  }>, deviceId?: string) =>
+    api.post('/sync/push', { data, deviceId }),
+
+  // PULL: Download latest server data for offline caching
+  pull: (params?: { last_sync?: string; entities?: string; full?: string }) =>
+    api.get('/sync/pull', { params }),
+
+  // Legacy compat
+  sync: (data: Record<string, unknown>[]) =>
+    api.post('/sync/push', {
+      data: data.map(d => ({
+        type: d.type,
+        payload: d.data || d,
+        offline_id: d.clientId || crypto.randomUUID(),
+        timestamp: d.timestamp || new Date().toISOString(),
+      })),
+    }),
+
+  // Status & management
   getStatus: () => api.get('/sync/status'),
+  resolveConflicts: (resolutions: Array<{ conflict_id: string; strategy: string }>) =>
+    api.post('/sync/resolve-conflicts', { resolutions }),
+  registerDevice: (device: {
+    deviceFingerprint: string;
+    deviceName?: string;
+    deviceType?: string;
+    browser?: string;
+    os?: string;
+  }) => api.post('/sync/register-device', device),
 };
 
 export default api;

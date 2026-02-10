@@ -2,7 +2,7 @@
 
 -- ARTICLE 11: Management of Trauma Patients
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000011-0000-0000-0000-000000000011'::uuid, 'introduction', 1, 'Introduction to Trauma Management', 
+('d2000011-0000-0000-0000-000000000011'::uuid, 'introduction', 1, 'Introduction to Trauma Management', 
 'Trauma is the leading cause of death in people under 44 years and a major cause of morbidity worldwide. The systematic approach to trauma care saves lives.
 
 **Trauma Epidemiology**
@@ -29,7 +29,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 - Rapid assessment and definitive care improves survival
 - "Platinum 10 minutes" - even more critical for hemorrhage control'),
 
-('d0000011-0000-0000-0000-000000000011'::uuid, 'content', 2, 'Primary Survey (ABCDE)',
+('d2000011-0000-0000-0000-000000000011'::uuid, 'content', 2, 'Primary Survey (ABCDE)',
 'The primary survey identifies life-threatening conditions requiring immediate intervention.
 
 **A - Airway with Cervical Spine Protection**
@@ -89,7 +89,7 @@ Interventions:
 - Log roll for back examination
 - Prevent hypothermia (warm blankets, warmed fluids)'),
 
-('d0000011-0000-0000-0000-000000000011'::uuid, 'content', 3, 'Secondary Survey and Adjuncts',
+('d2000011-0000-0000-0000-000000000011'::uuid, 'content', 3, 'Secondary Survey and Adjuncts',
 'The secondary survey is a head-to-toe evaluation performed after the primary survey is complete and resuscitation initiated.
 
 **Adjuncts to Primary Survey**
@@ -129,7 +129,7 @@ Extended FAST (eFAST): Includes lung sliding for pneumothorax
 - Interventions performed
 - Response to treatment'),
 
-('d0000011-0000-0000-0000-000000000011'::uuid, 'content', 4, 'Hemorrhagic Shock Classes',
+('d2000011-0000-0000-0000-000000000011'::uuid, 'content', 4, 'Hemorrhagic Shock Classes',
 '**Classification of Hemorrhagic Shock**
 
 | Class | Blood Loss | Heart Rate | BP | RR | Mental Status | Urine Output |
@@ -158,7 +158,7 @@ Extended FAST (eFAST): Includes lung sliding for pneumothorax
 - Base deficit improvement
 - Resolution of tachycardia'),
 
-('d0000011-0000-0000-0000-000000000011'::uuid, 'key_points', 5, 'Key Points',
+('d2000011-0000-0000-0000-000000000011'::uuid, 'key_points', 5, 'Key Points',
 '1. Trauma: Leading cause of death ages 1-44; trimodal death distribution
 2. Golden Hour: Critical first 60 minutes - rapid assessment saves lives
 3. Primary Survey: ABCDE - identify and treat life-threatening conditions
@@ -172,7 +172,7 @@ Extended FAST (eFAST): Includes lung sliding for pneumothorax
 
 -- ARTICLE 12: ATLS Principles and Protocols
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000012-0000-0000-0000-000000000012'::uuid, 'introduction', 1, 'ATLS Principles', 
+('d2000012-0000-0000-0000-000000000012'::uuid, 'introduction', 1, 'ATLS Principles', 
 'Advanced Trauma Life Support (ATLS) is a standardized approach to trauma care developed by the American College of Surgeons. It provides a systematic methodology applicable worldwide.
 
 **Core ATLS Principles**
@@ -200,7 +200,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 - Nursing team
 - Documentation'),
 
-('d0000012-0000-0000-0000-000000000012'::uuid, 'content', 2, 'Airway Management in Trauma',
+('d2000012-0000-0000-0000-000000000012'::uuid, 'content', 2, 'Airway Management in Trauma',
 '**Indications for Definitive Airway**
 - Apnea
 - GCS ≤8
@@ -238,7 +238,7 @@ Technique:
 
 Contraindicated: Children <12 years (needle cricothyroidotomy preferred)'),
 
-('d0000012-0000-0000-0000-000000000012'::uuid, 'content', 3, 'Breathing Emergencies',
+('d2000012-0000-0000-0000-000000000012'::uuid, 'content', 3, 'Breathing Emergencies',
 '**Tension Pneumothorax**
 Pathophysiology: Air enters pleural space with each breath but cannot escape
 Clinical features:
@@ -276,7 +276,7 @@ Paradoxical movement
 Main problem: Underlying pulmonary contusion
 Treatment: Pain control, consider intubation if respiratory failure'),
 
-('d0000012-0000-0000-0000-000000000012'::uuid, 'content', 4, 'Transfer and Definitive Care',
+('d2000012-0000-0000-0000-000000000012'::uuid, 'content', 4, 'Transfer and Definitive Care',
 '**Indications for Transfer to Trauma Center**
 - Mechanism: High-speed RTA, ejection, falls >6m, pedestrian vs vehicle
 - Anatomy: Penetrating injury head/neck/torso, flail chest, unstable pelvis
@@ -316,7 +316,7 @@ Techniques:
 - Early tranexamic acid
 - Prevent/treat hypothermia'),
 
-('d0000012-0000-0000-0000-000000000012'::uuid, 'key_points', 5, 'Key Points',
+('d2000012-0000-0000-0000-000000000012'::uuid, 'key_points', 5, 'Key Points',
 '1. ATLS: Standardized systematic approach - treat greatest threat first
 2. GCS ≤8 requires definitive airway
 3. Tension pneumothorax: Clinical diagnosis - needle decompress immediately
@@ -330,7 +330,7 @@ Techniques:
 
 -- ARTICLE 13: Abdominal Trauma
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000013-0000-0000-0000-000000000013'::uuid, 'introduction', 1, 'Introduction to Abdominal Trauma', 
+('d2000013-0000-0000-0000-000000000013'::uuid, 'introduction', 1, 'Introduction to Abdominal Trauma', 
 'Abdominal trauma is a significant cause of morbidity and mortality. Injuries may be occult, making clinical assessment and appropriate investigation crucial.
 
 **Classification**
@@ -359,7 +359,7 @@ Penetrating:
 - Low energy (stab) - local injury
 - High energy (gunshot) - cavitation and distant injury'),
 
-('d0000013-0000-0000-0000-000000000013'::uuid, 'content', 2, 'Assessment of Abdominal Trauma',
+('d2000013-0000-0000-0000-000000000013'::uuid, 'content', 2, 'Assessment of Abdominal Trauma',
 '**Clinical Examination**
 May be unreliable due to:
 - Altered consciousness
@@ -399,7 +399,7 @@ Positive if:
 5. Free air on imaging
 6. Gunshot wound traversing peritoneum'),
 
-('d0000013-0000-0000-0000-000000000013'::uuid, 'content', 3, 'Solid Organ Injuries',
+('d2000013-0000-0000-0000-000000000013'::uuid, 'content', 3, 'Solid Organ Injuries',
 '**Splenic Injury**
 Most common organ injured in blunt trauma
 Grading (AAST): I-V based on hematoma and laceration size
@@ -435,7 +435,7 @@ Indications for surgery:
 - Renal pedicle injury
 - Shattered kidney'),
 
-('d0000013-0000-0000-0000-000000000013'::uuid, 'content', 4, 'Hollow Viscus and Penetrating Trauma',
+('d2000013-0000-0000-0000-000000000013'::uuid, 'content', 4, 'Hollow Viscus and Penetrating Trauma',
 '**Hollow Viscus Injury**
 Often missed initially - high morbidity from delayed diagnosis
 
@@ -477,7 +477,7 @@ Techniques:
 - ICU resuscitation
 - Planned reoperation 24-48 hours'),
 
-('d0000013-0000-0000-0000-000000000013'::uuid, 'key_points', 5, 'Key Points',
+('d2000013-0000-0000-0000-000000000013'::uuid, 'key_points', 5, 'Key Points',
 '1. Spleen is most commonly injured in blunt trauma; small bowel in penetrating
 2. FAST: Rapid assessment for free fluid; positive + unstable = laparotomy
 3. CT scan: Gold standard for stable patients
@@ -491,7 +491,7 @@ Techniques:
 
 -- ARTICLE 14: Chest Trauma
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000014-0000-0000-0000-000000000014'::uuid, 'introduction', 1, 'Introduction to Chest Trauma', 
+('d2000014-0000-0000-0000-000000000014'::uuid, 'introduction', 1, 'Introduction to Chest Trauma', 
 'Thoracic injuries account for 25% of trauma deaths. Most can be managed with simple procedures; only 15-20% require thoracotomy.
 
 **Mechanisms**
@@ -515,7 +515,7 @@ Potentially Life-Threatening (Secondary Survey):
 5. Esophageal injury
 6. Tracheobronchial injury'),
 
-('d0000014-0000-0000-0000-000000000014'::uuid, 'content', 2, 'Immediate Life Threats',
+('d2000014-0000-0000-0000-000000000014'::uuid, 'content', 2, 'Immediate Life Threats',
 '**Tension Pneumothorax**
 Mechanism: One-way valve effect
 Clinical: Respiratory distress, deviated trachea, absent breath sounds, shock
@@ -544,7 +544,7 @@ Main problem: Underlying pulmonary contusion
 Treatment: Analgesia (epidural ideal), O2, consider ventilation
 Surgical fixation for severe cases'),
 
-('d0000014-0000-0000-0000-000000000014'::uuid, 'content', 3, 'Chest Drain Insertion',
+('d2000014-0000-0000-0000-000000000014'::uuid, 'content', 3, 'Chest Drain Insertion',
 '**Indications**
 - Pneumothorax
 - Hemothorax
@@ -572,7 +572,7 @@ Bordered by: Anterior border of latissimus dorsi, lateral border of pectoralis m
 - Subcutaneous emphysema
 - Bleeding from intercostal vessels'),
 
-('d0000014-0000-0000-0000-000000000014'::uuid, 'content', 4, 'Potentially Life-Threatening Injuries',
+('d2000014-0000-0000-0000-000000000014'::uuid, 'content', 4, 'Potentially Life-Threatening Injuries',
 '**Pulmonary Contusion**
 Bruising of lung parenchyma
 Most common potentially fatal chest injury
@@ -608,7 +608,7 @@ Presents: Massive air leak, persistent pneumothorax despite chest drain
 Diagnosis: Bronchoscopy
 Treatment: Surgical repair'),
 
-('d0000014-0000-0000-0000-000000000014'::uuid, 'key_points', 5, 'Key Points',
+('d2000014-0000-0000-0000-000000000014'::uuid, 'key_points', 5, 'Key Points',
 '1. 85% of chest injuries managed with chest drain alone
 2. Tension pneumothorax: Clinical diagnosis - treat immediately
 3. Beck triad: JVD, hypotension, muffled sounds = tamponade
@@ -623,29 +623,29 @@ Treatment: Surgical repair'),
 -- MCQs for Articles 11-14
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation) VALUES
 -- Article 11
-('d0000011-0000-0000-0000-000000000011'::uuid, 1, 'What percentage of trauma deaths occur immediately (within seconds to minutes)?', '10%', '30%', '50%', '70%', '90%', 'C', 'The trimodal distribution shows 50% of deaths occur immediately, 30% in early phase (Golden Hour), and 20% in late phase. Immediate deaths are due to massive hemorrhage or severe brain injury.'),
-('d0000011-0000-0000-0000-000000000011'::uuid, 2, 'In trauma, what is the correct airway opening maneuver?', 'Head tilt chin lift', 'Jaw thrust with C-spine protection', 'Neck extension', 'Head turn to side', 'Flexion of neck', 'B', 'Jaw thrust with cervical spine protection is the correct maneuver in trauma. Head tilt chin lift is contraindicated as it may cause spinal cord injury if cervical spine is unstable.'),
-('d0000011-0000-0000-0000-000000000011'::uuid, 3, 'FAST ultrasound examines which four areas?', 'Liver, spleen, kidneys, bladder', 'RUQ, LUQ, suprapubic, subxiphoid', 'Heart, lungs, abdomen, pelvis', 'Neck, chest, abdomen, pelvis', 'Aorta, IVC, heart, kidneys', 'B', 'FAST examines: Right upper quadrant (Morison pouch), Left upper quadrant (splenorenal), Suprapubic (pelvis), and Subxiphoid (pericardium). eFAST adds lung sliding.'),
-('d0000011-0000-0000-0000-000000000011'::uuid, 4, 'Class III hemorrhagic shock involves what percentage blood loss?', '5-15%', '15-30%', '30-40%', '40-50%', 'Greater than 50%', 'C', 'Class III shock involves 30-40% blood loss (1500-2000mL). Patients are confused, hypotensive, and oliguric. Blood transfusion is required.'),
-('d0000011-0000-0000-0000-000000000011'::uuid, 5, 'What is the recommended ratio for massive transfusion?', '1:2:1 (PRBC:FFP:Platelets)', '1:1:1 (PRBC:FFP:Platelets)', '2:1:1 (PRBC:FFP:Platelets)', '4:2:1 (PRBC:FFP:Platelets)', '1:1:2 (PRBC:FFP:Platelets)', 'B', 'The 1:1:1 ratio of PRBC:FFP:Platelets is based on evidence from military and civilian studies showing improved survival with balanced resuscitation.'),
+('d2000011-0000-0000-0000-000000000011'::uuid, 1, 'What percentage of trauma deaths occur immediately (within seconds to minutes)?', '10%', '30%', '50%', '70%', '90%', 'C', 'The trimodal distribution shows 50% of deaths occur immediately, 30% in early phase (Golden Hour), and 20% in late phase. Immediate deaths are due to massive hemorrhage or severe brain injury.'),
+('d2000011-0000-0000-0000-000000000011'::uuid, 2, 'In trauma, what is the correct airway opening maneuver?', 'Head tilt chin lift', 'Jaw thrust with C-spine protection', 'Neck extension', 'Head turn to side', 'Flexion of neck', 'B', 'Jaw thrust with cervical spine protection is the correct maneuver in trauma. Head tilt chin lift is contraindicated as it may cause spinal cord injury if cervical spine is unstable.'),
+('d2000011-0000-0000-0000-000000000011'::uuid, 3, 'FAST ultrasound examines which four areas?', 'Liver, spleen, kidneys, bladder', 'RUQ, LUQ, suprapubic, subxiphoid', 'Heart, lungs, abdomen, pelvis', 'Neck, chest, abdomen, pelvis', 'Aorta, IVC, heart, kidneys', 'B', 'FAST examines: Right upper quadrant (Morison pouch), Left upper quadrant (splenorenal), Suprapubic (pelvis), and Subxiphoid (pericardium). eFAST adds lung sliding.'),
+('d2000011-0000-0000-0000-000000000011'::uuid, 4, 'Class III hemorrhagic shock involves what percentage blood loss?', '5-15%', '15-30%', '30-40%', '40-50%', 'Greater than 50%', 'C', 'Class III shock involves 30-40% blood loss (1500-2000mL). Patients are confused, hypotensive, and oliguric. Blood transfusion is required.'),
+('d2000011-0000-0000-0000-000000000011'::uuid, 5, 'What is the recommended ratio for massive transfusion?', '1:2:1 (PRBC:FFP:Platelets)', '1:1:1 (PRBC:FFP:Platelets)', '2:1:1 (PRBC:FFP:Platelets)', '4:2:1 (PRBC:FFP:Platelets)', '1:1:2 (PRBC:FFP:Platelets)', 'B', 'The 1:1:1 ratio of PRBC:FFP:Platelets is based on evidence from military and civilian studies showing improved survival with balanced resuscitation.'),
 
 -- Article 12
-('d0000012-0000-0000-0000-000000000012'::uuid, 1, 'What GCS score mandates a definitive airway?', 'Less than 15', 'Less than 12', 'Less than or equal to 8', 'Less than 5', 'Less than 3', 'C', 'GCS ≤8 indicates severe head injury with inability to protect the airway. This is an absolute indication for endotracheal intubation.'),
-('d0000012-0000-0000-0000-000000000012'::uuid, 2, 'What is the site for needle decompression in tension pneumothorax?', '2nd ICS, midclavicular line', '4th ICS, anterior axillary line', '5th ICS, mid-axillary line', '3rd ICS, midclavicular line', '2nd ICS, mid-axillary line', 'A', 'Needle decompression for tension pneumothorax is performed at the 2nd intercostal space, midclavicular line. This is followed by formal chest drain at 5th ICS, anterior axillary line.'),
-('d0000012-0000-0000-0000-000000000012'::uuid, 3, 'What constitutes the lethal triad in trauma?', 'Hypoxia, hypotension, hypothermia', 'Hypothermia, acidosis, coagulopathy', 'Fever, tachycardia, hypotension', 'Acidosis, hypoxia, anemia', 'Coagulopathy, hyperkalemia, acidosis', 'B', 'The lethal triad is hypothermia (<35°C), acidosis (pH<7.2), and coagulopathy. This indicates need for damage control surgery.'),
-('d0000012-0000-0000-0000-000000000012'::uuid, 4, 'What type of dressing is applied to an open pneumothorax?', 'Four-sided occlusive dressing', 'Three-sided occlusive dressing', 'Simple gauze dressing', 'No dressing', 'Pressure dressing', 'B', 'A three-sided occlusive dressing allows air to escape during expiration while preventing air entry during inspiration. A chest drain is then inserted at a separate site.'),
-('d0000012-0000-0000-0000-000000000012'::uuid, 5, 'What volume of blood in hemothorax may require thoracotomy?', 'Greater than 500mL initially', 'Greater than 1000mL initially', 'Greater than 1500mL initially', 'Greater than 2500mL initially', 'Any amount', 'C', 'Thoracotomy is indicated if >1500mL blood drains immediately OR ongoing drainage >200mL/hr for 2-4 hours. This suggests major vessel injury.'),
+('d2000012-0000-0000-0000-000000000012'::uuid, 1, 'What GCS score mandates a definitive airway?', 'Less than 15', 'Less than 12', 'Less than or equal to 8', 'Less than 5', 'Less than 3', 'C', 'GCS ≤8 indicates severe head injury with inability to protect the airway. This is an absolute indication for endotracheal intubation.'),
+('d2000012-0000-0000-0000-000000000012'::uuid, 2, 'What is the site for needle decompression in tension pneumothorax?', '2nd ICS, midclavicular line', '4th ICS, anterior axillary line', '5th ICS, mid-axillary line', '3rd ICS, midclavicular line', '2nd ICS, mid-axillary line', 'A', 'Needle decompression for tension pneumothorax is performed at the 2nd intercostal space, midclavicular line. This is followed by formal chest drain at 5th ICS, anterior axillary line.'),
+('d2000012-0000-0000-0000-000000000012'::uuid, 3, 'What constitutes the lethal triad in trauma?', 'Hypoxia, hypotension, hypothermia', 'Hypothermia, acidosis, coagulopathy', 'Fever, tachycardia, hypotension', 'Acidosis, hypoxia, anemia', 'Coagulopathy, hyperkalemia, acidosis', 'B', 'The lethal triad is hypothermia (<35°C), acidosis (pH<7.2), and coagulopathy. This indicates need for damage control surgery.'),
+('d2000012-0000-0000-0000-000000000012'::uuid, 4, 'What type of dressing is applied to an open pneumothorax?', 'Four-sided occlusive dressing', 'Three-sided occlusive dressing', 'Simple gauze dressing', 'No dressing', 'Pressure dressing', 'B', 'A three-sided occlusive dressing allows air to escape during expiration while preventing air entry during inspiration. A chest drain is then inserted at a separate site.'),
+('d2000012-0000-0000-0000-000000000012'::uuid, 5, 'What volume of blood in hemothorax may require thoracotomy?', 'Greater than 500mL initially', 'Greater than 1000mL initially', 'Greater than 1500mL initially', 'Greater than 2500mL initially', 'Any amount', 'C', 'Thoracotomy is indicated if >1500mL blood drains immediately OR ongoing drainage >200mL/hr for 2-4 hours. This suggests major vessel injury.'),
 
 -- Article 13
-('d0000013-0000-0000-0000-000000000013'::uuid, 1, 'What is the most commonly injured organ in blunt abdominal trauma?', 'Liver', 'Kidney', 'Spleen', 'Small bowel', 'Colon', 'C', 'The spleen is the most commonly injured organ in blunt abdominal trauma due to its anatomical position and fragility. Liver is second most common.'),
-('d0000013-0000-0000-0000-000000000013'::uuid, 2, 'What is the most commonly injured organ in penetrating abdominal trauma?', 'Liver', 'Spleen', 'Kidney', 'Small bowel', 'Stomach', 'D', 'Small bowel is the most commonly injured organ in penetrating abdominal trauma due to its large surface area in the abdomen. Liver is second most common.'),
-('d0000013-0000-0000-0000-000000000013'::uuid, 3, 'A hemodynamically unstable patient has positive FAST. What is the next step?', 'CT scan', 'Repeat FAST', 'Diagnostic peritoneal lavage', 'Immediate laparotomy', 'Admit for observation', 'D', 'Hemodynamic instability with positive FAST (free fluid) is an indication for immediate laparotomy. There is no time for CT or further workup.'),
-('d0000013-0000-0000-0000-000000000013'::uuid, 4, 'Post-splenectomy patients require vaccination against which organisms?', 'Hepatitis A and B', 'Pneumococcus, Meningococcus, H. influenzae', 'Tetanus and diphtheria only', 'Influenza only', 'No vaccines needed', 'B', 'Post-splenectomy patients are at risk of overwhelming post-splenectomy infection (OPSI) from encapsulated organisms. Vaccines against Pneumococcus, Meningococcus, and H. influenzae type b are required.'),
-('d0000013-0000-0000-0000-000000000013'::uuid, 5, 'What percentage of liver injuries can be managed non-operatively?', '20-30%', '40-50%', '60-70%', '80-90%', '100%', 'D', 'Approximately 80-90% of liver injuries in hemodynamically stable patients can be managed non-operatively with close monitoring. Surgery is reserved for unstable patients or failed non-operative management.'),
+('d2000013-0000-0000-0000-000000000013'::uuid, 1, 'What is the most commonly injured organ in blunt abdominal trauma?', 'Liver', 'Kidney', 'Spleen', 'Small bowel', 'Colon', 'C', 'The spleen is the most commonly injured organ in blunt abdominal trauma due to its anatomical position and fragility. Liver is second most common.'),
+('d2000013-0000-0000-0000-000000000013'::uuid, 2, 'What is the most commonly injured organ in penetrating abdominal trauma?', 'Liver', 'Spleen', 'Kidney', 'Small bowel', 'Stomach', 'D', 'Small bowel is the most commonly injured organ in penetrating abdominal trauma due to its large surface area in the abdomen. Liver is second most common.'),
+('d2000013-0000-0000-0000-000000000013'::uuid, 3, 'A hemodynamically unstable patient has positive FAST. What is the next step?', 'CT scan', 'Repeat FAST', 'Diagnostic peritoneal lavage', 'Immediate laparotomy', 'Admit for observation', 'D', 'Hemodynamic instability with positive FAST (free fluid) is an indication for immediate laparotomy. There is no time for CT or further workup.'),
+('d2000013-0000-0000-0000-000000000013'::uuid, 4, 'Post-splenectomy patients require vaccination against which organisms?', 'Hepatitis A and B', 'Pneumococcus, Meningococcus, H. influenzae', 'Tetanus and diphtheria only', 'Influenza only', 'No vaccines needed', 'B', 'Post-splenectomy patients are at risk of overwhelming post-splenectomy infection (OPSI) from encapsulated organisms. Vaccines against Pneumococcus, Meningococcus, and H. influenzae type b are required.'),
+('d2000013-0000-0000-0000-000000000013'::uuid, 5, 'What percentage of liver injuries can be managed non-operatively?', '20-30%', '40-50%', '60-70%', '80-90%', '100%', 'D', 'Approximately 80-90% of liver injuries in hemodynamically stable patients can be managed non-operatively with close monitoring. Surgery is reserved for unstable patients or failed non-operative management.'),
 
 -- Article 14
-('d0000014-0000-0000-0000-000000000014'::uuid, 1, 'Beck triad is associated with which condition?', 'Tension pneumothorax', 'Massive hemothorax', 'Cardiac tamponade', 'Flail chest', 'Pulmonary embolism', 'C', 'Beck triad (hypotension, muffled heart sounds, distended neck veins) is classic for cardiac tamponade. Pulsus paradoxus is another key sign.'),
-('d0000014-0000-0000-0000-000000000014'::uuid, 2, 'Where is the "safe triangle" for chest drain insertion?', '2nd ICS midclavicular line', '5th ICS anterior to mid-axillary line', '7th ICS posterior axillary line', '4th ICS midclavicular line', '6th ICS mid-axillary line', 'B', 'The safe triangle is bounded by latissimus dorsi posteriorly, pectoralis major anteriorly, and a horizontal line at nipple level. Drain insertion at 5th ICS anterior to mid-axillary line is within this triangle.'),
-('d0000014-0000-0000-0000-000000000014'::uuid, 3, 'Which rib border should the chest drain be inserted above?', 'Upper border of lower rib', 'Lower border of upper rib', 'Middle of rib', 'Any border', 'Between ribs only', 'A', 'The chest drain should pass above the rib (superior to lower rib) to avoid the intercostal neurovascular bundle which runs below each rib.'),
-('d0000014-0000-0000-0000-000000000014'::uuid, 4, 'Widened mediastinum on CXR suggests which injury?', 'Pulmonary contusion', 'Myocardial contusion', 'Traumatic aortic injury', 'Esophageal injury', 'Tracheobronchial injury', 'C', 'Widened mediastinum (>8cm at T4) on upright CXR is a classic sign of traumatic aortic injury. CT angiography is needed for confirmation.'),
-('d0000014-0000-0000-0000-000000000014'::uuid, 5, 'What is the main life-threatening problem in flail chest?', 'Pain', 'Paradoxical movement', 'Underlying pulmonary contusion', 'Rib fractures themselves', 'Pneumothorax', 'C', 'While flail chest causes paradoxical movement, the underlying pulmonary contusion is the main threat to life. Management focuses on treating the contusion with analgesia, oxygen, and possibly ventilation.');
+('d2000014-0000-0000-0000-000000000014'::uuid, 1, 'Beck triad is associated with which condition?', 'Tension pneumothorax', 'Massive hemothorax', 'Cardiac tamponade', 'Flail chest', 'Pulmonary embolism', 'C', 'Beck triad (hypotension, muffled heart sounds, distended neck veins) is classic for cardiac tamponade. Pulsus paradoxus is another key sign.'),
+('d2000014-0000-0000-0000-000000000014'::uuid, 2, 'Where is the "safe triangle" for chest drain insertion?', '2nd ICS midclavicular line', '5th ICS anterior to mid-axillary line', '7th ICS posterior axillary line', '4th ICS midclavicular line', '6th ICS mid-axillary line', 'B', 'The safe triangle is bounded by latissimus dorsi posteriorly, pectoralis major anteriorly, and a horizontal line at nipple level. Drain insertion at 5th ICS anterior to mid-axillary line is within this triangle.'),
+('d2000014-0000-0000-0000-000000000014'::uuid, 3, 'Which rib border should the chest drain be inserted above?', 'Upper border of lower rib', 'Lower border of upper rib', 'Middle of rib', 'Any border', 'Between ribs only', 'A', 'The chest drain should pass above the rib (superior to lower rib) to avoid the intercostal neurovascular bundle which runs below each rib.'),
+('d2000014-0000-0000-0000-000000000014'::uuid, 4, 'Widened mediastinum on CXR suggests which injury?', 'Pulmonary contusion', 'Myocardial contusion', 'Traumatic aortic injury', 'Esophageal injury', 'Tracheobronchial injury', 'C', 'Widened mediastinum (>8cm at T4) on upright CXR is a classic sign of traumatic aortic injury. CT angiography is needed for confirmation.'),
+('d2000014-0000-0000-0000-000000000014'::uuid, 5, 'What is the main life-threatening problem in flail chest?', 'Pain', 'Paradoxical movement', 'Underlying pulmonary contusion', 'Rib fractures themselves', 'Pneumothorax', 'C', 'While flail chest causes paradoxical movement, the underlying pulmonary contusion is the main threat to life. Management focuses on treating the contusion with analgesia, oxygen, and possibly ventilation.');

@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00010-0000-0000-0000-000000000010',
-    'b0000010-0000-0000-0000-000000000001',
+    'a1100010-0000-0000-0000-000000000010',
+    'b0000010-0000-0000-0000-000000000010',
     'a0000001-0000-0000-0000-000000000001',
     'Clinical Mensuration and Physical Examination in Surgery',
     'Principles of Measurement and Systematic Assessment',
@@ -14,14 +14,14 @@ INSERT INTO cme_articles (
     'UNTH Surgery Department, Clinical Skills Unit',
     40,
     2.0,
-    'basic',
+    'easy',
     1,
     true
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'introduction', 'Introduction',
 'Clinical mensuration—the systematic measurement of patient parameters—and physical examination remain cornerstone skills in medicine. Despite advances in imaging and laboratory diagnostics, the bedside assessment provides essential information that guides clinical decision-making.
 
 **Why Mensuration Matters:**
@@ -49,8 +49,8 @@ While the complete physical examination is essential, the surgical examination e
 This article provides the foundation for accurate clinical measurement and systematic physical examination in surgical practice.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. Demonstrate proper technique for measuring vital signs including blood pressure, pulse, temperature, and respiratory rate
@@ -74,8 +74,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Recognize examination findings that require urgent surgical intervention', 2);
 
 -- Section 3: Vital Signs
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'content', 'Vital Signs Measurement',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'content', 'Vital Signs Measurement',
 '## Temperature
 
 ### Measurement Sites and Normal Ranges
@@ -183,8 +183,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Delayed response to acute changes', 3);
 
 -- Section 4: Anthropometry
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'content', 'Anthropometric Measurements',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'content', 'Anthropometric Measurements',
 '## Height and Weight
 
 ### Height Measurement
@@ -261,8 +261,8 @@ $$MAMC = MAC - (π × TSF)$$
 - Predictor of postoperative complications', 4);
 
 -- Section 5: Abdominal Examination
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'content', 'Abdominal Examination',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'content', 'Abdominal Examination',
 '## Systematic Approach
 
 The abdominal examination follows the sequence: **Inspection, Auscultation, Percussion, Palpation**
@@ -373,8 +373,8 @@ Note: Auscultation before percussion/palpation to avoid altering bowel sounds.
 - Classic appendicitis tenderness', 5);
 
 -- Section 6: Wound and Drain Assessment
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'content', 'Wound and Drain Assessment',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'content', 'Wound and Drain Assessment',
 '## Wound Measurement
 
 ### Dimensions
@@ -459,8 +459,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - **Appliance fit**: Proper sizing, adherence, leakage', 6);
 
 -- Section 7: Preoperative Cardiovascular Assessment
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'content', 'Cardiovascular Examination',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'content', 'Cardiovascular Examination',
 '## Inspection
 
 ### General
@@ -550,8 +550,8 @@ Document:
 - Important preoperative assessment', 7);
 
 -- Section 8: Documentation
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'content', 'Documentation Principles',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'content', 'Documentation Principles',
 '## Importance of Accurate Documentation
 
 - Legal medical record
@@ -626,8 +626,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Avoid copy-forward errors', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'key_points', 'Key Points',
 '1. **Temperature Sites**: Rectal most accurate for core temperature. Add 0.5°C to axillary readings for oral equivalent. Fever defined as >38.0°C (100.4°F).
 
 2. **Blood Pressure Cuff Size**: Bladder should be 80% of arm circumference. Small cuff falsely elevates readings; large cuff falsely lowers them.
@@ -649,8 +649,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **JVP Measurement**: Height of internal jugular pulsation above sternal angle + 5 cm. Normal <9 cm H2O. Elevated in heart failure, tamponade, PE.', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: Count respiratory rate without the patient''s knowledge—awareness of counting significantly alters the rate.
 
 💡 **Pearl 2**: An incorrect blood pressure cuff size is the most common source of BP measurement error. When in doubt, use the larger cuff.
@@ -672,20 +672,20 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: Compare bilateral pulses and blood pressures. A difference of >20 mmHg in arm BPs or absent pulses suggests arterial stenosis or dissection.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00010-0000-0000-0000-000000000010', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100010-0000-0000-0000-000000000010', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00010-0000-0000-0000-000000000010', 1, 'Bickley LS, Szilagyi PG. Bates'' Guide to Physical Examination and History Taking. 13th ed. Wolters Kluwer; 2021.', NULL, NULL, NULL),
-('art00010-0000-0000-0000-000000000010', 2, 'Whelton PK, et al. 2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults. Hypertension. 2018;71(6):e13-e115.', '10.1161/HYP.0000000000000065', '29133356', NULL),
-('art00010-0000-0000-0000-000000000010', 3, 'White JV, et al. Consensus Statement: Academy of Nutrition and Dietetics and American Society for Parenteral and Enteral Nutrition. J Acad Nutr Diet. 2012;112(5):730-738.', '10.1016/j.jand.2012.03.012', '22709779', NULL),
-('art00010-0000-0000-0000-000000000010', 4, 'Wagner JY, et al. Clinical examination in the ICU: a systematic review. Crit Care Med. 2018;46(10):1671-1680.', '10.1097/CCM.0000000000003308', '29979216', NULL),
-('art00010-0000-0000-0000-000000000010', 5, 'Simel DL, Rennie D. The Rational Clinical Examination: Evidence-Based Clinical Diagnosis. McGraw-Hill; 2009.', NULL, NULL, NULL);
+('a1100010-0000-0000-0000-000000000010', 1, 'Bickley LS, Szilagyi PG. Bates'' Guide to Physical Examination and History Taking. 13th ed. Wolters Kluwer; 2021.', NULL, NULL, NULL),
+('a1100010-0000-0000-0000-000000000010', 2, 'Whelton PK, et al. 2017 ACC/AHA/AAPA/ABC/ACPM/AGS/APhA/ASH/ASPC/NMA/PCNA Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults. Hypertension. 2018;71(6):e13-e115.', '10.1161/HYP.0000000000000065', '29133356', NULL),
+('a1100010-0000-0000-0000-000000000010', 3, 'White JV, et al. Consensus Statement: Academy of Nutrition and Dietetics and American Society for Parenteral and Enteral Nutrition. J Acad Nutr Diet. 2012;112(5):730-738.', '10.1016/j.jand.2012.03.012', '22709779', NULL),
+('a1100010-0000-0000-0000-000000000010', 4, 'Wagner JY, et al. Clinical examination in the ICU: a systematic review. Crit Care Med. 2018;46(10):1671-1680.', '10.1097/CCM.0000000000003308', '29979216', NULL),
+('a1100010-0000-0000-0000-000000000010', 5, 'Simel DL, Rennie D. The Rational Clinical Examination: Evidence-Based Clinical Diagnosis. McGraw-Hill; 2009.', NULL, NULL, NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 1,
+('a1100010-0000-0000-0000-000000000010', 1,
 'When measuring blood pressure, the cuff bladder should encircle what percentage of the arm circumference?',
 '50%',
 '60%',
@@ -693,11 +693,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '80%',
 '100%',
 'D',
-'The blood pressure cuff bladder should encircle approximately 80% of the arm circumference. A cuff that is too small will give falsely elevated readings, while a cuff that is too large will give falsely low readings.',
-'1,2');
+'The blood pressure cuff bladder should encircle approximately 80% of the arm circumference. A cuff that is too small will give falsely elevated readings, while a cuff that is too large will give falsely low readings.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 2,
+('a1100010-0000-0000-0000-000000000010', 2,
 'Orthostatic hypotension is defined as a drop in systolic blood pressure of more than:',
 '5 mmHg',
 '10 mmHg',
@@ -705,11 +704,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '30 mmHg',
 '40 mmHg',
 'C',
-'Orthostatic hypotension is defined as a drop in systolic BP >20 mmHg or diastolic BP >10 mmHg within 3 minutes of standing. This suggests hypovolemia, dehydration, or autonomic dysfunction.',
-'2');
+'Orthostatic hypotension is defined as a drop in systolic BP >20 mmHg or diastolic BP >10 mmHg within 3 minutes of standing. This suggests hypovolemia, dehydration, or autonomic dysfunction.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 3,
+('a1100010-0000-0000-0000-000000000010', 3,
 'The proper sequence for abdominal examination is:',
 'Palpation, percussion, auscultation, inspection',
 'Inspection, palpation, percussion, auscultation',
@@ -717,11 +715,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Percussion, palpation, inspection, auscultation',
 'Auscultation, inspection, percussion, palpation',
 'C',
-'The abdominal examination follows the sequence: Inspection, Auscultation, Percussion, Palpation. Auscultation is performed before percussion and palpation to avoid altering bowel sounds.',
-'1');
+'The abdominal examination follows the sequence: Inspection, Auscultation, Percussion, Palpation. Auscultation is performed before percussion and palpation to avoid altering bowel sounds.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 4,
+('a1100010-0000-0000-0000-000000000010', 4,
 'Cullen''s sign is characterized by:',
 'Flank ecchymosis',
 'Periumbilical ecchymosis',
@@ -729,11 +726,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Abdominal distension',
 'Spider angiomata',
 'B',
-'Cullen''s sign refers to periumbilical ecchymosis, which develops 24-48 hours after retroperitoneal hemorrhage, classically seen in hemorrhagic pancreatitis. Grey-Turner''s sign is flank ecchymosis from the same etiology.',
-'1');
+'Cullen''s sign refers to periumbilical ecchymosis, which develops 24-48 hours after retroperitoneal hemorrhage, classically seen in hemorrhagic pancreatitis. Grey-Turner''s sign is flank ecchymosis from the same etiology.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 5,
+('a1100010-0000-0000-0000-000000000010', 5,
 'A positive Murphy''s sign is associated with:',
 'Appendicitis',
 'Acute cholecystitis',
@@ -741,11 +737,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Small bowel obstruction',
 'Peptic ulcer disease',
 'B',
-'Murphy''s sign is positive when deep palpation of the right upper quadrant during inspiration causes the patient to catch their breath due to pain. This is associated with acute cholecystitis as the inflamed gallbladder descends and contacts the examining fingers.',
-'1,5');
+'Murphy''s sign is positive when deep palpation of the right upper quadrant during inspiration causes the patient to catch their breath due to pain. This is associated with acute cholecystitis as the inflamed gallbladder descends and contacts the examining fingers.', '{1,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 6,
+('a1100010-0000-0000-0000-000000000010', 6,
 'Normal body temperature measured orally is:',
 '35.0-36.0°C',
 '36.5-37.5°C',
@@ -753,11 +748,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '38.0-39.0°C',
 '34.5-35.5°C',
 'B',
-'Normal oral body temperature ranges from 36.5-37.5°C (97.7-99.5°F). Fever is defined as temperature >38.0°C (100.4°F). Hypothermia is defined as <35.0°C (95.0°F).',
-'1');
+'Normal oral body temperature ranges from 36.5-37.5°C (97.7-99.5°F). Fever is defined as temperature >38.0°C (100.4°F). Hypothermia is defined as <35.0°C (95.0°F).', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 7,
+('a1100010-0000-0000-0000-000000000010', 7,
 'A BMI of 32 kg/m² classifies a patient as:',
 'Overweight',
 'Obesity Class I',
@@ -765,11 +759,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Obesity Class III',
 'Normal weight',
 'B',
-'Obesity Class I is defined as BMI 30.0-34.9 kg/m². A BMI of 32 falls within this range. Overweight is 25.0-29.9, Obesity Class II is 35.0-39.9, and Obesity Class III (morbid obesity) is ≥40.',
-'3');
+'Obesity Class I is defined as BMI 30.0-34.9 kg/m². A BMI of 32 falls within this range. Overweight is 25.0-29.9, Obesity Class II is 35.0-39.9, and Obesity Class III (morbid obesity) is ≥40.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 8,
+('a1100010-0000-0000-0000-000000000010', 8,
 'When assessing bowel sounds, you should listen for how long before declaring them absent?',
 '5 seconds per quadrant',
 '15 seconds per quadrant',
@@ -777,11 +770,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '10 seconds total',
 '2 minutes total',
 'C',
-'You should listen in each quadrant for 30-60 seconds before declaring bowel sounds absent. Bowel sounds are intermittent, and a brief listening period may miss normal sounds.',
-'1');
+'You should listen in each quadrant for 30-60 seconds before declaring bowel sounds absent. Bowel sounds are intermittent, and a brief listening period may miss normal sounds.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 9,
+('a1100010-0000-0000-0000-000000000010', 9,
 'Bilious drainage from a surgical drain suggests:',
 'Normal postoperative drainage',
 'Wound infection',
@@ -789,11 +781,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Chyle leak',
 'Hematoma',
 'C',
-'Bilious (green-yellow) drainage from a surgical drain, especially after hepatobiliary surgery, suggests a bile leak. This requires further evaluation with imaging and possibly intervention. Normal postoperative drainage is serosanguinous.',
-'4');
+'Bilious (green-yellow) drainage from a surgical drain, especially after hepatobiliary surgery, suggests a bile leak. This requires further evaluation with imaging and possibly intervention. Normal postoperative drainage is serosanguinous.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 10,
+('a1100010-0000-0000-0000-000000000010', 10,
 'Normal jugular venous pressure is less than:',
 '4 cm H2O',
 '7 cm H2O',
@@ -801,11 +792,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '12 cm H2O',
 '15 cm H2O',
 'C',
-'Normal JVP is <9 cm H2O (height of internal jugular pulsation above the sternal angle + 5 cm). Elevated JVP suggests increased right atrial pressure from heart failure, tamponade, PE, or volume overload.',
-'1');
+'Normal JVP is <9 cm H2O (height of internal jugular pulsation above the sternal angle + 5 cm). Elevated JVP suggests increased right atrial pressure from heart failure, tamponade, PE, or volume overload.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 11,
+('a1100010-0000-0000-0000-000000000010', 11,
 'Rovsing''s sign is positive when:',
 'RUQ palpation causes LLQ pain',
 'LLQ palpation causes RLQ pain',
@@ -813,11 +803,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Deep inspiration causes RUQ pain',
 'Hip flexion causes abdominal pain',
 'B',
-'Rovsing''s sign is positive when palpation of the left lower quadrant causes pain in the right lower quadrant. This suggests appendicitis due to the rebound effect on the inflamed appendix.',
-'1,5');
+'Rovsing''s sign is positive when palpation of the left lower quadrant causes pain in the right lower quadrant. This suggests appendicitis due to the rebound effect on the inflamed appendix.', '{1,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 12,
+('a1100010-0000-0000-0000-000000000010', 12,
 'Involuntary guarding and rigidity on abdominal examination indicate:',
 'Anxiety',
 'Constipation',
@@ -825,11 +814,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Abdominal wall hernia',
 'Normal finding',
 'C',
-'Involuntary guarding and rigidity (board-like abdomen) indicate peritoneal irritation from inflammation, infection, or blood in the peritoneal cavity. This is an important finding that often requires surgical evaluation.',
-'1');
+'Involuntary guarding and rigidity (board-like abdomen) indicate peritoneal irritation from inflammation, infection, or blood in the peritoneal cavity. This is an important finding that often requires surgical evaluation.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 13,
+('a1100010-0000-0000-0000-000000000010', 13,
 'A stoma that appears dusky or black indicates:',
 'Normal stoma color',
 'Adequate blood supply',
@@ -837,11 +825,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Stoma infection',
 'Need for routine follow-up',
 'C',
-'A dusky, purple, or black stoma indicates ischemia and is a surgical emergency. Normal stoma color is pink-red. Pale color may indicate anemia or hypoperfusion. Ischemia requires urgent surgical evaluation.',
-'4');
+'A dusky, purple, or black stoma indicates ischemia and is a surgical emergency. Normal stoma color is pink-red. Pale color may indicate anemia or hypoperfusion. Ischemia requires urgent surgical evaluation.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 14,
+('a1100010-0000-0000-0000-000000000010', 14,
 'When measuring temperature, an axillary reading is typically:',
 'The same as oral temperature',
 '0.5°C higher than oral temperature',
@@ -849,11 +836,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '1.0°C higher than oral temperature',
 '1.0°C lower than oral temperature',
 'C',
-'Axillary temperature is typically 0.5°C (0.9°F) lower than oral temperature. To estimate core temperature from an axillary reading, add 0.5°C. Rectal temperature is typically 0.5°C higher than oral.',
-'1');
+'Axillary temperature is typically 0.5°C (0.9°F) lower than oral temperature. To estimate core temperature from an axillary reading, add 0.5°C. Rectal temperature is typically 0.5°C higher than oral.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 15,
+('a1100010-0000-0000-0000-000000000010', 15,
 'One kilogram of body weight change corresponds to approximately how much fluid?',
 '500 mL',
 '750 mL',
@@ -861,11 +847,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '2 liters',
 '100 mL',
 'C',
-'One kilogram (1 kg) of body weight change corresponds to approximately 1 liter of fluid gain or loss. Daily weights are therefore one of the most reliable indicators of fluid balance.',
-'4');
+'One kilogram (1 kg) of body weight change corresponds to approximately 1 liter of fluid gain or loss. Daily weights are therefore one of the most reliable indicators of fluid balance.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 16,
+('a1100010-0000-0000-0000-000000000010', 16,
 'The normal liver span at the right midclavicular line is:',
 '2-4 cm',
 '4-6 cm',
@@ -873,11 +858,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '14-18 cm',
 '1-2 cm',
 'C',
-'The normal liver span at the right midclavicular line is 6-12 cm, measured by percussion from the upper border (lung resonance to hepatic dullness) to the lower border (hepatic dullness to bowel tympany).',
-'1');
+'The normal liver span at the right midclavicular line is 6-12 cm, measured by percussion from the upper border (lung resonance to hepatic dullness) to the lower border (hepatic dullness to bowel tympany).', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 17,
+('a1100010-0000-0000-0000-000000000010', 17,
 'A Grade IV murmur is characterized by:',
 'Barely audible with concentration',
 'Clearly audible without thrill',
@@ -885,11 +869,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Audible with stethoscope off chest',
 'Only audible in certain positions',
 'C',
-'A Grade IV murmur is loud and associated with a palpable thrill (vibration felt with the hand). Grade I is barely audible, Grade II is soft but clearly audible, Grade III is moderately loud, Grade V is very loud, and Grade VI is audible with the stethoscope off the chest.',
-'1');
+'A Grade IV murmur is loud and associated with a palpable thrill (vibration felt with the hand). Grade I is barely audible, Grade II is soft but clearly audible, Grade III is moderately loud, Grade V is very loud, and Grade VI is audible with the stethoscope off the chest.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 18,
+('a1100010-0000-0000-0000-000000000010', 18,
 'The normal adult respiratory rate at rest is:',
 '6-10 breaths per minute',
 '12-20 breaths per minute',
@@ -897,11 +880,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '30-40 breaths per minute',
 '8-12 breaths per minute',
 'B',
-'The normal adult respiratory rate at rest is 12-20 breaths per minute. Tachypnea is >20/minute (may indicate fever, anxiety, pain, metabolic acidosis). Bradypnea is <12/minute (may indicate opioid effect or CNS depression).',
-'1');
+'The normal adult respiratory rate at rest is 12-20 breaths per minute. Tachypnea is >20/minute (may indicate fever, anxiety, pain, metabolic acidosis). Bradypnea is <12/minute (may indicate opioid effect or CNS depression).', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 19,
+('a1100010-0000-0000-0000-000000000010', 19,
 'McBurney''s point is located at:',
 'The midpoint between the umbilicus and xiphoid',
 'One-third of the distance from the ASIS to the umbilicus',
@@ -909,11 +891,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'The midpoint between the pubic symphysis and umbilicus',
 'Two inches below the umbilicus',
 'B',
-'McBurney''s point is located one-third of the distance from the anterior superior iliac spine (ASIS) to the umbilicus. It is the classic point of maximal tenderness in appendicitis, corresponding to the typical location of the appendix base.',
-'1');
+'McBurney''s point is located one-third of the distance from the anterior superior iliac spine (ASIS) to the umbilicus. It is the classic point of maximal tenderness in appendicitis, corresponding to the typical location of the appendix base.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00010-0000-0000-0000-000000000010', 20,
+('a1100010-0000-0000-0000-000000000010', 20,
 'When palpating peripheral pulses, they should be graded as:',
 'Present or absent only',
 'Weak, normal, or strong',
@@ -921,5 +902,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '0 (absent), 1+ (diminished), 2+ (normal), 3+ (bounding)',
 'Numerical mmHg measurement',
 'D',
-'Peripheral pulses are typically graded on a scale: 0 (absent), 1+ (diminished/weak), 2+ (normal), 3+ (bounding). This standardized grading allows for consistent documentation and comparison between providers and over time.',
-'1');
+'Peripheral pulses are typically graded on a scale: 0 (absent), 1+ (diminished/weak), 2+ (normal), 3+ (bounding). This standardized grading allows for consistent documentation and comparison between providers and over time.', '{1}');

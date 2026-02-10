@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00012-0000-0000-0000-000000000012',
-    'b0000012-0000-0000-0000-000000000001',
+    'a1100012-0000-0000-0000-000000000012',
+    'b0000012-0000-0000-0000-000000000012',
     'a0000001-0000-0000-0000-000000000001',
     'Intraoperative Monitoring: Principles and Practice',
     'Essential Monitoring Standards for Patient Safety in Surgery',
@@ -14,14 +14,14 @@ INSERT INTO cme_articles (
     'UNTH Surgery Department, Anesthesiology Unit',
     50,
     2.5,
-    'intermediate',
+    'medium',
     1,
     true
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'introduction', 'Introduction',
 'Intraoperative monitoring refers to the continuous or intermittent measurement of physiological parameters during surgery to detect changes that may indicate patient deterioration and to guide therapeutic interventions. The development of sophisticated monitoring technologies has transformed perioperative care and significantly improved patient safety.
 
 **Why Monitoring Matters:**
@@ -56,8 +56,8 @@ While anesthesia personnel have primary responsibility for monitoring, the entir
 This article provides the knowledge foundation for understanding and interpreting intraoperative monitoring in surgical practice.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. List the ASA standards for basic anesthetic monitoring and explain their rationale
@@ -81,8 +81,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Apply monitoring data to clinical decision-making during surgical emergencies', 2);
 
 -- Section 3: Oxygenation Monitoring
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'content', 'Oxygenation Monitoring',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'content', 'Oxygenation Monitoring',
 '## Pulse Oximetry
 
 ### Principle
@@ -151,8 +151,8 @@ Beyond monitors, assess:
 - Provides additional acid-base information', 3);
 
 -- Section 4: Ventilation Monitoring
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'content', 'Ventilation Monitoring',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'content', 'Ventilation Monitoring',
 '## Capnography
 
 ### Principle
@@ -244,8 +244,8 @@ $$Compliance = \frac{Tidal Volume}{Plateau Pressure - PEEP}$$
 - Important during sedation cases', 4);
 
 -- Section 5: Cardiovascular Monitoring
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'content', 'Cardiovascular Monitoring',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'content', 'Cardiovascular Monitoring',
 '## Electrocardiography (ECG)
 
 ### Standard Configuration
@@ -371,8 +371,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Detection of air embolism', 5);
 
 -- Section 6: Temperature Monitoring
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'content', 'Temperature Monitoring',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'content', 'Temperature Monitoring',
 '## Importance of Temperature Monitoring
 
 Perioperative temperature management is critical because:
@@ -475,8 +475,8 @@ Perioperative temperature management is critical because:
 - Excessive warming', 6);
 
 -- Section 7: Neuromuscular Monitoring
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'content', 'Neuromuscular Monitoring',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'content', 'Neuromuscular Monitoring',
 '## Purpose of Neuromuscular Monitoring
 
 Neuromuscular blocking agents (NMBAs) are commonly used in surgery to:
@@ -575,8 +575,8 @@ A nerve stimulator delivers electrical current to a peripheral nerve, causing mu
 - No cholinergic side effects', 7);
 
 -- Section 8: Monitoring in Specific Situations
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'content', 'Monitoring in Specific Situations',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'content', 'Monitoring in Specific Situations',
 '## Neuromonitoring (Intraoperative Neurophysiologic Monitoring - IONM)
 
 ### Indications
@@ -682,8 +682,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Increased awareness risk (lower anesthetic requirements)', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'key_points', 'Key Points',
 '1. **ASA Basic Monitoring Standards**: Qualified personnel present, oxygenation monitoring, ventilation monitoring, circulation monitoring, and temperature monitoring (when clinically indicated).
 
 2. **Pulse Oximetry Limitations**: SpO2 does not measure ventilation (CO2), is delayed in detecting desaturation, and is falsely elevated in carbon monoxide poisoning. Normal SpO2 does not guarantee adequate oxygen delivery.
@@ -705,8 +705,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Quantitative NMB Monitoring**: Superior to qualitative (visual/tactile). Clinical assessment cannot reliably detect TOF ratios between 0.4-0.9, which are inadequate for safe extubation.', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: The pulse oximeter SpO2 can remain normal for several minutes after the patient stops breathing because of oxygen stores in the lungs. Capnography detects apnea immediately.
 
 💡 **Pearl 2**: A sudden drop in ETCO2 with maintained ventilation suggests decreased cardiac output, pulmonary embolism, or circuit disconnect. Check for causes systematically.
@@ -728,20 +728,20 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: BIS monitoring targets 40-60 for general anesthesia. Values >60 increase awareness risk; values <40 may indicate excessive depth and increase hypotension risk.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00012-0000-0000-0000-000000000012', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100012-0000-0000-0000-000000000012', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00012-0000-0000-0000-000000000012', 1, 'American Society of Anesthesiologists. Standards for Basic Anesthetic Monitoring. Approved 1986, last amended 2020.', NULL, NULL, 'https://www.asahq.org/standards-and-guidelines'),
-('art00012-0000-0000-0000-000000000012', 2, 'Naguib M, et al. Pharmacology of Neuromuscular Blocking Drugs. In: Miller''s Anesthesia, 9th ed. Elsevier; 2020.', NULL, NULL, NULL),
-('art00012-0000-0000-0000-000000000012', 3, 'Sessler DI. Perioperative thermoregulation and heat balance. Lancet. 2016;387(10038):2655-2664.', '10.1016/S0140-6736(15)00981-2', '26775126', NULL),
-('art00012-0000-0000-0000-000000000012', 4, 'Murphy GS, et al. Residual Neuromuscular Blockade and Critical Respiratory Events. Anesth Analg. 2008;107(1):130-137.', '10.1213/ane.0b013e31816d1268', '18635478', NULL),
-('art00012-0000-0000-0000-000000000012', 5, 'Jubran A. Pulse oximetry. Crit Care. 2015;19(1):272.', '10.1186/s13054-015-0984-8', '26179876', NULL);
+('a1100012-0000-0000-0000-000000000012', 1, 'American Society of Anesthesiologists. Standards for Basic Anesthetic Monitoring. Approved 1986, last amended 2020.', NULL, NULL, 'https://www.asahq.org/standards-and-guidelines'),
+('a1100012-0000-0000-0000-000000000012', 2, 'Naguib M, et al. Pharmacology of Neuromuscular Blocking Drugs. In: Miller''s Anesthesia, 9th ed. Elsevier; 2020.', NULL, NULL, NULL),
+('a1100012-0000-0000-0000-000000000012', 3, 'Sessler DI. Perioperative thermoregulation and heat balance. Lancet. 2016;387(10038):2655-2664.', '10.1016/S0140-6736(15)00981-2', '26775126', NULL),
+('a1100012-0000-0000-0000-000000000012', 4, 'Murphy GS, et al. Residual Neuromuscular Blockade and Critical Respiratory Events. Anesth Analg. 2008;107(1):130-137.', '10.1213/ane.0b013e31816d1268', '18635478', NULL),
+('a1100012-0000-0000-0000-000000000012', 5, 'Jubran A. Pulse oximetry. Crit Care. 2015;19(1):272.', '10.1186/s13054-015-0984-8', '26179876', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 1,
+('a1100012-0000-0000-0000-000000000012', 1,
 'Which of the following is NOT one of the ASA Standards for Basic Anesthetic Monitoring?',
 'Oxygenation monitoring',
 'Ventilation monitoring',
@@ -749,11 +749,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Urine output monitoring',
 'Temperature monitoring when indicated',
 'D',
-'The ASA Standards for Basic Anesthetic Monitoring include: qualified personnel present, oxygenation monitoring (pulse oximetry + inspired O2), ventilation monitoring (capnography), circulation monitoring (ECG, BP, pulse), and temperature monitoring when clinically indicated. Urine output is important but not part of the basic standards.',
-'1');
+'The ASA Standards for Basic Anesthetic Monitoring include: qualified personnel present, oxygenation monitoring (pulse oximetry + inspired O2), ventilation monitoring (capnography), circulation monitoring (ECG, BP, pulse), and temperature monitoring when clinically indicated. Urine output is important but not part of the basic standards.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 2,
+('a1100012-0000-0000-0000-000000000012', 2,
 'A pulse oximeter may give falsely elevated readings in which of the following conditions?',
 'Anemia',
 'Methemoglobinemia',
@@ -761,11 +760,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Hypotension',
 'Hypothermia',
 'C',
-'Carbon monoxide poisoning causes falsely elevated SpO2 readings because carboxyhemoglobin (COHb) absorbs light similarly to oxyhemoglobin. The pulse oximeter cannot differentiate between the two. Anemia gives accurate SpO2, methemoglobin causes readings toward 85%, and hypotension/hypothermia cause low or unreliable signals.',
-'5');
+'Carbon monoxide poisoning causes falsely elevated SpO2 readings because carboxyhemoglobin (COHb) absorbs light similarly to oxyhemoglobin. The pulse oximeter cannot differentiate between the two. Anemia gives accurate SpO2, methemoglobin causes readings toward 85%, and hypotension/hypothermia cause low or unreliable signals.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 3,
+('a1100012-0000-0000-0000-000000000012', 3,
 'An absent end-tidal CO2 waveform immediately after endotracheal intubation most likely indicates:',
 'Normal intubation',
 'Esophageal intubation',
@@ -773,11 +771,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Circuit leak',
 'Low cardiac output',
 'B',
-'Absent ETCO2 immediately after intubation most likely indicates esophageal intubation—the tube is in the esophagus rather than the trachea. Persistent ETCO2 waveform (>6 breaths) confirms tracheal placement. Circuit disconnection is another possibility but would be obvious.',
-'1');
+'Absent ETCO2 immediately after intubation most likely indicates esophageal intubation—the tube is in the esophagus rather than the trachea. Persistent ETCO2 waveform (>6 breaths) confirms tracheal placement. Circuit disconnection is another possibility but would be obvious.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 4,
+('a1100012-0000-0000-0000-000000000012', 4,
 'The "shark fin" appearance on a capnogram waveform indicates:',
 'Normal ventilation',
 'Esophageal intubation',
@@ -785,11 +782,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Cardiac arrest',
 'Hyperventilation',
 'C',
-'The "shark fin" capnogram pattern (sloping upstroke without a plateau) indicates bronchospasm, COPD, or lower airway obstruction. This pattern occurs because obstructed airways have prolonged expiration with delayed CO2 elimination, creating the characteristic upsloping waveform.',
-'1');
+'The "shark fin" capnogram pattern (sloping upstroke without a plateau) indicates bronchospasm, COPD, or lower airway obstruction. This pattern occurs because obstructed airways have prolonged expiration with delayed CO2 elimination, creating the characteristic upsloping waveform.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 5,
+('a1100012-0000-0000-0000-000000000012', 5,
 'Which ECG lead combination is most sensitive for detecting intraoperative myocardial ischemia?',
 'Lead I and aVL',
 'Lead II and III',
@@ -797,11 +793,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Lead aVR and V1',
 'Lead III and aVF',
 'C',
-'Lead II and V5 combination detects approximately 80% of intraoperative ischemia. Lead II is optimal for rhythm monitoring (best P wave visibility), while Lead V5 (lateral precordial lead) is most sensitive for detecting lateral wall ischemia.',
-'1');
+'Lead II and V5 combination detects approximately 80% of intraoperative ischemia. Lead II is optimal for rhythm monitoring (best P wave visibility), while Lead V5 (lateral precordial lead) is most sensitive for detecting lateral wall ischemia.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 6,
+('a1100012-0000-0000-0000-000000000012', 6,
 'A blood pressure cuff that is too small for the patient''s arm will result in:',
 'Falsely low readings',
 'Accurate readings',
@@ -809,11 +804,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Inability to obtain any reading',
 'Variable readings depending on position',
 'C',
-'A blood pressure cuff that is too small will give falsely elevated readings. The narrow cuff requires higher pressure to compress the artery adequately. The cuff bladder should be 80% of the arm circumference. Conversely, a cuff that is too large will give falsely low readings.',
-'1');
+'A blood pressure cuff that is too small will give falsely elevated readings. The narrow cuff requires higher pressure to compress the artery adequately. The cuff bladder should be 80% of the arm circumference. Conversely, a cuff that is too large will give falsely low readings.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 7,
+('a1100012-0000-0000-0000-000000000012', 7,
 'Allen''s test is performed before cannulation of which artery?',
 'Femoral artery',
 'Brachial artery',
@@ -821,11 +815,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Carotid artery',
 'Dorsalis pedis artery',
 'C',
-'Allen''s test assesses collateral circulation (from the ulnar artery) before radial artery cannulation. The test involves occluding both radial and ulnar arteries, then releasing the ulnar while observing for hand reperfusion. Adequate collateral circulation ensures hand perfusion if radial artery thrombosis occurs.',
-'1');
+'Allen''s test assesses collateral circulation (from the ulnar artery) before radial artery cannulation. The test involves occluding both radial and ulnar arteries, then releasing the ulnar while observing for hand reperfusion. Adequate collateral circulation ensures hand perfusion if radial artery thrombosis occurs.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 8,
+('a1100012-0000-0000-0000-000000000012', 8,
 'Perioperative hypothermia (temperature <36°C) is associated with all of the following EXCEPT:',
 'Increased surgical site infection',
 'Impaired coagulation',
@@ -833,11 +826,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Cardiac arrhythmias',
 'Delayed drug metabolism',
 'C',
-'Perioperative hypothermia is associated with increased surgical site infection, impaired coagulation and increased bleeding, cardiac arrhythmias, delayed drug metabolism, and prolonged hospital stay—not shorter stay. Maintaining normothermia (≥36°C) improves surgical outcomes.',
-'3');
+'Perioperative hypothermia is associated with increased surgical site infection, impaired coagulation and increased bleeding, cardiac arrhythmias, delayed drug metabolism, and prolonged hospital stay—not shorter stay. Maintaining normothermia (≥36°C) improves surgical outcomes.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 9,
+('a1100012-0000-0000-0000-000000000012', 9,
 'Which is the most effective method for preventing intraoperative hypothermia?',
 'Warmed IV fluids alone',
 'Increasing operating room temperature',
@@ -845,11 +837,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Reflective blankets',
 'Warming mattresses alone',
 'C',
-'Forced-air warming is the most effective method for preventing and treating intraoperative hypothermia. It works by convective heat transfer. While warmed IV fluids, increased OR temperature, and warming mattresses help, forced-air warming has the greatest impact on maintaining normothermia.',
-'3');
+'Forced-air warming is the most effective method for preventing and treating intraoperative hypothermia. It works by convective heat transfer. While warmed IV fluids, increased OR temperature, and warming mattresses help, forced-air warming has the greatest impact on maintaining normothermia.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 10,
+('a1100012-0000-0000-0000-000000000012', 10,
 'The earliest sign of malignant hyperthermia during anesthesia is typically:',
 'Rising temperature',
 'Muscle rigidity',
@@ -857,11 +848,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Tachycardia',
 'Skin flushing',
 'C',
-'An unexplained rise in ETCO2 (due to increased CO2 production from hypermetabolism) is typically the earliest sign of malignant hyperthermia. Temperature elevation may be a late finding, rising 1-2°C every 5 minutes once established. Other early signs include tachycardia and muscle rigidity.',
-'1,3');
+'An unexplained rise in ETCO2 (due to increased CO2 production from hypermetabolism) is typically the earliest sign of malignant hyperthermia. Temperature elevation may be a late finding, rising 1-2°C every 5 minutes once established. Other early signs include tachycardia and muscle rigidity.', '{1,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 11,
+('a1100012-0000-0000-0000-000000000012', 11,
 'Train-of-four (TOF) ratio of ≥0.9 is required before extubation because ratios below this:',
 'Are impossible to measure accurately',
 'Indicate complete neuromuscular blockade',
@@ -869,11 +859,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Suggest inadequate anesthesia',
 'Indicate the patient is awake',
 'C',
-'TOF ratio <0.9 indicates residual neuromuscular blockade, which is associated with upper airway obstruction, aspiration, hypoxemia, and respiratory complications. Clinical assessment cannot reliably detect ratios between 0.4-0.9, making quantitative monitoring essential for safe extubation decisions.',
-'2,4');
+'TOF ratio <0.9 indicates residual neuromuscular blockade, which is associated with upper airway obstruction, aspiration, hypoxemia, and respiratory complications. Clinical assessment cannot reliably detect ratios between 0.4-0.9, making quantitative monitoring essential for safe extubation decisions.', '{2,4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 12,
+('a1100012-0000-0000-0000-000000000012', 12,
 'A TOF count of 0/4 indicates:',
 'No neuromuscular blockade',
 'Approximately 50% receptor block',
@@ -881,11 +870,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '70-80% receptor block',
 'Nerve stimulator malfunction',
 'C',
-'A TOF count of 0/4 (no twitches visible) indicates >95% neuromuscular receptor blockade. This represents deep block suitable for intubation. As blockade decreases, twitches return: 1/4 = 90-95%, 2/4 = 80-90%, 3/4 = 70-80%, 4/4 with fade = <75%.',
-'2');
+'A TOF count of 0/4 (no twitches visible) indicates >95% neuromuscular receptor blockade. This represents deep block suitable for intubation. As blockade decreases, twitches return: 1/4 = 90-95%, 2/4 = 80-90%, 3/4 = 70-80%, 4/4 with fade = <75%.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 13,
+('a1100012-0000-0000-0000-000000000012', 13,
 'Which site provides the most accurate core temperature measurement?',
 'Skin of forehead',
 'Axilla',
@@ -893,11 +881,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Oral cavity',
 'Tympanic membrane (infrared)',
 'C',
-'Pulmonary artery temperature, measured via a Swan-Ganz catheter, is the gold standard for core temperature. Esophageal temperature (distal third) is also excellent and more practical in most surgical settings. Skin, axilla, and standard tympanic measurements are less accurate for core temperature.',
-'3');
+'Pulmonary artery temperature, measured via a Swan-Ganz catheter, is the gold standard for core temperature. Esophageal temperature (distal third) is also excellent and more practical in most surgical settings. Skin, axilla, and standard tympanic measurements are less accurate for core temperature.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 14,
+('a1100012-0000-0000-0000-000000000012', 14,
 'During CPR, an ETCO2 reading can be used to:',
 'Confirm endotracheal tube placement only',
 'Assess the quality of chest compressions',
@@ -905,11 +892,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Replace ECG monitoring',
 'Measure blood oxygen levels',
 'B',
-'During CPR, ETCO2 provides real-time feedback on chest compression quality. ETCO2 >10 mmHg suggests effective compressions (adequate cardiac output). Values <10 mmHg suggest poor compressions or poor prognosis. A sudden increase may indicate return of spontaneous circulation (ROSC).',
-'1');
+'During CPR, ETCO2 provides real-time feedback on chest compression quality. ETCO2 >10 mmHg suggests effective compressions (adequate cardiac output). Values <10 mmHg suggest poor compressions or poor prognosis. A sudden increase may indicate return of spontaneous circulation (ROSC).', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 15,
+('a1100012-0000-0000-0000-000000000012', 15,
 'Normal Bispectral Index (BIS) target range for general anesthesia is:',
 '0-20',
 '20-40',
@@ -917,11 +903,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '60-80',
 '80-100',
 'C',
-'The target BIS range for general anesthesia is 40-60. Values >60 increase the risk of intraoperative awareness. Values <40 may indicate excessive anesthetic depth, increasing hypotension risk. BIS of 0 indicates isoelectric EEG, while 100 indicates fully awake.',
-'1');
+'The target BIS range for general anesthesia is 40-60. Values >60 increase the risk of intraoperative awareness. Values <40 may indicate excessive anesthetic depth, increasing hypotension risk. BIS of 0 indicates isoelectric EEG, while 100 indicates fully awake.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 16,
+('a1100012-0000-0000-0000-000000000012', 16,
 'Sugammadex reverses neuromuscular blockade caused by:',
 'All neuromuscular blocking agents',
 'Succinylcholine only',
@@ -929,11 +914,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Benzylisoquinolinium NMBAs (atracurium, cisatracurium)',
 'Neostigmine',
 'C',
-'Sugammadex specifically reverses aminosteroid neuromuscular blocking agents (rocuronium and vecuronium) by encapsulating them. It does not reverse succinylcholine or benzylisoquinolinium agents. Neostigmine is a reversal agent, not an NMBA.',
-'2');
+'Sugammadex specifically reverses aminosteroid neuromuscular blocking agents (rocuronium and vecuronium) by encapsulating them. It does not reverse succinylcholine or benzylisoquinolinium agents. Neostigmine is a reversal agent, not an NMBA.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 17,
+('a1100012-0000-0000-0000-000000000012', 17,
 'Somatosensory evoked potentials (SSEPs) primarily monitor which spinal cord pathway?',
 'Anterior motor tracts',
 'Lateral spinothalamic tracts',
@@ -941,11 +925,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Sympathetic fibers',
 'Autonomic pathways',
 'C',
-'SSEPs monitor the posterior (dorsal) columns of the spinal cord, which carry proprioception and vibration sensation. Motor evoked potentials (MEPs) are used to monitor the anterior motor pathways (corticospinal tracts). Both modalities are often used together for spine surgery.',
-'1');
+'SSEPs monitor the posterior (dorsal) columns of the spinal cord, which carry proprioception and vibration sensation. Motor evoked potentials (MEPs) are used to monitor the anterior motor pathways (corticospinal tracts). Both modalities are often used together for spine surgery.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 18,
+('a1100012-0000-0000-0000-000000000012', 18,
 'Which plateau pressure should be targeted to prevent ventilator-induced lung injury?',
 '<10 cmH2O',
 '<20 cmH2O',
@@ -953,11 +936,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '<40 cmH2O',
 '<50 cmH2O',
 'C',
-'Plateau pressure should be maintained <30 cmH2O to prevent ventilator-induced lung injury (barotrauma and volutrauma). Plateau pressure reflects alveolar pressure and is measured during an inspiratory hold. Peak pressure includes airway resistance and may be higher.',
-'1');
+'Plateau pressure should be maintained <30 cmH2O to prevent ventilator-induced lung injury (barotrauma and volutrauma). Plateau pressure reflects alveolar pressure and is measured during an inspiratory hold. Peak pressure includes airway resistance and may be higher.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 19,
+('a1100012-0000-0000-0000-000000000012', 19,
 'The dicrotic notch on an arterial waveform represents:',
 'Atrial contraction',
 'Ventricular contraction',
@@ -965,11 +947,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Mitral valve closure',
 'Pulmonic valve closure',
 'C',
-'The dicrotic notch on an arterial waveform represents aortic valve closure, marking the end of systole and the beginning of diastole. The systolic upstroke reflects ventricular ejection, and the diastolic portion reflects peripheral vascular resistance and runoff.',
-'1');
+'The dicrotic notch on an arterial waveform represents aortic valve closure, marking the end of systole and the beginning of diastole. The systolic upstroke reflects ventricular ejection, and the diastolic portion reflects peripheral vascular resistance and runoff.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00012-0000-0000-0000-000000000012', 20,
+('a1100012-0000-0000-0000-000000000012', 20,
 'A sudden decrease in ETCO2 with normal oxygen saturation during surgery most likely suggests:',
 'Bronchospasm',
 'Esophageal intubation',
@@ -977,5 +958,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Malignant hyperthermia',
 'Hypoventilation',
 'C',
-'A sudden decrease in ETCO2 with maintained SpO2 suggests decreased pulmonary blood flow, most commonly from pulmonary embolism or decreased cardiac output. Less CO2 is delivered to the lungs for exhalation. Bronchospasm and esophageal intubation have different patterns; MH causes increased ETCO2.',
-'1');
+'A sudden decrease in ETCO2 with maintained SpO2 suggests decreased pulmonary blood flow, most commonly from pulmonary embolism or decreased cardiac output. Less CO2 is delivered to the lungs for exhalation. Bronchospasm and esophageal intubation have different patterns; MH causes increased ETCO2.', '{1}');

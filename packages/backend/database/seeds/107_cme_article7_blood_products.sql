@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00007-0000-0000-0000-000000000007',
-    'b0000007-0000-0000-0000-000000000001',
+    'a1100007-0000-0000-0000-000000000007',
+    'b0000007-0000-0000-0000-000000000007',
     'a0000001-0000-0000-0000-000000000001',
     'Blood Products and Transfusion Medicine in Surgical Practice',
     'Evidence-Based Transfusion Therapy and Management of Transfusion Reactions',
@@ -14,14 +14,14 @@ INSERT INTO cme_articles (
     'UNTH Surgery Department, Transfusion Medicine Unit',
     55,
     3.0,
-    'advanced',
+    'hard',
     1,
     true
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'introduction', 'Introduction',
 'Blood transfusion has evolved from a dangerous experimental procedure to a lifesaving intervention with sophisticated quality controls. However, transfusion remains associated with significant risks and should be approached as any other medical therapy—with careful consideration of indications, alternatives, and informed consent.
 
 **Historical Milestones:**
@@ -48,8 +48,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 This article will provide the evidence-based knowledge required for safe and appropriate transfusion practice.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. Describe the preparation, storage conditions, and clinical uses of major blood components
@@ -73,8 +73,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Discuss informed consent and documentation requirements for transfusion', 2);
 
 -- Section 3: Blood Group Systems
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'content', 'Blood Group Systems',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'content', 'Blood Group Systems',
 '## ABO Blood Group System
 
 The ABO system is the most clinically significant blood group system.
@@ -154,8 +154,8 @@ The ABO system is the most clinically significant blood group system.
 **MNS:** Mostly clinically insignificant', 3);
 
 -- Section 4: Blood Components
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'content', 'Blood Components',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'content', 'Blood Components',
 '## Component Therapy
 
 Modern transfusion medicine uses component therapy rather than whole blood, allowing targeted treatment and efficient use of a limited resource.
@@ -270,8 +270,8 @@ Modern transfusion medicine uses component therapy rather than whole blood, allo
 - Each unit raises fibrinogen ~5-10 mg/dL', 4);
 
 -- Section 5: Compatibility Testing
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'content', 'Compatibility Testing and Transfusion Administration',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'content', 'Compatibility Testing and Transfusion Administration',
 '## Pretransfusion Testing
 
 ### Sample Collection
@@ -370,8 +370,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Post-transfusion vital signs', 5);
 
 -- Section 6: Transfusion Thresholds
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'content', 'Evidence-Based Transfusion Thresholds',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'content', 'Evidence-Based Transfusion Thresholds',
 '## Red Blood Cell Transfusion Thresholds
 
 ### Landmark Trials
@@ -439,8 +439,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Do NOT transfuse for mildly elevated INR without bleeding', 6);
 
 -- Section 7: Transfusion Reactions
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'content', 'Transfusion Reactions',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'content', 'Transfusion Reactions',
 '## Acute Transfusion Reactions (Within 24 Hours)
 
 ### Acute Hemolytic Transfusion Reaction (AHTR)
@@ -621,8 +621,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - HPA-negative platelets if transfusion needed', 7);
 
 -- Section 8: Massive Transfusion
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'content', 'Massive Transfusion',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'content', 'Massive Transfusion',
 '## Definition and Triggers
 
 **Traditional Definition:**
@@ -726,8 +726,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Minimized with hemostatic resuscitation', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'key_points', 'Key Points',
 '1. **ABO Compatibility**: Type O is universal RBC donor; Type AB is universal plasma donor. ABO incompatibility causes acute hemolytic reactions (IgM-mediated intravascular hemolysis).
 
 2. **Component Storage**: RBCs at 1-6°C (42 days); Platelets at 20-24°C with agitation (5-7 days); FFP frozen (1 year), thawed (24 hours)
@@ -749,8 +749,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Documentation Requirements**: Two-person verification at bedside, vital sign monitoring, completion time, any reactions—all must be documented.', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: The most common cause of fatal AHTR is clerical error. Always verify patient identity and blood product at the bedside with two qualified personnel.
 
 💡 **Pearl 2**: Fever during transfusion may be FNHTR or bacterial contamination. Stop the transfusion, send workup, and treat contamination as a possibility until proven otherwise—especially with platelets.
@@ -772,23 +772,23 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: The best transfusion is the one you don''t have to give. Apply patient blood management principles: optimize hemoglobin preoperatively, minimize blood loss, and use restrictive thresholds.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00007-0000-0000-0000-000000000007', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100007-0000-0000-0000-000000000007', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00007-0000-0000-0000-000000000007', 1, 'Hébert PC, et al. A multicenter, randomized, controlled clinical trial of transfusion requirements in critical care (TRICC). N Engl J Med. 1999;340(6):409-417.', '10.1056/NEJM199902113400601', '9971864', NULL),
-('art00007-0000-0000-0000-000000000007', 2, 'Carson JL, et al. Liberal or restrictive transfusion in high-risk patients after hip surgery (FOCUS). N Engl J Med. 2011;365(26):2453-2462.', '10.1056/NEJMoa1012452', '22168590', NULL),
-('art00007-0000-0000-0000-000000000007', 3, 'Mazer CD, et al. Restrictive or liberal red-cell transfusion for cardiac surgery (TRICS III). N Engl J Med. 2017;377(22):2133-2144.', '10.1056/NEJMoa1711818', '29130845', NULL),
-('art00007-0000-0000-0000-000000000007', 4, 'Holcomb JB, et al. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio (PROPPR). JAMA. 2015;313(5):471-482.', '10.1001/jama.2015.12', '25647203', NULL),
-('art00007-0000-0000-0000-000000000007', 5, 'CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. Lancet. 2010;376(9734):23-32.', '10.1016/S0140-6736(10)60835-5', '20554319', NULL),
-('art00007-0000-0000-0000-000000000007', 6, 'Toy P, et al. Transfusion-related acute lung injury: definition and review. Crit Care Med. 2005;33(4):721-726.', '10.1097/01.CCM.0000159849.94750.51', '15818095', NULL),
-('art00007-0000-0000-0000-000000000007', 7, 'Delaney M, et al. Transfusion reactions: prevention, diagnosis, and treatment. Lancet. 2016;388(10061):2825-2836.', '10.1016/S0140-6736(15)01313-6', '27083327', NULL),
-('art00007-0000-0000-0000-000000000007', 8, 'Fung MK, et al., eds. AABB Technical Manual. 20th ed. AABB Press; 2020.', NULL, NULL, NULL);
+('a1100007-0000-0000-0000-000000000007', 1, 'Hébert PC, et al. A multicenter, randomized, controlled clinical trial of transfusion requirements in critical care (TRICC). N Engl J Med. 1999;340(6):409-417.', '10.1056/NEJM199902113400601', '9971864', NULL),
+('a1100007-0000-0000-0000-000000000007', 2, 'Carson JL, et al. Liberal or restrictive transfusion in high-risk patients after hip surgery (FOCUS). N Engl J Med. 2011;365(26):2453-2462.', '10.1056/NEJMoa1012452', '22168590', NULL),
+('a1100007-0000-0000-0000-000000000007', 3, 'Mazer CD, et al. Restrictive or liberal red-cell transfusion for cardiac surgery (TRICS III). N Engl J Med. 2017;377(22):2133-2144.', '10.1056/NEJMoa1711818', '29130845', NULL),
+('a1100007-0000-0000-0000-000000000007', 4, 'Holcomb JB, et al. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio (PROPPR). JAMA. 2015;313(5):471-482.', '10.1001/jama.2015.12', '25647203', NULL),
+('a1100007-0000-0000-0000-000000000007', 5, 'CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. Lancet. 2010;376(9734):23-32.', '10.1016/S0140-6736(10)60835-5', '20554319', NULL),
+('a1100007-0000-0000-0000-000000000007', 6, 'Toy P, et al. Transfusion-related acute lung injury: definition and review. Crit Care Med. 2005;33(4):721-726.', '10.1097/01.CCM.0000159849.94750.51', '15818095', NULL),
+('a1100007-0000-0000-0000-000000000007', 7, 'Delaney M, et al. Transfusion reactions: prevention, diagnosis, and treatment. Lancet. 2016;388(10061):2825-2836.', '10.1016/S0140-6736(15)01313-6', '27083327', NULL),
+('a1100007-0000-0000-0000-000000000007', 8, 'Fung MK, et al., eds. AABB Technical Manual. 20th ed. AABB Press; 2020.', NULL, NULL, NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 1,
+('a1100007-0000-0000-0000-000000000007', 1,
 'A type B patient requires emergency RBC transfusion before crossmatch can be completed. Which blood type should be transfused?',
 'Type A RBCs',
 'Type B or Type O RBCs',
@@ -796,11 +796,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Type AB plasma',
 'Any available type',
 'B',
-'A type B patient can receive type B (identical) or type O (universal donor) RBCs because O cells lack A and B antigens that would react with the patient''s anti-A antibodies. Type A would cause a hemolytic reaction. Type AB RBCs have A antigens that would also react.',
-'8');
+'A type B patient can receive type B (identical) or type O (universal donor) RBCs because O cells lack A and B antigens that would react with the patient''s anti-A antibodies. Type A would cause a hemolytic reaction. Type AB RBCs have A antigens that would also react.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 2,
+('a1100007-0000-0000-0000-000000000007', 2,
 'According to the TRICC trial, what is the recommended hemoglobin threshold for RBC transfusion in stable ICU patients?',
 '10 g/dL',
 '9 g/dL',
@@ -808,11 +807,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '7 g/dL',
 '6 g/dL',
 'D',
-'The TRICC trial demonstrated that a restrictive transfusion strategy (transfuse when Hb <7 g/dL, maintain 7-9 g/dL) was at least as effective as a liberal strategy (transfuse when Hb <10 g/dL) in critically ill patients, with fewer transfusions and possibly better outcomes.',
-'1');
+'The TRICC trial demonstrated that a restrictive transfusion strategy (transfuse when Hb <7 g/dL, maintain 7-9 g/dL) was at least as effective as a liberal strategy (transfuse when Hb <10 g/dL) in critically ill patients, with fewer transfusions and possibly better outcomes.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 3,
+('a1100007-0000-0000-0000-000000000007', 3,
 'Platelets must be stored at which temperature?',
 '1-6°C with no agitation',
 '1-6°C with continuous agitation',
@@ -820,11 +818,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '-18°C or colder',
 '37°C',
 'C',
-'Platelets are stored at room temperature (20-24°C) with continuous agitation to maintain their function. This storage temperature, while preserving platelet function, also makes platelets the highest-risk blood product for bacterial contamination.',
-'8');
+'Platelets are stored at room temperature (20-24°C) with continuous agitation to maintain their function. This storage temperature, while preserving platelet function, also makes platelets the highest-risk blood product for bacterial contamination.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 4,
+('a1100007-0000-0000-0000-000000000007', 4,
 'A patient develops fever, chills, flank pain, hypotension, and dark urine during a blood transfusion. What is the most likely diagnosis?',
 'Febrile non-hemolytic transfusion reaction',
 'Acute hemolytic transfusion reaction',
@@ -832,11 +829,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Allergic transfusion reaction',
 'Transfusion-associated circulatory overload',
 'B',
-'Fever, chills, flank/back pain, hypotension, and hemoglobinuria (dark urine) are classic symptoms of an acute hemolytic transfusion reaction due to ABO incompatibility. This represents intravascular hemolysis and is a medical emergency.',
-'7');
+'Fever, chills, flank/back pain, hypotension, and hemoglobinuria (dark urine) are classic symptoms of an acute hemolytic transfusion reaction due to ABO incompatibility. This represents intravascular hemolysis and is a medical emergency.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 5,
+('a1100007-0000-0000-0000-000000000007', 5,
 'What is the first and most important step in managing a suspected acute hemolytic transfusion reaction?',
 'Administer epinephrine',
 'Give IV fluids',
@@ -844,11 +840,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Order a chest x-ray',
 'Administer antipyretics',
 'C',
-'The first and most critical step is to immediately stop the transfusion to prevent further infusion of incompatible blood. Maintain IV access with normal saline, verify patient identity and product, send workup samples, and provide supportive care.',
-'7');
+'The first and most critical step is to immediately stop the transfusion to prevent further infusion of incompatible blood. Maintain IV access with normal saline, verify patient identity and product, send workup samples, and provide supportive care.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 6,
+('a1100007-0000-0000-0000-000000000007', 6,
 'The PROPPR trial established the optimal ratio for massive transfusion protocol as:',
 '1:1:2 (RBC:FFP:Platelets)',
 '1:1:1 (RBC:FFP:Platelets)',
@@ -856,11 +851,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '1:2:1 (RBC:FFP:Platelets)',
 '3:1:1 (RBC:FFP:Platelets)',
 'B',
-'The PROPPR trial compared 1:1:1 to 1:1:2 ratios and found that the 1:1:1 ratio (plasma:platelets:RBCs) achieved hemostasis more often and showed a trend toward improved 24-hour survival. This balanced approach became the standard for massive transfusion.',
-'4');
+'The PROPPR trial compared 1:1:1 to 1:1:2 ratios and found that the 1:1:1 ratio (plasma:platelets:RBCs) achieved hemostasis more often and showed a trend toward improved 24-hour survival. This balanced approach became the standard for massive transfusion.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 7,
+('a1100007-0000-0000-0000-000000000007', 7,
 'Which blood product carries the highest risk of bacterial contamination?',
 'Packed red blood cells',
 'Fresh frozen plasma',
@@ -868,11 +862,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Cryoprecipitate',
 'Whole blood',
 'C',
-'Platelets have the highest risk of bacterial contamination because they are stored at room temperature (20-24°C), which supports bacterial growth. RBCs are stored at 1-6°C, and plasma/cryo are frozen, inhibiting bacterial proliferation.',
-'7,8');
+'Platelets have the highest risk of bacterial contamination because they are stored at room temperature (20-24°C), which supports bacterial growth. RBCs are stored at 1-6°C, and plasma/cryo are frozen, inhibiting bacterial proliferation.', '{7,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 8,
+('a1100007-0000-0000-0000-000000000007', 8,
 'A patient develops dyspnea and bilateral pulmonary infiltrates 4 hours after platelet transfusion. BP is 85/50 mmHg and BNP is normal. What is the most likely diagnosis?',
 'Transfusion-associated circulatory overload (TACO)',
 'Transfusion-related acute lung injury (TRALI)',
@@ -880,11 +873,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Bacterial sepsis',
 'Allergic reaction',
 'B',
-'Dyspnea with bilateral infiltrates within 6 hours of transfusion, hypotension, and normal BNP suggests TRALI. TACO would present with hypertension and elevated BNP. TRALI is caused by donor antibodies against recipient leukocyte antigens.',
-'6,7');
+'Dyspnea with bilateral infiltrates within 6 hours of transfusion, hypotension, and normal BNP suggests TRALI. TACO would present with hypertension and elevated BNP. TRALI is caused by donor antibodies against recipient leukocyte antigens.', '{6,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 9,
+('a1100007-0000-0000-0000-000000000007', 9,
 'According to the CRASH-2 trial, tranexamic acid in trauma should be administered:',
 'Only if fibrinogen is low',
 'Within 3 hours of injury',
@@ -892,11 +884,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'After 8 hours from injury',
 'Only in penetrating trauma',
 'B',
-'The CRASH-2 trial demonstrated that tranexamic acid reduces mortality in bleeding trauma patients when given within 3 hours of injury. Administration after 3 hours showed no benefit and potential harm. The dose is 1g IV over 10 minutes, then 1g over 8 hours.',
-'5');
+'The CRASH-2 trial demonstrated that tranexamic acid reduces mortality in bleeding trauma patients when given within 3 hours of injury. Administration after 3 hours showed no benefit and potential harm. The dose is 1g IV over 10 minutes, then 1g over 8 hours.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 10,
+('a1100007-0000-0000-0000-000000000007', 10,
 'What is the expected increase in hemoglobin from one unit of packed red blood cells?',
 '0.5 g/dL',
 '1 g/dL',
@@ -904,11 +895,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '3 g/dL',
 '5 g/dL',
 'B',
-'One unit of packed RBCs is expected to increase hemoglobin by approximately 1 g/dL (or hematocrit by 3%) in an average adult without ongoing bleeding or hemolysis. A smaller response suggests bleeding, hemolysis, or splenomegaly.',
-'8');
+'One unit of packed RBCs is expected to increase hemoglobin by approximately 1 g/dL (or hematocrit by 3%) in an average adult without ongoing bleeding or hemolysis. A smaller response suggests bleeding, hemolysis, or splenomegaly.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 11,
+('a1100007-0000-0000-0000-000000000007', 11,
 'For a patient with IgA deficiency who has had a severe allergic reaction to transfusion, which product modification is indicated?',
 'Leukoreduced products',
 'Irradiated products',
@@ -916,11 +906,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'CMV-negative products',
 'Fresher products',
 'C',
-'Patients with IgA deficiency may develop anti-IgA antibodies that can cause severe anaphylactic reactions to plasma-containing products. Washed RBCs and platelets remove most plasma proteins including IgA. Alternatively, products from IgA-deficient donors can be used.',
-'7,8');
+'Patients with IgA deficiency may develop anti-IgA antibodies that can cause severe anaphylactic reactions to plasma-containing products. Washed RBCs and platelets remove most plasma proteins including IgA. Alternatively, products from IgA-deficient donors can be used.', '{7,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 12,
+('a1100007-0000-0000-0000-000000000007', 12,
 'Irradiation of blood products is performed to prevent:',
 'Febrile non-hemolytic reactions',
 'Transfusion-related acute lung injury',
@@ -928,11 +917,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Bacterial contamination',
 'Citrate toxicity',
 'C',
-'Irradiation (25-50 Gy) prevents transfusion-associated graft-versus-host disease (TA-GVHD) by inactivating donor T-lymphocytes that could engraft and attack immunocompromised recipients. TA-GVHD has >90% mortality.',
-'7,8');
+'Irradiation (25-50 Gy) prevents transfusion-associated graft-versus-host disease (TA-GVHD) by inactivating donor T-lymphocytes that could engraft and attack immunocompromised recipients. TA-GVHD has >90% mortality.', '{7,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 13,
+('a1100007-0000-0000-0000-000000000007', 13,
 'Cryoprecipitate is the preferred treatment for hypofibrinogenemia because it contains:',
 'All coagulation factors',
 'Concentrated fibrinogen, Factor VIII, Factor XIII, and vWF',
@@ -940,11 +928,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Platelets and plasma',
 'Vitamin K-dependent factors',
 'B',
-'Cryoprecipitate is a concentrated source of fibrinogen (150-250 mg per unit), Factor VIII, Factor XIII, von Willebrand factor, and fibronectin. It is prepared from the cold-insoluble fraction of plasma and is used for hypofibrinogenemia.',
-'8');
+'Cryoprecipitate is a concentrated source of fibrinogen (150-250 mg per unit), Factor VIII, Factor XIII, von Willebrand factor, and fibronectin. It is prepared from the cold-insoluble fraction of plasma and is used for hypofibrinogenemia.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 14,
+('a1100007-0000-0000-0000-000000000007', 14,
 'During massive transfusion, hypotension and prolonged QT develop despite adequate volume resuscitation. The most likely cause is:',
 'Hyperkalemia',
 'Hypocalcemia from citrate toxicity',
@@ -952,11 +939,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Metabolic acidosis',
 'Allergic reaction',
 'B',
-'Citrate, used as an anticoagulant in blood products, binds ionized calcium. During massive transfusion, citrate accumulation can cause hypocalcemia, manifesting as hypotension, prolonged QT, paresthesias, and tetany. Treatment is IV calcium.',
-'8');
+'Citrate, used as an anticoagulant in blood products, binds ionized calcium. During massive transfusion, citrate accumulation can cause hypocalcemia, manifesting as hypotension, prolonged QT, paresthesias, and tetany. Treatment is IV calcium.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 15,
+('a1100007-0000-0000-0000-000000000007', 15,
 'Which platelet count threshold is recommended before neurosurgery?',
 '10,000/µL',
 '20,000/µL',
@@ -964,11 +950,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '100,000/µL',
 '150,000/µL',
 'D',
-'A platelet count of ≥100,000/µL is recommended before neurosurgery and ocular surgery due to the severe consequences of bleeding in these locations. Lower thresholds (50,000/µL) are acceptable for most other surgeries and procedures.',
-'8');
+'A platelet count of ≥100,000/µL is recommended before neurosurgery and ocular surgery due to the severe consequences of bleeding in these locations. Lower thresholds (50,000/µL) are acceptable for most other surgeries and procedures.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 16,
+('a1100007-0000-0000-0000-000000000007', 16,
 'Type O-negative blood is called the "universal donor" for RBCs because:',
 'It contains all antigens',
 'It lacks A, B, and D antigens',
@@ -976,11 +961,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'It has the longest shelf life',
 'It is the most common blood type',
 'B',
-'Type O-negative RBCs lack A, B, and D (Rh) antigens and therefore will not react with anti-A, anti-B, or anti-D antibodies in any recipient. This makes it safe for emergency transfusion when the recipient''s blood type is unknown.',
-'8');
+'Type O-negative RBCs lack A, B, and D (Rh) antigens and therefore will not react with anti-A, anti-B, or anti-D antibodies in any recipient. This makes it safe for emergency transfusion when the recipient''s blood type is unknown.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 17,
+('a1100007-0000-0000-0000-000000000007', 17,
 'FFP should be transfused within what time period after thawing?',
 '2 hours',
 '4 hours',
@@ -988,11 +972,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '48 hours',
 '5 days',
 'C',
-'FFP must be transfused within 24 hours of thawing when stored at 1-6°C. After 24 hours, labile coagulation factors (V and VIII) decrease, and it becomes "thawed plasma" with a 5-day expiration but reduced factor activity.',
-'8');
+'FFP must be transfused within 24 hours of thawing when stored at 1-6°C. After 24 hours, labile coagulation factors (V and VIII) decrease, and it becomes "thawed plasma" with a 5-day expiration but reduced factor activity.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 18,
+('a1100007-0000-0000-0000-000000000007', 18,
 'A patient develops hives and itching during a transfusion with stable vital signs. The appropriate management is:',
 'Stop transfusion permanently',
 'Stop transfusion, give antihistamines, may resume if symptoms resolve',
@@ -1000,11 +983,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Administer epinephrine',
 'Give corticosteroids and stop transfusion',
 'B',
-'Mild urticarial reactions (hives, itching without systemic symptoms) can be managed by temporarily stopping the transfusion, administering antihistamines, and resuming the transfusion slowly once symptoms resolve. Severe allergic reactions require stopping and not resuming.',
-'7');
+'Mild urticarial reactions (hives, itching without systemic symptoms) can be managed by temporarily stopping the transfusion, administering antihistamines, and resuming the transfusion slowly once symptoms resolve. Severe allergic reactions require stopping and not resuming.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 19,
+('a1100007-0000-0000-0000-000000000007', 19,
 'The maximum time allowed for infusion of one unit of packed red blood cells is:',
 '1 hour',
 '2 hours',
@@ -1012,11 +994,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '6 hours',
 '8 hours',
 'C',
-'RBCs must be transfused within 4 hours of leaving controlled storage (1-6°C) to minimize bacterial growth and maintain product quality. If transfusion cannot be completed in 4 hours, the remaining product should be discarded.',
-'8');
+'RBCs must be transfused within 4 hours of leaving controlled storage (1-6°C) to minimize bacterial growth and maintain product quality. If transfusion cannot be completed in 4 hours, the remaining product should be discarded.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00007-0000-0000-0000-000000000007', 20,
+('a1100007-0000-0000-0000-000000000007', 20,
 'Which IV solution is compatible with blood product administration?',
 'Lactated Ringer''s',
 'D5W',
@@ -1024,5 +1005,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'D5 0.45% NS',
 'Any crystalloid solution',
 'C',
-'Only 0.9% Normal Saline is compatible with blood products. Lactated Ringer''s contains calcium which can cause clotting. Dextrose solutions can cause hemolysis. No medications should be added to or infused through the same line as blood.',
-'8');
+'Only 0.9% Normal Saline is compatible with blood products. Lactated Ringer''s contains calcium which can cause clotting. Dextrose solutions can cause hemolysis. No medications should be added to or infused through the same line as blood.', '{8}');

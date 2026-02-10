@@ -2,7 +2,7 @@
 
 -- Sections
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000001-0000-0000-0000-000000000001'::uuid, 'introduction', 1, 'Introduction to Acute Abdomen', 
+('d2000001-0000-0000-0000-000000000001'::uuid, 'introduction', 1, 'Introduction to Acute Abdomen', 
 'The acute abdomen represents one of the most challenging presentations in emergency surgery. It describes a syndrome characterized by abdominal pain of sudden onset requiring urgent evaluation and often surgical intervention. The term encompasses a wide spectrum of pathologies ranging from benign self-limiting conditions to life-threatening emergencies.
 
 Understanding the acute abdomen requires a systematic approach integrating clinical history, physical examination, and appropriate investigations. The goal is to identify patients requiring emergency surgery while avoiding unnecessary operations in those who can be managed conservatively.
@@ -17,7 +17,7 @@ Acute abdomen refers to sudden, severe abdominal pain that develops over hours t
 - In developing countries, intestinal obstruction and typhoid perforation are more common
 - In developed nations, appendicitis and biliary disease predominate'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'clinical_presentation', 2, 'Clinical Presentation and History Taking',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'content', 2, 'Clinical Presentation and History Taking',
 'A thorough history is the cornerstone of evaluating acute abdomen. The character, location, and evolution of pain provide crucial diagnostic clues.
 
 **Pain Characteristics**
@@ -53,7 +53,7 @@ Acute abdomen refers to sudden, severe abdominal pain that develops over hours t
 - **E**xacerbating/relieving factors
 - **S**everity: Scale of 1-10'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'examination', 3, 'Physical Examination',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'content', 3, 'Physical Examination',
 'Systematic examination is essential and should follow a structured approach.
 
 **General Inspection**
@@ -103,7 +103,7 @@ Essential in all cases of acute abdomen:
 - Blood (mesenteric ischemia, intussusception)
 - Prostate assessment in males'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'differential_diagnosis', 4, 'Differential Diagnosis',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'content', 4, 'Differential Diagnosis',
 'The differential diagnosis of acute abdomen is extensive and can be categorized by etiology and location.
 
 **By Anatomical Location**
@@ -172,7 +172,7 @@ Essential in all cases of acute abdomen:
 - Herpes zoster
 - Tabes dorsalis'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'investigations', 5, 'Investigations',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'content', 5, 'Investigations',
 'Investigations should be targeted based on clinical suspicion but a baseline workup is generally performed.
 
 **Laboratory Investigations**
@@ -239,7 +239,7 @@ Essential in all cases of acute abdomen:
 - Rarely used now with availability of CT
 - May be useful in unstable trauma patients'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'management', 6, 'Management Principles',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'content', 6, 'Management Principles',
 'Management follows ABCDE resuscitation principles with concurrent surgical evaluation.
 
 **Initial Resuscitation**
@@ -300,7 +300,7 @@ Empirical broad-spectrum coverage for intra-abdominal sepsis:
 - Laparoscopy: Preferred for appendicitis, cholecystitis, diagnostic uncertainty
 - Laparotomy: Unstable patients, anticipated complex pathology, diffuse peritonitis'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 'key_points', 7, 'Key Points',
+('d2000001-0000-0000-0000-000000000001'::uuid, 'key_points', 7, 'Key Points',
 '**Essential Learning Points**
 
 1. **Definition**: Acute abdomen is sudden severe abdominal pain requiring urgent evaluation and often surgical intervention.
@@ -345,102 +345,102 @@ Empirical broad-spectrum coverage for intra-abdominal sepsis:
 
 -- MCQs
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation) VALUES
-('d0000001-0000-0000-0000-000000000001'::uuid, 1, 
+('d2000001-0000-0000-0000-000000000001'::uuid, 1, 
 'A 45-year-old man presents with sudden onset severe epigastric pain radiating to the back. He has a history of peptic ulcer disease. On examination, he has board-like rigidity. What is the most likely diagnosis?',
 'Acute pancreatitis', 'Perforated duodenal ulcer', 'Acute cholecystitis', 'Myocardial infarction', 'Aortic dissection',
 'B', 'Board-like rigidity indicates generalized peritonitis. In a patient with peptic ulcer disease presenting with sudden severe epigastric pain, perforated duodenal ulcer is the most likely diagnosis. The pain radiates to the back due to peritoneal irritation. Acute pancreatitis can cause similar pain but typically does not cause board-like rigidity early in the course.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 2,
+('d2000001-0000-0000-0000-000000000001'::uuid, 2,
 'A 25-year-old woman presents with right lower quadrant pain. Which investigation is mandatory before proceeding to surgery?',
 'Serum amylase', 'Full blood count', 'Urine pregnancy test', 'Abdominal ultrasound', 'CT scan of abdomen',
 'C', 'A urine pregnancy test is mandatory in all females of reproductive age presenting with acute abdominal pain. Ruptured ectopic pregnancy must be excluded as it is a life-threatening emergency and can mimic appendicitis. Missing this diagnosis could be fatal.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 3,
+('d2000001-0000-0000-0000-000000000001'::uuid, 3,
 'Visceral pain from the midgut structures is typically felt in which location?',
 'Epigastric region', 'Periumbilical region', 'Suprapubic region', 'Right lower quadrant', 'Left lower quadrant',
 'B', 'Midgut structures (jejunum, ileum, appendix, cecum, ascending and transverse colon) produce visceral pain that is felt in the periumbilical region. This is because the midgut is innervated by sympathetic nerves from T10 spinal segment. Epigastric pain is from foregut, and suprapubic from hindgut structures.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 4,
+('d2000001-0000-0000-0000-000000000001'::uuid, 4,
 'Which of the following is the most reliable sign of generalized peritonitis?',
 'Rebound tenderness', 'Guarding', 'Absent bowel sounds', 'Board-like rigidity', 'Localized tenderness',
 'D', 'Board-like rigidity (involuntary muscle contraction causing a rigid abdominal wall) is the most reliable sign of generalized peritonitis. It indicates severe peritoneal irritation and is an indication for emergency laparotomy. Guarding is voluntary and can be overcome, while rebound tenderness is less specific.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 5,
+('d2000001-0000-0000-0000-000000000001'::uuid, 5,
 'A patient with acute abdomen has absent liver dullness on percussion. What does this finding suggest?',
 'Massive hepatomegaly', 'Pneumoperitoneum', 'Ascites', 'Intestinal obstruction', 'Hepatic abscess',
 'B', 'Loss of liver dullness on percussion (Jobert sign) suggests pneumoperitoneum - free air in the peritoneal cavity. This is because the free air rises to the highest point (right hypochondrium in supine position) and overlies the liver, replacing the normal dullness with tympany. This indicates visceral perforation.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 6,
+('d2000001-0000-0000-0000-000000000001'::uuid, 6,
 'Murphy sign is positive in which condition?',
 'Acute appendicitis', 'Acute pancreatitis', 'Acute cholecystitis', 'Perforated peptic ulcer', 'Renal colic',
 'C', 'Murphy sign is characteristic of acute cholecystitis. It is elicited by asking the patient to inspire deeply while palpating the right upper quadrant. Inspiration causes the inflamed gallbladder to descend and contact the examining fingers, causing pain and inspiratory arrest.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 7,
+('d2000001-0000-0000-0000-000000000001'::uuid, 7,
 'Which investigation is the gold standard for diagnosing most causes of acute abdomen?',
 'Plain abdominal X-ray', 'Abdominal ultrasound', 'CT scan of abdomen and pelvis', 'MRI abdomen', 'Diagnostic laparoscopy',
 'C', 'Contrast-enhanced CT scan of the abdomen and pelvis is the gold standard for diagnosing most causes of acute abdomen. It has high sensitivity and specificity for appendicitis, diverticulitis, bowel obstruction, pancreatitis, and can identify the source and extent of peritonitis. It also provides vascular assessment.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 8,
+('d2000001-0000-0000-0000-000000000001'::uuid, 8,
 'A patient with acute abdominal pain is restless and constantly moving. What type of pain is this most consistent with?',
 'Peritonitis', 'Biliary colic', 'Appendicitis with peritonitis', 'Perforated viscus', 'Mesenteric ischemia',
 'B', 'Patients with colicky pain (such as biliary colic, renal colic, or intestinal colic) are characteristically restless and unable to find a comfortable position. In contrast, patients with peritonitis lie very still because any movement aggravates the pain caused by peritoneal irritation.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 9,
+('d2000001-0000-0000-0000-000000000001'::uuid, 9,
 'Which of the following is NOT a cause of medical (non-surgical) acute abdomen?',
 'Diabetic ketoacidosis', 'Acute intermittent porphyria', 'Lead poisoning', 'Strangulated hernia', 'Sickle cell crisis',
 'D', 'Strangulated hernia is a surgical emergency requiring operative intervention. The other options - DKA, acute intermittent porphyria, lead poisoning, and sickle cell crisis - are medical causes of acute abdominal pain that do not require surgical treatment and can mimic surgical conditions.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 10,
+('d2000001-0000-0000-0000-000000000001'::uuid, 10,
 'Shoulder tip pain in a patient with acute abdomen suggests irritation of which structure?',
 'Stomach', 'Gallbladder', 'Diaphragm', 'Pancreas', 'Spleen',
 'C', 'Shoulder tip pain (referred pain) indicates irritation of the diaphragm. The phrenic nerve (C3-C5) innervates the diaphragm, and irritation causes referred pain to the C3-C5 dermatome distribution in the shoulder. This can occur with subphrenic abscess, splenic rupture, or perforated peptic ulcer with subphrenic air.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 11,
+('d2000001-0000-0000-0000-000000000001'::uuid, 11,
 'In a patient with suspected intestinal obstruction, which X-ray finding is most characteristic?',
 'Free air under diaphragm', 'Multiple air-fluid levels', 'Ground glass appearance', 'Sentinel loop', 'Thumbprinting',
 'B', 'Multiple air-fluid levels on erect abdominal X-ray are characteristic of intestinal obstruction. They represent gas-fluid interfaces in dilated obstructed bowel loops. Free air under diaphragm suggests perforation, ground glass suggests ascites, sentinel loop suggests localized ileus, and thumbprinting suggests colonic ischemia.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 12,
+('d2000001-0000-0000-0000-000000000001'::uuid, 12,
 'Which of the following statements about analgesia in acute abdomen is TRUE?',
 'Analgesia should be withheld until diagnosis is made', 'Morphine masks important clinical signs', 'Adequate analgesia is ethical and does not impair diagnosis', 'Only non-opioid analgesics should be used', 'Analgesia delays surgical intervention',
 'C', 'Modern evidence shows that adequate analgesia does not mask clinical signs and is both ethical and necessary for patient comfort. Withholding pain relief is unethical and causes unnecessary suffering. Studies have shown that opioid analgesia does not significantly affect diagnostic accuracy or clinical decision-making.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 13,
+('d2000001-0000-0000-0000-000000000001'::uuid, 13,
 'A serum amylase level more than how many times the upper limit of normal is diagnostic of acute pancreatitis?',
 '1 time', '2 times', '3 times', '5 times', '10 times',
 'C', 'A serum amylase or lipase level greater than 3 times the upper limit of normal is diagnostic of acute pancreatitis in the appropriate clinical context. Lower elevations can be seen in other conditions such as perforated peptic ulcer, intestinal obstruction, and renal failure.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 14,
+('d2000001-0000-0000-0000-000000000001'::uuid, 14,
 'The Rovsing sign is positive when pressure in which area causes pain in the right iliac fossa?',
 'Right upper quadrant', 'Epigastrium', 'Left iliac fossa', 'Suprapubic region', 'Umbilical region',
 'C', 'Rovsing sign is positive when palpation of the left iliac fossa causes pain in the right iliac fossa. This occurs because pressing on the left side compresses bowel gas, which transmits pressure to the inflamed appendix in the right iliac fossa, causing pain. It is a classic sign of acute appendicitis.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 15,
+('d2000001-0000-0000-0000-000000000001'::uuid, 15,
 'Which antibiotic regimen is appropriate for community-acquired intra-abdominal sepsis?',
 'Gentamicin alone', 'Metronidazole alone', 'Ceftriaxone plus Metronidazole', 'Vancomycin alone', 'Fluconazole plus Ampicillin',
 'C', 'Community-acquired intra-abdominal sepsis requires broad-spectrum coverage against gram-negative bacteria and anaerobes. Ceftriaxone (third-generation cephalosporin) provides gram-negative coverage, while Metronidazole covers anaerobes. Alternative regimens include Amoxicillin-Clavulanate or Piperacillin-Tazobactam.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 16,
+('d2000001-0000-0000-0000-000000000001'::uuid, 16,
 'Which of the following conditions can be managed conservatively without surgery?',
 'Perforated duodenal ulcer', 'Strangulated inguinal hernia', 'Uncomplicated acute diverticulitis', 'Mesenteric ischemia', 'Ruptured ectopic pregnancy',
 'C', 'Uncomplicated acute diverticulitis (without perforation, abscess, or obstruction) is typically managed conservatively with antibiotics, bowel rest, and close monitoring. The other conditions listed are surgical emergencies requiring operative intervention.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 17,
+('d2000001-0000-0000-0000-000000000001'::uuid, 17,
 'The psoas sign in appendicitis is positive when which movement causes pain?',
 'Flexion of right hip', 'Extension of right hip', 'Internal rotation of right hip', 'External rotation of right hip', 'Adduction of right hip',
 'B', 'The psoas sign is positive when passive extension of the right hip (or active flexion against resistance) causes pain in the right iliac fossa. This occurs when the inflamed appendix is retrocecal and lies on the psoas muscle. Extension stretches the psoas, irritating the overlying inflamed appendix.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 18,
+('d2000001-0000-0000-0000-000000000001'::uuid, 18,
 'A 60-year-old man presents with sudden onset abdominal pain, bloody diarrhea, and is in shock. Abdomen is soft with minimal tenderness. What is the most likely diagnosis?',
 'Perforated peptic ulcer', 'Acute pancreatitis', 'Mesenteric ischemia', 'Ruptured AAA', 'Sigmoid volvulus',
 'C', 'This presentation (pain out of proportion to physical findings, bloody diarrhea, and shock) is classic for acute mesenteric ischemia. The "pain out of proportion to exam" is a key feature - severe pain with a relatively benign abdominal examination initially. This is a surgical emergency requiring urgent revascularization.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 19,
+('d2000001-0000-0000-0000-000000000001'::uuid, 19,
 'What is the minimum urine output target during resuscitation of a patient with acute abdomen?',
 '0.25 mL/kg/hour', '0.5 mL/kg/hour', '1 mL/kg/hour', '2 mL/kg/hour', '3 mL/kg/hour',
 'B', 'The minimum target urine output during resuscitation is 0.5 mL/kg/hour (approximately 30-50 mL/hour in an average adult). This indicates adequate renal perfusion and is a marker of successful fluid resuscitation. A urinary catheter should be placed to monitor output accurately.'),
 
-('d0000001-0000-0000-0000-000000000001'::uuid, 20,
+('d2000001-0000-0000-0000-000000000001'::uuid, 20,
 'Which is the preferred surgical approach for diagnostic uncertainty in acute abdomen?',
 'Midline laparotomy', 'Right paramedian incision', 'McBurney incision', 'Diagnostic laparoscopy', 'Pfannenstiel incision',
 'D', 'Diagnostic laparoscopy is the preferred approach for diagnostic uncertainty in acute abdomen, especially in young women where gynecological pathology may mimic appendicitis. It allows visualization of the entire abdomen, definitive diagnosis, and often therapeutic intervention with minimal morbidity compared to open surgery.');

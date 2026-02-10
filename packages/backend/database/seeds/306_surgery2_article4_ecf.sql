@@ -1,7 +1,7 @@
 -- Surgery 2 Article 4: Enterocutaneous Fistulae - Sections and MCQs
 
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000004-0000-0000-0000-000000000004'::uuid, 'introduction', 1, 'Introduction to Enterocutaneous Fistulae', 
+('d2000004-0000-0000-0000-000000000004'::uuid, 'introduction', 1, 'Introduction to Enterocutaneous Fistulae', 
 'An enterocutaneous fistula (ECF) is an abnormal communication between the gastrointestinal tract and the skin. It represents one of the most challenging conditions in surgical practice, associated with significant morbidity, mortality, and healthcare costs.
 
 **Definition**
@@ -39,7 +39,7 @@ A fistula is defined as an abnormal communication between two epithelialized sur
 - Modern mortality 5-20% with optimal management
 - Major causes of death: Sepsis, electrolyte imbalance, malnutrition'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 'learning_objectives', 2, 'Learning Objectives',
+('d2000004-0000-0000-0000-000000000004'::uuid, 'learning_objectives', 2, 'Learning Objectives',
 'After completing this module, you should be able to:
 
 1. Define and classify enterocutaneous fistulae by output, anatomy, and origin
@@ -53,7 +53,7 @@ A fistula is defined as an abnormal communication between two epithelialized sur
 9. Describe surgical principles for ECF repair
 10. Understand prevention strategies in high-risk patients'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 'content', 3, 'Pathophysiology and Complications',
+('d2000004-0000-0000-0000-000000000004'::uuid, 'content', 3, 'Pathophysiology and Complications',
 '**Fluid and Electrolyte Losses**
 High-output fistulae cause massive losses:
 - Volume: Up to 3-6 liters/day in proximal fistulae
@@ -96,7 +96,7 @@ Factors that PREVENT spontaneous closure:
 - Low output, simple fistulae: Up to 60-80%
 - High output, complex fistulae: <10%'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 'content', 4, 'Initial Assessment and Stabilization',
+('d2000004-0000-0000-0000-000000000004'::uuid, 'content', 4, 'Initial Assessment and Stabilization',
 'Management follows a phased approach: Resuscitation → Investigation → Nutrition → Definitive treatment.
 
 **Phase 1: Resuscitation and Control of Sepsis (Days 1-10)**
@@ -140,7 +140,7 @@ Factors that PREVENT spontaneous closure:
 - Upper GI endoscopy if proximal fistula suspected
 - Colonoscopy for colonic fistulae'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 'content', 5, 'Nutritional Management',
+('d2000004-0000-0000-0000-000000000004'::uuid, 'content', 5, 'Nutritional Management',
 'Nutrition is the cornerstone of ECF management. Patients are typically severely malnourished.
 
 **Nutritional Assessment**
@@ -186,7 +186,7 @@ Complications:
 - Aim for positive nitrogen balance
 - Correct micronutrient deficiencies'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 'content', 6, 'Definitive Management',
+('d2000004-0000-0000-0000-000000000004'::uuid, 'content', 6, 'Definitive Management',
 '**Conservative Management**
 Allow 4-8 weeks for potential spontaneous closure:
 - Continue nutritional support
@@ -232,7 +232,7 @@ Spontaneous closure typically occurs by 6 weeks if it will occur.
 - Protect anastomosis (omental wrap)
 - Early recognition and treatment of anastomotic leak'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 'key_points', 7, 'Key Points',
+('d2000004-0000-0000-0000-000000000004'::uuid, 'key_points', 7, 'Key Points',
 '1. ECF = abnormal communication between GI tract and skin; 75-85% are postoperative
 2. Classification by output: Low <200mL, Moderate 200-500mL, High >500mL per day
 3. Mortality mainly from sepsis, electrolyte imbalance, and malnutrition
@@ -246,102 +246,102 @@ Spontaneous closure typically occurs by 6 weeks if it will occur.
 
 -- MCQs
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation) VALUES
-('d0000004-0000-0000-0000-000000000004'::uuid, 1,
+('d2000004-0000-0000-0000-000000000004'::uuid, 1,
 'What output defines a high-output enterocutaneous fistula?',
 '<100 mL/24 hours', '100-200 mL/24 hours', '200-500 mL/24 hours', '>500 mL/24 hours', '>1000 mL/24 hours',
 'D', 'A high-output fistula is defined as producing >500 mL in 24 hours. Low output is <200 mL, and moderate is 200-500 mL. High-output fistulae are more challenging to manage and have lower rates of spontaneous closure.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 2,
+('d2000004-0000-0000-0000-000000000004'::uuid, 2,
 'What is the most common cause of enterocutaneous fistula?',
 'Crohn disease', 'Malignancy', 'Anastomotic leak following surgery', 'Radiation enteritis', 'Tuberculosis',
 'C', 'Postoperative causes account for 75-85% of ECF, with anastomotic leak being the most common. Spontaneous causes (Crohn disease, malignancy, radiation, infection) account for only 15-25% of cases.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 3,
+('d2000004-0000-0000-0000-000000000004'::uuid, 3,
 'In the FRIENDS mnemonic for factors preventing spontaneous closure, what does the "N" stand for?',
 'Nutrition deficiency', 'Neoplasm', 'Necrosis', 'Narrow tract', 'Non-adherence',
 'B', 'The FRIENDS mnemonic: Foreign body, Radiation, Infection/Inflammation, Epithelialization of tract, Neoplasm, Distal obstruction, Short tract (<2cm). These factors prevent spontaneous closure of fistulae.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 4,
+('d2000004-0000-0000-0000-000000000004'::uuid, 4,
 'What is the overall spontaneous closure rate for enterocutaneous fistulae with conservative management?',
 '5-10%', '20-40%', '60-70%', '80-90%', '95%',
 'B', 'Overall, 20-40% of ECF close spontaneously with conservative management. Simple, low-output fistulae have higher closure rates (up to 60-80%), while complex, high-output fistulae have much lower rates (<10%).'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 5,
+('d2000004-0000-0000-0000-000000000004'::uuid, 5,
 'What is the primary cause of death in patients with enterocutaneous fistulae?',
 'Hemorrhage', 'Malnutrition alone', 'Sepsis', 'Pulmonary embolism', 'Renal failure alone',
 'C', 'Sepsis is the primary cause of death in ECF patients, often from uncontrolled intra-abdominal abscess. Malnutrition and electrolyte imbalance are other major contributing factors. Modern management has reduced mortality from 40-60% historically to 5-20%.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 6,
+('d2000004-0000-0000-0000-000000000004'::uuid, 6,
 'What medication may reduce fistula output by 40-50%?',
 'Omeprazole', 'Loperamide', 'Octreotide', 'Metoclopramide', 'Erythromycin',
 'C', 'Octreotide, a somatostatin analog, can reduce fistula output by 40-50% by decreasing gastrointestinal secretions. It is used as an adjunct in managing high-output fistulae but has not been shown to improve spontaneous closure rates.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 7,
+('d2000004-0000-0000-0000-000000000004'::uuid, 7,
 'What is the first priority in the initial management of ECF?',
 'Start parenteral nutrition', 'Plan definitive surgery', 'Sepsis control and resuscitation', 'Fistulogram', 'Consult wound care nurse',
 'C', 'Sepsis control and resuscitation is the first priority in ECF management. This includes IV fluid resuscitation, identifying and draining any abscesses, and starting antibiotics. Without sepsis control, other interventions will fail.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 8,
+('d2000004-0000-0000-0000-000000000004'::uuid, 8,
 'What is fistuloclysis?',
 'Irrigation of fistula with saline', 'Reinfusing fistula effluent distally into the bowel', 'Injection of contrast into fistula', 'Endoscopic treatment of fistula', 'Application of negative pressure to fistula',
 'B', 'Fistuloclysis is the technique of collecting fistula effluent and reinfusing it into the distal bowel (via tube or distal stoma). This allows use of the distal bowel for absorption, reduces parenteral nutrition requirements, and maintains gut integrity.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 9,
+('d2000004-0000-0000-0000-000000000004'::uuid, 9,
 'What is the recommended protein intake for patients with high-output ECF?',
 '0.5-1.0 g/kg/day', '1.0-1.2 g/kg/day', '1.5-2.5 g/kg/day', '3.0-4.0 g/kg/day', '5.0 g/kg/day',
 'C', 'Protein requirements are increased to 1.5-2.5 g/kg/day in patients with high-output ECF due to protein losses in fistula effluent (up to 100g/day) and the catabolic state. Caloric requirements are 25-35 kcal/kg/day.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 10,
+('d2000004-0000-0000-0000-000000000004'::uuid, 10,
 'What is the minimum waiting period before definitive surgery for ECF after the last laparotomy?',
 '2 weeks', '4 weeks', '6-12 weeks', '6 months', '1 year',
 'C', 'A waiting period of 6-12 weeks from the last laparotomy is recommended before definitive surgery. This allows adhesions to mature and become more filmy (frozen abdomen resolves), reducing the risk of inadvertent enterotomy during adhesiolysis.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 11,
+('d2000004-0000-0000-0000-000000000004'::uuid, 11,
 'Which imaging modality best defines fistula anatomy and identifies abscesses?',
 'Plain abdominal X-ray', 'Ultrasound', 'CT scan with oral and IV contrast', 'MRI', 'Nuclear medicine scan',
 'C', 'CT scan with oral and IV contrast is the best modality to define fistula anatomy, identify associated abscesses, assess bowel continuity, and identify any distal obstruction. A fistulogram provides additional detail about the tract itself.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 12,
+('d2000004-0000-0000-0000-000000000004'::uuid, 12,
 'If spontaneous closure is going to occur, by what time will it typically happen?',
 '1 week', '2 weeks', '6 weeks', '6 months', '1 year',
 'C', 'If an ECF is going to close spontaneously, it typically does so within 4-6 weeks of onset. If no closure occurs by 6 weeks with optimal conservative management, spontaneous closure is unlikely and surgical planning should begin.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 13,
+('d2000004-0000-0000-0000-000000000004'::uuid, 13,
 'What is the role of omentum in surgical repair of ECF?',
 'Provide blood supply to anastomosis', 'Interpose between anastomosis and abdominal wall', 'Fill dead space', 'All of the above', 'None of the above',
 'D', 'The omentum serves multiple functions in ECF repair: it provides additional blood supply, fills dead space, has immunological properties, and most importantly, is interposed between the new anastomosis and the abdominal wall to prevent recurrent fistula formation.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 14,
+('d2000004-0000-0000-0000-000000000004'::uuid, 14,
 'What is the "pinch test" used to assess in ECF patients?',
 'Hydration status', 'Nutritional adequacy', 'Skin thickness for surgery', 'Edema', 'Infection',
 'B', 'The pinch test assesses nutritional status by checking if adequate subcutaneous fat has been restored. If skin folds can be easily "pinched" at the chest wall, it suggests the patient has achieved adequate nutritional repletion and may be ready for surgery.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 15,
+('d2000004-0000-0000-0000-000000000004'::uuid, 15,
 'What type of fistula has the lowest spontaneous closure rate?',
 'Low-output jejunal fistula', 'Low-output colonic fistula', 'High-output ileal fistula with short tract', 'Lateral duodenal fistula', 'Gastric fistula',
 'C', 'High-output fistulae with short tracts (<2 cm) have the lowest spontaneous closure rates (<10%). The high output prevents tract collapse and healing, while short tracts tend to epithelialize rapidly, preventing closure.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 16,
+('d2000004-0000-0000-0000-000000000004'::uuid, 16,
 'What metabolic disturbance is expected with a high-output jejunal fistula?',
 'Metabolic alkalosis, hyperkalemia', 'Metabolic acidosis, hypokalemia', 'Respiratory alkalosis', 'Respiratory acidosis', 'No significant metabolic disturbance',
 'B', 'High-output jejunal fistulae cause metabolic acidosis (loss of bicarbonate-rich intestinal secretions) and hypokalemia. Gastric fistulae cause metabolic alkalosis due to loss of HCl. All high-output fistulae cause significant electrolyte losses.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 17,
+('d2000004-0000-0000-0000-000000000004'::uuid, 17,
 'Why is enteral nutrition preferred over parenteral nutrition when possible?',
 'It is cheaper', 'It maintains gut mucosal integrity', 'It reduces bacterial translocation', 'It supports immune function', 'All of the above',
 'E', 'Enteral nutrition is preferred for multiple reasons: it is cheaper, maintains gut mucosal integrity, reduces bacterial translocation, supports immune function, and is more physiological. TPN is reserved for when enteral feeding is not possible.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 18,
+('d2000004-0000-0000-0000-000000000004'::uuid, 18,
 'What is the recurrence rate after surgical repair of ECF?',
 '1-5%', '10-20%', '30-40%', '50-60%', '70-80%',
 'B', 'With proper surgical technique and appropriate patient selection, the recurrence rate after ECF repair is 10-20%. Success rates >80% are achievable with adequate nutritional optimization, sepsis control, and adherence to surgical principles.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 19,
+('d2000004-0000-0000-0000-000000000004'::uuid, 19,
 'What is the most important factor in preventing ECF during primary surgery?',
 'Use of drains', 'Meticulous surgical technique', 'Prophylactic antibiotics', 'Early postoperative feeding', 'Use of fibrin glue',
 'B', 'Meticulous surgical technique is the most important factor in preventing ECF. This includes avoiding tension on anastomoses, ensuring adequate blood supply, not creating anastomoses in contaminated fields, and careful handling of tissues.'),
 
-('d0000004-0000-0000-0000-000000000004'::uuid, 20,
+('d2000004-0000-0000-0000-000000000004'::uuid, 20,
 'A patient with ECF has persistent fever despite antibiotics. CT shows a 5cm collection adjacent to the fistula. What is the next step?',
 'Increase antibiotic coverage', 'Start TPN', 'CT-guided or surgical drainage', 'Proceed to definitive surgery', 'Obtain fistulogram',
 'C', 'Persistent sepsis despite antibiotics with an identified collection requires drainage (CT-guided if accessible, otherwise surgical). Source control is essential - antibiotics alone cannot treat undrained abscesses. This takes priority over other management steps.');

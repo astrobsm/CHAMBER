@@ -243,7 +243,7 @@ export interface Pagination {
 // Offline sync types
 export interface SyncItem {
   id: string;
-  type: 'attendance' | 'test_answer' | 'participation';
+  type: 'attendance' | 'test_answer' | 'participation' | 'cme_progress';
   action: 'create' | 'update' | 'delete';
   data: Record<string, unknown>;
   createdAt: string;
@@ -251,6 +251,40 @@ export interface SyncItem {
   syncedAt?: string;
   retryCount: number;
   lastError?: string;
+  conflictData?: Record<string, unknown>;
+}
+
+export interface SyncConflict {
+  offline_id: string;
+  type: string;
+  conflict: boolean;
+  server_record?: Record<string, unknown>;
+  resolution?: string;
+  message?: string;
+}
+
+export interface SyncResult {
+  synced: number;
+  conflicts: number;
+  errors: number;
+  details: {
+    results: Array<{ offline_id: string; status: string; server_id?: string }>;
+    conflicts: SyncConflict[];
+    errors: Array<{ offline_id: string; type: string; error: string; retryable: boolean }>;
+  };
+  serverTime: string;
+  duration: number;
+}
+
+export interface PullData {
+  studentData?: Record<string, unknown>;
+  assessorData?: Record<string, unknown>;
+  adminData?: Record<string, unknown>;
+  systemConfig?: Record<string, unknown>;
+  participationTypes?: Record<string, unknown>[];
+  syncTimestamp: string;
+  isFullSync: boolean;
+  serverTime: string;
 }
 
 // Notification types

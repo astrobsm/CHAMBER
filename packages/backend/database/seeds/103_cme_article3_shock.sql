@@ -6,8 +6,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00003-0000-0000-0000-000000000003',
-    'b0000003-0000-0000-0000-000000000001',
+    'a1100003-0000-0000-0000-000000000003',
+    'b0000003-0000-0000-0000-000000000003',
     'a0000001-0000-0000-0000-000000000001',
     'Recognition and Management of Shock States in Surgical Practice',
     'A Comprehensive Approach to Circulatory Failure',
@@ -22,8 +22,8 @@ INSERT INTO cme_articles (
 
 -- Insert article sections
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00003-0000-0000-0000-000000000003', 'introduction', 'Introduction', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100003-0000-0000-0000-000000000003', 'introduction', 'Introduction', 
 'Shock is defined as a life-threatening circulatory failure characterized by inadequate oxygen delivery to meet cellular metabolic demands. Despite advances in critical care, shock remains a leading cause of morbidity and mortality in surgical patients.
 
 **The Common Pathway:**
@@ -58,8 +58,8 @@ Where:
 Shock results when DO₂ is insufficient to meet tissue oxygen consumption (VO₂).', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00003-0000-0000-0000-000000000003', 'learning_objectives', 'Learning Objectives', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100003-0000-0000-0000-000000000003', 'learning_objectives', 'Learning Objectives', 
 'Upon completion of this article, participants should be able to:
 
 1. Define shock and explain its pathophysiological basis in terms of oxygen delivery and cellular metabolism
@@ -83,8 +83,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Discuss complications of shock and resuscitation including SIRS and MODS', 2);
 
 -- Section 3: Classification of Shock
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00003-0000-0000-0000-000000000003', 'content', 'Classification of Shock', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100003-0000-0000-0000-000000000003', 'content', 'Classification of Shock', 
 '## Hemodynamic Classification
 
 Shock can be classified based on the primary hemodynamic derangement:
@@ -166,8 +166,8 @@ Shock can be classified based on the primary hemodynamic derangement:
 | SvO₂ | ↓ | ↓ | ↑ (early) | ↓ |', 3);
 
 -- Section 4: Hemorrhagic Shock
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00003-0000-0000-0000-000000000003', 'content', 'Hemorrhagic Shock', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100003-0000-0000-0000-000000000003', 'content', 'Hemorrhagic Shock', 
 '## ATLS Classification of Hemorrhagic Shock
 
 The American College of Surgeons ATLS course classifies hemorrhagic shock into four classes based on blood loss and physiological parameters:
@@ -276,8 +276,8 @@ Modern trauma resuscitation emphasizes:
 - ICU resuscitation before definitive repair', 4);
 
 -- Section 5: Septic Shock
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00003-0000-0000-0000-000000000003', 'content', 'Septic Shock', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100003-0000-0000-0000-000000000003', 'content', 'Septic Shock', 
 '## Definitions (Sepsis-3)
 
 ### Sepsis
@@ -366,8 +366,8 @@ Bedside screening tool (≥2 indicates high risk):
 - Recent ADRENAL and APROCCHSS trials inform practice', 5);
 
 -- Section 6: Other Shock States
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00003-0000-0000-0000-000000000003', 'content', 'Cardiogenic, Obstructive, and Other Shock States', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100003-0000-0000-0000-000000000003', 'content', 'Cardiogenic, Obstructive, and Other Shock States', 
 '## Cardiogenic Shock
 
 ### Definition
@@ -496,8 +496,8 @@ IgE-mediated systemic release of histamine and other mediators causing vasodilat
 7. Nebulized bronchodilators if bronchospasm', 6);
 
 -- Section 7: Monitoring and Endpoints
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00003-0000-0000-0000-000000000003', 'content', 'Monitoring and Resuscitation Endpoints', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100003-0000-0000-0000-000000000003', 'content', 'Monitoring and Resuscitation Endpoints', 
 '## Clinical Monitoring
 
 ### Vital Signs
@@ -608,8 +608,8 @@ Static measures (CVP, PCWP) are poor predictors of response to fluids. Dynamic m
 - Mental status improvement', 7);
 
 -- Section 8: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00003-0000-0000-0000-000000000003', 'key_points', 'Key Points', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100003-0000-0000-0000-000000000003', 'key_points', 'Key Points', 
 '1. **Shock Definition**: Circulatory failure with inadequate tissue oxygen delivery to meet metabolic demands
 
 2. **Four Types**: Hypovolemic (↓preload), Cardiogenic (pump failure), Distributive (↓SVR), Obstructive (mechanical)
@@ -631,8 +631,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Lactate**: Key biomarker; target normalization or clearance of 10% every 2 hours as resuscitation endpoint', 8);
 
 -- Section 9: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00003-0000-0000-0000-000000000003', 'clinical_pearls', 'Clinical Pearls', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100003-0000-0000-0000-000000000003', 'clinical_pearls', 'Clinical Pearls', 
 '💡 **Pearl 1**: Hypotension is a late sign of shock - compensatory mechanisms maintain BP until they fail. Tachycardia, altered mental status, and oliguria may appear first.
 
 💡 **Pearl 2**: In neurogenic shock, patients are hypotensive but bradycardic with warm extremities - the opposite of other shock states. This is due to loss of sympathetic tone.
@@ -654,25 +654,25 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: Never clamp chest tube drainage to transport a patient - risk of tension pneumothorax. Always keep drainage system below chest level.', 9);
 
 -- Section 10: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00003-0000-0000-0000-000000000003', 'references', 'References', 'See reference list below.', 10);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100003-0000-0000-0000-000000000003', 'references', 'References', 'See reference list below.', 10);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00003-0000-0000-0000-000000000003', 1, 'American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual, 10th Edition. 2018.', NULL, NULL, NULL),
-('art00003-0000-0000-0000-000000000003', 2, 'Singer M, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):801-810.', '10.1001/jama.2016.0287', '26903338', NULL),
-('art00003-0000-0000-0000-000000000003', 3, 'Evans L, et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Crit Care Med. 2021;49(11):e1063-e1143.', '10.1097/CCM.0000000000005337', '34605781', NULL),
-('art00003-0000-0000-0000-000000000003', 4, 'van Diepen S, et al. Contemporary Management of Cardiogenic Shock: A Scientific Statement From the American Heart Association. Circulation. 2017;136(16):e52-e68.', '10.1161/CIR.0000000000000525', '28874357', NULL),
-('art00003-0000-0000-0000-000000000003', 5, 'Cecconi M, et al. Consensus on circulatory shock and hemodynamic monitoring. Task Force of the European Society of Intensive Care Medicine. Intensive Care Med. 2014;40(12):1795-1815.', '10.1007/s00134-014-3525-z', '25392034', NULL),
-('art00003-0000-0000-0000-000000000003', 6, 'CRASH-2 Trial Collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. Lancet. 2010;376(9734):23-32.', '10.1016/S0140-6736(10)60835-5', '20554319', NULL),
-('art00003-0000-0000-0000-000000000003', 7, 'Holcomb JB, et al. Transfusion of Plasma, Platelets, and Red Blood Cells in a 1:1:1 vs a 1:1:2 Ratio and Mortality in Patients With Severe Trauma: The PROPPR Randomized Clinical Trial. JAMA. 2015;313(5):471-482.', '10.1001/jama.2015.12', '25647203', NULL),
-('art00003-0000-0000-0000-000000000003', 8, 'Murthy S, Bhatt DL. Cardiogenic Shock. N Engl J Med. 2022;386(22):2137-2148.', '10.1056/NEJMcp2211110', '35649022', NULL),
-('art00003-0000-0000-0000-000000000003', 9, 'Konstantinides SV, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020;41(4):543-603.', '10.1093/eurheartj/ehz405', '31504429', NULL),
-('art00003-0000-0000-0000-000000000003', 10, 'Simons FE, et al. World Allergy Organization Guidelines for the Assessment and Management of Anaphylaxis. World Allergy Organ J. 2011;4(2):13-37.', '10.1097/WOX.0b013e318211496c', '23268454', NULL);
+('a1100003-0000-0000-0000-000000000003', 1, 'American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual, 10th Edition. 2018.', NULL, NULL, NULL),
+('a1100003-0000-0000-0000-000000000003', 2, 'Singer M, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):801-810.', '10.1001/jama.2016.0287', '26903338', NULL),
+('a1100003-0000-0000-0000-000000000003', 3, 'Evans L, et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Crit Care Med. 2021;49(11):e1063-e1143.', '10.1097/CCM.0000000000005337', '34605781', NULL),
+('a1100003-0000-0000-0000-000000000003', 4, 'van Diepen S, et al. Contemporary Management of Cardiogenic Shock: A Scientific Statement From the American Heart Association. Circulation. 2017;136(16):e52-e68.', '10.1161/CIR.0000000000000525', '28874357', NULL),
+('a1100003-0000-0000-0000-000000000003', 5, 'Cecconi M, et al. Consensus on circulatory shock and hemodynamic monitoring. Task Force of the European Society of Intensive Care Medicine. Intensive Care Med. 2014;40(12):1795-1815.', '10.1007/s00134-014-3525-z', '25392034', NULL),
+('a1100003-0000-0000-0000-000000000003', 6, 'CRASH-2 Trial Collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. Lancet. 2010;376(9734):23-32.', '10.1016/S0140-6736(10)60835-5', '20554319', NULL),
+('a1100003-0000-0000-0000-000000000003', 7, 'Holcomb JB, et al. Transfusion of Plasma, Platelets, and Red Blood Cells in a 1:1:1 vs a 1:1:2 Ratio and Mortality in Patients With Severe Trauma: The PROPPR Randomized Clinical Trial. JAMA. 2015;313(5):471-482.', '10.1001/jama.2015.12', '25647203', NULL),
+('a1100003-0000-0000-0000-000000000003', 8, 'Murthy S, Bhatt DL. Cardiogenic Shock. N Engl J Med. 2022;386(22):2137-2148.', '10.1056/NEJMcp2211110', '35649022', NULL),
+('a1100003-0000-0000-0000-000000000003', 9, 'Konstantinides SV, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020;41(4):543-603.', '10.1093/eurheartj/ehz405', '31504429', NULL),
+('a1100003-0000-0000-0000-000000000003', 10, 'Simons FE, et al. World Allergy Organization Guidelines for the Assessment and Management of Anaphylaxis. World Allergy Organ J. 2011;4(2):13-37.', '10.1097/WOX.0b013e318211496c', '23268454', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 1,
+('a1100003-0000-0000-0000-000000000003', 1,
 'A 30-year-old man presents after a motor vehicle accident with HR 125, BP 95/70, RR 28, and altered mental status. He is estimated to have lost approximately 1800 mL of blood. According to ATLS classification, this represents which class of hemorrhagic shock?',
 'Class I',
 'Class II',
@@ -680,11 +680,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Class IV',
 'Unclassifiable without more information',
 'C',
-'Class III hemorrhagic shock involves 30-40% blood volume loss (approximately 1500-2000 mL in a 70 kg adult with 5L blood volume). Clinical features include tachycardia (120-140), hypotension, tachypnea (30-40), decreased urine output (5-15 mL/hr), and anxiety/confusion. This patient shows signs of inadequate perfusion and requires crystalloid and blood transfusion.',
-'1');
+'Class III hemorrhagic shock involves 30-40% blood volume loss (approximately 1500-2000 mL in a 70 kg adult with 5L blood volume). Clinical features include tachycardia (120-140), hypotension, tachypnea (30-40), decreased urine output (5-15 mL/hr), and anxiety/confusion. This patient shows signs of inadequate perfusion and requires crystalloid and blood transfusion.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 2,
+('a1100003-0000-0000-0000-000000000003', 2,
 'Which hemodynamic profile is characteristic of early septic shock?',
 'Decreased CVP, decreased CO, increased SVR',
 'Increased CVP, decreased CO, increased SVR',
@@ -692,11 +691,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Increased CVP, increased CO, decreased SVR',
 'Normal CVP, decreased CO, normal SVR',
 'C',
-'Early septic shock (distributive shock) is characterized by vasodilation leading to decreased SVR, often with normal or increased cardiac output as the heart compensates. CVP may be low due to relative hypovolemia from vasodilation and capillary leak. This is in contrast to cardiogenic shock where CO is decreased and CVP is elevated.',
-'2,5');
+'Early septic shock (distributive shock) is characterized by vasodilation leading to decreased SVR, often with normal or increased cardiac output as the heart compensates. CVP may be low due to relative hypovolemia from vasodilation and capillary leak. This is in contrast to cardiogenic shock where CO is decreased and CVP is elevated.', '{2,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 3,
+('a1100003-0000-0000-0000-000000000003', 3,
 'A 60-year-old woman with suspected pneumonia has BP 82/50, HR 110, lactate 4.5 mmol/L, and requires norepinephrine to maintain MAP ≥65 despite receiving 2L crystalloid. According to Sepsis-3, she has:',
 'SIRS only',
 'Sepsis without organ dysfunction',
@@ -704,11 +702,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Septic shock',
 'Cannot be classified without SOFA score',
 'D',
-'According to Sepsis-3, septic shock is defined as sepsis requiring vasopressors to maintain MAP ≥65 mmHg AND having a lactate >2 mmol/L despite adequate fluid resuscitation. This patient meets both criteria: she requires norepinephrine (vasopressor) and has lactate of 4.5 mmol/L (>2). Septic shock carries mortality >40%.',
-'2,3');
+'According to Sepsis-3, septic shock is defined as sepsis requiring vasopressors to maintain MAP ≥65 mmHg AND having a lactate >2 mmol/L despite adequate fluid resuscitation. This patient meets both criteria: she requires norepinephrine (vasopressor) and has lactate of 4.5 mmol/L (>2). Septic shock carries mortality >40%.', '{2,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 4,
+('a1100003-0000-0000-0000-000000000003', 4,
 'According to the Surviving Sepsis Campaign 2021 guidelines, what is the first-line vasopressor for septic shock?',
 'Dopamine',
 'Epinephrine',
@@ -716,11 +713,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Vasopressin',
 'Phenylephrine',
 'C',
-'Norepinephrine is the first-line vasopressor for septic shock according to the Surviving Sepsis Campaign 2021 guidelines. It has both α-adrenergic (vasoconstriction) and β-adrenergic (inotropic) effects. Vasopressin is recommended as a second agent if norepinephrine doses are escalating. Dopamine is no longer preferred due to higher arrhythmia risk.',
-'3');
+'Norepinephrine is the first-line vasopressor for septic shock according to the Surviving Sepsis Campaign 2021 guidelines. It has both α-adrenergic (vasoconstriction) and β-adrenergic (inotropic) effects. Vasopressin is recommended as a second agent if norepinephrine doses are escalating. Dopamine is no longer preferred due to higher arrhythmia risk.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 5,
+('a1100003-0000-0000-0000-000000000003', 5,
 'A patient with a spinal cord injury at C6 presents with BP 75/50 and HR 52. His skin is warm and dry. This clinical presentation is most consistent with:',
 'Hypovolemic shock',
 'Cardiogenic shock',
@@ -728,11 +724,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Neurogenic shock',
 'Anaphylactic shock',
 'D',
-'Neurogenic shock from spinal cord injury (above T6) results in loss of sympathetic tone, causing vasodilation and bradycardia. The hallmark is hypotension with bradycardia (not tachycardia) and warm, dry skin (due to vasodilation). This is in contrast to hypovolemic and cardiogenic shock, which cause cool, clammy skin from compensatory vasoconstriction.',
-'1');
+'Neurogenic shock from spinal cord injury (above T6) results in loss of sympathetic tone, causing vasodilation and bradycardia. The hallmark is hypotension with bradycardia (not tachycardia) and warm, dry skin (due to vasodilation). This is in contrast to hypovolemic and cardiogenic shock, which cause cool, clammy skin from compensatory vasoconstriction.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 6,
+('a1100003-0000-0000-0000-000000000003', 6,
 'The Hour-1 Bundle for sepsis includes all of the following EXCEPT:',
 'Measuring serum lactate',
 'Obtaining blood cultures',
@@ -740,11 +735,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Inserting a central venous catheter',
 'Starting vasopressors if hypotensive after fluids',
 'D',
-'The Surviving Sepsis Campaign Hour-1 Bundle includes: (1) Measure lactate, (2) Obtain blood cultures before antibiotics, (3) Administer broad-spectrum antibiotics, (4) Begin rapid fluid resuscitation with 30 mL/kg crystalloid for hypotension or lactate ≥4, and (5) Apply vasopressors for MAP <65. Central venous catheter insertion is not part of the Hour-1 Bundle, though it may be needed for vasopressor administration.',
-'3');
+'The Surviving Sepsis Campaign Hour-1 Bundle includes: (1) Measure lactate, (2) Obtain blood cultures before antibiotics, (3) Administer broad-spectrum antibiotics, (4) Begin rapid fluid resuscitation with 30 mL/kg crystalloid for hypotension or lactate ≥4, and (5) Apply vasopressors for MAP <65. Central venous catheter insertion is not part of the Hour-1 Bundle, though it may be needed for vasopressor administration.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 7,
+('a1100003-0000-0000-0000-000000000003', 7,
 'Beck''s triad, consisting of hypotension, JVD, and muffled heart sounds, is classically associated with:',
 'Tension pneumothorax',
 'Cardiac tamponade',
@@ -752,11 +746,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Cardiogenic shock from MI',
 'Aortic dissection',
 'B',
-'Beck''s triad (hypotension, jugular venous distension, and muffled heart sounds) is the classic presentation of cardiac tamponade, though it is present in only 10-40% of cases. Pericardial fluid compresses the heart, impairing diastolic filling and reducing cardiac output. Pulsus paradoxus (>10 mmHg drop in SBP with inspiration) is another important sign.',
-'1');
+'Beck''s triad (hypotension, jugular venous distension, and muffled heart sounds) is the classic presentation of cardiac tamponade, though it is present in only 10-40% of cases. Pericardial fluid compresses the heart, impairing diastolic filling and reducing cardiac output. Pulsus paradoxus (>10 mmHg drop in SBP with inspiration) is another important sign.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 8,
+('a1100003-0000-0000-0000-000000000003', 8,
 'A trauma patient has unstable vital signs with absent breath sounds on the left, tracheal deviation to the right, and JVD. What is the immediate management?',
 'Obtain chest X-ray to confirm diagnosis',
 'Needle decompression of left chest',
@@ -764,11 +757,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Start massive transfusion protocol',
 'Perform pericardiocentesis',
 'B',
-'This patient has tension pneumothorax (absent breath sounds, tracheal deviation away from affected side, JVD, hemodynamic instability). Immediate needle decompression of the affected (left) side at the 2nd intercostal space, midclavicular line is required. Do NOT wait for imaging in an unstable patient. This should be followed by tube thoracostomy.',
-'1');
+'This patient has tension pneumothorax (absent breath sounds, tracheal deviation away from affected side, JVD, hemodynamic instability). Immediate needle decompression of the affected (left) side at the 2nd intercostal space, midclavicular line is required. Do NOT wait for imaging in an unstable patient. This should be followed by tube thoracostomy.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 9,
+('a1100003-0000-0000-0000-000000000003', 9,
 'Which of the following is the earliest reliable clinical sign of hemorrhage (Class II hemorrhagic shock)?',
 'Hypotension',
 'Tachycardia',
@@ -776,11 +768,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Altered mental status',
 'Tachypnea',
 'B',
-'Tachycardia is the earliest reliable sign of hemorrhage. In Class II hemorrhage (15-30% blood volume loss), heart rate increases to 100-120 bpm while blood pressure is typically maintained through compensatory mechanisms. Hypotension is a late sign, occurring in Class III-IV hemorrhage when compensatory mechanisms fail.',
-'1');
+'Tachycardia is the earliest reliable sign of hemorrhage. In Class II hemorrhage (15-30% blood volume loss), heart rate increases to 100-120 bpm while blood pressure is typically maintained through compensatory mechanisms. Hypotension is a late sign, occurring in Class III-IV hemorrhage when compensatory mechanisms fail.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 10,
+('a1100003-0000-0000-0000-000000000003', 10,
 'What is the recommended initial fluid resuscitation volume in sepsis according to the Surviving Sepsis Campaign?',
 '10 mL/kg crystalloid',
 '20 mL/kg crystalloid',
@@ -788,11 +779,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '40 mL/kg crystalloid',
 '50 mL/kg crystalloid',
 'C',
-'The Surviving Sepsis Campaign recommends an initial fluid bolus of 30 mL/kg crystalloid for patients with sepsis-induced hypotension or lactate ≥4 mmol/L, to be administered within 3 hours. Balanced crystalloids (such as Lactated Ringer''s) are preferred over normal saline. Further fluid administration should be guided by dynamic assessment of fluid responsiveness.',
-'3');
+'The Surviving Sepsis Campaign recommends an initial fluid bolus of 30 mL/kg crystalloid for patients with sepsis-induced hypotension or lactate ≥4 mmol/L, to be administered within 3 hours. Balanced crystalloids (such as Lactated Ringer''s) are preferred over normal saline. Further fluid administration should be guided by dynamic assessment of fluid responsiveness.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 11,
+('a1100003-0000-0000-0000-000000000003', 11,
 'In cardiogenic shock from acute MI, which hemodynamic finding differentiates it from hypovolemic shock?',
 'Decreased cardiac output',
 'Increased systemic vascular resistance',
@@ -800,11 +790,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Decreased mixed venous oxygen saturation',
 'Metabolic acidosis',
 'C',
-'Both cardiogenic and hypovolemic shock have decreased CO, increased SVR, decreased SvO₂, and may develop metabolic acidosis. The key differentiating feature is filling pressure: cardiogenic shock has ELEVATED PCWP (and CVP) due to pump failure with backup of blood, while hypovolemic shock has LOW filling pressures due to volume depletion.',
-'4,8');
+'Both cardiogenic and hypovolemic shock have decreased CO, increased SVR, decreased SvO₂, and may develop metabolic acidosis. The key differentiating feature is filling pressure: cardiogenic shock has ELEVATED PCWP (and CVP) due to pump failure with backup of blood, while hypovolemic shock has LOW filling pressures due to volume depletion.', '{4,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 12,
+('a1100003-0000-0000-0000-000000000003', 12,
 'What is the target mean arterial pressure (MAP) for resuscitation in septic shock according to guidelines?',
 '≥55 mmHg',
 '≥60 mmHg',
@@ -812,11 +801,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '≥70 mmHg',
 '≥80 mmHg',
 'C',
-'The Surviving Sepsis Campaign recommends targeting MAP ≥65 mmHg in septic shock resuscitation. This threshold is associated with adequate organ perfusion in most patients. Higher targets (e.g., 80-85 mmHg) have not shown benefit and may increase arrhythmia risk. Lower MAPs may be acceptable in specific populations (e.g., chronic hypotension).',
-'3');
+'The Surviving Sepsis Campaign recommends targeting MAP ≥65 mmHg in septic shock resuscitation. This threshold is associated with adequate organ perfusion in most patients. Higher targets (e.g., 80-85 mmHg) have not shown benefit and may increase arrhythmia risk. Lower MAPs may be acceptable in specific populations (e.g., chronic hypotension).', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 13,
+('a1100003-0000-0000-0000-000000000003', 13,
 'The "lethal triad" in trauma refers to which combination?',
 'Hypotension, tachycardia, altered mental status',
 'Hypothermia, acidosis, coagulopathy',
@@ -824,11 +812,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Hemorrhage, infection, organ failure',
 'Hypoxia, hypercarbia, hypotension',
 'B',
-'The "lethal triad" in trauma refers to hypothermia, acidosis, and coagulopathy. Each element worsens the others in a vicious cycle: hypothermia impairs coagulation, acidosis inhibits clotting factors, and ongoing bleeding worsens hypothermia and acidosis. Damage control surgery and resuscitation aims to break this cycle.',
-'1,6');
+'The "lethal triad" in trauma refers to hypothermia, acidosis, and coagulopathy. Each element worsens the others in a vicious cycle: hypothermia impairs coagulation, acidosis inhibits clotting factors, and ongoing bleeding worsens hypothermia and acidosis. Damage control surgery and resuscitation aims to break this cycle.', '{1,6}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 14,
+('a1100003-0000-0000-0000-000000000003', 14,
 'What is the first-line medication for anaphylactic shock?',
 'Diphenhydramine (antihistamine)',
 'Methylprednisolone (corticosteroid)',
@@ -836,11 +823,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Albuterol (nebulized)',
 'Normal saline IV bolus',
 'C',
-'Epinephrine IM is the FIRST-LINE treatment for anaphylaxis and anaphylactic shock. It should be given immediately at a dose of 0.3-0.5 mg in the anterolateral thigh. Epinephrine reverses vasodilation, bronchoconstriction, and reduces mediator release. Antihistamines and steroids are adjunctive but should not delay epinephrine administration.',
-'10');
+'Epinephrine IM is the FIRST-LINE treatment for anaphylaxis and anaphylactic shock. It should be given immediately at a dose of 0.3-0.5 mg in the anterolateral thigh. Epinephrine reverses vasodilation, bronchoconstriction, and reduces mediator release. Antihistamines and steroids are adjunctive but should not delay epinephrine administration.', '{10}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 15,
+('a1100003-0000-0000-0000-000000000003', 15,
 'Which laboratory value is the most important biomarker for assessing tissue perfusion and guiding resuscitation in shock?',
 'Hemoglobin',
 'White blood cell count',
@@ -848,11 +834,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Serum creatinine',
 'Arterial pH',
 'C',
-'Serum lactate is the most important biomarker in shock. It reflects tissue hypoperfusion and anaerobic metabolism. Elevated lactate correlates with mortality. Serial lactate measurements guide resuscitation with a target of normalization or clearance of ≥10% every 2 hours. Unlike other markers, lactate directly reflects cellular-level oxygen debt.',
-'3,5');
+'Serum lactate is the most important biomarker in shock. It reflects tissue hypoperfusion and anaerobic metabolism. Elevated lactate correlates with mortality. Serial lactate measurements guide resuscitation with a target of normalization or clearance of ≥10% every 2 hours. Unlike other markers, lactate directly reflects cellular-level oxygen debt.', '{3,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 16,
+('a1100003-0000-0000-0000-000000000003', 16,
 'A patient with massive pulmonary embolism presents with shock (SBP 70 mmHg). What is the recommended initial treatment?',
 'Anticoagulation with enoxaparin only',
 'Systemic thrombolysis with tPA',
@@ -860,11 +845,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Observation with supportive care',
 'Immediate surgical embolectomy',
 'B',
-'For massive (high-risk) pulmonary embolism with hemodynamic instability/shock, systemic thrombolysis is the recommended first-line treatment. Standard dosing is tPA 100 mg over 2 hours. Thrombolysis rapidly lyses the clot and reduces RV afterload. Surgical embolectomy is reserved for when thrombolysis is contraindicated or has failed.',
-'9');
+'For massive (high-risk) pulmonary embolism with hemodynamic instability/shock, systemic thrombolysis is the recommended first-line treatment. Standard dosing is tPA 100 mg over 2 hours. Thrombolysis rapidly lyses the clot and reduces RV afterload. Surgical embolectomy is reserved for when thrombolysis is contraindicated or has failed.', '{9}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 17,
+('a1100003-0000-0000-0000-000000000003', 17,
 'In damage control resuscitation, what is "permissive hypotension" and when is it appropriate?',
 'Maintaining SBP 80-90 mmHg until surgical hemorrhage control, except in TBI',
 'Allowing any blood pressure as long as the patient is conscious',
@@ -872,11 +856,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Using vasopressors to maintain SBP >120 mmHg',
 'Transfusing blood only when SBP falls below 60 mmHg',
 'A',
-'Permissive hypotension involves targeting a lower than normal blood pressure (SBP 80-90 mmHg) until surgical hemorrhage control is achieved. This avoids "popping the clot" by preventing high arterial pressures that may dislodge forming thrombus. It is NOT appropriate in traumatic brain injury, where higher MAPs are needed to maintain cerebral perfusion.',
-'1,7');
+'Permissive hypotension involves targeting a lower than normal blood pressure (SBP 80-90 mmHg) until surgical hemorrhage control is achieved. This avoids "popping the clot" by preventing high arterial pressures that may dislodge forming thrombus. It is NOT appropriate in traumatic brain injury, where higher MAPs are needed to maintain cerebral perfusion.', '{1,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 18,
+('a1100003-0000-0000-0000-000000000003', 18,
 'Which of the following is a dynamic measure of fluid responsiveness?',
 'Central venous pressure',
 'Pulmonary capillary wedge pressure',
@@ -884,11 +867,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Chest X-ray showing pulmonary edema',
 'Jugular venous distension',
 'C',
-'The passive leg raise test is a dynamic measure of fluid responsiveness. It transiently increases preload by "autotransfusing" blood from the legs. If cardiac output increases by >10%, the patient is likely to respond to fluid administration. Static measures like CVP and PCWP are poor predictors of fluid responsiveness.',
-'5');
+'The passive leg raise test is a dynamic measure of fluid responsiveness. It transiently increases preload by "autotransfusing" blood from the legs. If cardiac output increases by >10%, the patient is likely to respond to fluid administration. Static measures like CVP and PCWP are poor predictors of fluid responsiveness.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 19,
+('a1100003-0000-0000-0000-000000000003', 19,
 'In trauma, the PROPPR trial supported which ratio of blood products in massive transfusion?',
 '1:1:1 (PRBC:FFP:Platelets)',
 '2:1:1 (PRBC:FFP:Platelets)',
@@ -896,11 +878,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '4:1:1 (PRBC:FFP:Platelets)',
 '6:1 (PRBC:FFP only)',
 'A',
-'The PROPPR (Pragmatic, Randomized Optimal Platelet and Plasma Ratios) trial compared 1:1:1 to 1:1:2 ratios of plasma:platelets:red blood cells in trauma patients requiring massive transfusion. While 24-hour mortality was similar, the 1:1:1 group achieved hemostasis faster and had fewer deaths due to exsanguination within 24 hours.',
-'7');
+'The PROPPR (Pragmatic, Randomized Optimal Platelet and Plasma Ratios) trial compared 1:1:1 to 1:1:2 ratios of plasma:platelets:red blood cells in trauma patients requiring massive transfusion. While 24-hour mortality was similar, the 1:1:1 group achieved hemostasis faster and had fewer deaths due to exsanguination within 24 hours.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00003-0000-0000-0000-000000000003', 20,
+('a1100003-0000-0000-0000-000000000003', 20,
 'What is the appropriate target for lactate clearance during resuscitation of shock?',
 'Complete normalization within 1 hour',
 'Decrease of ≥10% every 2 hours',
@@ -908,5 +889,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Any decrease within 24 hours',
 'Lactate clearance is not a useful resuscitation target',
 'B',
-'The target for lactate clearance during resuscitation is a decrease of ≥10% every 2 hours. Serial lactate measurements guide the adequacy of resuscitation. Failure to clear lactate despite resuscitation efforts suggests ongoing tissue hypoperfusion, inadequate intervention, or non-hypoperfusion causes of elevated lactate and warrants reassessment.',
-'3,5');
+'The target for lactate clearance during resuscitation is a decrease of ≥10% every 2 hours. Serial lactate measurements guide the adequacy of resuscitation. Failure to clear lactate despite resuscitation efforts suggests ongoing tissue hypoperfusion, inadequate intervention, or non-hypoperfusion causes of elevated lactate and warrants reassessment.', '{3,5}');

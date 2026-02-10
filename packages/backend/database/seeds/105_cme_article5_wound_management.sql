@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00005-0000-0000-0000-000000000005',
-    'b0000005-0000-0000-0000-000000000001',
+    'a1100005-0000-0000-0000-000000000005',
+    'b0000005-0000-0000-0000-000000000005',
     'a0000001-0000-0000-0000-000000000001',
     'Surgical Wounds and Evidence-Based Wound Management',
     'Principles of Wound Assessment, Care, and Complication Prevention',
@@ -20,8 +20,8 @@ INSERT INTO cme_articles (
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'introduction', 'Introduction',
 'Wound management represents one of the oldest and most fundamental aspects of medical practice. From ancient civilizations using honey and wine to treat wounds to modern advanced wound care technologies, the goal has remained constant: to create optimal conditions for wound healing.
 
 **The Burden of Wounds:**
@@ -41,8 +41,8 @@ The approach to wound care has evolved from passive protection to active optimiz
 This article will provide the foundation for evidence-based wound assessment and management decisions.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. Apply systematic wound assessment techniques including measurement, tissue classification, and documentation
@@ -66,8 +66,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Develop comprehensive wound care plans for complex patients', 2);
 
 -- Section 3: Wound Assessment
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'content', 'Systematic Wound Assessment',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'content', 'Systematic Wound Assessment',
 '## Components of Wound Assessment
 
 ### 1. History
@@ -148,8 +148,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Part of medical record', 3);
 
 -- Section 4: Wound Classification
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'content', 'Wound Classification Systems',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'content', 'Wound Classification Systems',
 '## Classification by Depth
 
 ### Superficial (Partial Thickness)
@@ -228,8 +228,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Senescent cells at wound edge', 4);
 
 -- Section 5: Wound Bed Preparation
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'content', 'Wound Bed Preparation: The TIME Framework',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'content', 'Wound Bed Preparation: The TIME Framework',
 '## The TIME Framework
 
 The TIME framework provides a systematic approach to wound bed preparation:
@@ -318,8 +318,8 @@ The TIME framework provides a systematic approach to wound bed preparation:
 - Skin grafting for large wounds', 5);
 
 -- Section 6: Wound Dressings
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'content', 'Wound Dressing Selection',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'content', 'Wound Dressing Selection',
 '## Principles of Dressing Selection
 
 The ideal wound dressing:
@@ -403,8 +403,8 @@ The ideal wound dressing:
 | Cavity wound | Ribbon alginate, hydrofiber, foam cavity |', 6);
 
 -- Section 7: NPWT
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'content', 'Negative Pressure Wound Therapy',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'content', 'Negative Pressure Wound Therapy',
 '## Mechanism of Action
 
 Negative Pressure Wound Therapy (NPWT) applies controlled sub-atmospheric pressure to the wound bed.
@@ -479,8 +479,8 @@ Negative Pressure Wound Therapy (NPWT) applies controlled sub-atmospheric pressu
 - Fistula development (rare)', 7);
 
 -- Section 8: SSI Prevention
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'content', 'Surgical Site Infection Prevention',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'content', 'Surgical Site Infection Prevention',
 '## SSI Definition and Classification
 
 ### Definition (CDC)
@@ -573,8 +573,8 @@ Infection occurring within 30 days of surgery (or 1 year if implant) meeting spe
 - May require operative intervention', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'key_points', 'Key Points',
 '1. **Wound Assessment**: Document location, dimensions, tissue types (%, color), exudate, edges, and periwound skin at each encounter
 
 2. **TIME Framework**: Tissue (debride), Infection (reduce bioburden), Moisture (balance), Edge (encourage advancement)
@@ -596,8 +596,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Chronic Wound Definition**: Wound failing to progress through healing phases in expected timeframe (usually >4-6 weeks)', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: "If the wound isn''t healing, you''re missing something." Always reassess for uncontrolled infection, ischemia, pressure, or systemic factors.
 
 💡 **Pearl 2**: The presence of odor during hydrocolloid removal is normal (autolysis of dead tissue) and should not be confused with infection.
@@ -619,23 +619,23 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: Before blaming the wound for not healing, evaluate the patient—optimize nutrition, glucose control, perfusion, and offload pressure.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00005-0000-0000-0000-000000000005', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100005-0000-0000-0000-000000000005', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00005-0000-0000-0000-000000000005', 1, 'Schultz GS, et al. Wound bed preparation: a systematic approach to wound management. Wound Repair Regen. 2003;11(Suppl 1):S1-28.', '10.1046/j.1524-475x.11.s2.1.x', '12654015', NULL),
-('art00005-0000-0000-0000-000000000005', 2, 'Anderson DJ, et al. Strategies to prevent surgical site infections in acute care hospitals: 2014 update. Infect Control Hosp Epidemiol. 2014;35(6):605-627.', '10.1086/676022', '24799638', NULL),
-('art00005-0000-0000-0000-000000000005', 3, 'Argenta LC, Morykwas MJ. Vacuum-assisted closure: a new method for wound control and treatment. Ann Plast Surg. 1997;38(6):563-576.', '10.1097/00000637-199706000-00001', '9188970', NULL),
-('art00005-0000-0000-0000-000000000005', 4, 'Wound, Ostomy and Continence Nurses Society. Guideline for Prevention and Management of Pressure Ulcers. WOCN Clinical Practice Guideline Series. 2016.', NULL, NULL, NULL),
-('art00005-0000-0000-0000-000000000005', 5, 'James GA, et al. Biofilms in chronic wounds. Wound Repair Regen. 2008;16(1):37-44.', '10.1111/j.1524-475X.2007.00321.x', '18086294', NULL),
-('art00005-0000-0000-0000-000000000005', 6, 'Berríos-Torres SI, et al. CDC Guideline for the Prevention of Surgical Site Infection. JAMA Surg. 2017;152(8):784-791.', '10.1001/jamasurg.2017.0904', '28467526', NULL),
-('art00005-0000-0000-0000-000000000005', 7, 'Dumville JC, et al. Negative pressure wound therapy for treating surgical wounds healing by secondary intention. Cochrane Database Syst Rev. 2015;(6):CD011278.', '10.1002/14651858.CD011278.pub2', '26042534', NULL),
-('art00005-0000-0000-0000-000000000005', 8, 'Winter GD. Formation of the scab and the rate of epithelization of superficial wounds in the skin of the young domestic pig. Nature. 1962;193:293-294.', '10.1038/193293a0', '14007593', NULL);
+('a1100005-0000-0000-0000-000000000005', 1, 'Schultz GS, et al. Wound bed preparation: a systematic approach to wound management. Wound Repair Regen. 2003;11(Suppl 1):S1-28.', '10.1046/j.1524-475x.11.s2.1.x', '12654015', NULL),
+('a1100005-0000-0000-0000-000000000005', 2, 'Anderson DJ, et al. Strategies to prevent surgical site infections in acute care hospitals: 2014 update. Infect Control Hosp Epidemiol. 2014;35(6):605-627.', '10.1086/676022', '24799638', NULL),
+('a1100005-0000-0000-0000-000000000005', 3, 'Argenta LC, Morykwas MJ. Vacuum-assisted closure: a new method for wound control and treatment. Ann Plast Surg. 1997;38(6):563-576.', '10.1097/00000637-199706000-00001', '9188970', NULL),
+('a1100005-0000-0000-0000-000000000005', 4, 'Wound, Ostomy and Continence Nurses Society. Guideline for Prevention and Management of Pressure Ulcers. WOCN Clinical Practice Guideline Series. 2016.', NULL, NULL, NULL),
+('a1100005-0000-0000-0000-000000000005', 5, 'James GA, et al. Biofilms in chronic wounds. Wound Repair Regen. 2008;16(1):37-44.', '10.1111/j.1524-475X.2007.00321.x', '18086294', NULL),
+('a1100005-0000-0000-0000-000000000005', 6, 'Berríos-Torres SI, et al. CDC Guideline for the Prevention of Surgical Site Infection. JAMA Surg. 2017;152(8):784-791.', '10.1001/jamasurg.2017.0904', '28467526', NULL),
+('a1100005-0000-0000-0000-000000000005', 7, 'Dumville JC, et al. Negative pressure wound therapy for treating surgical wounds healing by secondary intention. Cochrane Database Syst Rev. 2015;(6):CD011278.', '10.1002/14651858.CD011278.pub2', '26042534', NULL),
+('a1100005-0000-0000-0000-000000000005', 8, 'Winter GD. Formation of the scab and the rate of epithelization of superficial wounds in the skin of the young domestic pig. Nature. 1962;193:293-294.', '10.1038/193293a0', '14007593', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 1,
+('a1100005-0000-0000-0000-000000000005', 1,
 'A wound bed that is 60% yellow and 40% red indicates:',
 '60% slough/fibrin tissue requiring debridement and 40% healthy granulation tissue',
 '60% infected tissue requiring antibiotics',
@@ -643,11 +643,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'A wound that should not be debrided',
 'A wound ready for skin grafting',
 'A',
-'Yellow tissue in a wound bed represents slough (fibrinous debris, devitalized tissue) which requires debridement to prepare the wound bed for healing. Red tissue represents healthy granulation tissue that should be protected. The TIME framework indicates that non-viable tissue (T) should be removed.',
-'1');
+'Yellow tissue in a wound bed represents slough (fibrinous debris, devitalized tissue) which requires debridement to prepare the wound bed for healing. Red tissue represents healthy granulation tissue that should be protected. The TIME framework indicates that non-viable tissue (T) should be removed.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 2,
+('a1100005-0000-0000-0000-000000000005', 2,
 'According to the TIME framework, which component addresses bacterial biofilm and colonization?',
 'Tissue',
 'Infection/Inflammation',
@@ -655,11 +654,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Edge',
 'None of the above',
 'B',
-'The "I" in TIME stands for Infection/Inflammation and addresses bacterial imbalance, critical colonization, and biofilm. Management includes debridement to disrupt biofilm, topical antimicrobials, and systemic antibiotics when indicated for clinical infection.',
-'1,5');
+'The "I" in TIME stands for Infection/Inflammation and addresses bacterial imbalance, critical colonization, and biofilm. Management includes debridement to disrupt biofilm, topical antimicrobials, and systemic antibiotics when indicated for clinical infection.', '{1,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 3,
+('a1100005-0000-0000-0000-000000000005', 3,
 'Which dressing type is most appropriate for a heavily exudating leg ulcer?',
 'Hydrogel',
 'Transparent film',
@@ -667,11 +665,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Alginate or foam dressing',
 'Dry gauze',
 'D',
-'Heavily exudating wounds require absorptive dressings such as alginates, hydrofibers, or foam dressings. Hydrogels donate moisture and are for dry wounds. Films and hydrocolloids cannot manage heavy exudate and will cause maceration. Dry gauze provides suboptimal moist wound healing environment.',
-'1');
+'Heavily exudating wounds require absorptive dressings such as alginates, hydrofibers, or foam dressings. Hydrogels donate moisture and are for dry wounds. Films and hydrocolloids cannot manage heavy exudate and will cause maceration. Dry gauze provides suboptimal moist wound healing environment.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 4,
+('a1100005-0000-0000-0000-000000000005', 4,
 'A patient has a dry, necrotic heel eschar with no signs of infection. Which debridement method is most appropriate as initial management?',
 'Immediate sharp surgical debridement',
 'Autolytic debridement with hydrogel',
@@ -679,11 +676,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Enzymatic debridement with collagenase',
 'Mechanical wet-to-dry dressings',
 'C',
-'Stable, dry eschar on the heel (without infection, fluctuance, or drainage) should be left intact as it acts as a biological dressing. This is an exception to the general principle of debridement. If the eschar becomes unstable, infected, or the wound develops cellulitis, then debridement is indicated.',
-'4');
+'Stable, dry eschar on the heel (without infection, fluctuance, or drainage) should be left intact as it acts as a biological dressing. This is an exception to the general principle of debridement. If the eschar becomes unstable, infected, or the wound develops cellulitis, then debridement is indicated.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 5,
+('a1100005-0000-0000-0000-000000000005', 5,
 'What is the recommended timing for prophylactic antibiotic administration to prevent SSI?',
 '24 hours before surgery',
 '2 hours before surgery',
@@ -691,11 +687,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'At the time of skin closure',
 'Postoperatively in recovery',
 'C',
-'Prophylactic antibiotics should be given within 60 minutes of surgical incision to achieve adequate tissue levels at the time of potential contamination. Vancomycin and fluoroquinolones require a 120-minute window due to longer infusion times. Antibiotics should be discontinued within 24 hours postoperatively.',
-'2,6');
+'Prophylactic antibiotics should be given within 60 minutes of surgical incision to achieve adequate tissue levels at the time of potential contamination. Vancomycin and fluoroquinolones require a 120-minute window due to longer infusion times. Antibiotics should be discontinued within 24 hours postoperatively.', '{2,6}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 6,
+('a1100005-0000-0000-0000-000000000005', 6,
 'Which of the following is an absolute contraindication to Negative Pressure Wound Therapy (NPWT)?',
 'Diabetic foot ulcer',
 'Sternal wound infection',
@@ -703,11 +698,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Moderate exudate',
 'Granulating wound',
 'C',
-'Malignancy in the wound bed is an absolute contraindication to NPWT because the negative pressure and increased blood flow may promote tumor growth and metastasis. Other absolute contraindications include untreated osteomyelitis, necrotic tissue with eschar, and exposed blood vessels or anastomoses.',
-'3,7');
+'Malignancy in the wound bed is an absolute contraindication to NPWT because the negative pressure and increased blood flow may promote tumor growth and metastasis. Other absolute contraindications include untreated osteomyelitis, necrotic tissue with eschar, and exposed blood vessels or anastomoses.', '{3,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 7,
+('a1100005-0000-0000-0000-000000000005', 7,
 'What is the primary mechanism by which NPWT promotes wound healing?',
 'Kills bacteria directly',
 'Macrodeformation drawing wound edges together and microdeformation stimulating cell proliferation',
@@ -715,11 +709,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Increases wound temperature',
 'Delivers antibiotics to the wound',
 'B',
-'NPWT primarily works through macrodeformation (drawing wound edges together, reducing wound size) and microdeformation (mechanical stretch on cells stimulating proliferation and granulation tissue formation). It also removes excess exudate and edema, but does not directly kill bacteria or deliver medications.',
-'3');
+'NPWT primarily works through macrodeformation (drawing wound edges together, reducing wound size) and microdeformation (mechanical stretch on cells stimulating proliferation and granulation tissue formation). It also removes excess exudate and edema, but does not directly kill bacteria or deliver medications.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 8,
+('a1100005-0000-0000-0000-000000000005', 8,
 'A wound that has not shown healing progress despite 6 weeks of treatment would be classified as:',
 'An acute wound',
 'A chronic wound',
@@ -727,11 +720,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'A healing wound',
 'An epithelializing wound',
 'B',
-'A chronic wound is defined as a wound that fails to progress through the normal healing phases in an expected timeframe, usually 4-6 weeks. These wounds are often stalled in the inflammatory phase due to persistent infection, biofilm, underlying disease, poor perfusion, or other factors that must be addressed.',
-'1');
+'A chronic wound is defined as a wound that fails to progress through the normal healing phases in an expected timeframe, usually 4-6 weeks. These wounds are often stalled in the inflammatory phase due to persistent infection, biofilm, underlying disease, poor perfusion, or other factors that must be addressed.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 9,
+('a1100005-0000-0000-0000-000000000005', 9,
 'Which debridement method is most selective for necrotic tissue while sparing healthy tissue?',
 'Wet-to-dry mechanical debridement',
 'Sharp surgical debridement',
@@ -739,11 +731,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'High-pressure irrigation',
 'None are selective',
 'C',
-'Autolytic debridement uses the body''s own enzymes and moisture (maintained by occlusive or semi-occlusive dressings) to selectively break down necrotic tissue while sparing viable tissue. Enzymatic debridement (e.g., collagenase) is also selective. Wet-to-dry and sharp debridement can remove viable tissue as well.',
-'1');
+'Autolytic debridement uses the body''s own enzymes and moisture (maintained by occlusive or semi-occlusive dressings) to selectively break down necrotic tissue while sparing viable tissue. Enzymatic debridement (e.g., collagenase) is also selective. Wet-to-dry and sharp debridement can remove viable tissue as well.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 10,
+('a1100005-0000-0000-0000-000000000005', 10,
 'Winter''s research established the importance of which principle in wound healing?',
 'The need for wound desiccation',
 'The benefit of moist wound healing',
@@ -751,11 +742,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'The requirement for daily dressing changes',
 'The use of antiseptics on all wounds',
 'B',
-'Winter''s landmark 1962 research demonstrated that wounds covered with an occlusive dressing (maintaining moisture) epithelialized faster than those left to dry and form a scab. This established the principle of moist wound healing that underlies modern wound care.',
-'8');
+'Winter''s landmark 1962 research demonstrated that wounds covered with an occlusive dressing (maintaining moisture) epithelialized faster than those left to dry and form a scab. This established the principle of moist wound healing that underlies modern wound care.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 11,
+('a1100005-0000-0000-0000-000000000005', 11,
 'Rolled wound edges (epibole) indicate:',
 'Normal wound healing progression',
 'A wound ready for closure',
@@ -763,11 +753,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Infection requiring antibiotics',
 'Excessive moisture',
 'C',
-'Rolled or epibolic wound edges indicate stalled healing where the epithelium has rolled down over the wound edge rather than migrating across the wound bed. Sharp debridement of the rolled edge to create a fresh wound margin can stimulate healing to resume. This addresses the "E" (Edge) component of TIME.',
-'1');
+'Rolled or epibolic wound edges indicate stalled healing where the epithelium has rolled down over the wound edge rather than migrating across the wound bed. Sharp debridement of the rolled edge to create a fresh wound margin can stimulate healing to resume. This addresses the "E" (Edge) component of TIME.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 12,
+('a1100005-0000-0000-0000-000000000005', 12,
 'According to the CDC classification, a surgical site infection involving fascia and muscle is classified as:',
 'Superficial incisional SSI',
 'Deep incisional SSI',
@@ -775,11 +764,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Complex SSI',
 'Chronic SSI',
 'B',
-'Deep incisional SSI involves the fascia and muscle layers. Superficial SSI involves only skin and subcutaneous tissue. Organ/space SSI involves any anatomic site (other than the incision) that was opened or manipulated during surgery, such as intra-abdominal abscess.',
-'2,6');
+'Deep incisional SSI involves the fascia and muscle layers. Superficial SSI involves only skin and subcutaneous tissue. Organ/space SSI involves any anatomic site (other than the incision) that was opened or manipulated during surgery, such as intra-abdominal abscess.', '{2,6}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 13,
+('a1100005-0000-0000-0000-000000000005', 13,
 'Which of the following topical agents should NOT be used simultaneously with enzymatic collagenase debridement?',
 'Normal saline',
 'Petrolatum barrier',
@@ -787,11 +775,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Hydrogel',
 'Foam dressings',
 'C',
-'Silver-containing products inactivate collagenase (enzymatic debrider). When using collagenase (Santyl), avoid silver dressings, heavy metals, and antiseptics containing these agents. Protect periwound skin with barrier cream, apply collagenase to necrotic tissue, and cover with appropriate moisture-retentive dressing.',
-'1');
+'Silver-containing products inactivate collagenase (enzymatic debrider). When using collagenase (Santyl), avoid silver dressings, heavy metals, and antiseptics containing these agents. Protect periwound skin with barrier cream, apply collagenase to necrotic tissue, and cover with appropriate moisture-retentive dressing.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 14,
+('a1100005-0000-0000-0000-000000000005', 14,
 'The typical pressure setting for standard NPWT is:',
 '25-50 mmHg',
 '75-125 mmHg',
@@ -799,11 +786,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '250-300 mmHg',
 '400-500 mmHg',
 'B',
-'Standard NPWT settings are typically 75-125 mmHg of continuous negative pressure. Lower settings may be used for sensitive wounds or skin grafts. Higher pressures are generally not needed and may cause discomfort. The therapy can be continuous or intermittent depending on the clinical situation.',
-'3');
+'Standard NPWT settings are typically 75-125 mmHg of continuous negative pressure. Lower settings may be used for sensitive wounds or skin grafts. Higher pressures are generally not needed and may cause discomfort. The therapy can be continuous or intermittent depending on the clinical situation.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 15,
+('a1100005-0000-0000-0000-000000000005', 15,
 'A characteristic odor upon removal of a hydrocolloid dressing indicates:',
 'Wound infection requiring antibiotics',
 'Normal autolytic debridement process',
@@ -811,11 +797,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Need to discontinue hydrocolloid use',
 'Anaerobic bacterial colonization',
 'B',
-'The characteristic odor upon hydrocolloid removal is a normal finding associated with autolytic debridement of necrotic tissue and is not indicative of infection. The gel formed by the dressing interacting with exudate can have an unpleasant smell. Assess for true signs of infection rather than relying on odor alone.',
-'1');
+'The characteristic odor upon hydrocolloid removal is a normal finding associated with autolytic debridement of necrotic tissue and is not indicative of infection. The gel formed by the dressing interacting with exudate can have an unpleasant smell. Assess for true signs of infection rather than relying on odor alone.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 16,
+('a1100005-0000-0000-0000-000000000005', 16,
 'Biofilms in chronic wounds are characterized by which of the following?',
 'They are easily eradicated by systemic antibiotics',
 'They can form within 24 hours of wound creation',
@@ -823,11 +808,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'They do not affect wound healing',
 'They are visible to the naked eye as thick green drainage',
 'B',
-'Biofilms can form within 24 hours of wound creation. They are communities of bacteria encased in a protective extracellular matrix that is resistant to antibiotics and host defenses. Biofilms are found in an estimated 60-90% of chronic wounds and impair healing. Debridement is the most effective method to disrupt biofilm.',
-'5');
+'Biofilms can form within 24 hours of wound creation. They are communities of bacteria encased in a protective extracellular matrix that is resistant to antibiotics and host defenses. Biofilms are found in an estimated 60-90% of chronic wounds and impair healing. Debridement is the most effective method to disrupt biofilm.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 17,
+('a1100005-0000-0000-0000-000000000005', 17,
 'The CDC SSI prevention bundle includes all of the following EXCEPT:',
 'Maintaining perioperative normothermia',
 'Appropriate antibiotic prophylaxis',
@@ -835,11 +819,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Hair removal with clippers rather than razors',
 'Perioperative glucose control',
 'C',
-'The SSI prevention bundle recommends discontinuing prophylactic antibiotics within 24 hours postoperatively. Routine prolonged antibiotic courses do not reduce SSI and increase antibiotic resistance. The bundle includes normothermia, appropriate prophylaxis, clippers for hair removal, and glucose control (<200 mg/dL).',
-'2,6');
+'The SSI prevention bundle recommends discontinuing prophylactic antibiotics within 24 hours postoperatively. Routine prolonged antibiotic courses do not reduce SSI and increase antibiotic resistance. The bundle includes normothermia, appropriate prophylaxis, clippers for hair removal, and glucose control (<200 mg/dL).', '{2,6}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 18,
+('a1100005-0000-0000-0000-000000000005', 18,
 'In a diabetic foot ulcer, visualization of bone at the base of the wound suggests:',
 'The wound is superficial',
 'The ulcer is Wagner Grade 2 or higher',
@@ -847,11 +830,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'The wound will heal without intervention',
 'NPWT is contraindicated',
 'B',
-'Visualization of or probing to bone in a diabetic foot ulcer suggests at least Wagner Grade 2 (deep ulcer to tendon, bone, or joint) and raises suspicion for osteomyelitis. The "probe-to-bone" test is a simple bedside assessment. MRI is more sensitive for osteomyelitis diagnosis. Such wounds require aggressive treatment.',
-'4');
+'Visualization of or probing to bone in a diabetic foot ulcer suggests at least Wagner Grade 2 (deep ulcer to tendon, bone, or joint) and raises suspicion for osteomyelitis. The "probe-to-bone" test is a simple bedside assessment. MRI is more sensitive for osteomyelitis diagnosis. Such wounds require aggressive treatment.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 19,
+('a1100005-0000-0000-0000-000000000005', 19,
 'How frequently should NPWT dressings typically be changed?',
 'Every 6 hours',
 'Every 24 hours',
@@ -859,11 +841,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Once weekly',
 'Only when saturated',
 'C',
-'NPWT dressings are typically changed every 48-72 hours, or as prescribed. More frequent changes may be needed for infected wounds. Less frequent changes (up to 5-7 days) may be appropriate for skin graft fixation. Always count foam pieces to ensure none is retained in the wound.',
-'3,7');
+'NPWT dressings are typically changed every 48-72 hours, or as prescribed. More frequent changes may be needed for infected wounds. Less frequent changes (up to 5-7 days) may be appropriate for skin graft fixation. Always count foam pieces to ensure none is retained in the wound.', '{3,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00005-0000-0000-0000-000000000005', 20,
+('a1100005-0000-0000-0000-000000000005', 20,
 'A wound showing 40-50% reduction in size at 4 weeks of treatment indicates:',
 'Treatment failure requiring change in approach',
 'Good healing trajectory likely to heal by 12 weeks',
@@ -871,5 +852,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Need for immediate surgical intervention',
 'Normal healing that requires no monitoring',
 'B',
-'Research has shown that a 40-50% reduction in wound area at 4 weeks is a reliable predictor of complete healing by 12 weeks. This is a validated endpoint used in clinical trials and can help guide clinical decision-making about whether to continue current therapy or escalate treatment.',
-'1');
+'Research has shown that a 40-50% reduction in wound area at 4 weeks is a reliable predictor of complete healing by 12 weeks. This is a validated endpoint used in clinical trials and can help guide clinical decision-making about whether to continue current therapy or escalate treatment.', '{1}');

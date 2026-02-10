@@ -1,4 +1,4 @@
--- CME Article 19: Esophageal Cancer - Surgery 4
+- CME Article 19: Esophageal Cancer - Surgery 4
 
 INSERT INTO cme_articles (id, topic_id, category_id, title, subtitle, abstract, authors, estimated_reading_minutes, cme_credits, difficulty_level, version, is_published) VALUES
 ('d0040019-0000-0000-0000-000000000019', 'c4000026-0000-0000-0000-000000000026', 'a0000004-0000-0000-0000-000000000004', 'Esophageal Cancer: Surgical Management', 'Diagnosis, Staging, and Esophagectomy', 'Review of esophageal cancer covering types, staging, neoadjuvant therapy, and surgical approaches.', 'UNTH Surgery Department', 30, 2.0, 'hard', 1, true) ON CONFLICT (id) DO NOTHING;

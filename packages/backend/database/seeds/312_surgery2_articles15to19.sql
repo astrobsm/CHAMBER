@@ -2,7 +2,7 @@
 
 -- ARTICLE 15: Cardiac Tamponade
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000015-0000-0000-0000-000000000015'::uuid, 'introduction', 1, 'Introduction to Cardiac Tamponade', 
+('d2000015-0000-0000-0000-000000000015'::uuid, 'introduction', 1, 'Introduction to Cardiac Tamponade', 
 'Cardiac tamponade is a life-threatening condition where fluid accumulates in the pericardial sac, compressing the heart and impairing filling. In trauma, blood is the typical fluid.
 
 **Anatomy**
@@ -25,7 +25,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 5. Decreased cardiac output
 6. Shock and death if untreated'),
 
-('d0000015-0000-0000-0000-000000000015'::uuid, 'content', 2, 'Clinical Features and Diagnosis',
+('d2000015-0000-0000-0000-000000000015'::uuid, 'content', 2, 'Clinical Features and Diagnosis',
 '**Beck Triad** (classic but present in only 10-40%)
 1. Hypotension (low cardiac output)
 2. Distended neck veins (impaired venous return)
@@ -64,7 +64,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 - Low voltage complexes
 - Electrical alternans (beat-to-beat QRS variation)'),
 
-('d0000015-0000-0000-0000-000000000015'::uuid, 'content', 3, 'Management',
+('d2000015-0000-0000-0000-000000000015'::uuid, 'content', 3, 'Management',
 '**Resuscitation**
 - IV fluids to increase preload temporarily
 - Avoid agents that decrease preload (diuretics, vasodilators)
@@ -105,7 +105,7 @@ Aims:
 - Open cardiac massage
 - Cross-clamp aorta'),
 
-('d0000015-0000-0000-0000-000000000015'::uuid, 'key_points', 4, 'Key Points',
+('d2000015-0000-0000-0000-000000000015'::uuid, 'key_points', 4, 'Key Points',
 '1. Tamponade: Blood in pericardium compresses heart, impairs filling
 2. Rapid 100-200mL accumulation can cause tamponade
 3. Beck triad: Hypotension, JVD, muffled heart sounds
@@ -119,7 +119,7 @@ Aims:
 
 -- ARTICLE 16: Spinal Injuries
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000016-0000-0000-0000-000000000016'::uuid, 'introduction', 1, 'Introduction to Spinal Injuries', 
+('d2000016-0000-0000-0000-000000000016'::uuid, 'introduction', 1, 'Introduction to Spinal Injuries', 
 'Spinal injuries can result in devastating permanent neurological disability. The priority is preventing secondary injury through proper immobilization and management.
 
 **Epidemiology**
@@ -146,7 +146,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 - Denis 3-column model (thoracolumbar)
 - Subaxial cervical injury classification'),
 
-('d0000016-0000-0000-0000-000000000016'::uuid, 'content', 2, 'Incomplete Cord Syndromes',
+('d2000016-0000-0000-0000-000000000016'::uuid, 'content', 2, 'Incomplete Cord Syndromes',
 '**Central Cord Syndrome**
 - Most common incomplete syndrome
 - Usually hyperextension in elderly with cervical spondylosis
@@ -180,7 +180,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 - Variable motor weakness
 - Surgical emergency'),
 
-('d0000016-0000-0000-0000-000000000016'::uuid, 'content', 3, 'Initial Management',
+('d2000016-0000-0000-0000-000000000016'::uuid, 'content', 3, 'Initial Management',
 '**Pre-hospital Care**
 - Assume spinal injury in all trauma patients
 - Manual in-line stabilization
@@ -211,7 +211,7 @@ NEXUS criteria (can clear if ALL present):
 
 Canadian C-spine Rule: Alternative clinical decision tool'),
 
-('d0000016-0000-0000-0000-000000000016'::uuid, 'content', 4, 'Imaging and Definitive Care',
+('d2000016-0000-0000-0000-000000000016'::uuid, 'content', 4, 'Imaging and Definitive Care',
 '**Imaging**
 - CT spine: Primary imaging modality (replaced plain X-rays)
 - MRI: For cord assessment, ligamentous injury, disc herniation
@@ -244,7 +244,7 @@ ASIA (American Spinal Injury Association) scale:
 - Pressure sore prevention
 - DVT prophylaxis'),
 
-('d0000016-0000-0000-0000-000000000016'::uuid, 'key_points', 5, 'Key Points',
+('d2000016-0000-0000-0000-000000000016'::uuid, 'key_points', 5, 'Key Points',
 '1. Assume spinal injury in all trauma patients until cleared
 2. Manual in-line stabilization - never hyperextend neck
 3. Central cord syndrome: Upper limbs weaker than lower (best prognosis)
@@ -258,7 +258,7 @@ ASIA (American Spinal Injury Association) scale:
 
 -- ARTICLE 17: Pelvic Fractures
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000017-0000-0000-0000-000000000017'::uuid, 'introduction', 1, 'Introduction to Pelvic Fractures', 
+('d2000017-0000-0000-0000-000000000017'::uuid, 'introduction', 1, 'Introduction to Pelvic Fractures', 
 'Pelvic fractures range from minor stable injuries to life-threatening unstable fractures with massive hemorrhage.
 
 **Anatomy**
@@ -286,7 +286,7 @@ Based on mechanism of injury:
 
 4. **Combined Mechanism**'),
 
-('d0000017-0000-0000-0000-000000000017'::uuid, 'content', 2, 'Assessment and Hemorrhage',
+('d2000017-0000-0000-0000-000000000017'::uuid, 'content', 2, 'Assessment and Hemorrhage',
 '**Clinical Assessment**
 - Mechanism of injury
 - Pelvic stability (single examination only - do not repeat)
@@ -319,7 +319,7 @@ Life-threatening hemorrhage:
 - Zone 2 (lateral): Do NOT explore in blunt trauma
 - Zone 3 (pelvic): Do NOT explore - apply binder, interventional radiology'),
 
-('d0000017-0000-0000-0000-000000000017'::uuid, 'content', 3, 'Initial Management',
+('d2000017-0000-0000-0000-000000000017'::uuid, 'content', 3, 'Initial Management',
 '**Pelvic Binder**
 - First-line hemorrhage control
 - Reduces pelvic volume
@@ -351,7 +351,7 @@ Options:
 - Consider if ongoing hemorrhage despite binder
 - REBOA (Resuscitative Endovascular Balloon Occlusion of Aorta) as bridge'),
 
-('d0000017-0000-0000-0000-000000000017'::uuid, 'content', 4, 'Definitive Management',
+('d2000017-0000-0000-0000-000000000017'::uuid, 'content', 4, 'Definitive Management',
 '**Non-operative Management**
 - Stable fractures (intact posterior ring)
 - Weight-bearing as tolerated
@@ -389,7 +389,7 @@ Timing:
 - DVT/PE
 - Urological dysfunction'),
 
-('d0000017-0000-0000-0000-000000000017'::uuid, 'key_points', 5, 'Key Points',
+('d2000017-0000-0000-0000-000000000017'::uuid, 'key_points', 5, 'Key Points',
 '1. Posterior pelvic ring provides 60% of stability
 2. Lateral compression most common mechanism (60%)
 3. APC "open book" increases pelvic volume → massive hemorrhage
@@ -403,7 +403,7 @@ Timing:
 
 -- ARTICLE 18: Compartment Syndrome
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000018-0000-0000-0000-000000000018'::uuid, 'introduction', 1, 'Introduction to Compartment Syndrome', 
+('d2000018-0000-0000-0000-000000000018'::uuid, 'introduction', 1, 'Introduction to Compartment Syndrome', 
 'Compartment syndrome is a surgical emergency where increased pressure within a closed muscle compartment compromises tissue perfusion, leading to irreversible damage if untreated.
 
 **Pathophysiology**
@@ -434,7 +434,7 @@ Decreased compartment size:
 - Hand
 - Foot'),
 
-('d0000018-0000-0000-0000-000000000018'::uuid, 'content', 2, 'Clinical Features - The 6 Ps',
+('d2000018-0000-0000-0000-000000000018'::uuid, 'content', 2, 'Clinical Features - The 6 Ps',
 '**The 6 Ps** (unreliable - late signs)
 1. **Pain** - out of proportion to injury
 2. **Pain on passive stretch** - earliest and most reliable
@@ -470,7 +470,7 @@ Clinical findings:
 - Weakness of ankle dorsiflexion
 - Sensory loss in first web space'),
 
-('d0000018-0000-0000-0000-000000000018'::uuid, 'content', 3, 'Diagnosis and Management',
+('d2000018-0000-0000-0000-000000000018'::uuid, 'content', 3, 'Diagnosis and Management',
 '**Diagnosis**
 Clinical diagnosis - do not delay for measurements in obvious cases
 
@@ -510,7 +510,7 @@ Single incision: Lateral - releases all 4 compartments
 Double incision: Medial and lateral - most common
 Four compartments: Anterior, lateral, superficial posterior, deep posterior'),
 
-('d0000018-0000-0000-0000-000000000018'::uuid, 'content', 4, 'Complications and Special Situations',
+('d2000018-0000-0000-0000-000000000018'::uuid, 'content', 4, 'Complications and Special Situations',
 '**Complications of Compartment Syndrome**
 Untreated:
 - Muscle necrosis (within 6-8 hours)
@@ -552,7 +552,7 @@ Treated late:
 - Measure via bladder pressure
 - Treatment: Decompressive laparotomy'),
 
-('d0000018-0000-0000-0000-000000000018'::uuid, 'key_points', 5, 'Key Points',
+('d2000018-0000-0000-0000-000000000018'::uuid, 'key_points', 5, 'Key Points',
 '1. Compartment syndrome: Surgical emergency - permanent damage within 6-8 hours
 2. Pain out of proportion + pain on passive stretch = earliest signs
 3. Pulses are usually PRESENT - pulselessness is a late/different finding
@@ -566,7 +566,7 @@ Treated late:
 
 -- ARTICLE 19: Burns Assessment and Management
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000019-0000-0000-0000-000000000019'::uuid, 'introduction', 1, 'Introduction to Burns', 
+('d2000019-0000-0000-0000-000000000019'::uuid, 'introduction', 1, 'Introduction to Burns', 
 'Burns are injuries to tissue caused by heat, chemicals, electricity, or radiation. Major burns are complex injuries requiring specialized multidisciplinary care.
 
 **Classification by Mechanism**
@@ -595,7 +595,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 - Full thickness (3rd degree): All skin layers
 - 4th degree: Underlying tissue (muscle, bone)'),
 
-('d0000019-0000-0000-0000-000000000019'::uuid, 'content', 2, 'Burn Depth and Area Assessment',
+('d2000019-0000-0000-0000-000000000019'::uuid, 'content', 2, 'Burn Depth and Area Assessment',
 '**Burn Depth Assessment**
 
 | Depth | Layers | Appearance | Sensation | Healing |
@@ -627,7 +627,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 - Proportionally larger heads, smaller legs
 - Must use pediatric charts'),
 
-('d0000019-0000-0000-0000-000000000019'::uuid, 'content', 3, 'Initial Management and Resuscitation',
+('d2000019-0000-0000-0000-000000000019'::uuid, 'content', 3, 'Initial Management and Resuscitation',
 '**Primary Survey (ATLS)**
 - Airway: Assess for inhalation injury
 - Breathing: Circumferential chest burns may need escharotomy
@@ -662,7 +662,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 Indication: Circumferential full-thickness burn limiting breathing or limb perfusion
 Technique: Full-thickness incision through eschar to release constriction'),
 
-('d0000019-0000-0000-0000-000000000019'::uuid, 'content', 4, 'Wound Care and Special Burns',
+('d2000019-0000-0000-0000-000000000019'::uuid, 'content', 4, 'Wound Care and Special Burns',
 '**Wound Management**
 - Cool burns with tepid water (10-20 minutes, within 3 hours)
 - Cover with clean dressings
@@ -701,7 +701,7 @@ Technique: Full-thickness incision through eschar to release constriction'),
 - Below glottis: Chemical injury from smoke
 - Treatment: Early intubation, bronchoscopy, supportive care'),
 
-('d0000019-0000-0000-0000-000000000019'::uuid, 'content', 5, 'Burn Center Referral and Complications',
+('d2000019-0000-0000-0000-000000000019'::uuid, 'content', 5, 'Burn Center Referral and Complications',
 '**Burn Center Referral Criteria**
 - Partial thickness >10% TBSA
 - Full thickness any size
@@ -744,7 +744,7 @@ Late:
 - Pressure garments for scarring
 - Psychological support'),
 
-('d0000019-0000-0000-0000-000000000019'::uuid, 'key_points', 6, 'Key Points',
+('d2000019-0000-0000-0000-000000000019'::uuid, 'key_points', 6, 'Key Points',
 '1. Zone of stasis: Potentially salvageable - goal is to prevent progression
 2. Rule of Nines: Head 9%, each arm 9%, anterior trunk 18%, each leg 18%
 3. Parkland formula: 4mL × kg × %TBSA; half in first 8 hours
@@ -759,36 +759,36 @@ Late:
 -- MCQs for Articles 15-19
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation) VALUES
 -- Article 15
-('d0000015-0000-0000-0000-000000000015'::uuid, 1, 'What volume of acute pericardial blood accumulation can cause tamponade?', '20-50mL', '100-200mL', '500-750mL', '1000-1500mL', 'Greater than 2000mL', 'B', 'Rapid accumulation of 100-200mL blood can cause tamponade as the pericardium cannot stretch quickly. Slow accumulation allows adaptation, with up to 2L being tolerated.'),
-('d0000015-0000-0000-0000-000000000015'::uuid, 2, 'What is pulsus paradoxus?', 'Irregular pulse rate', 'Greater than 10mmHg SBP drop on inspiration', 'Absent peripheral pulse', 'Alternating strong and weak pulses', 'Pulse rate increasing with respiration', 'B', 'Pulsus paradoxus is an exaggerated decrease (>10mmHg) in systolic blood pressure during inspiration. It occurs because inspiratory filling of RV compresses LV in the fixed pericardial space.'),
-('d0000015-0000-0000-0000-000000000015'::uuid, 3, 'Which FAST view is used to assess for cardiac tamponade?', 'Right upper quadrant', 'Left upper quadrant', 'Suprapubic', 'Subxiphoid', 'All views equally', 'D', 'The subxiphoid view of FAST directly visualizes the pericardium and can detect pericardial fluid. It is the key view for assessing cardiac tamponade.'),
-('d0000015-0000-0000-0000-000000000015'::uuid, 4, 'What is the definitive treatment for cardiac tamponade?', 'Pericardiocentesis', 'IV fluid resuscitation', 'Surgical exploration and repair', 'Inotropic support', 'Observation', 'C', 'While pericardiocentesis is a temporizing measure, definitive treatment requires surgical exploration (sternotomy or thoracotomy) to evacuate blood/clot and repair the cardiac injury.'),
-('d0000015-0000-0000-0000-000000000015'::uuid, 5, 'Which cardiac chamber is compressed first in tamponade?', 'Left atrium', 'Left ventricle', 'Right atrium', 'Right ventricle', 'All chambers equally', 'D', 'The right ventricle is compressed first due to its thinner wall and lower intracavitary pressure. This leads to impaired right ventricular filling.'),
+('d2000015-0000-0000-0000-000000000015'::uuid, 1, 'What volume of acute pericardial blood accumulation can cause tamponade?', '20-50mL', '100-200mL', '500-750mL', '1000-1500mL', 'Greater than 2000mL', 'B', 'Rapid accumulation of 100-200mL blood can cause tamponade as the pericardium cannot stretch quickly. Slow accumulation allows adaptation, with up to 2L being tolerated.'),
+('d2000015-0000-0000-0000-000000000015'::uuid, 2, 'What is pulsus paradoxus?', 'Irregular pulse rate', 'Greater than 10mmHg SBP drop on inspiration', 'Absent peripheral pulse', 'Alternating strong and weak pulses', 'Pulse rate increasing with respiration', 'B', 'Pulsus paradoxus is an exaggerated decrease (>10mmHg) in systolic blood pressure during inspiration. It occurs because inspiratory filling of RV compresses LV in the fixed pericardial space.'),
+('d2000015-0000-0000-0000-000000000015'::uuid, 3, 'Which FAST view is used to assess for cardiac tamponade?', 'Right upper quadrant', 'Left upper quadrant', 'Suprapubic', 'Subxiphoid', 'All views equally', 'D', 'The subxiphoid view of FAST directly visualizes the pericardium and can detect pericardial fluid. It is the key view for assessing cardiac tamponade.'),
+('d2000015-0000-0000-0000-000000000015'::uuid, 4, 'What is the definitive treatment for cardiac tamponade?', 'Pericardiocentesis', 'IV fluid resuscitation', 'Surgical exploration and repair', 'Inotropic support', 'Observation', 'C', 'While pericardiocentesis is a temporizing measure, definitive treatment requires surgical exploration (sternotomy or thoracotomy) to evacuate blood/clot and repair the cardiac injury.'),
+('d2000015-0000-0000-0000-000000000015'::uuid, 5, 'Which cardiac chamber is compressed first in tamponade?', 'Left atrium', 'Left ventricle', 'Right atrium', 'Right ventricle', 'All chambers equally', 'D', 'The right ventricle is compressed first due to its thinner wall and lower intracavitary pressure. This leads to impaired right ventricular filling.'),
 
 -- Article 16
-('d0000016-0000-0000-0000-000000000016'::uuid, 1, 'In central cord syndrome, which limbs are more affected?', 'Both equally', 'Lower limbs more than upper', 'Upper limbs more than lower', 'Ipsilateral limbs only', 'Contralateral limbs only', 'C', 'Central cord syndrome characteristically affects upper limbs more than lower limbs ("man in a barrel" pattern). It is the most common incomplete cord syndrome.'),
-('d0000016-0000-0000-0000-000000000016'::uuid, 2, 'Which incomplete cord syndrome has the worst prognosis?', 'Central cord syndrome', 'Anterior cord syndrome', 'Brown-Séquard syndrome', 'Posterior cord syndrome', 'Cauda equina syndrome', 'B', 'Anterior cord syndrome has the worst prognosis among incomplete syndromes because it affects motor function and pain/temperature, with only proprioception preserved.'),
-('d0000016-0000-0000-0000-000000000016'::uuid, 3, 'Neurogenic shock is characterized by which combination?', 'Tachycardia and hypotension', 'Bradycardia and hypotension', 'Tachycardia and hypertension', 'Bradycardia and hypertension', 'Normal heart rate and hypotension', 'B', 'Neurogenic shock causes bradycardia (loss of sympathetic tone) and hypotension. This contrasts with hypovolemic shock which causes tachycardia.'),
-('d0000016-0000-0000-0000-000000000016'::uuid, 4, 'What is the recommended initial imaging for suspected spinal injury?', 'Plain X-rays', 'CT spine', 'MRI spine', 'Myelography', 'No imaging if NEXUS negative', 'B', 'CT spine is the primary imaging modality for suspected spinal injury in trauma. It has replaced plain X-rays due to superior sensitivity.'),
-('d0000016-0000-0000-0000-000000000016'::uuid, 5, 'What treatment is NO LONGER recommended for acute spinal cord injury?', 'Spinal immobilization', 'High-dose steroids', 'Maintaining MAP greater than 85mmHg', 'Early surgical decompression', 'Rehabilitation', 'B', 'High-dose methylprednisolone (from NASCIS studies) is no longer recommended for acute spinal cord injury as subsequent analysis showed no significant benefit and potential harm.'),
+('d2000016-0000-0000-0000-000000000016'::uuid, 1, 'In central cord syndrome, which limbs are more affected?', 'Both equally', 'Lower limbs more than upper', 'Upper limbs more than lower', 'Ipsilateral limbs only', 'Contralateral limbs only', 'C', 'Central cord syndrome characteristically affects upper limbs more than lower limbs ("man in a barrel" pattern). It is the most common incomplete cord syndrome.'),
+('d2000016-0000-0000-0000-000000000016'::uuid, 2, 'Which incomplete cord syndrome has the worst prognosis?', 'Central cord syndrome', 'Anterior cord syndrome', 'Brown-Séquard syndrome', 'Posterior cord syndrome', 'Cauda equina syndrome', 'B', 'Anterior cord syndrome has the worst prognosis among incomplete syndromes because it affects motor function and pain/temperature, with only proprioception preserved.'),
+('d2000016-0000-0000-0000-000000000016'::uuid, 3, 'Neurogenic shock is characterized by which combination?', 'Tachycardia and hypotension', 'Bradycardia and hypotension', 'Tachycardia and hypertension', 'Bradycardia and hypertension', 'Normal heart rate and hypotension', 'B', 'Neurogenic shock causes bradycardia (loss of sympathetic tone) and hypotension. This contrasts with hypovolemic shock which causes tachycardia.'),
+('d2000016-0000-0000-0000-000000000016'::uuid, 4, 'What is the recommended initial imaging for suspected spinal injury?', 'Plain X-rays', 'CT spine', 'MRI spine', 'Myelography', 'No imaging if NEXUS negative', 'B', 'CT spine is the primary imaging modality for suspected spinal injury in trauma. It has replaced plain X-rays due to superior sensitivity.'),
+('d2000016-0000-0000-0000-000000000016'::uuid, 5, 'What treatment is NO LONGER recommended for acute spinal cord injury?', 'Spinal immobilization', 'High-dose steroids', 'Maintaining MAP greater than 85mmHg', 'Early surgical decompression', 'Rehabilitation', 'B', 'High-dose methylprednisolone (from NASCIS studies) is no longer recommended for acute spinal cord injury as subsequent analysis showed no significant benefit and potential harm.'),
 
 -- Article 17
-('d0000017-0000-0000-0000-000000000017'::uuid, 1, 'What percentage of pelvic stability is provided by the posterior ring?', '20%', '40%', '60%', '80%', '100%', 'C', 'The posterior pelvic ring provides approximately 60% of pelvic stability. Posterior ring disruption (sacroiliac joint, sacrum) indicates a mechanically unstable pelvis.'),
-('d0000017-0000-0000-0000-000000000017'::uuid, 2, 'What is the most common mechanism of pelvic fracture?', 'Anteroposterior compression', 'Lateral compression', 'Vertical shear', 'Combined mechanism', 'Axial loading', 'B', 'Lateral compression accounts for approximately 60% of pelvic fractures. It typically occurs from side-impact motor vehicle accidents.'),
-('d0000017-0000-0000-0000-000000000017'::uuid, 3, 'Blood at the urethral meatus in pelvic fracture warrants which action?', 'Immediate urethral catheterization', 'Retrograde urethrogram before catheterization', 'Suprapubic catheter insertion', 'CT scan', 'Observation only', 'B', 'Blood at the urethral meatus suggests urethral injury. Retrograde urethrogram should be performed before any attempt at urethral catheterization to avoid converting partial to complete injury.'),
-('d0000017-0000-0000-0000-000000000017'::uuid, 4, 'The pelvic binder should be placed at which anatomical level?', 'Iliac crests', 'Greater trochanters', 'Umbilicus', 'Pubic symphysis', 'Anterior superior iliac spines', 'B', 'The pelvic binder should be applied at the level of the greater trochanters to effectively reduce pelvic volume and promote tamponade of venous bleeding.'),
-('d0000017-0000-0000-0000-000000000017'::uuid, 5, 'What percentage of hemorrhage in unstable pelvic fractures is venous?', '10%', '30%', '50%', '70%', '90%', 'E', 'Approximately 90% of hemorrhage in pelvic fractures is from the venous plexus, which responds to volume reduction and tamponade. Only 10% is arterial, which may require embolization.'),
+('d2000017-0000-0000-0000-000000000017'::uuid, 1, 'What percentage of pelvic stability is provided by the posterior ring?', '20%', '40%', '60%', '80%', '100%', 'C', 'The posterior pelvic ring provides approximately 60% of pelvic stability. Posterior ring disruption (sacroiliac joint, sacrum) indicates a mechanically unstable pelvis.'),
+('d2000017-0000-0000-0000-000000000017'::uuid, 2, 'What is the most common mechanism of pelvic fracture?', 'Anteroposterior compression', 'Lateral compression', 'Vertical shear', 'Combined mechanism', 'Axial loading', 'B', 'Lateral compression accounts for approximately 60% of pelvic fractures. It typically occurs from side-impact motor vehicle accidents.'),
+('d2000017-0000-0000-0000-000000000017'::uuid, 3, 'Blood at the urethral meatus in pelvic fracture warrants which action?', 'Immediate urethral catheterization', 'Retrograde urethrogram before catheterization', 'Suprapubic catheter insertion', 'CT scan', 'Observation only', 'B', 'Blood at the urethral meatus suggests urethral injury. Retrograde urethrogram should be performed before any attempt at urethral catheterization to avoid converting partial to complete injury.'),
+('d2000017-0000-0000-0000-000000000017'::uuid, 4, 'The pelvic binder should be placed at which anatomical level?', 'Iliac crests', 'Greater trochanters', 'Umbilicus', 'Pubic symphysis', 'Anterior superior iliac spines', 'B', 'The pelvic binder should be applied at the level of the greater trochanters to effectively reduce pelvic volume and promote tamponade of venous bleeding.'),
+('d2000017-0000-0000-0000-000000000017'::uuid, 5, 'What percentage of hemorrhage in unstable pelvic fractures is venous?', '10%', '30%', '50%', '70%', '90%', 'E', 'Approximately 90% of hemorrhage in pelvic fractures is from the venous plexus, which responds to volume reduction and tamponade. Only 10% is arterial, which may require embolization.'),
 
 -- Article 18
-('d0000018-0000-0000-0000-000000000018'::uuid, 1, 'What is the earliest and most reliable sign of compartment syndrome?', 'Pulselessness', 'Paralysis', 'Pain on passive stretch', 'Paresthesia', 'Pallor', 'C', 'Pain on passive stretch of muscles in the affected compartment is the earliest and most reliable clinical sign. Pain is characteristically out of proportion to the injury.'),
-('d0000018-0000-0000-0000-000000000018'::uuid, 2, 'What compartment pressure indicates compartment syndrome?', 'Greater than 10mmHg', 'Greater than 20mmHg', 'Greater than 30mmHg', 'Greater than 50mmHg', 'Greater than 70mmHg', 'C', 'Absolute compartment pressure >30mmHg or delta P (diastolic BP minus compartment pressure) <30mmHg indicates compartment syndrome requiring fasciotomy.'),
-('d0000018-0000-0000-0000-000000000018'::uuid, 3, 'What is the significance of pulses in compartment syndrome?', 'Always absent', 'Usually present', 'Present only in early stages', 'Present in upper limb only', 'Indicates severity', 'B', 'Pulses are usually PRESENT in compartment syndrome because arterial pressure exceeds compartment pressure. Pulselessness suggests vascular injury, not compartment syndrome.'),
-('d0000018-0000-0000-0000-000000000018'::uuid, 4, 'After fasciotomy, wound closure is typically performed when?', 'Immediately', '24 hours', '48-72 hours', '1 week', '2 weeks', 'C', 'Fasciotomy wounds are left open initially and closed by delayed primary closure or skin grafting at 48-72 hours once swelling subsides.'),
-('d0000018-0000-0000-0000-000000000018'::uuid, 5, 'Volkmann ischemic contracture is a complication of compartment syndrome in which location?', 'Leg', 'Thigh', 'Forearm', 'Hand', 'Foot', 'C', 'Volkmann ischemic contracture occurs in the forearm following compartment syndrome. It results in characteristic wrist flexion, MCP extension, and IP flexion.'),
+('d2000018-0000-0000-0000-000000000018'::uuid, 1, 'What is the earliest and most reliable sign of compartment syndrome?', 'Pulselessness', 'Paralysis', 'Pain on passive stretch', 'Paresthesia', 'Pallor', 'C', 'Pain on passive stretch of muscles in the affected compartment is the earliest and most reliable clinical sign. Pain is characteristically out of proportion to the injury.'),
+('d2000018-0000-0000-0000-000000000018'::uuid, 2, 'What compartment pressure indicates compartment syndrome?', 'Greater than 10mmHg', 'Greater than 20mmHg', 'Greater than 30mmHg', 'Greater than 50mmHg', 'Greater than 70mmHg', 'C', 'Absolute compartment pressure >30mmHg or delta P (diastolic BP minus compartment pressure) <30mmHg indicates compartment syndrome requiring fasciotomy.'),
+('d2000018-0000-0000-0000-000000000018'::uuid, 3, 'What is the significance of pulses in compartment syndrome?', 'Always absent', 'Usually present', 'Present only in early stages', 'Present in upper limb only', 'Indicates severity', 'B', 'Pulses are usually PRESENT in compartment syndrome because arterial pressure exceeds compartment pressure. Pulselessness suggests vascular injury, not compartment syndrome.'),
+('d2000018-0000-0000-0000-000000000018'::uuid, 4, 'After fasciotomy, wound closure is typically performed when?', 'Immediately', '24 hours', '48-72 hours', '1 week', '2 weeks', 'C', 'Fasciotomy wounds are left open initially and closed by delayed primary closure or skin grafting at 48-72 hours once swelling subsides.'),
+('d2000018-0000-0000-0000-000000000018'::uuid, 5, 'Volkmann ischemic contracture is a complication of compartment syndrome in which location?', 'Leg', 'Thigh', 'Forearm', 'Hand', 'Foot', 'C', 'Volkmann ischemic contracture occurs in the forearm following compartment syndrome. It results in characteristic wrist flexion, MCP extension, and IP flexion.'),
 
 -- Article 19
-('d0000019-0000-0000-0000-000000000019'::uuid, 1, 'According to the Rule of Nines, what percentage does each lower limb represent in adults?', '9%', '12%', '15%', '18%', '21%', 'D', 'In adults, each lower limb represents 18% of total body surface area according to the Rule of Nines. This includes both anterior (9%) and posterior (9%) surfaces.'),
-('d0000019-0000-0000-0000-000000000019'::uuid, 2, 'The Parkland formula calculates fluid resuscitation as:', '2mL x kg x %TBSA', '4mL x kg x %TBSA', '6mL x kg x %TBSA', '8mL x kg x %TBSA', '10mL x kg x %TBSA', 'B', 'The Parkland formula is 4mL × body weight (kg) × %TBSA burn. Half is given in the first 8 hours (from time of injury) and half over the next 16 hours.'),
-('d0000019-0000-0000-0000-000000000019'::uuid, 3, 'What portion of Parkland fluid is given in the first 8 hours?', 'One quarter', 'One third', 'Half', 'Two thirds', 'Three quarters', 'C', 'Half of the calculated fluid is given in the first 8 hours (timed from the injury, not admission), and the remaining half is given over the next 16 hours.'),
-('d0000019-0000-0000-0000-000000000019'::uuid, 4, 'Which sign is NOT associated with inhalation injury?', 'Facial burns', 'Singed nasal hair', 'Soot in sputum', 'Hoarseness', 'Peripheral edema', 'E', 'Peripheral edema is not a specific sign of inhalation injury. Signs include facial burns, singed nasal/facial hair, soot in mouth/nose/sputum, and hoarseness or stridor.'),
-('d0000019-0000-0000-0000-000000000019'::uuid, 5, 'What is the leading cause of death in burn patients?', 'Hypovolemic shock', 'Inhalation injury', 'Sepsis', 'Acute kidney injury', 'Cardiac arrhythmia', 'C', 'Sepsis (burn wound infection) is the leading cause of death in burn patients. Sources include the wound itself, catheter-related infections, and pneumonia.');
+('d2000019-0000-0000-0000-000000000019'::uuid, 1, 'According to the Rule of Nines, what percentage does each lower limb represent in adults?', '9%', '12%', '15%', '18%', '21%', 'D', 'In adults, each lower limb represents 18% of total body surface area according to the Rule of Nines. This includes both anterior (9%) and posterior (9%) surfaces.'),
+('d2000019-0000-0000-0000-000000000019'::uuid, 2, 'The Parkland formula calculates fluid resuscitation as:', '2mL x kg x %TBSA', '4mL x kg x %TBSA', '6mL x kg x %TBSA', '8mL x kg x %TBSA', '10mL x kg x %TBSA', 'B', 'The Parkland formula is 4mL × body weight (kg) × %TBSA burn. Half is given in the first 8 hours (from time of injury) and half over the next 16 hours.'),
+('d2000019-0000-0000-0000-000000000019'::uuid, 3, 'What portion of Parkland fluid is given in the first 8 hours?', 'One quarter', 'One third', 'Half', 'Two thirds', 'Three quarters', 'C', 'Half of the calculated fluid is given in the first 8 hours (timed from the injury, not admission), and the remaining half is given over the next 16 hours.'),
+('d2000019-0000-0000-0000-000000000019'::uuid, 4, 'Which sign is NOT associated with inhalation injury?', 'Facial burns', 'Singed nasal hair', 'Soot in sputum', 'Hoarseness', 'Peripheral edema', 'E', 'Peripheral edema is not a specific sign of inhalation injury. Signs include facial burns, singed nasal/facial hair, soot in mouth/nose/sputum, and hoarseness or stridor.'),
+('d2000019-0000-0000-0000-000000000019'::uuid, 5, 'What is the leading cause of death in burn patients?', 'Hypovolemic shock', 'Inhalation injury', 'Sepsis', 'Acute kidney injury', 'Cardiac arrhythmia', 'C', 'Sepsis (burn wound infection) is the leading cause of death in burn patients. Sources include the wound itself, catheter-related infections, and pneumonia.');

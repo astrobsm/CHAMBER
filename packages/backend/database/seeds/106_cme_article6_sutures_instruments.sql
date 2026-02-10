@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00006-0000-0000-0000-000000000006',
-    'b0000006-0000-0000-0000-000000000001',
+    'a1100006-0000-0000-0000-000000000006',
+    'b0000006-0000-0000-0000-000000000006',
     'a0000001-0000-0000-0000-000000000001',
     'Sutures and Surgical Instruments: A Comprehensive Guide',
     'Selection, Handling, and Evidence-Based Application',
@@ -20,8 +20,8 @@ INSERT INTO cme_articles (
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'introduction', 'Introduction',
 'The art of surgery relies fundamentally on two elements: the ability to achieve hemostasis and the ability to approximate tissues. Sutures and surgical instruments are the tools that make these objectives possible.
 
 **Historical Perspective:**
@@ -47,8 +47,8 @@ Similarly, familiarity with surgical instruments ensures:
 This article will provide the knowledge base required for appropriate selection and use of sutures and instruments in clinical practice.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. Classify suture materials by origin, absorbability, and structure
@@ -72,8 +72,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Recognize complications related to sutures and implement prevention strategies', 2);
 
 -- Section 3: Suture Classification
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'content', 'Suture Classification',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'content', 'Suture Classification',
 '## Classification Systems
 
 ### By Origin
@@ -164,8 +164,8 @@ Remain in tissue indefinitely or are removed
 | 2 | 0.50 | Retention sutures |', 3);
 
 -- Section 4: Suture Selection
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'content', 'Suture Selection by Tissue Type',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'content', 'Suture Selection by Tissue Type',
 '## Principles of Selection
 
 **Match suture characteristics to tissue needs:**
@@ -260,8 +260,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Monocryl, Vicryl Rapide', 4);
 
 -- Section 5: Surgical Needles
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'content', 'Surgical Needles',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'content', 'Surgical Needles',
 '## Needle Anatomy
 
 A surgical needle has three parts:
@@ -326,8 +326,8 @@ A surgical needle has three parts:
 - Never grasp at point or swage', 5);
 
 -- Section 6: Suturing Techniques
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'content', 'Suturing Techniques',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'content', 'Suturing Techniques',
 '## Fundamentals
 
 ### Principles of Wound Closure
@@ -422,8 +422,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Use bolsters or bridges to prevent skin necrosis', 6);
 
 -- Section 7: Surgical Instruments
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'content', 'Essential Surgical Instruments',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'content', 'Essential Surgical Instruments',
 '## Categories of Instruments
 
 ### 1. Cutting Instruments
@@ -516,8 +516,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - **Gomco**: Pediatric', 7);
 
 -- Section 8: Knot Tying
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'content', 'Knot Tying Principles',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'content', 'Knot Tying Principles',
 '## Principles of Surgical Knots
 
 ### Purpose of Knots
@@ -585,8 +585,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 6. **Air knots**: Not laying throws flat', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'key_points', 'Key Points',
 '1. **Suture Classification**: Natural vs. synthetic; absorbable vs. non-absorbable; monofilament vs. braided; sized 10-0 (finest) to #7 (largest)
 
 2. **Absorbable Sutures**: Plain gut (10 days), Chromic gut (21 days), Vicryl (21 days), Monocryl (7-14 days), PDS (42-56 days) - represents tensile strength retention
@@ -608,8 +608,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Closure Principles**: Approximate don''t strangulate; close in layers; evert skin edges; equal bites both sides', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: "Reverse cutting" needles have the cutting edge on the outer curve, reducing the risk of the suture cutting through the wound edge—preferred for skin closure.
 
 💡 **Pearl 2**: Use the smallest suture that will hold the tissue adequately. Excess suture material increases foreign body reaction and infection risk.
@@ -631,23 +631,23 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: Never use silk in vascular surgery—it is thrombogenic and causes inflammatory reaction. Polypropylene is the standard.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00006-0000-0000-0000-000000000006', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100006-0000-0000-0000-000000000006', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00006-0000-0000-0000-000000000006', 1, 'Hochberg J, Meyer KM, Marion MD. Suture choice and other methods of skin closure. Surg Clin North Am. 2009;89(3):627-641.', '10.1016/j.suc.2009.03.001', '19465201', NULL),
-('art00006-0000-0000-0000-000000000006', 2, 'Moy RL, Waldman B, Hein DW. A review of sutures and suturing techniques. J Dermatol Surg Oncol. 1992;18(9):785-795.', '10.1111/j.1524-4725.1992.tb03046.x', '1512311', NULL),
-('art00006-0000-0000-0000-000000000006', 3, 'Van Winkle W Jr, Hastings JC. Considerations in the choice of suture material for various tissues. Surg Gynecol Obstet. 1972;135(1):113-126.', NULL, '4557019', NULL),
-('art00006-0000-0000-0000-000000000006', 4, 'Israelsson LA, Millbourn D. Closing midline abdominal incisions. Langenbecks Arch Surg. 2012;397(8):1201-1207.', '10.1007/s00423-012-1019-4', '23143146', NULL),
-('art00006-0000-0000-0000-000000000006', 5, 'Trimbos JB, et al. A randomised clinical trial comparing two different knot techniques in midline laparotomy closure. Br J Surg. 2013;100(13):1721-1727.', '10.1002/bjs.9306', '24227362', NULL),
-('art00006-0000-0000-0000-000000000006', 6, 'Dennis C, et al. Suture materials: conventional and advanced technologies. J Biomater Appl. 2016;31(1):21-44.', '10.1177/0885328216655659', '27334139', NULL),
-('art00006-0000-0000-0000-000000000006', 7, 'Ethicon Wound Closure Manual. Ethicon, Inc., 2004.', NULL, NULL, NULL),
-('art00006-0000-0000-0000-000000000006', 8, 'Parell GJ, Becker GD. Comparison of absorbable with nonabsorbable sutures in closure of facial skin wounds. Arch Facial Plast Surg. 2003;5(6):488-490.', '10.1001/archfaci.5.6.488', '14623685', NULL);
+('a1100006-0000-0000-0000-000000000006', 1, 'Hochberg J, Meyer KM, Marion MD. Suture choice and other methods of skin closure. Surg Clin North Am. 2009;89(3):627-641.', '10.1016/j.suc.2009.03.001', '19465201', NULL),
+('a1100006-0000-0000-0000-000000000006', 2, 'Moy RL, Waldman B, Hein DW. A review of sutures and suturing techniques. J Dermatol Surg Oncol. 1992;18(9):785-795.', '10.1111/j.1524-4725.1992.tb03046.x', '1512311', NULL),
+('a1100006-0000-0000-0000-000000000006', 3, 'Van Winkle W Jr, Hastings JC. Considerations in the choice of suture material for various tissues. Surg Gynecol Obstet. 1972;135(1):113-126.', NULL, '4557019', NULL),
+('a1100006-0000-0000-0000-000000000006', 4, 'Israelsson LA, Millbourn D. Closing midline abdominal incisions. Langenbecks Arch Surg. 2012;397(8):1201-1207.', '10.1007/s00423-012-1019-4', '23143146', NULL),
+('a1100006-0000-0000-0000-000000000006', 5, 'Trimbos JB, et al. A randomised clinical trial comparing two different knot techniques in midline laparotomy closure. Br J Surg. 2013;100(13):1721-1727.', '10.1002/bjs.9306', '24227362', NULL),
+('a1100006-0000-0000-0000-000000000006', 6, 'Dennis C, et al. Suture materials: conventional and advanced technologies. J Biomater Appl. 2016;31(1):21-44.', '10.1177/0885328216655659', '27334139', NULL),
+('a1100006-0000-0000-0000-000000000006', 7, 'Ethicon Wound Closure Manual. Ethicon, Inc., 2004.', NULL, NULL, NULL),
+('a1100006-0000-0000-0000-000000000006', 8, 'Parell GJ, Becker GD. Comparison of absorbable with nonabsorbable sutures in closure of facial skin wounds. Arch Facial Plast Surg. 2003;5(6):488-490.', '10.1001/archfaci.5.6.488', '14623685', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 1,
+('a1100006-0000-0000-0000-000000000006', 1,
 'Which suture material has the longest tensile strength retention?',
 'Plain gut',
 'Chromic gut',
@@ -655,11 +655,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Polydioxanone (PDS)',
 'Poliglecaprone (Monocryl)',
 'D',
-'Polydioxanone (PDS) maintains tensile strength for 42-56 days, the longest of common absorbable sutures. Monocryl loses strength by 7-14 days, Vicryl and Chromic gut by 21 days, and Plain gut by 10 days. PDS is ideal for slowly healing tissues like fascia.',
-'1,3');
+'Polydioxanone (PDS) maintains tensile strength for 42-56 days, the longest of common absorbable sutures. Monocryl loses strength by 7-14 days, Vicryl and Chromic gut by 21 days, and Plain gut by 10 days. PDS is ideal for slowly healing tissues like fascia.', '{1,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 2,
+('a1100006-0000-0000-0000-000000000006', 2,
 'For a contaminated abdominal wound that requires delayed primary closure, which suture structure is preferred and why?',
 'Braided suture because it has better knot security',
 'Monofilament suture because it has lower capillarity and bacterial harboring',
@@ -667,11 +666,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Any suture with coating',
 'Silk because of its handling properties',
 'B',
-'Monofilament sutures are preferred in contaminated wounds because they lack the interstices present in braided sutures where bacteria can harbor and multiply (wicking/capillarity). Braided sutures increase infection risk in contaminated wounds.',
-'1,6');
+'Monofilament sutures are preferred in contaminated wounds because they lack the interstices present in braided sutures where bacteria can harbor and multiply (wicking/capillarity). Braided sutures increase infection risk in contaminated wounds.', '{1,6}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 3,
+('a1100006-0000-0000-0000-000000000006', 3,
 'Which needle type is most appropriate for bowel anastomosis?',
 'Cutting needle',
 'Reverse cutting needle',
@@ -679,11 +677,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Blunt needle',
 'Spatula needle',
 'C',
-'Taper needles with a round body and conical point are used for bowel anastomosis. They separate (rather than cut) the tissue fibers, creating a smaller hole that seals around the suture. This minimizes leakage at anastomotic sites. Cutting needles would create larger holes.',
-'2,7');
+'Taper needles with a round body and conical point are used for bowel anastomosis. They separate (rather than cut) the tissue fibers, creating a smaller hole that seals around the suture. This minimizes leakage at anastomotic sites. Cutting needles would create larger holes.', '{2,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 4,
+('a1100006-0000-0000-0000-000000000006', 4,
 'A reverse cutting needle differs from a conventional cutting needle in that:',
 'It has a round body instead of triangular',
 'The cutting edge is on the outer (convex) curve',
@@ -691,11 +688,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'It cannot penetrate skin',
 'It is always straight',
 'B',
-'A reverse cutting needle has the cutting edge on the outer (convex) curve rather than the inner (concave) curve. This reduces the risk of the suture cutting through the wound edge, as the flat surface faces the wound edge. It is the preferred cutting needle for skin closure.',
-'2,7');
+'A reverse cutting needle has the cutting edge on the outer (convex) curve rather than the inner (concave) curve. This reduces the risk of the suture cutting through the wound edge, as the flat surface faces the wound edge. It is the preferred cutting needle for skin closure.', '{2,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 5,
+('a1100006-0000-0000-0000-000000000006', 5,
 'What is the recommended suture for vascular anastomosis?',
 'Chromic gut',
 'Vicryl',
@@ -703,11 +699,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Silk',
 'Nylon',
 'C',
-'Polypropylene (Prolene) is the standard suture for vascular anastomosis. It is monofilament (reduces thrombogenicity), non-absorbable (maintains permanent strength), and relatively inert. Silk is contraindicated in vascular surgery due to its thrombogenic and inflammatory properties.',
-'1,3');
+'Polypropylene (Prolene) is the standard suture for vascular anastomosis. It is monofilament (reduces thrombogenicity), non-absorbable (maintains permanent strength), and relatively inert. Silk is contraindicated in vascular surgery due to its thrombogenic and inflammatory properties.', '{1,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 6,
+('a1100006-0000-0000-0000-000000000006', 6,
 'Which suturing technique provides the best skin edge eversion?',
 'Simple continuous',
 'Simple interrupted',
@@ -715,11 +710,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Running subcuticular',
 'Horizontal mattress',
 'C',
-'Vertical mattress sutures provide excellent skin edge eversion by taking a deep far bite followed by a superficial near bite. The configuration lifts and everts the wound edges. This is particularly useful in thick skin or when tension threatens to invert edges.',
-'2');
+'Vertical mattress sutures provide excellent skin edge eversion by taking a deep far bite followed by a superficial near bite. The configuration lifts and everts the wound edges. This is particularly useful in thick skin or when tension threatens to invert edges.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 7,
+('a1100006-0000-0000-0000-000000000006', 7,
 'How many throws are typically required for knot security with Polypropylene (Prolene) suture?',
 '2-3 throws',
 '3-4 throws',
@@ -727,11 +721,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '8-10 throws',
 'Only 1 throw with surgeon''s knot',
 'C',
-'Polypropylene is a smooth, slippery monofilament with significant memory, requiring 5-6 throws to achieve adequate knot security. The slippery surface reduces friction, making knots prone to slippage with fewer throws. Braided sutures like Vicryl require only 3-4 throws.',
-'5,7');
+'Polypropylene is a smooth, slippery monofilament with significant memory, requiring 5-6 throws to achieve adequate knot security. The slippery surface reduces friction, making knots prone to slippage with fewer throws. Braided sutures like Vicryl require only 3-4 throws.', '{5,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 8,
+('a1100006-0000-0000-0000-000000000006', 8,
 'Which instrument is most appropriate for grasping bowel during anastomosis?',
 'Allis clamp',
 'Kocher clamp',
@@ -739,11 +732,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Kelly clamp',
 'Towel clip',
 'C',
-'Babcock clamps are atraumatic with smooth, rounded jaws that grasp tissue without crushing or puncturing. They are ideal for delicate structures like bowel, fallopian tubes, and ureters. Allis clamps have teeth and are traumatic; Kocher clamps are heavy with teeth for fascia.',
-'7');
+'Babcock clamps are atraumatic with smooth, rounded jaws that grasp tissue without crushing or puncturing. They are ideal for delicate structures like bowel, fallopian tubes, and ureters. Allis clamps have teeth and are traumatic; Kocher clamps are heavy with teeth for fascia.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 9,
+('a1100006-0000-0000-0000-000000000006', 9,
 'Metzenbaum scissors are best suited for:',
 'Cutting fascia',
 'Cutting sutures',
@@ -751,11 +743,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Cutting skin',
 'Cutting bone',
 'C',
-'Metzenbaum scissors are delicate curved scissors designed for dissecting and cutting soft tissue. They have thin blades optimized for precision dissection. Mayo scissors are heavier and used for cutting fascia and sutures. Using Metzenbaum for heavy tissue damages the instrument.',
-'7');
+'Metzenbaum scissors are delicate curved scissors designed for dissecting and cutting soft tissue. They have thin blades optimized for precision dissection. Mayo scissors are heavier and used for cutting fascia and sutures. Using Metzenbaum for heavy tissue damages the instrument.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 10,
+('a1100006-0000-0000-0000-000000000006', 10,
 'A granny knot (slip knot) is formed when:',
 'Throws are placed in alternating directions',
 'The first throw is doubled',
@@ -763,11 +754,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Too many throws are used',
 'Monofilament suture is used',
 'C',
-'A granny knot forms when consecutive throws are placed in the same direction (both over-over or both under-under) rather than alternating. This creates an unstable knot that tends to slip or unravel. A square knot, with alternating throws, lies flat and is secure.',
-'5,7');
+'A granny knot forms when consecutive throws are placed in the same direction (both over-over or both under-under) rather than alternating. This creates an unstable knot that tends to slip or unravel. A square knot, with alternating throws, lies flat and is secure.', '{5,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 11,
+('a1100006-0000-0000-0000-000000000006', 11,
 'Which scalpel blade is best for making a stab incision for drain placement?',
 '#10 blade',
 '#11 blade',
@@ -775,11 +765,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '#20 blade',
 '#22 blade',
 'B',
-'The #11 blade has a pointed triangular shape, making it ideal for stab incisions such as drain placement, incising abscesses, and creating port sites. The #10 blade is curved for general incisions, and the #15 blade is a smaller curved blade for precise incisions.',
-'7');
+'The #11 blade has a pointed triangular shape, making it ideal for stab incisions such as drain placement, incising abscesses, and creating port sites. The #10 blade is curved for general incisions, and the #15 blade is a smaller curved blade for precise incisions.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 12,
+('a1100006-0000-0000-0000-000000000006', 12,
 'What is the recommended suture-to-wound length ratio for abdominal fascia closure?',
 '1:1',
 '2:1',
@@ -787,11 +776,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '6:1',
 '10:1',
 'C',
-'A 4:1 suture length to wound length ratio is recommended for abdominal fascial closure to ensure adequate tissue incorporation. This can be achieved with bites 1 cm from the edge placed 1 cm apart. This ratio correlates with reduced incisional hernia rates.',
-'4');
+'A 4:1 suture length to wound length ratio is recommended for abdominal fascial closure to ensure adequate tissue incorporation. This can be achieved with bites 1 cm from the edge placed 1 cm apart. This ratio correlates with reduced incisional hernia rates.', '{4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 13,
+('a1100006-0000-0000-0000-000000000006', 13,
 'For deep abdominal retraction, which retractor would be most appropriate?',
 'Army-Navy retractor',
 'Weitlaner retractor',
@@ -799,11 +787,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Senn retractor',
 'Skin hooks',
 'C',
-'Deaver retractors are large, curved handheld retractors designed for deep abdominal exposure. Army-Navy retractors are small and used for superficial work. Weitlaner is self-retaining for superficial tissue. Senn retractors are small double-ended retractors for superficial use.',
-'7');
+'Deaver retractors are large, curved handheld retractors designed for deep abdominal exposure. Army-Navy retractors are small and used for superficial work. Weitlaner is self-retaining for superficial tissue. Senn retractors are small double-ended retractors for superficial use.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 14,
+('a1100006-0000-0000-0000-000000000006', 14,
 'Which needle curve is most commonly used for general surgical applications?',
 '1/4 circle',
 '3/8 circle',
@@ -811,11 +798,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '5/8 circle',
 'Straight',
 'B',
-'The 3/8 circle needle is the most commonly used curvature for general surgical applications including skin, fascia, and bowel. It allows for adequate tissue bite with a natural wrist rotation. The 1/2 circle is preferred for deep body cavities.',
-'2,7');
+'The 3/8 circle needle is the most commonly used curvature for general surgical applications including skin, fascia, and bowel. It allows for adequate tissue bite with a natural wrist rotation. The 1/2 circle is preferred for deep body cavities.', '{2,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 15,
+('a1100006-0000-0000-0000-000000000006', 15,
 'What is the advantage of a surgeon''s knot (double first throw)?',
 'It creates a more secure final knot',
 'It maintains tension while the second throw is placed',
@@ -823,11 +809,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'It is less traumatic to tissue',
 'It uses less suture material',
 'B',
-'The surgeon''s knot uses a double throw on the first pass, creating more friction than a single throw. This helps maintain tension on the tissue approximation while the second throw is placed, particularly useful when closing wounds under tension.',
-'5,7');
+'The surgeon''s knot uses a double throw on the first pass, creating more friction than a single throw. This helps maintain tension on the tissue approximation while the second throw is placed, particularly useful when closing wounds under tension.', '{5,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 16,
+('a1100006-0000-0000-0000-000000000006', 16,
 'Which forceps type should be used when closing skin to minimize tissue trauma?',
 'Russian forceps',
 'Bonney (1x2 teeth) forceps',
@@ -835,11 +820,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'DeBakey forceps',
 'Plain (smooth) forceps',
 'C',
-'Adson forceps have fine teeth (typically 1x2) that provide secure grip on skin edges with minimal trauma. They are the standard for skin closure. Bonney forceps are heavier with larger teeth for fascia. DeBakey forceps are atraumatic but smooth and may not grip skin adequately.',
-'7');
+'Adson forceps have fine teeth (typically 1x2) that provide secure grip on skin edges with minimal trauma. They are the standard for skin closure. Bonney forceps are heavier with larger teeth for fascia. DeBakey forceps are atraumatic but smooth and may not grip skin adequately.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 17,
+('a1100006-0000-0000-0000-000000000006', 17,
 'For optimal cosmetic outcome in facial skin closure, which suture material and technique is preferred?',
 '2-0 Silk, simple interrupted',
 '5-0 or 6-0 Nylon, simple interrupted, early removal',
@@ -847,11 +831,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '3-0 Prolene, mattress sutures',
 '2-0 Chromic gut, buried',
 'B',
-'Fine (5-0 or 6-0) nylon sutures with simple interrupted technique and early removal (5-7 days for face) produces optimal cosmetic results. The fine suture minimizes scarring, monofilament structure reduces suture track marks, and early removal prevents permanent marks.',
-'1,8');
+'Fine (5-0 or 6-0) nylon sutures with simple interrupted technique and early removal (5-7 days for face) produces optimal cosmetic results. The fine suture minimizes scarring, monofilament structure reduces suture track marks, and early removal prevents permanent marks.', '{1,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 18,
+('a1100006-0000-0000-0000-000000000006', 18,
 'What is the appropriate action if there is any question about suture sterility during a procedure?',
 'Use it if the package appears intact',
 'Discard and use a new suture',
@@ -859,11 +842,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Ask the circulator to verify',
 'Use it only for deep sutures, not skin',
 'B',
-'If there is any question about the sterility of a suture or any surgical supply, it should be discarded and replaced with new sterile material. There is no reliable way to re-sterilize sutures, and using potentially contaminated material increases infection risk.',
-'7');
+'If there is any question about the sterility of a suture or any surgical supply, it should be discarded and replaced with new sterile material. There is no reliable way to re-sterilize sutures, and using potentially contaminated material increases infection risk.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 19,
+('a1100006-0000-0000-0000-000000000006', 19,
 'A purse-string suture is commonly used for:',
 'Skin closure',
 'Fascial closure',
@@ -871,11 +853,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Nerve repair',
 'Tendon repair',
 'C',
-'A purse-string suture creates a circular running stitch that, when tightened, closes like a drawstring. Common uses include appendix stump closure, securing ostomy appliances, and inverting structures. It is not used for linear closures like skin or fascia.',
-'7');
+'A purse-string suture creates a circular running stitch that, when tightened, closes like a drawstring. Common uses include appendix stump closure, securing ostomy appliances, and inverting structures. It is not used for linear closures like skin or fascia.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00006-0000-0000-0000-000000000006', 20,
+('a1100006-0000-0000-0000-000000000006', 20,
 'Which suture material maintains its strength essentially permanently and is effectively non-absorbable despite being classified as natural?',
 'Plain gut',
 'Chromic gut',
@@ -883,5 +864,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Cotton',
 'Catgut',
 'C',
-'Silk, despite being natural, is effectively permanent in tissue. While it gradually loses tensile strength over years and technically can be encapsulated or degrade very slowly, it is classified and used as a non-absorbable suture for practical purposes.',
-'1,3');
+'Silk, despite being natural, is effectively permanent in tissue. While it gradually loses tensile strength over years and technically can be encapsulated or degrade very slowly, it is classified and used as a non-absorbable suture for practical purposes.', '{1,3}');

@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00011-0000-0000-0000-000000000011',
-    'b0000011-0000-0000-0000-000000000001',
+    'a1100011-0000-0000-0000-000000000011',
+    'b0000011-0000-0000-0000-000000000011',
     'a0000001-0000-0000-0000-000000000001',
     'Nasogastric Intubation: Indications, Techniques, and Management',
     'A Comprehensive Guide to NGT Placement and Care',
@@ -14,14 +14,14 @@ INSERT INTO cme_articles (
     'UNTH Surgery Department, GI Surgery Unit',
     35,
     2.0,
-    'basic',
+    'easy',
     1,
     true
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'introduction', 'Introduction',
 'Nasogastric intubation involves the passage of a tube through the nose, down the esophagus, and into the stomach. This seemingly simple procedure is one of the most commonly performed in hospitals, yet complications ranging from minor discomfort to fatal misplacement can occur.
 
 **Historical Context:**
@@ -46,8 +46,8 @@ Never use an NGT for feeding or medications until placement is confirmed. The co
 This article provides the knowledge foundation for safe, effective nasogastric intubation in surgical practice.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. Identify the indications and contraindications for nasogastric tube insertion
@@ -71,8 +71,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Identify special considerations for NGT insertion in specific patient populations', 2);
 
 -- Section 3: Types of Nasogastric Tubes
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'content', 'Types of Nasogastric Tubes',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'content', 'Types of Nasogastric Tubes',
 '## Classification by Function
 
 ### Large-Bore Tubes (Decompression/Drainage)
@@ -157,8 +157,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Pediatric: Based on age/size', 3);
 
 -- Section 4: Indications and Contraindications
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'content', 'Indications and Contraindications',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'content', 'Indications and Contraindications',
 '## Indications
 
 ### Decompression
@@ -225,8 +225,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Ensure tube position confirmed before any use', 4);
 
 -- Section 5: Insertion Technique
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'content', 'Insertion Technique',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'content', 'Insertion Technique',
 '## Equipment Required
 
 - Appropriate NGT (selected based on indication)
@@ -317,8 +317,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Higher risk of misplacement—confirm carefully', 5);
 
 -- Section 6: Confirmation of Placement
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'content', 'Confirmation of Placement',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'content', 'Confirmation of Placement',
 '## Critical Safety Point
 
 ⚠️ **NEVER use an NGT for feeding, medication, or lavage until correct gastric placement is CONFIRMED.**
@@ -416,8 +416,8 @@ Check tube position:
 - If patient shows signs of respiratory distress', 6);
 
 -- Section 7: Management and Care
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'content', 'NGT Management and Nursing Care',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'content', 'NGT Management and Nursing Care',
 '## Maintaining Patency
 
 ### For Suction/Drainage Tubes
@@ -522,8 +522,8 @@ Prolonged high NGT output causes loss of:
 8. Provide oral care', 7);
 
 -- Section 8: Complications
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'content', 'Complications',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'content', 'Complications',
 '## Insertion Complications
 
 ### Pulmonary Misplacement
@@ -624,8 +624,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 | Bronchopulmonary fistula | Very rare | High |', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'key_points', 'Key Points',
 '1. **Salem Sump vs. Levin**: Salem sump (double-lumen) allows continuous suction; Levin (single-lumen) requires intermittent suction only to prevent mucosal injury.
 
 2. **Absolute Contraindications**: Severe mid-face trauma, basilar skull fracture, known esophageal obstruction, recent esophageal/gastric surgery, and caustic ingestion.
@@ -647,8 +647,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **High NGT Output**: Leads to loss of water, sodium, potassium, chloride, and hydrogen. Results in dehydration and hypochloremic, hypokalemic metabolic alkalosis.', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: If the patient can speak clearly during NGT insertion, the tube is likely not in the trachea. However, this does not guarantee gastric placement—the tube could be coiled in the esophagus or pharynx.
 
 💡 **Pearl 2**: The blue "pigtail" on a Salem sump tube is the air vent—keep it above the level of the stomach to prevent siphoning. Never inject medications or flush through it.
@@ -670,20 +670,20 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: "Coffee-ground" aspirate indicates digested blood and suggests upper GI bleeding. Bright red blood requires urgent evaluation for active hemorrhage.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00011-0000-0000-0000-000000000011', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100011-0000-0000-0000-000000000011', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00011-0000-0000-0000-000000000011', 1, 'National Patient Safety Agency. Reducing the harm caused by misplaced nasogastric feeding tubes in adults, children and infants. Patient Safety Alert NPSA/2011/PSA002. 2011.', NULL, NULL, NULL),
-('art00011-0000-0000-0000-000000000011', 2, 'Metheny NA. Preventing respiratory complications of tube feedings: evidence-based practice. Am J Crit Care. 2006;15(4):360-369.', NULL, '16823012', NULL),
-('art00011-0000-0000-0000-000000000011', 3, 'Sparks DA, et al. Pulmonary complications of 9931 nasogastric tubes. South Med J. 2011;104(2):140-144.', '10.1097/SMJ.0b013e318200670e', '21258232', NULL),
-('art00011-0000-0000-0000-000000000011', 4, 'Bourgault AM, et al. Obtaining accurate pH measurements from different nasogastric and orogastric tube sites. Am J Crit Care. 2015;24(2):e21-e27.', '10.4037/ajcc2015427', '25727280', NULL),
-('art00011-0000-0000-0000-000000000011', 5, 'Taylor SJ, et al. Confirming nasogastric tube position with pH and appearance of aspirate: what is the evidence? Intensive Crit Care Nurs. 2021;64:102989.', '10.1016/j.iccn.2020.102989', '33384220', NULL);
+('a1100011-0000-0000-0000-000000000011', 1, 'National Patient Safety Agency. Reducing the harm caused by misplaced nasogastric feeding tubes in adults, children and infants. Patient Safety Alert NPSA/2011/PSA002. 2011.', NULL, NULL, NULL),
+('a1100011-0000-0000-0000-000000000011', 2, 'Metheny NA. Preventing respiratory complications of tube feedings: evidence-based practice. Am J Crit Care. 2006;15(4):360-369.', NULL, '16823012', NULL),
+('a1100011-0000-0000-0000-000000000011', 3, 'Sparks DA, et al. Pulmonary complications of 9931 nasogastric tubes. South Med J. 2011;104(2):140-144.', '10.1097/SMJ.0b013e318200670e', '21258232', NULL),
+('a1100011-0000-0000-0000-000000000011', 4, 'Bourgault AM, et al. Obtaining accurate pH measurements from different nasogastric and orogastric tube sites. Am J Crit Care. 2015;24(2):e21-e27.', '10.4037/ajcc2015427', '25727280', NULL),
+('a1100011-0000-0000-0000-000000000011', 5, 'Taylor SJ, et al. Confirming nasogastric tube position with pH and appearance of aspirate: what is the evidence? Intensive Crit Care Nurs. 2021;64:102989.', '10.1016/j.iccn.2020.102989', '33384220', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 1,
+('a1100011-0000-0000-0000-000000000011', 1,
 'Which type of nasogastric tube can safely be used with continuous suction?',
 'Levin tube',
 'Salem sump tube',
@@ -691,11 +691,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Ewald tube',
 'Any of the above',
 'B',
-'The Salem sump tube has a double-lumen design with a vent (blue pigtail) that allows atmospheric air to enter, preventing the tube from adhering to and damaging the gastric mucosa during continuous suction. The Levin tube (single-lumen) should only be used with intermittent suction.',
-'1');
+'The Salem sump tube has a double-lumen design with a vent (blue pigtail) that allows atmospheric air to enter, preventing the tube from adhering to and damaging the gastric mucosa during continuous suction. The Levin tube (single-lumen) should only be used with intermittent suction.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 2,
+('a1100011-0000-0000-0000-000000000011', 2,
 'Which of the following is an absolute contraindication to nasogastric tube insertion?',
 'Hiatal hernia',
 'Esophageal varices (small bore tube)',
@@ -703,11 +702,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Coagulopathy',
 'Recent nasal surgery',
 'C',
-'Basilar skull fracture is an absolute contraindication due to the risk of intracranial placement through the fractured cribriform plate. Esophageal varices, coagulopathy, and recent nasal surgery are relative contraindications. Hiatal hernia is not a contraindication.',
-'1,2');
+'Basilar skull fracture is an absolute contraindication due to the risk of intracranial placement through the fractured cribriform plate. Esophageal varices, coagulopathy, and recent nasal surgery are relative contraindications. Hiatal hernia is not a contraindication.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 3,
+('a1100011-0000-0000-0000-000000000011', 3,
 'The NEX measurement for NGT length estimation involves measuring from:',
 'Nare to ear to xiphoid',
 'Nose to elbow to xiphoid',
@@ -715,11 +713,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Nare to eye to xiphoid',
 'Nose to ear to umbilicus',
 'A',
-'The NEX method measures from the Nose (nare) to the Earlobe to the Xiphoid process. This provides an approximate length for tube insertion to reach the stomach, typically 50-60 cm in adults.',
-'1');
+'The NEX method measures from the Nose (nare) to the Earlobe to the Xiphoid process. This provides an approximate length for tube insertion to reach the stomach, typically 50-60 cm in adults.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 4,
+('a1100011-0000-0000-0000-000000000011', 4,
 'The auscultation or "whoosh" test for confirming NGT placement:',
 'Is the gold standard for confirmation',
 'Is reliable and should be used as primary confirmation',
@@ -727,11 +724,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Can only confirm pulmonary placement',
 'Should be performed before pH testing',
 'C',
-'The auscultation or "whoosh" test (injecting air while listening over the stomach) is unreliable and should NOT be used as sole confirmation. Air injected into the lung or esophagus can sound similar to gastric placement. This method has been associated with undetected misplacements.',
-'1,2');
+'The auscultation or "whoosh" test (injecting air while listening over the stomach) is unreliable and should NOT be used as sole confirmation. Air injected into the lung or esophagus can sound similar to gastric placement. This method has been associated with undetected misplacements.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 5,
+('a1100011-0000-0000-0000-000000000011', 5,
 'A pH of 5.5 or less in NGT aspirate suggests:',
 'Pulmonary placement',
 'Esophageal placement',
@@ -739,11 +735,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Small bowel placement',
 'Placement cannot be determined',
 'C',
-'A pH of 5.5 or less in NGT aspirate strongly suggests gastric placement, as gastric acid typically has a pH of 1-5.5. Respiratory secretions typically have pH >6, and intestinal secretions have pH 6-8.',
-'4,5');
+'A pH of 5.5 or less in NGT aspirate strongly suggests gastric placement, as gastric acid typically has a pH of 1-5.5. Respiratory secretions typically have pH >6, and intestinal secretions have pH 6-8.', '{4,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 6,
+('a1100011-0000-0000-0000-000000000011', 6,
 'What is the recommended position for a patient during NGT insertion?',
 'Supine with neck extended',
 'Left lateral decubitus',
@@ -751,11 +746,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Trendelenburg position',
 'Prone position',
 'C',
-'The optimal position for NGT insertion is High Fowler''s (90°) or at least 30-45° elevation, with the neck flexed forward (chin toward chest). This position facilitates swallowing, helps direct the tube posteriorly toward the esophagus rather than the trachea, and reduces aspiration risk.',
-'1');
+'The optimal position for NGT insertion is High Fowler''s (90°) or at least 30-45° elevation, with the neck flexed forward (chin toward chest). This position facilitates swallowing, helps direct the tube posteriorly toward the esophagus rather than the trachea, and reduces aspiration risk.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 7,
+('a1100011-0000-0000-0000-000000000011', 7,
 'For a feeding tube (fine-bore), what is the gold standard for confirming placement before first use?',
 'Auscultation of air injection',
 'pH testing alone',
@@ -763,11 +757,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Clinical assessment',
 'Observation of aspirate color',
 'C',
-'X-ray confirmation is MANDATORY (gold standard) for all feeding tubes before first use. Fine-bore tubes are more likely to enter the bronchus undetected and may not allow sufficient aspiration for pH testing. The consequences of feeding into the lungs are severe.',
-'1,2,3');
+'X-ray confirmation is MANDATORY (gold standard) for all feeding tubes before first use. Fine-bore tubes are more likely to enter the bronchus undetected and may not allow sufficient aspiration for pH testing. The consequences of feeding into the lungs are severe.', '{1,2,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 8,
+('a1100011-0000-0000-0000-000000000011', 8,
 'Which symptom during NGT insertion most strongly suggests tracheal misplacement?',
 'Mild gagging',
 'Brief coughing',
@@ -775,11 +768,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Watering eyes',
 'Swallowing difficulty',
 'C',
-'Persistent coughing, choking, cyanosis, or inability to speak during NGT insertion are warning signs of tracheal misplacement. The tube should be withdrawn immediately. Mild gagging and brief coughing can occur with correct esophageal passage.',
-'1,2');
+'Persistent coughing, choking, cyanosis, or inability to speak during NGT insertion are warning signs of tracheal misplacement. The tube should be withdrawn immediately. Mild gagging and brief coughing can occur with correct esophageal passage.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 9,
+('a1100011-0000-0000-0000-000000000011', 9,
 'Prolonged high NGT output typically leads to which electrolyte abnormality?',
 'Hyperchloremic metabolic acidosis',
 'Hypochloremic metabolic alkalosis',
@@ -787,11 +779,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Respiratory acidosis',
 'Hypercalcemia',
 'B',
-'Prolonged high NGT output causes loss of gastric acid (HCl), leading to hypochloremic, hypokalemic metabolic alkalosis. The loss of hydrogen ions (acid) causes alkalosis, while chloride and potassium are lost in gastric secretions.',
-'1');
+'Prolonged high NGT output causes loss of gastric acid (HCl), leading to hypochloremic, hypokalemic metabolic alkalosis. The loss of hydrogen ions (acid) causes alkalosis, while chloride and potassium are lost in gastric secretions.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 10,
+('a1100011-0000-0000-0000-000000000011', 10,
 'What should be done with the stylet of a fine-bore feeding tube?',
 'Leave in place permanently for stability',
 'Remove before insertion to improve flexibility',
@@ -799,11 +790,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Replace daily to maintain patency',
 'Use to unclog the tube if obstructed',
 'C',
-'The stylet in a fine-bore feeding tube provides rigidity for insertion but must be removed ONLY after X-ray confirms correct position. Never reinsert a stylet into an in situ tube, as this poses a significant risk of esophageal or gastric perforation.',
-'1');
+'The stylet in a fine-bore feeding tube provides rigidity for insertion but must be removed ONLY after X-ray confirms correct position. Never reinsert a stylet into an in situ tube, as this poses a significant risk of esophageal or gastric perforation.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 11,
+('a1100011-0000-0000-0000-000000000011', 11,
 'How often should a feeding tube be flushed during continuous enteral feeding?',
 'Once daily',
 'Every 8 hours',
@@ -811,11 +801,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Only before and after feeding',
 'Weekly',
 'C',
-'During continuous enteral feeding, the tube should be flushed with 30 mL water every 4 hours to maintain patency. Additional flushes are needed before and after medications and when feeds are interrupted or discontinued.',
-'1');
+'During continuous enteral feeding, the tube should be flushed with 30 mL water every 4 hours to maintain patency. Additional flushes are needed before and after medications and when feeds are interrupted or discontinued.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 12,
+('a1100011-0000-0000-0000-000000000011', 12,
 'The blue "pigtail" on a Salem sump tube:',
 'Should be clamped when not in use',
 'Is used for medication administration',
@@ -823,11 +812,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Should be connected to the suction apparatus',
 'Can be used for feeding if the main lumen is blocked',
 'C',
-'The blue pigtail on a Salem sump tube is the air vent that allows atmospheric pressure to prevent the tube from adhering to the gastric mucosa during continuous suction. It should be kept above the level of the stomach to prevent siphoning of gastric contents.',
-'1');
+'The blue pigtail on a Salem sump tube is the air vent that allows atmospheric pressure to prevent the tube from adhering to the gastric mucosa during continuous suction. It should be kept above the level of the stomach to prevent siphoning of gastric contents.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 13,
+('a1100011-0000-0000-0000-000000000011', 13,
 'Coffee-ground appearance of NGT aspirate indicates:',
 'Normal gastric secretions',
 'Bile reflux',
@@ -835,11 +823,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Upper gastrointestinal bleeding (digested blood)',
 'Intestinal obstruction',
 'D',
-'Coffee-ground appearance in NGT aspirate indicates digested blood (old blood that has been exposed to gastric acid), suggesting upper gastrointestinal bleeding. This requires investigation for the source of bleeding. Bright red blood indicates fresh, active bleeding.',
-'1');
+'Coffee-ground appearance in NGT aspirate indicates digested blood (old blood that has been exposed to gastric acid), suggesting upper gastrointestinal bleeding. This requires investigation for the source of bleeding. Bright red blood indicates fresh, active bleeding.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 14,
+('a1100011-0000-0000-0000-000000000011', 14,
 'When should NGT position be rechecked?',
 'Only at initial insertion',
 'Once daily',
@@ -847,11 +834,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Only if the patient complains',
 'Weekly during prolonged use',
 'C',
-'NGT position should be verified: before each use for medications or feeding, at least every 4 hours during continuous feeding, after episodes of vomiting or coughing, after suctioning, and whenever the tube''s external marking appears to have moved.',
-'1,2');
+'NGT position should be verified: before each use for medications or feeding, at least every 4 hours during continuous feeding, after episodes of vomiting or coughing, after suctioning, and whenever the tube''s external marking appears to have moved.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 15,
+('a1100011-0000-0000-0000-000000000011', 15,
 'What is the typical French size for a nasogastric decompression tube in adults?',
 '6-8 Fr',
 '8-12 Fr',
@@ -859,11 +845,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '20-24 Fr',
 '36-40 Fr',
 'C',
-'Adult decompression NGTs are typically 14-18 French in size. Feeding tubes are smaller (8-12 Fr) for comfort. Large-bore lavage tubes (36-40 Fr) are used for gastric lavage in overdose situations and are typically inserted orally.',
-'1');
+'Adult decompression NGTs are typically 14-18 French in size. Feeding tubes are smaller (8-12 Fr) for comfort. Large-bore lavage tubes (36-40 Fr) are used for gastric lavage in overdose situations and are typically inserted orally.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 16,
+('a1100011-0000-0000-0000-000000000011', 16,
 'In a patient with mid-face trauma and suspected CSF leak, enteral access should be obtained via:',
 'Nasogastric tube with extra care',
 'Orogastric tube or surgical gastrostomy',
@@ -871,11 +856,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Standard NGT after CT scan',
 'NGT with fluoroscopic guidance',
 'B',
-'Mid-face trauma with suspected CSF leak suggests a basilar skull fracture, which is an absolute contraindication to nasogastric intubation due to the risk of intracranial placement through the fractured cribriform plate. Enteral access should be via the orogastric route or surgical gastrostomy/jejunostomy.',
-'1,3');
+'Mid-face trauma with suspected CSF leak suggests a basilar skull fracture, which is an absolute contraindication to nasogastric intubation due to the risk of intracranial placement through the fractured cribriform plate. Enteral access should be via the orogastric route or surgical gastrostomy/jejunostomy.', '{1,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 17,
+('a1100011-0000-0000-0000-000000000011', 17,
 'Sinusitis as a complication of NGT occurs due to:',
 'Bacterial contamination of the tube',
 'Allergic reaction to tube material',
@@ -883,11 +867,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Direct trauma during insertion',
 'Aspiration of gastric contents',
 'C',
-'NGT sinusitis occurs due to obstruction of sinus drainage pathways. The tube presence in the nasal cavity can obstruct the ostia of the paranasal sinuses, preventing normal drainage and predisposing to infection. Risk increases with prolonged tube placement.',
-'1');
+'NGT sinusitis occurs due to obstruction of sinus drainage pathways. The tube presence in the nasal cavity can obstruct the ostia of the paranasal sinuses, preventing normal drainage and predisposing to infection. Risk increases with prolonged tube placement.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 18,
+('a1100011-0000-0000-0000-000000000011', 18,
 'What head-of-bed elevation is recommended for patients with NGTs to reduce aspiration risk?',
 'Flat (0 degrees)',
 '15 degrees',
@@ -895,11 +878,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Trendelenburg',
 'Position does not affect aspiration risk',
 'C',
-'Head-of-bed elevation of 30-45 degrees (semi-recumbent position) is recommended for all patients with NGTs, especially those receiving enteral feeding, to reduce the risk of gastroesophageal reflux and pulmonary aspiration.',
-'2');
+'Head-of-bed elevation of 30-45 degrees (semi-recumbent position) is recommended for all patients with NGTs, especially those receiving enteral feeding, to reduce the risk of gastroesophageal reflux and pulmonary aspiration.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 19,
+('a1100011-0000-0000-0000-000000000011', 19,
 'When removing an NGT, the patient should be instructed to:',
 'Breathe deeply and cough',
 'Bear down as if having a bowel movement',
@@ -907,11 +889,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Swallow repeatedly',
 'Pant rapidly',
 'C',
-'When removing an NGT, the patient should hold their breath (which closes the epiglottis) while the tube is withdrawn steadily and quickly in one motion. The tube should be pinched during removal to prevent aspiration of any remaining contents.',
-'1');
+'When removing an NGT, the patient should hold their breath (which closes the epiglottis) while the tube is withdrawn steadily and quickly in one motion. The tube should be pinched during removal to prevent aspiration of any remaining contents.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00011-0000-0000-0000-000000000011', 20,
+('a1100011-0000-0000-0000-000000000011', 20,
 'For patients requiring enteral access for more than 4-6 weeks, the preferred approach is:',
 'Continue with nasogastric tube',
 'Switch to nasojejunal tube',
@@ -919,5 +900,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Convert to parenteral nutrition',
 'Use orogastric tube instead',
 'C',
-'For patients requiring enteral access for more than 4-6 weeks, gastrostomy (PEG) or jejunostomy should be considered rather than prolonged NGT use. Long-term NGT is associated with complications including sinusitis, nasal and esophageal erosion, patient discomfort, and increased aspiration risk.',
-'1');
+'For patients requiring enteral access for more than 4-6 weeks, gastrostomy (PEG) or jejunostomy should be considered rather than prolonged NGT use. Long-term NGT is associated with complications including sinusitis, nasal and esophageal erosion, patient discomfort, and increased aspiration risk.', '{1}');

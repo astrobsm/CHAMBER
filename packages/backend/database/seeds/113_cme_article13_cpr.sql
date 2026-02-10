@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00013-0000-0000-0000-000000000013',
-    'b0000013-0000-0000-0000-000000000001',
+    'a1100013-0000-0000-0000-000000000013',
+    'b0000013-0000-0000-0000-000000000013',
     'a0000001-0000-0000-0000-000000000001',
     'Cardiopulmonary Resuscitation: Evidence-Based Practice',
     'BLS, ACLS, and Post-Resuscitation Care',
@@ -14,14 +14,14 @@ INSERT INTO cme_articles (
     'UNTH Surgery Department, Emergency Medicine Unit',
     55,
     3.0,
-    'intermediate',
+    'medium',
     1,
     true
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'introduction', 'Introduction',
 'Cardiac arrest is the cessation of effective cardiac mechanical activity, resulting in loss of consciousness, absent pulse, and apnea. Without immediate intervention, irreversible brain injury begins within 4-6 minutes, and death follows.
 
 **Global Burden:**
@@ -58,8 +58,8 @@ For in-hospital cardiac arrest:
 High-quality CPR is more important than the sheer act of doing CPR. Poor-quality CPR provides minimal benefit. This article emphasizes the components of high-quality resuscitation.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. Describe the chain of survival for both out-of-hospital and in-hospital cardiac arrest
@@ -83,8 +83,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Discuss ethical considerations in resuscitation including when to terminate efforts', 2);
 
 -- Section 3: High-Quality CPR
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'content', 'High-Quality CPR',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'content', 'High-Quality CPR',
 '## Components of High-Quality CPR
 
 High-quality CPR is the most critical intervention for survival. Each component is evidence-based and measurable.
@@ -164,8 +164,8 @@ High-quality CPR is the most critical intervention for survival. Each component 
 - Available on many defibrillators', 3);
 
 -- Section 4: Basic Life Support (BLS)
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'content', 'Basic Life Support (BLS)',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'content', 'Basic Life Support (BLS)',
 '## BLS Algorithm: Adult Cardiac Arrest
 
 ### Step 1: Ensure Scene Safety
@@ -276,8 +276,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - 2-rescuer: 15:2 ratio', 4);
 
 -- Section 5: ACLS - Cardiac Arrest
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'content', 'Advanced Cardiovascular Life Support (ACLS)',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'content', 'Advanced Cardiovascular Life Support (ACLS)',
 '## ACLS Cardiac Arrest Algorithm
 
 ### Initial Assessment
@@ -402,8 +402,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Monitor ETCO2', 5);
 
 -- Section 6: Special Circumstances
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'content', 'Special Resuscitation Circumstances',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'content', 'Special Resuscitation Circumstances',
 '## Drowning
 
 ### Key Principles
@@ -508,8 +508,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Smaller epinephrine doses (<1 mcg/kg)', 6);
 
 -- Section 7: Post-Cardiac Arrest Care
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'content', 'Post-Cardiac Arrest Care',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'content', 'Post-Cardiac Arrest Care',
 '## Overview
 
 Post-cardiac arrest care is the final critical link in the chain of survival. ROSC is just the beginning—subsequent care determines neurologic outcome.
@@ -623,8 +623,8 @@ Post-cardiac arrest care is the final critical link in the chain of survival. RO
 - Seizure prophylaxis/treatment', 7);
 
 -- Section 8: Ethics and Termination
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'content', 'Ethical Considerations',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'content', 'Ethical Considerations',
 '## When to Start CPR
 
 ### Presumption of Resuscitation
@@ -706,8 +706,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Family notification', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'key_points', 'Key Points',
 '1. **High-Quality CPR**: Rate 100-120/min, depth 5-6 cm, full recoil, minimize interruptions (<10 sec), avoid excessive ventilation. Chest compression fraction >80%.
 
 2. **C-A-B Sequence**: Start with compressions, then airway and breathing. Early compressions are critical.
@@ -729,8 +729,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Neurologic Prognostication**: Delay until at least 72 hours after ROSC and off sedation. Use multimodal assessment.', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: Don''t interrupt CPR to check for pulse or rhythm unless you''ve completed a full 2-minute cycle. Every pause decreases coronary perfusion pressure.
 
 💡 **Pearl 2**: Metronome apps or CPR feedback devices help maintain proper compression rate. The song "Stayin'' Alive" by the Bee Gees is ~100-110 bpm for reference.
@@ -752,20 +752,20 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: A patient who was just in VF/pVT arrest will likely arrest again. Have pads in place and be ready for re-arrest. Post-arrest arrhythmias are common.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00013-0000-0000-0000-000000000013', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100013-0000-0000-0000-000000000013', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00013-0000-0000-0000-000000000013', 1, 'Panchal AR, et al. Part 3: Adult Basic and Advanced Life Support: 2020 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2020;142(16_suppl_2):S366-S468.', '10.1161/CIR.0000000000000916', '33081529', NULL),
-('art00013-0000-0000-0000-000000000013', 2, 'Merchant RM, et al. Part 1: Executive Summary: 2020 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2020;142(16_suppl_2):S337-S357.', '10.1161/CIR.0000000000000918', '33081530', NULL),
-('art00013-0000-0000-0000-000000000013', 3, 'Nolan JP, et al. European Resuscitation Council and European Society of Intensive Care Medicine guidelines 2021: post-resuscitation care. Intensive Care Med. 2021;47(4):369-421.', '10.1007/s00134-021-06368-4', '33765189', NULL),
-('art00013-0000-0000-0000-000000000013', 4, 'Dankiewicz J, et al. Hypothermia versus Normothermia after Out-of-Hospital Cardiac Arrest (TTM2 Trial). N Engl J Med. 2021;384(24):2283-2294.', '10.1056/NEJMoa2100591', '34133859', NULL),
-('art00013-0000-0000-0000-000000000013', 5, 'Kleinman ME, et al. Part 5: Adult Basic Life Support and Cardiopulmonary Resuscitation Quality. Circulation. 2015;132(18 Suppl 2):S414-S435.', '10.1161/CIR.0000000000000259', '26472993', NULL);
+('a1100013-0000-0000-0000-000000000013', 1, 'Panchal AR, et al. Part 3: Adult Basic and Advanced Life Support: 2020 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2020;142(16_suppl_2):S366-S468.', '10.1161/CIR.0000000000000916', '33081529', NULL),
+('a1100013-0000-0000-0000-000000000013', 2, 'Merchant RM, et al. Part 1: Executive Summary: 2020 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2020;142(16_suppl_2):S337-S357.', '10.1161/CIR.0000000000000918', '33081530', NULL),
+('a1100013-0000-0000-0000-000000000013', 3, 'Nolan JP, et al. European Resuscitation Council and European Society of Intensive Care Medicine guidelines 2021: post-resuscitation care. Intensive Care Med. 2021;47(4):369-421.', '10.1007/s00134-021-06368-4', '33765189', NULL),
+('a1100013-0000-0000-0000-000000000013', 4, 'Dankiewicz J, et al. Hypothermia versus Normothermia after Out-of-Hospital Cardiac Arrest (TTM2 Trial). N Engl J Med. 2021;384(24):2283-2294.', '10.1056/NEJMoa2100591', '34133859', NULL),
+('a1100013-0000-0000-0000-000000000013', 5, 'Kleinman ME, et al. Part 5: Adult Basic Life Support and Cardiopulmonary Resuscitation Quality. Circulation. 2015;132(18 Suppl 2):S414-S435.', '10.1161/CIR.0000000000000259', '26472993', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 1,
+('a1100013-0000-0000-0000-000000000013', 1,
 'The recommended chest compression rate for adult CPR is:',
 'At least 60 compressions per minute',
 '80-100 compressions per minute',
@@ -773,11 +773,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '120-140 compressions per minute',
 'As fast as possible',
 'C',
-'The recommended compression rate for adult CPR is 100-120 compressions per minute. Rates below 100 provide inadequate blood flow, while rates above 120 are associated with decreased compression depth and incomplete recoil, reducing effectiveness.',
-'1,5');
+'The recommended compression rate for adult CPR is 100-120 compressions per minute. Rates below 100 provide inadequate blood flow, while rates above 120 are associated with decreased compression depth and incomplete recoil, reducing effectiveness.', '{1,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 2,
+('a1100013-0000-0000-0000-000000000013', 2,
 'The recommended chest compression depth for adults is:',
 'At least 2 cm (1 inch)',
 'At least 4 cm (1.5 inches)',
@@ -785,11 +784,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'At least 7 cm (3 inches)',
 'Depth does not matter as long as rate is adequate',
 'C',
-'Adult chest compression depth should be at least 5 cm (2 inches) but no more than 6 cm (2.4 inches). Inadequate depth reduces coronary and cerebral perfusion, while excessive depth increases injury risk.',
-'1,5');
+'Adult chest compression depth should be at least 5 cm (2 inches) but no more than 6 cm (2.4 inches). Inadequate depth reduces coronary and cerebral perfusion, while excessive depth increases injury risk.', '{1,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 3,
+('a1100013-0000-0000-0000-000000000013', 3,
 'Which rhythm is a "shockable" rhythm in cardiac arrest?',
 'Asystole',
 'Pulseless electrical activity (PEA)',
@@ -797,11 +795,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Sinus bradycardia with hypotension',
 'Third-degree heart block',
 'C',
-'Ventricular fibrillation (VF) is a shockable rhythm, along with pulseless ventricular tachycardia (pVT). Asystole and PEA are non-shockable rhythms and do not respond to defibrillation.',
-'1');
+'Ventricular fibrillation (VF) is a shockable rhythm, along with pulseless ventricular tachycardia (pVT). Asystole and PEA are non-shockable rhythms and do not respond to defibrillation.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 4,
+('a1100013-0000-0000-0000-000000000013', 4,
 'When should the first dose of epinephrine be given in VF/pVT cardiac arrest?',
 'Immediately when cardiac arrest is recognized',
 'After the second shock',
@@ -809,11 +806,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Only if two doses of amiodarone are ineffective',
 'Epinephrine is not used in shockable rhythms',
 'B',
-'In VF/pVT, epinephrine 1 mg IV/IO is given after the second shock (during the second 2-minute CPR cycle). Early defibrillation is the priority. In non-shockable rhythms (asystole/PEA), epinephrine is given as soon as IV/IO access is established.',
-'1');
+'In VF/pVT, epinephrine 1 mg IV/IO is given after the second shock (during the second 2-minute CPR cycle). Early defibrillation is the priority. In non-shockable rhythms (asystole/PEA), epinephrine is given as soon as IV/IO access is established.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 5,
+('a1100013-0000-0000-0000-000000000013', 5,
 'The recommended dose of epinephrine during cardiac arrest is:',
 '0.1 mg IV/IO every 3-5 minutes',
 '0.5 mg IV/IO every 3-5 minutes',
@@ -821,11 +817,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '3 mg IV/IO every 3-5 minutes',
 '5 mg IV/IO every 3-5 minutes',
 'C',
-'The standard dose of epinephrine during cardiac arrest is 1 mg IV/IO (1:10,000 concentration), given every 3-5 minutes. This applies to both shockable and non-shockable rhythms.',
-'1');
+'The standard dose of epinephrine during cardiac arrest is 1 mg IV/IO (1:10,000 concentration), given every 3-5 minutes. This applies to both shockable and non-shockable rhythms.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 6,
+('a1100013-0000-0000-0000-000000000013', 6,
 'Which of the following is NOT one of the "H''s" for reversible causes of cardiac arrest?',
 'Hypovolemia',
 'Hypoglycemia',
@@ -833,11 +828,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Hydrogen ion (acidosis)',
 'Hypoxia',
 'B',
-'The H''s are: Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo/Hyperkalemia, and Hypothermia. Hypoglycemia, while important, is not one of the classic H''s. The T''s are: Tension pneumothorax, Tamponade, Toxins, and Thrombosis (pulmonary/coronary).',
-'1');
+'The H''s are: Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo/Hyperkalemia, and Hypothermia. Hypoglycemia, while important, is not one of the classic H''s. The T''s are: Tension pneumothorax, Tamponade, Toxins, and Thrombosis (pulmonary/coronary).', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 7,
+('a1100013-0000-0000-0000-000000000013', 7,
 'During CPR with an advanced airway in place, ventilations should be given:',
 '30 compressions followed by 2 breaths',
 'Every 2 seconds (30 breaths per minute)',
@@ -845,11 +839,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Every 10 seconds (6 breaths per minute)',
 'Only when the patient appears cyanotic',
 'C',
-'With an advanced airway in place, continuous chest compressions should be given without pause, and ventilations should be delivered every 6 seconds (10 breaths per minute). This optimizes chest compression fraction.',
-'1,5');
+'With an advanced airway in place, continuous chest compressions should be given without pause, and ventilations should be delivered every 6 seconds (10 breaths per minute). This optimizes chest compression fraction.', '{1,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 8,
+('a1100013-0000-0000-0000-000000000013', 8,
 'An end-tidal CO2 (ETCO2) reading during CPR can indicate:',
 'Quality of chest compressions',
 'Possible return of spontaneous circulation',
@@ -857,11 +850,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'All of the above',
 'None of the above',
 'D',
-'ETCO2 during CPR indicates compression quality (low ETCO2 suggests inadequate compressions), can detect ROSC (sudden rise in ETCO2), and has prognostic value (persistently <10 mmHg associated with poor outcomes).',
-'1');
+'ETCO2 during CPR indicates compression quality (low ETCO2 suggests inadequate compressions), can detect ROSC (sudden rise in ETCO2), and has prognostic value (persistently <10 mmHg associated with poor outcomes).', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 9,
+('a1100013-0000-0000-0000-000000000013', 9,
 'The first dose of amiodarone in refractory VF/pVT is:',
 '150 mg IV/IO',
 '300 mg IV/IO',
@@ -869,11 +861,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '600 mg IV/IO',
 '1 mg/kg IV/IO',
 'B',
-'The first dose of amiodarone for refractory VF/pVT is 300 mg IV/IO bolus, given after the third shock. A second dose of 150 mg may be given if VF/pVT persists. Lidocaine is an alternative (1-1.5 mg/kg first dose).',
-'1');
+'The first dose of amiodarone for refractory VF/pVT is 300 mg IV/IO bolus, given after the third shock. A second dose of 150 mg may be given if VF/pVT persists. Lidocaine is an alternative (1-1.5 mg/kg first dose).', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 10,
+('a1100013-0000-0000-0000-000000000013', 10,
 'How often should compressors be rotated during CPR?',
 'Every 30 seconds',
 'Every 1 minute',
@@ -881,11 +872,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Every 5 minutes',
 'Only when fatigued',
 'C',
-'Compressors should rotate every 2 minutes (at rhythm check) to prevent fatigue-related decline in compression quality. Studies show compression quality decreases after just 1-2 minutes. Rotation should take <10 seconds.',
-'1,5');
+'Compressors should rotate every 2 minutes (at rhythm check) to prevent fatigue-related decline in compression quality. Studies show compression quality decreases after just 1-2 minutes. Rotation should take <10 seconds.', '{1,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 11,
+('a1100013-0000-0000-0000-000000000013', 11,
 'The target chest compression fraction (CCF) during cardiac arrest should be:',
 'Greater than 50%',
 'Greater than 60%',
@@ -893,11 +883,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '100%',
 'Any CCF is acceptable',
 'C',
-'Chest compression fraction (percentage of time spent on compressions) should be >80% (ideally as high as possible). Higher CCF is associated with improved survival. Interruptions for rhythm checks, shocks, and ventilation should be minimized.',
-'1,5');
+'Chest compression fraction (percentage of time spent on compressions) should be >80% (ideally as high as possible). Higher CCF is associated with improved survival. Interruptions for rhythm checks, shocks, and ventilation should be minimized.', '{1,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 12,
+('a1100013-0000-0000-0000-000000000013', 12,
 'In pregnancy, what modification is essential during CPR?',
 'Use only half the standard drug doses',
 'Perform compressions lower on the sternum',
@@ -905,11 +894,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Avoid defibrillation until after delivery',
 'CPR should not be performed during pregnancy',
 'C',
-'Left lateral uterine displacement (manual or wedge) is essential during CPR in pregnancy to relieve aortocaval compression by the gravid uterus. Standard compressions, drug doses, and defibrillation apply. Perimortem cesarean delivery should be considered if no ROSC within 4-5 minutes.',
-'1');
+'Left lateral uterine displacement (manual or wedge) is essential during CPR in pregnancy to relieve aortocaval compression by the gravid uterus. Standard compressions, drug doses, and defibrillation apply. Perimortem cesarean delivery should be considered if no ROSC within 4-5 minutes.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 13,
+('a1100013-0000-0000-0000-000000000013', 13,
 'The primary mechanism of death in drowning is:',
 'Cardiac arrhythmia',
 'Electrolyte imbalance',
@@ -917,11 +905,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Hypothermia',
 'Aspiration pneumonia',
 'C',
-'Hypoxia is the primary cause of arrest in drowning. The arrest is asphyxial in nature. Therefore, rescue breathing is particularly important in drowning resuscitation, and victims may benefit from 5 initial rescue breaths when possible.',
-'1');
+'Hypoxia is the primary cause of arrest in drowning. The arrest is asphyxial in nature. Therefore, rescue breathing is particularly important in drowning resuscitation, and victims may benefit from 5 initial rescue breaths when possible.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 14,
+('a1100013-0000-0000-0000-000000000013', 14,
 'Targeted temperature management after cardiac arrest involves maintaining a temperature of:',
 '28-30°C for 12 hours',
 '32-36°C for at least 24 hours',
@@ -929,11 +916,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '38-40°C for 72 hours',
 'Normal body temperature throughout',
 'B',
-'Targeted temperature management (TTM) involves maintaining a core temperature of 32-36°C for at least 24 hours in comatose patients after ROSC. Fever (>37.7°C) should be avoided for at least 72 hours after arrest.',
-'3,4');
+'Targeted temperature management (TTM) involves maintaining a core temperature of 32-36°C for at least 24 hours in comatose patients after ROSC. Fever (>37.7°C) should be avoided for at least 72 hours after arrest.', '{3,4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 15,
+('a1100013-0000-0000-0000-000000000013', 15,
 'Neurologic prognostication after cardiac arrest should be delayed until at least:',
 '12 hours after ROSC',
 '24 hours after ROSC',
@@ -941,11 +927,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '72 hours after ROSC, off sedation',
 '1 week after ROSC',
 'D',
-'Neurologic prognostication should be delayed until at least 72 hours after ROSC (and longer if TTM was used or sedatives are still present). Early prognostication can lead to premature withdrawal of care in patients who may recover. Multimodal assessment is recommended.',
-'3');
+'Neurologic prognostication should be delayed until at least 72 hours after ROSC (and longer if TTM was used or sedatives are still present). Early prognostication can lead to premature withdrawal of care in patients who may recover. Multimodal assessment is recommended.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 16,
+('a1100013-0000-0000-0000-000000000013', 16,
 'After ROSC, oxygen should be titrated to maintain SpO2 of:',
 '88-92%',
 '94-98%',
@@ -953,11 +938,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'As high as possible',
 'Oxygen therapy is not needed after ROSC',
 'B',
-'After ROSC, oxygen should be titrated to maintain SpO2 94-98%. Both hypoxemia and hyperoxemia are harmful. Once reliable SpO2 monitoring is available, FiO2 should be weaned to avoid excessive oxygen levels.',
-'1,3');
+'After ROSC, oxygen should be titrated to maintain SpO2 94-98%. Both hypoxemia and hyperoxemia are harmful. Once reliable SpO2 monitoring is available, FiO2 should be weaned to avoid excessive oxygen levels.', '{1,3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 17,
+('a1100013-0000-0000-0000-000000000013', 17,
 'The treatment of choice for opioid overdose with respiratory depression is:',
 'Epinephrine',
 'Atropine',
@@ -965,11 +949,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Flumazenil',
 'Sodium bicarbonate',
 'C',
-'Naloxone is the specific antidote for opioid overdose. It reverses respiratory depression caused by opioids. Initial dose is 0.4-2 mg IV/IM/SQ/IN, repeated every 2-3 minutes as needed. Ventilatory support (BVM) should be provided while awaiting effect.',
-'1');
+'Naloxone is the specific antidote for opioid overdose. It reverses respiratory depression caused by opioids. Initial dose is 0.4-2 mg IV/IM/SQ/IN, repeated every 2-3 minutes as needed. Ventilatory support (BVM) should be provided while awaiting effect.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 18,
+('a1100013-0000-0000-0000-000000000013', 18,
 'The compression-to-ventilation ratio for two-rescuer infant CPR by healthcare providers is:',
 '5:1',
 '15:2',
@@ -977,11 +960,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Continuous compressions only',
 '10:1',
 'B',
-'For two-rescuer infant/child CPR by healthcare providers, the ratio is 15:2. For single-rescuer CPR (all ages) and adult CPR regardless of rescuer number (without advanced airway), the ratio is 30:2.',
-'1');
+'For two-rescuer infant/child CPR by healthcare providers, the ratio is 15:2. For single-rescuer CPR (all ages) and adult CPR regardless of rescuer number (without advanced airway), the ratio is 30:2.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 19,
+('a1100013-0000-0000-0000-000000000013', 19,
 'The most important intervention for improving survival in witnessed VF cardiac arrest is:',
 'Epinephrine administration',
 'Endotracheal intubation',
@@ -989,11 +971,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Vasopressin administration',
 'IV fluid resuscitation',
 'C',
-'Early defibrillation is the most important intervention for improving survival in VF/pVT arrest. For every minute without defibrillation, survival decreases by 7-10%. High-quality CPR maintains viability until defibrillation can be performed.',
-'1,2');
+'Early defibrillation is the most important intervention for improving survival in VF/pVT arrest. For every minute without defibrillation, survival decreases by 7-10%. High-quality CPR maintains viability until defibrillation can be performed.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00013-0000-0000-0000-000000000013', 20,
+('a1100013-0000-0000-0000-000000000013', 20,
 'Which of the following patients should receive emergent coronary angiography after ROSC?',
 'All patients with ROSC regardless of ECG',
 'Only patients with previous history of MI',
@@ -1001,5 +982,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Only patients who remain conscious',
 'Coronary angiography should be delayed for at least 72 hours',
 'C',
-'Patients with STEMI on post-arrest ECG should receive emergent coronary angiography and PCI (within 90 minutes). For patients without STEMI but with suspected cardiac cause, early angiography (within 24 hours) should be considered. Coronary intervention should not delay TTM.',
-'1,3');
+'Patients with STEMI on post-arrest ECG should receive emergent coronary angiography and PCI (within 90 minutes). For patients without STEMI but with suspected cardiac cause, early angiography (within 24 hours) should be considered. Coronary intervention should not delay TTM.', '{1,3}');

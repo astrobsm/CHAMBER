@@ -28,7 +28,7 @@ INSERT INTO article_self_assessments (id, article_id, question_number, question_
 
 ('e0000376-0001-0000-0000-000000000001', 'd0000376-0000-0000-0000-000000000076', 1,
 'The ABCDE criteria for melanoma evaluation include all EXCEPT:',
-'Asymmetry', 'Border irregularity', 'Color variation', 'Diameter greater than 6mm', 'Elasticity', NULL,
+'Asymmetry', 'Border irregularity', 'Color variation', 'Diameter greater than 6mm', 'Elasticity',
 'E', 'ABCDE criteria for melanoma: A = ASYMMETRY (one half does not match the other); B = BORDER irregularity (ragged, notched, blurred edges); C = COLOR variation (multiple shades of brown, black, red, white, blue); D = DIAMETER >6 mm (larger than pencil eraser); E = EVOLUTION (changing in size, shape, color, or new symptoms). E is NOT "Elasticity." Additional concerning features: ulceration, bleeding, itching. Any changing mole warrants evaluation.', 'easy'),
 
 ('e0000376-0002-0000-0000-000000000002', 'd0000376-0000-0000-0000-000000000076', 2,

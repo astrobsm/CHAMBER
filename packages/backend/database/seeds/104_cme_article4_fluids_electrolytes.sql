@@ -6,8 +6,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00004-0000-0000-0000-000000000004',
-    'b0000004-0000-0000-0000-000000000001',
+    'a1100004-0000-0000-0000-000000000004',
+    'b0000004-0000-0000-0000-000000000004',
     'a0000001-0000-0000-0000-000000000001',
     'Fluid and Electrolyte Management in Surgical Patients',
     'Principles of Perioperative Fluid Therapy and Electrolyte Disorders',
@@ -22,8 +22,8 @@ INSERT INTO cme_articles (
 
 -- Insert article sections
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'introduction', 'Introduction', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'introduction', 'Introduction', 
 'Fluid and electrolyte homeostasis is critical for normal cellular function and organ system performance. Surgical patients face unique challenges including:
 
 - **Preoperative deficits** from NPO status, bowel preparation, or underlying disease
@@ -50,8 +50,8 @@ Modern perioperative fluid management has evolved from fixed-volume protocols to
 6. Monitor and adjust based on response', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'learning_objectives', 'Learning Objectives', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'learning_objectives', 'Learning Objectives', 
 'Upon completion of this article, participants should be able to:
 
 1. Describe the distribution of body water across fluid compartments and factors that influence fluid movement
@@ -75,8 +75,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Develop a comprehensive fluid management plan for complex surgical patients', 2);
 
 -- Section 3: Body Fluid Compartments
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'content', 'Body Fluid Compartments', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'content', 'Body Fluid Compartments', 
 '## Total Body Water
 
 Total body water (TBW) comprises approximately **60% of body weight** in adult males (less in females and elderly due to higher fat content).
@@ -143,8 +143,8 @@ This fluid is temporarily unavailable for circulation and must be replaced.
 - Burns: Massive third-spacing and evaporative losses', 3);
 
 -- Section 4: Intravenous Fluids
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'content', 'Intravenous Fluids', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'content', 'Intravenous Fluids', 
 '## Crystalloids
 
 Crystalloid solutions contain water and electrolytes that freely cross capillary membranes.
@@ -273,8 +273,8 @@ The SAFE study and subsequent trials have shown:
 **Current Practice:** Crystalloids are first-line for resuscitation. Albumin may have a role in specific situations (sepsis, burns, liver disease).', 4);
 
 -- Section 5: Maintenance Fluids
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'content', 'Maintenance Fluid Requirements', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'content', 'Maintenance Fluid Requirements', 
 '## Holliday-Segar Formula
 
 The classic approach to calculating maintenance fluid requirements:
@@ -355,8 +355,8 @@ Benefits of GDFT:
 - Reduced GI complications', 5);
 
 -- Section 6: Sodium Disorders
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'content', 'Sodium Disorders', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'content', 'Sodium Disorders', 
 '## Hyponatremia (Serum Na⁺ <135 mEq/L)
 
 ### Classification by Volume Status
@@ -441,8 +441,8 @@ Free Water Deficit = TBW × [(Na - 140) / 140]
 - Replace deficit over 48-72 hours plus ongoing losses', 6);
 
 -- Section 7: Potassium Disorders
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'content', 'Potassium Disorders', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'content', 'Potassium Disorders', 
 '## Overview
 
 Potassium is the major intracellular cation:
@@ -559,8 +559,8 @@ Small changes in serum K⁺ can cause life-threatening cardiac arrhythmias.
 - **Dialysis** (definitive for severe cases or renal failure)', 7);
 
 -- Section 8: Other Electrolyte Disorders
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'content', 'Calcium, Magnesium, and Phosphate Disorders', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'content', 'Calcium, Magnesium, and Phosphate Disorders', 
 '## Calcium Disorders
 
 ### Calcium Physiology
@@ -675,8 +675,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Monitor for hypocalcemia (phosphate binds calcium)', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'key_points', 'Key Points', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'key_points', 'Key Points', 
 '1. **Body Fluid Distribution**: TBW 60% body weight; ICF 40%, ECF 20% (intravascular 5%, interstitial 15%)
 
 2. **Crystalloid Choice**: Balanced crystalloids (LR, Plasmalyte) preferred over NS to avoid hyperchloremic acidosis; NS for hyponatremia and metabolic alkalosis
@@ -698,8 +698,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Hypomagnesemia**: Causes refractory hypokalemia and hypocalcemia; must correct Mg before K and Ca will normalize', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'clinical_pearls', 'Clinical Pearls', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'clinical_pearls', 'Clinical Pearls', 
 '💡 **Pearl 1**: When a postoperative patient becomes hyponatremic, always consider SIADH from pain, nausea, medications, or surgery itself. Check urine osmolality and sodium.
 
 💡 **Pearl 2**: Lactate in LR is converted to bicarbonate in the liver. It does NOT worsen lactic acidosis and is safe in shock.
@@ -721,25 +721,25 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: An elderly patient with hypernatremia usually means not enough water intake. Ensure they have access to water and can drink independently.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00004-0000-0000-0000-000000000004', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100004-0000-0000-0000-000000000004', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00004-0000-0000-0000-000000000004', 1, 'Holliday MA, Segar WE. The maintenance need for water in parenteral fluid therapy. Pediatrics. 1957;19(5):823-832.', NULL, '13431307', NULL),
-('art00004-0000-0000-0000-000000000004', 2, 'Semler MW, et al. Balanced Crystalloids versus Saline in Critically Ill Adults (SMART Trial). N Engl J Med. 2018;378(9):829-839.', '10.1056/NEJMoa1711584', '29485925', NULL),
-('art00004-0000-0000-0000-000000000004', 3, 'Self WH, et al. Balanced Crystalloids versus Saline in Noncritically Ill Adults (SALT-ED Trial). N Engl J Med. 2018;378(9):819-828.', '10.1056/NEJMoa1711586', '29485926', NULL),
-('art00004-0000-0000-0000-000000000004', 4, 'Finfer S, et al. A comparison of albumin and saline for fluid resuscitation in the intensive care unit (SAFE Study). N Engl J Med. 2004;350(22):2247-2256.', '10.1056/NEJMoa040232', '15163774', NULL),
-('art00004-0000-0000-0000-000000000004', 5, 'Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014;170(3):G1-47.', '10.1530/EJE-13-1020', '24569125', NULL),
-('art00004-0000-0000-0000-000000000004', 6, 'Sterns RH. Treatment of Severe Hyponatremia. Clin J Am Soc Nephrol. 2018;13(4):641-649.', '10.2215/CJN.10440917', '29295830', NULL),
-('art00004-0000-0000-0000-000000000004', 7, 'Clase CM, et al. Potassium homeostasis and management of dyskalemia in kidney diseases. Nat Rev Nephrol. 2020;16(5):260-277.', '10.1038/s41581-019-0240-1', '32152499', NULL),
-('art00004-0000-0000-0000-000000000004', 8, 'Kraft MD, et al. Treatment of electrolyte disorders in adult patients in the intensive care unit. Am J Health Syst Pharm. 2005;62(16):1663-1682.', '10.2146/ajhp040300', '16085929', NULL),
-('art00004-0000-0000-0000-000000000004', 9, 'Miller RD, et al. Miller''s Anesthesia, 9th Edition. Elsevier, 2020.', NULL, NULL, NULL),
-('art00004-0000-0000-0000-000000000004', 10, 'Myburgh JA, Mythen MG. Resuscitation fluids. N Engl J Med. 2013;369(13):1243-1251.', '10.1056/NEJMra1208627', '24066745', NULL);
+('a1100004-0000-0000-0000-000000000004', 1, 'Holliday MA, Segar WE. The maintenance need for water in parenteral fluid therapy. Pediatrics. 1957;19(5):823-832.', NULL, '13431307', NULL),
+('a1100004-0000-0000-0000-000000000004', 2, 'Semler MW, et al. Balanced Crystalloids versus Saline in Critically Ill Adults (SMART Trial). N Engl J Med. 2018;378(9):829-839.', '10.1056/NEJMoa1711584', '29485925', NULL),
+('a1100004-0000-0000-0000-000000000004', 3, 'Self WH, et al. Balanced Crystalloids versus Saline in Noncritically Ill Adults (SALT-ED Trial). N Engl J Med. 2018;378(9):819-828.', '10.1056/NEJMoa1711586', '29485926', NULL),
+('a1100004-0000-0000-0000-000000000004', 4, 'Finfer S, et al. A comparison of albumin and saline for fluid resuscitation in the intensive care unit (SAFE Study). N Engl J Med. 2004;350(22):2247-2256.', '10.1056/NEJMoa040232', '15163774', NULL),
+('a1100004-0000-0000-0000-000000000004', 5, 'Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014;170(3):G1-47.', '10.1530/EJE-13-1020', '24569125', NULL),
+('a1100004-0000-0000-0000-000000000004', 6, 'Sterns RH. Treatment of Severe Hyponatremia. Clin J Am Soc Nephrol. 2018;13(4):641-649.', '10.2215/CJN.10440917', '29295830', NULL),
+('a1100004-0000-0000-0000-000000000004', 7, 'Clase CM, et al. Potassium homeostasis and management of dyskalemia in kidney diseases. Nat Rev Nephrol. 2020;16(5):260-277.', '10.1038/s41581-019-0240-1', '32152499', NULL),
+('a1100004-0000-0000-0000-000000000004', 8, 'Kraft MD, et al. Treatment of electrolyte disorders in adult patients in the intensive care unit. Am J Health Syst Pharm. 2005;62(16):1663-1682.', '10.2146/ajhp040300', '16085929', NULL),
+('a1100004-0000-0000-0000-000000000004', 9, 'Miller RD, et al. Miller''s Anesthesia, 9th Edition. Elsevier, 2020.', NULL, NULL, NULL),
+('a1100004-0000-0000-0000-000000000004', 10, 'Myburgh JA, Mythen MG. Resuscitation fluids. N Engl J Med. 2013;369(13):1243-1251.', '10.1056/NEJMra1208627', '24066745', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 1,
+('a1100004-0000-0000-0000-000000000004', 1,
 'Using the 4-2-1 rule, what is the hourly maintenance fluid requirement for a 70 kg adult?',
 '70 mL/hr',
 '90 mL/hr',
@@ -747,11 +747,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '140 mL/hr',
 '210 mL/hr',
 'C',
-'Using the 4-2-1 rule: First 10 kg at 4 mL/kg/hr = 40 mL/hr; Second 10 kg at 2 mL/kg/hr = 20 mL/hr; Remaining 50 kg at 1 mL/kg/hr = 50 mL/hr. Total = 40 + 20 + 50 = 110 mL/hr.',
-'1');
+'Using the 4-2-1 rule: First 10 kg at 4 mL/kg/hr = 40 mL/hr; Second 10 kg at 2 mL/kg/hr = 20 mL/hr; Remaining 50 kg at 1 mL/kg/hr = 50 mL/hr. Total = 40 + 20 + 50 = 110 mL/hr.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 2,
+('a1100004-0000-0000-0000-000000000004', 2,
 'Which of the following IV fluids is most appropriate for initial resuscitation in hypovolemic shock?',
 '5% Dextrose in Water',
 '0.45% Normal Saline',
@@ -759,11 +758,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '3% Hypertonic Saline',
 '25% Albumin',
 'C',
-'Lactated Ringer''s (or other balanced crystalloid like Plasmalyte) is the preferred resuscitation fluid. It has a more physiologic electrolyte composition and lower chloride content than normal saline, reducing the risk of hyperchloremic metabolic acidosis. D5W and 0.45% saline are hypotonic and not appropriate for resuscitation.',
-'2,3,10');
+'Lactated Ringer''s (or other balanced crystalloid like Plasmalyte) is the preferred resuscitation fluid. It has a more physiologic electrolyte composition and lower chloride content than normal saline, reducing the risk of hyperchloremic metabolic acidosis. D5W and 0.45% saline are hypotonic and not appropriate for resuscitation.', '{2,3,10}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 3,
+('a1100004-0000-0000-0000-000000000004', 3,
 'A postoperative patient has serum sodium of 118 mEq/L with seizures. What is the most appropriate initial treatment?',
 'Fluid restriction and observation',
 '0.9% Normal Saline at 250 mL/hr',
@@ -771,11 +769,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Demeclocycline 600 mg twice daily',
 'Furosemide 40 mg IV',
 'C',
-'Severe symptomatic hyponatremia with seizures requires emergent treatment with 3% hypertonic saline. A 100-150 mL bolus can be repeated every 20 minutes until symptoms improve, targeting an initial rise of 4-6 mEq/L. The goal is to reverse neurological symptoms quickly while avoiding overcorrection (max 8-10 mEq/L in 24 hours).',
-'5,6');
+'Severe symptomatic hyponatremia with seizures requires emergent treatment with 3% hypertonic saline. A 100-150 mL bolus can be repeated every 20 minutes until symptoms improve, targeting an initial rise of 4-6 mEq/L. The goal is to reverse neurological symptoms quickly while avoiding overcorrection (max 8-10 mEq/L in 24 hours).', '{5,6}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 4,
+('a1100004-0000-0000-0000-000000000004', 4,
 'What is the maximum recommended rate of sodium correction in chronic hyponatremia to avoid osmotic demyelination syndrome (ODS)?',
 '4-6 mEq/L per 24 hours',
 '8-10 mEq/L per 24 hours',
@@ -783,11 +780,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '25 mEq/L per 24 hours',
 'There is no maximum limit',
 'B',
-'The maximum safe rate of sodium correction is 8-10 mEq/L per 24 hours for chronic hyponatremia. Faster correction risks osmotic demyelination syndrome (ODS, formerly central pontine myelinolysis). High-risk patients (malnourished, alcoholics, hypokalemic) may need even slower correction (6-8 mEq/L per day).',
-'5,6');
+'The maximum safe rate of sodium correction is 8-10 mEq/L per 24 hours for chronic hyponatremia. Faster correction risks osmotic demyelination syndrome (ODS, formerly central pontine myelinolysis). High-risk patients (malnourished, alcoholics, hypokalemic) may need even slower correction (6-8 mEq/L per day).', '{5,6}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 5,
+('a1100004-0000-0000-0000-000000000004', 5,
 'A patient with hyperkalemia of 7.2 mEq/L and peaked T waves on ECG is being treated. Which medication should be administered FIRST?',
 'Regular insulin with dextrose',
 'Sodium polystyrene sulfonate (Kayexalate)',
@@ -795,11 +791,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Furosemide',
 'Albuterol nebulizer',
 'C',
-'Calcium gluconate should be given FIRST because it immediately stabilizes the cardiac membrane and protects against arrhythmias. It works within 1-3 minutes and lasts 30-60 minutes. It does NOT lower potassium. After stabilizing the heart, shift potassium into cells with insulin/glucose and albuterol, then remove potassium from the body.',
-'7,8');
+'Calcium gluconate should be given FIRST because it immediately stabilizes the cardiac membrane and protects against arrhythmias. It works within 1-3 minutes and lasts 30-60 minutes. It does NOT lower potassium. After stabilizing the heart, shift potassium into cells with insulin/glucose and albuterol, then remove potassium from the body.', '{7,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 6,
+('a1100004-0000-0000-0000-000000000004', 6,
 'Which of the following is the earliest ECG change seen in hyperkalemia?',
 'Widened QRS complex',
 'Loss of P waves',
@@ -807,11 +802,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Sine wave pattern',
 'Prolonged QT interval',
 'C',
-'Peaked T waves are the earliest ECG change in hyperkalemia (typically appearing at K⁺ >5.5-6.0 mEq/L). As potassium rises further, the progression is: peaked T waves → prolonged PR interval → widened QRS → loss of P waves → sine wave pattern → ventricular fibrillation/asystole.',
-'7,8');
+'Peaked T waves are the earliest ECG change in hyperkalemia (typically appearing at K⁺ >5.5-6.0 mEq/L). As potassium rises further, the progression is: peaked T waves → prolonged PR interval → widened QRS → loss of P waves → sine wave pattern → ventricular fibrillation/asystole.', '{7,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 7,
+('a1100004-0000-0000-0000-000000000004', 7,
 'A patient has persistent hypokalemia despite aggressive potassium replacement. Which electrolyte should be checked and corrected?',
 'Sodium',
 'Calcium',
@@ -819,11 +813,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Phosphate',
 'Chloride',
 'C',
-'Hypomagnesemia causes refractory hypokalemia because magnesium is required for proper function of the Na-K-ATPase pump and the ROMK channel in the kidney. Potassium replacement will not be effective until magnesium is corrected. Always check and correct magnesium when treating hypokalemia.',
-'7,8');
+'Hypomagnesemia causes refractory hypokalemia because magnesium is required for proper function of the Na-K-ATPase pump and the ROMK channel in the kidney. Potassium replacement will not be effective until magnesium is corrected. Always check and correct magnesium when treating hypokalemia.', '{7,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 8,
+('a1100004-0000-0000-0000-000000000004', 8,
 'A postoperative day 1 thyroidectomy patient develops perioral numbness and a positive Chvostek''s sign. What is the most likely electrolyte abnormality?',
 'Hyponatremia',
 'Hyperkalemia',
@@ -831,11 +824,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Hypomagnesemia',
 'Hypophosphatemia',
 'C',
-'Hypocalcemia is a common complication after thyroidectomy due to inadvertent parathyroid removal or injury, or temporary parathyroid stunning. Chvostek''s sign (facial twitching when facial nerve is tapped) and Trousseau''s sign (carpal spasm with BP cuff inflation) are classic signs of hypocalcemia. Treatment is IV calcium gluconate.',
-'8,9');
+'Hypocalcemia is a common complication after thyroidectomy due to inadvertent parathyroid removal or injury, or temporary parathyroid stunning. Chvostek''s sign (facial twitching when facial nerve is tapped) and Trousseau''s sign (carpal spasm with BP cuff inflation) are classic signs of hypocalcemia. Treatment is IV calcium gluconate.', '{8,9}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 9,
+('a1100004-0000-0000-0000-000000000004', 9,
 'What is the distribution of 1 liter of 0.9% Normal Saline in a patient with normal physiology?',
 '100% remains in intravascular space',
 '100% goes to interstitial space',
@@ -843,11 +835,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '25% intravascular, 75% interstitial',
 '33% intravascular, 67% intracellular',
 'D',
-'Isotonic crystalloids like NS distribute throughout the extracellular fluid (ECF). The ECF is divided 1:3 between plasma and interstitium. Therefore, 1 L of NS results in approximately 250 mL (25%) remaining intravascular and 750 mL (75%) distributing to the interstitium. This is why large volumes of crystalloid are needed for resuscitation.',
-'10');
+'Isotonic crystalloids like NS distribute throughout the extracellular fluid (ECF). The ECF is divided 1:3 between plasma and interstitium. Therefore, 1 L of NS results in approximately 250 mL (25%) remaining intravascular and 750 mL (75%) distributing to the interstitium. This is why large volumes of crystalloid are needed for resuscitation.', '{10}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 10,
+('a1100004-0000-0000-0000-000000000004', 10,
 'A 70 kg male has serum sodium of 160 mEq/L. Calculate his free water deficit.',
 '2 liters',
 '4 liters',
@@ -855,11 +846,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '8 liters',
 '10 liters',
 'C',
-'Free Water Deficit = TBW × [(Serum Na - 140) / 140]. TBW for a male = 0.6 × 70 kg = 42 L. Deficit = 42 × [(160-140)/140] = 42 × (20/140) = 42 × 0.143 = 6 L. This deficit should be replaced slowly over 48-72 hours plus ongoing losses.',
-'8');
+'Free Water Deficit = TBW × [(Serum Na - 140) / 140]. TBW for a male = 0.6 × 70 kg = 42 L. Deficit = 42 × [(160-140)/140] = 42 × (20/140) = 42 × 0.143 = 6 L. This deficit should be replaced slowly over 48-72 hours plus ongoing losses.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 11,
+('a1100004-0000-0000-0000-000000000004', 11,
 'Which clinical finding helps distinguish hypervolemic hyponatremia from euvolemic hyponatremia?',
 'Low serum osmolality',
 'Urine sodium >20 mEq/L',
@@ -867,11 +857,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Elevated urine osmolality',
 'Decreased mental status',
 'C',
-'Hypervolemic hyponatremia (heart failure, cirrhosis, nephrotic syndrome) is characterized by total body salt and water excess with visible edema, ascites, or pulmonary congestion. Euvolemic hyponatremia (SIADH, hypothyroidism) has no clinical evidence of volume overload or depletion. Both may have low serum osmolality.',
-'5');
+'Hypervolemic hyponatremia (heart failure, cirrhosis, nephrotic syndrome) is characterized by total body salt and water excess with visible edema, ascites, or pulmonary congestion. Euvolemic hyponatremia (SIADH, hypothyroidism) has no clinical evidence of volume overload or depletion. Both may have low serum osmolality.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 12,
+('a1100004-0000-0000-0000-000000000004', 12,
 'The SMART trial demonstrated that compared to 0.9% Normal Saline, balanced crystalloids in ICU patients resulted in:',
 'Higher mortality',
 'Lower rates of major adverse kidney events',
@@ -879,11 +868,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'No difference in any outcome',
 'Higher rates of metabolic alkalosis',
 'B',
-'The SMART trial showed that balanced crystalloids (LR or Plasmalyte) compared to 0.9% Normal Saline in critically ill adults resulted in lower rates of the composite outcome of death, new renal replacement therapy, or persistent renal dysfunction (major adverse kidney events). This supports the use of balanced crystalloids over NS.',
-'2');
+'The SMART trial showed that balanced crystalloids (LR or Plasmalyte) compared to 0.9% Normal Saline in critically ill adults resulted in lower rates of the composite outcome of death, new renal replacement therapy, or persistent renal dysfunction (major adverse kidney events). This supports the use of balanced crystalloids over NS.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 13,
+('a1100004-0000-0000-0000-000000000004', 13,
 'Which of the following is the best description of "third-spacing"?',
 'Fluid loss through the urinary system',
 'Fluid sequestration in non-functional body compartments',
@@ -891,11 +879,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Excessive oral fluid intake',
 'Fluid loss through the skin',
 'B',
-'Third-spacing refers to fluid sequestration into non-functional body compartments where it is temporarily unavailable for circulation. Examples include bowel lumen (ileus, obstruction), peritoneal cavity (ascites, peritonitis), retroperitoneum (pancreatitis), and traumatized tissues. This fluid must be replaced but will eventually remobilize.',
-'9');
+'Third-spacing refers to fluid sequestration into non-functional body compartments where it is temporarily unavailable for circulation. Examples include bowel lumen (ileus, obstruction), peritoneal cavity (ascites, peritonitis), retroperitoneum (pancreatitis), and traumatized tissues. This fluid must be replaced but will eventually remobilize.', '{9}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 14,
+('a1100004-0000-0000-0000-000000000004', 14,
 'A patient with severe hypercalcemia (Ca 14.5 mg/dL) requires treatment. After initial volume expansion, which medication provides the most sustained reduction in calcium levels?',
 'Calcitonin',
 'Furosemide',
@@ -903,11 +890,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Prednisone',
 'Hydrochlorothiazide',
 'C',
-'Bisphosphonates (like zoledronic acid) inhibit osteoclast activity and provide the most sustained reduction in calcium levels in hypercalcemia, particularly from malignancy. The effect takes 2-4 days to onset but lasts weeks. Calcitonin has rapid but transient effect (hours). Volume expansion and furosemide enhance calcium excretion but are temporary measures.',
-'8');
+'Bisphosphonates (like zoledronic acid) inhibit osteoclast activity and provide the most sustained reduction in calcium levels in hypercalcemia, particularly from malignancy. The effect takes 2-4 days to onset but lasts weeks. Calcitonin has rapid but transient effect (hours). Volume expansion and furosemide enhance calcium excretion but are temporary measures.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 15,
+('a1100004-0000-0000-0000-000000000004', 15,
 'What is the major advantage of using Lactated Ringer''s solution over 0.9% Normal Saline for large-volume resuscitation?',
 'Lower cost',
 'Higher sodium concentration',
@@ -915,11 +901,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Better compatibility with blood products',
 'Higher osmolality',
 'C',
-'The major advantage of LR over NS for large-volume resuscitation is the lower chloride content (109 vs 154 mEq/L), reducing the risk of hyperchloremic metabolic acidosis. Normal saline has supraphysiologic chloride, which can cause acidosis when given in large volumes. LR is slightly hypotonic and contains potassium, so caution is needed in hyperkalemia.',
-'2,3,10');
+'The major advantage of LR over NS for large-volume resuscitation is the lower chloride content (109 vs 154 mEq/L), reducing the risk of hyperchloremic metabolic acidosis. Normal saline has supraphysiologic chloride, which can cause acidosis when given in large volumes. LR is slightly hypotonic and contains potassium, so caution is needed in hyperkalemia.', '{2,3,10}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 16,
+('a1100004-0000-0000-0000-000000000004', 16,
 'What percentage of total body water is located in the intracellular compartment?',
 '25%',
 '40%',
@@ -927,11 +912,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '67%',
 '80%',
 'D',
-'The intracellular fluid (ICF) contains approximately two-thirds (67%) of total body water. The remaining one-third is in the extracellular fluid (ECF), which is further divided into interstitial (75% of ECF) and intravascular (25% of ECF) compartments. For a 70 kg male with 42 L TBW, ICF is approximately 28 L.',
-'9');
+'The intracellular fluid (ICF) contains approximately two-thirds (67%) of total body water. The remaining one-third is in the extracellular fluid (ECF), which is further divided into interstitial (75% of ECF) and intravascular (25% of ECF) compartments. For a 70 kg male with 42 L TBW, ICF is approximately 28 L.', '{9}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 17,
+('a1100004-0000-0000-0000-000000000004', 17,
 'A patient receiving total parenteral nutrition develops acute hypophosphatemia. What syndrome should be suspected?',
 'Hungry bone syndrome',
 'Tumor lysis syndrome',
@@ -939,11 +923,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Milk-alkali syndrome',
 'SIADH',
 'C',
-'Refeeding syndrome occurs when malnourished patients are fed, causing a shift of phosphate (as well as potassium and magnesium) into cells as metabolism resumes. Hypophosphatemia is the hallmark. It can cause muscle weakness, respiratory failure, cardiac dysfunction, and arrhythmias. Prevention involves slow feeding initiation and aggressive electrolyte supplementation.',
-'8');
+'Refeeding syndrome occurs when malnourished patients are fed, causing a shift of phosphate (as well as potassium and magnesium) into cells as metabolism resumes. Hypophosphatemia is the hallmark. It can cause muscle weakness, respiratory failure, cardiac dysfunction, and arrhythmias. Prevention involves slow feeding initiation and aggressive electrolyte supplementation.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 18,
+('a1100004-0000-0000-0000-000000000004', 18,
 'Which form of calcium supplementation is preferred for peripheral IV administration?',
 'Calcium chloride',
 'Calcium gluconate',
@@ -951,11 +934,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Calcium citrate',
 'Calcium lactate',
 'B',
-'Calcium gluconate is preferred for peripheral IV administration because it is less caustic if extravasation occurs. Calcium chloride is more potent (provides more ionized calcium per gram) but causes severe tissue necrosis if it extravasates and should only be given via central line. Calcium carbonate, citrate, and lactate are oral formulations.',
-'8');
+'Calcium gluconate is preferred for peripheral IV administration because it is less caustic if extravasation occurs. Calcium chloride is more potent (provides more ionized calcium per gram) but causes severe tissue necrosis if it extravasates and should only be given via central line. Calcium carbonate, citrate, and lactate are oral formulations.', '{8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 19,
+('a1100004-0000-0000-0000-000000000004', 19,
 'Insulin and glucose are used in the treatment of hyperkalemia because they:',
 'Increase renal excretion of potassium',
 'Shift potassium into cells',
@@ -963,11 +945,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Stabilize the cardiac membrane',
 'Increase GI excretion of potassium',
 'B',
-'Insulin activates the Na-K-ATPase pump, driving potassium from the extracellular fluid into cells. This temporarily lowers serum potassium. Glucose is given simultaneously to prevent hypoglycemia. This is a temporizing measure; potassium eventually shifts back out, so definitive removal (dialysis, diuretics) is needed.',
-'7,8');
+'Insulin activates the Na-K-ATPase pump, driving potassium from the extracellular fluid into cells. This temporarily lowers serum potassium. Glucose is given simultaneously to prevent hypoglycemia. This is a temporizing measure; potassium eventually shifts back out, so definitive removal (dialysis, diuretics) is needed.', '{7,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00004-0000-0000-0000-000000000004', 20,
+('a1100004-0000-0000-0000-000000000004', 20,
 'Torsades de Pointes is a cardiac arrhythmia that can occur with severe deficiency of which electrolyte?',
 'Sodium',
 'Potassium',
@@ -975,5 +956,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Magnesium',
 'Phosphate',
 'D',
-'Severe hypomagnesemia can cause Torsades de Pointes, a polymorphic ventricular tachycardia associated with prolonged QT interval. Treatment includes IV magnesium sulfate 2 g IV push. Hypomagnesemia also prolongs the QT interval and increases the risk of arrhythmias in conjunction with hypokalemia and certain medications.',
-'8');
+'Severe hypomagnesemia can cause Torsades de Pointes, a polymorphic ventricular tachycardia associated with prolonged QT interval. Treatment includes IV magnesium sulfate 2 g IV push. Hypomagnesemia also prolongs the QT interval and increases the risk of arrhythmias in conjunction with hypokalemia and certain medications.', '{8}');

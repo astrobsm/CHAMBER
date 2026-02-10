@@ -5,8 +5,8 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00014-0000-0000-0000-000000000014',
-    'b0000014-0000-0000-0000-000000000001',
+    'a1100014-0000-0000-0000-000000000014',
+    'b0000014-0000-0000-0000-000000000014',
     'a0000001-0000-0000-0000-000000000001',
     'Leg Ulcers: Etiology, Diagnosis, and Evidence-Based Management',
     'A Comprehensive Approach to Chronic Leg Wounds',
@@ -14,14 +14,14 @@ INSERT INTO cme_articles (
     'UNTH Surgery Department, Vascular Surgery Unit',
     50,
     2.5,
-    'intermediate',
+    'medium',
     1,
     true
 );
 
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'introduction', 'Introduction',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'introduction', 'Introduction',
 'A leg ulcer is defined as a loss of skin below the knee that takes more than 6 weeks to heal. Chronic leg ulcers represent a significant healthcare burden, affecting patient quality of life and consuming substantial healthcare resources.
 
 **Epidemiology:**
@@ -56,8 +56,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 This article provides a systematic approach to the diagnosis and evidence-based management of chronic leg ulcers.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'learning_objectives', 'Learning Objectives',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'learning_objectives', 'Learning Objectives',
 'Upon completion of this article, participants should be able to:
 
 1. Differentiate between venous, arterial, diabetic, and mixed leg ulcers based on clinical features
@@ -81,8 +81,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. Recognize atypical ulcers that require biopsy or specialist referral', 2);
 
 -- Section 3: Venous Ulcers
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'content', 'Venous Leg Ulcers',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'content', 'Venous Leg Ulcers',
 '## Pathophysiology
 
 ### Chronic Venous Insufficiency (CVI)
@@ -196,8 +196,8 @@ Venous hypertension leads to:
 - Improves healing time but compression still essential', 3);
 
 -- Section 4: Arterial Ulcers
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'content', 'Arterial Leg Ulcers',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'content', 'Arterial Leg Ulcers',
 '## Pathophysiology
 
 Arterial ulcers result from insufficient arterial blood supply to meet tissue metabolic demands, leading to tissue ischemia and necrosis.
@@ -312,8 +312,8 @@ Arterial ulcers result from insufficient arterial blood supply to meet tissue me
 - Toe, transmetatarsal, below-knee, above-knee', 4);
 
 -- Section 5: Diabetic Foot Ulcers
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'content', 'Diabetic Foot Ulcers',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'content', 'Diabetic Foot Ulcers',
 '## Pathophysiology
 
 Diabetic foot ulcers result from the combined effects of:
@@ -436,8 +436,8 @@ Diabetic foot ulcers result from the combined effects of:
 - Improved glycemic control improves healing and reduces infection', 5);
 
 -- Section 6: Wound Care Principles
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'content', 'Wound Care and Dressings',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'content', 'Wound Care and Dressings',
 '## TIME Framework for Wound Bed Preparation
 
 ### T - Tissue (Non-viable or Deficient)
@@ -565,8 +565,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Variable efficacy', 6);
 
 -- Section 7: Mixed and Atypical Ulcers
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'content', 'Mixed and Atypical Ulcers',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'content', 'Mixed and Atypical Ulcers',
 '## Mixed Arterial-Venous Ulcers
 
 ### Definition
@@ -675,8 +675,8 @@ Co-existing venous insufficiency and peripheral arterial disease
 - Need for skin grafting', 7);
 
 -- Section 8: Prevention and Recurrence
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'content', 'Prevention and Recurrence',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'content', 'Prevention and Recurrence',
 '## Venous Ulcer Recurrence Prevention
 
 ### The Problem
@@ -797,8 +797,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 - Reduced amputation rates', 8);
 
 -- Section 9: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'key_points', 'Key Points',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'key_points', 'Key Points',
 '1. **Etiology Matters**: 60-80% of leg ulcers are venous; accurate diagnosis determines treatment. Arterial status MUST be assessed before compression.
 
 2. **Venous Ulcers**: Medial malleolus location, shallow, irregular borders, associated skin changes (hemosiderin, lipodermatosclerosis). Compression is the cornerstone of treatment.
@@ -820,8 +820,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Multifactorial Approach**: Healing requires addressing underlying cause, optimizing wound care, managing comorbidities, and preventing recurrence.', 9);
 
 -- Section 10: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'clinical_pearls', 'Clinical Pearls',
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'clinical_pearls', 'Clinical Pearls',
 '💡 **Pearl 1**: An ulcer on the lateral leg or foot in a patient with varicose veins is NOT automatically venous. Check ABI and consider arterial disease.
 
 💡 **Pearl 2**: Pain that wakes the patient at night and is relieved by dangling the leg over the bed is classic for arterial insufficiency—gravity helps perfusion.
@@ -843,20 +843,20 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: If a venous ulcer is not showing improvement after 4-6 weeks of adequate compression, reassess the diagnosis and consider referral, imaging, or biopsy.', 10);
 
 -- Section 11: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00014-0000-0000-0000-000000000014', 'references', 'References', 'See reference list below.', 11);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100014-0000-0000-0000-000000000014', 'references', 'References', 'See reference list below.', 11);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00014-0000-0000-0000-000000000014', 1, 'O''Donnell TF Jr, et al. Management of venous leg ulcers: Clinical practice guidelines of the Society for Vascular Surgery and the American Venous Forum. J Vasc Surg. 2014;60(2 Suppl):3S-59S.', '10.1016/j.jvs.2014.04.049', '24974070', NULL),
-('art00014-0000-0000-0000-000000000014', 2, 'Conte MS, et al. Global vascular guidelines on the management of chronic limb-threatening ischemia (GVG-CLTI). J Vasc Surg. 2019;69(6S):3S-125S.', '10.1016/j.jvs.2019.02.016', '31159978', NULL),
-('art00014-0000-0000-0000-000000000014', 3, 'Lipsky BA, et al. IWGDF/IDSA Guidelines on the Diagnosis and Treatment of Diabetes-related Foot Infections. Clin Infect Dis. 2020;71(6):e199-e226.', '10.1093/cid/ciaa006', '32246533', NULL),
-('art00014-0000-0000-0000-000000000014', 4, 'Gohel MS, et al. A Randomized Trial of Early Endovenous Ablation in Venous Ulceration (EVRA Trial). N Engl J Med. 2018;378(22):2105-2114.', '10.1056/NEJMoa1801214', '29688123', NULL),
-('art00014-0000-0000-0000-000000000014', 5, 'Nelson EA, et al. Compression for preventing recurrence of venous ulcers. Cochrane Database Syst Rev. 2014;2014(9):CD002303.', '10.1002/14651858.CD002303.pub3', '25203307', NULL);
+('a1100014-0000-0000-0000-000000000014', 1, 'O''Donnell TF Jr, et al. Management of venous leg ulcers: Clinical practice guidelines of the Society for Vascular Surgery and the American Venous Forum. J Vasc Surg. 2014;60(2 Suppl):3S-59S.', '10.1016/j.jvs.2014.04.049', '24974070', NULL),
+('a1100014-0000-0000-0000-000000000014', 2, 'Conte MS, et al. Global vascular guidelines on the management of chronic limb-threatening ischemia (GVG-CLTI). J Vasc Surg. 2019;69(6S):3S-125S.', '10.1016/j.jvs.2019.02.016', '31159978', NULL),
+('a1100014-0000-0000-0000-000000000014', 3, 'Lipsky BA, et al. IWGDF/IDSA Guidelines on the Diagnosis and Treatment of Diabetes-related Foot Infections. Clin Infect Dis. 2020;71(6):e199-e226.', '10.1093/cid/ciaa006', '32246533', NULL),
+('a1100014-0000-0000-0000-000000000014', 4, 'Gohel MS, et al. A Randomized Trial of Early Endovenous Ablation in Venous Ulceration (EVRA Trial). N Engl J Med. 2018;378(22):2105-2114.', '10.1056/NEJMoa1801214', '29688123', NULL),
+('a1100014-0000-0000-0000-000000000014', 5, 'Nelson EA, et al. Compression for preventing recurrence of venous ulcers. Cochrane Database Syst Rev. 2014;2014(9):CD002303.', '10.1002/14651858.CD002303.pub3', '25203307', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 1,
+('a1100014-0000-0000-0000-000000000014', 1,
 'The most common cause of leg ulcers is:',
 'Arterial insufficiency',
 'Venous insufficiency',
@@ -864,11 +864,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Trauma',
 'Malignancy',
 'B',
-'Venous insufficiency accounts for 60-80% of all leg ulcers, making it the most common cause. Arterial disease accounts for 10-25%, and mixed venous-arterial disease for 10-15%. Diabetic ulcers account for about 5-10%.',
-'1');
+'Venous insufficiency accounts for 60-80% of all leg ulcers, making it the most common cause. Arterial disease accounts for 10-25%, and mixed venous-arterial disease for 10-15%. Diabetic ulcers account for about 5-10%.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 2,
+('a1100014-0000-0000-0000-000000000014', 2,
 'Venous ulcers are typically located:',
 'Over the lateral malleolus',
 'Over the medial malleolus (gaiter area)',
@@ -876,11 +875,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'On the heel',
 'On the dorsum of the foot',
 'B',
-'Venous ulcers typically occur over the medial malleolus in the "gaiter area" of the lower leg. This is due to the distribution of venous hypertension and perforator veins in this region. Arterial ulcers are more common on toes, heel, and lateral aspects.',
-'1');
+'Venous ulcers typically occur over the medial malleolus in the "gaiter area" of the lower leg. This is due to the distribution of venous hypertension and perforator veins in this region. Arterial ulcers are more common on toes, heel, and lateral aspects.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 3,
+('a1100014-0000-0000-0000-000000000014', 3,
 'Before applying compression therapy for a leg ulcer, which assessment is MANDATORY?',
 'Duplex ultrasound of veins',
 'Ankle-brachial index (ABI)',
@@ -888,11 +886,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Hemoglobin level',
 'Nutritional assessment',
 'B',
-'Ankle-brachial index (ABI) is MANDATORY before compression therapy to rule out significant arterial disease. Compression on an ischemic limb can worsen perfusion and lead to tissue necrosis. ABI >0.8 is generally safe for high compression.',
-'1');
+'Ankle-brachial index (ABI) is MANDATORY before compression therapy to rule out significant arterial disease. Compression on an ischemic limb can worsen perfusion and lead to tissue necrosis. ABI >0.8 is generally safe for high compression.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 4,
+('a1100014-0000-0000-0000-000000000014', 4,
 'An ABI of 0.5 indicates:',
 'Normal arterial circulation',
 'Mild peripheral arterial disease',
@@ -900,11 +897,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Venous insufficiency',
 'Measurement error',
 'C',
-'An ABI of 0.5 indicates severe peripheral arterial disease. Normal ABI is 1.0-1.3. Borderline is 0.9-1.0. Mild-moderate PAD is 0.5-0.9. ABI <0.5 indicates severe PAD and critical limb ischemia. Compression is contraindicated at this level.',
-'2');
+'An ABI of 0.5 indicates severe peripheral arterial disease. Normal ABI is 1.0-1.3. Borderline is 0.9-1.0. Mild-moderate PAD is 0.5-0.9. ABI <0.5 indicates severe PAD and critical limb ischemia. Compression is contraindicated at this level.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 5,
+('a1100014-0000-0000-0000-000000000014', 5,
 'Classic features of an arterial ulcer include all EXCEPT:',
 'Punched-out appearance',
 'Severe pain, worse at night',
@@ -912,11 +908,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Absent peripheral pulses',
 'Pain relieved by dependency',
 'C',
-'Arterial ulcers are typically located on toes, heels, and lateral malleolus—not the medial malleolus, which is classic for venous ulcers. Arterial ulcers are punched-out, painful (worse at night, relieved by dependency), and associated with absent pulses.',
-'2');
+'Arterial ulcers are typically located on toes, heels, and lateral malleolus—not the medial malleolus, which is classic for venous ulcers. Arterial ulcers are punched-out, painful (worse at night, relieved by dependency), and associated with absent pulses.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 6,
+('a1100014-0000-0000-0000-000000000014', 6,
 'The cornerstone of venous ulcer treatment is:',
 'Antibiotics',
 'Debridement',
@@ -924,11 +919,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Skin grafting',
 'Elevation alone',
 'C',
-'Compression therapy is the cornerstone of venous ulcer treatment. High compression heals more ulcers than low compression. Multicomponent systems are superior to single-component. Other treatments (dressings, debridement) are adjunctive to compression.',
-'1,5');
+'Compression therapy is the cornerstone of venous ulcer treatment. High compression heals more ulcers than low compression. Multicomponent systems are superior to single-component. Other treatments (dressings, debridement) are adjunctive to compression.', '{1,5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 7,
+('a1100014-0000-0000-0000-000000000014', 7,
 'In diabetic foot ulcers, the most essential component of treatment is:',
 'Antibiotics',
 'Debridement',
@@ -936,11 +930,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Compression',
 'Topical growth factors',
 'C',
-'Offloading (removing pressure from the wound) is the most essential component of diabetic foot ulcer treatment. Total contact casting is the gold standard for plantar ulcers. Without adequate offloading, wounds will not heal despite other interventions.',
-'3');
+'Offloading (removing pressure from the wound) is the most essential component of diabetic foot ulcer treatment. Total contact casting is the gold standard for plantar ulcers. Without adequate offloading, wounds will not heal despite other interventions.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 8,
+('a1100014-0000-0000-0000-000000000014', 8,
 'A positive "probe to bone" test in a diabetic foot ulcer suggests:',
 'Adequate wound depth',
 'Need for skin grafting',
@@ -948,11 +941,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Good prognosis for healing',
 'Superficial infection only',
 'C',
-'A positive probe to bone test (sterile probe reaches bone through the ulcer) has >85% positive predictive value for osteomyelitis in diabetic foot ulcers. This finding should prompt further investigation (imaging, bone biopsy) and consideration of prolonged antibiotic therapy.',
-'3');
+'A positive probe to bone test (sterile probe reaches bone through the ulcer) has >85% positive predictive value for osteomyelitis in diabetic foot ulcers. This finding should prompt further investigation (imaging, bone biopsy) and consideration of prolonged antibiotic therapy.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 9,
+('a1100014-0000-0000-0000-000000000014', 9,
 'Lipodermatosclerosis and hemosiderin staining are characteristic of:',
 'Arterial insufficiency',
 'Chronic venous insufficiency',
@@ -960,11 +952,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Pyoderma gangrenosum',
 'Vasculitis',
 'B',
-'Lipodermatosclerosis (woody induration of the skin) and hemosiderin staining (brown discoloration) are characteristic features of chronic venous insufficiency. These result from chronic venous hypertension and extravasation of red blood cells with hemoglobin breakdown.',
-'1');
+'Lipodermatosclerosis (woody induration of the skin) and hemosiderin staining (brown discoloration) are characteristic features of chronic venous insufficiency. These result from chronic venous hypertension and extravasation of red blood cells with hemoglobin breakdown.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 10,
+('a1100014-0000-0000-0000-000000000014', 10,
 'The TIME framework for wound bed preparation stands for:',
 'Temperature, Infection, Moisture, Epithelialization',
 'Tissue, Infection, Moisture, Edge',
@@ -972,11 +963,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Timing, Irrigation, Management, Elevation',
 'Tissue, Inflammation, Moist, Epithelium',
 'B',
-'TIME stands for Tissue (non-viable), Infection/Inflammation, Moisture imbalance, and Edge (non-advancing). This systematic framework guides wound bed preparation to optimize conditions for healing.',
-'1');
+'TIME stands for Tissue (non-viable), Infection/Inflammation, Moisture imbalance, and Edge (non-advancing). This systematic framework guides wound bed preparation to optimize conditions for healing.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 11,
+('a1100014-0000-0000-0000-000000000014', 11,
 'Marjolin''s ulcer refers to:',
 'Venous ulcer that fails to heal',
 'Squamous cell carcinoma arising in a chronic wound',
@@ -984,11 +974,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Diabetic foot ulcer with osteomyelitis',
 'Traumatic ulcer with infection',
 'B',
-'Marjolin''s ulcer is a squamous cell carcinoma that arises in chronic wounds, typically after 20-30 years of non-healing. It is aggressive with high metastatic potential. Signs include raised edges, excessive granulation, and bleeding. Treatment is wide excision.',
-'1');
+'Marjolin''s ulcer is a squamous cell carcinoma that arises in chronic wounds, typically after 20-30 years of non-healing. It is aggressive with high metastatic potential. Signs include raised edges, excessive granulation, and bleeding. Treatment is wide excision.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 12,
+('a1100014-0000-0000-0000-000000000014', 12,
 'A leg ulcer that is not healing after 3 months of appropriate treatment should prompt:',
 'Continuation of the same treatment',
 'Immediate amputation',
@@ -996,11 +985,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Switching antibiotics',
 'Increasing compression pressure',
 'C',
-'A non-healing ulcer after 3 months of appropriate treatment should prompt biopsy to rule out malignancy and other atypical causes. Malignancy, vasculitis, and other conditions may present as chronic ulcers.',
-'1');
+'A non-healing ulcer after 3 months of appropriate treatment should prompt biopsy to rule out malignancy and other atypical causes. Malignancy, vasculitis, and other conditions may present as chronic ulcers.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 13,
+('a1100014-0000-0000-0000-000000000014', 13,
 'In mixed arterial-venous ulcers with ABI 0.6, the appropriate management is:',
 'High compression (40 mmHg)',
 'No compression at all',
@@ -1008,11 +996,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Immediate surgical intervention',
 'Amputation',
 'C',
-'For mixed arterial-venous ulcers with ABI 0.5-0.8, reduced compression (23-30 mmHg) can be used with caution and close supervision. These patients may benefit from vascular assessment and possible revascularization. Full compression is reserved for ABI >0.8.',
-'1');
+'For mixed arterial-venous ulcers with ABI 0.5-0.8, reduced compression (23-30 mmHg) can be used with caution and close supervision. These patients may benefit from vascular assessment and possible revascularization. Full compression is reserved for ABI >0.8.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 14,
+('a1100014-0000-0000-0000-000000000014', 14,
 'The recurrence rate for venous ulcers at 5 years WITHOUT prevention measures is approximately:',
 '10%',
 '30%',
@@ -1020,11 +1007,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '70%',
 '90%',
 'D',
-'Without preventive measures (especially compression stockings), venous ulcer recurrence rates are approximately 70% at 5 years. Lifelong compression therapy significantly reduces this rate. Patient education and compliance are essential.',
-'5');
+'Without preventive measures (especially compression stockings), venous ulcer recurrence rates are approximately 70% at 5 years. Lifelong compression therapy significantly reduces this rate. Patient education and compliance are essential.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 15,
+('a1100014-0000-0000-0000-000000000014', 15,
 'For prevention of venous ulcer recurrence, compression stockings should be worn:',
 'For 6 months after healing',
 'For 1 year after healing',
@@ -1032,11 +1018,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Only when symptoms occur',
 'Only during winter months',
 'C',
-'Compression stockings should be worn lifelong after venous ulcer healing to prevent recurrence. Class 2 compression (23-32 mmHg) is the minimum recommended. Stockings should be replaced every 3-6 months as they lose elasticity.',
-'5');
+'Compression stockings should be worn lifelong after venous ulcer healing to prevent recurrence. Class 2 compression (23-32 mmHg) is the minimum recommended. Stockings should be replaced every 3-6 months as they lose elasticity.', '{5}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 16,
+('a1100014-0000-0000-0000-000000000014', 16,
 'Which dressing is most appropriate for a heavily exudating wound?',
 'Hydrocolloid',
 'Film dressing',
@@ -1044,11 +1029,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Hydrogel',
 'Paraffin gauze',
 'C',
-'Alginate and foam dressings are highly absorbent and appropriate for heavily exudating wounds. Hydrocolloids are for low-moderate exudate. Hydrogels provide moisture to dry wounds. Film dressings are for minimal exudate or as secondary dressings.',
-'1');
+'Alginate and foam dressings are highly absorbent and appropriate for heavily exudating wounds. Hydrocolloids are for low-moderate exudate. Hydrogels provide moisture to dry wounds. Film dressings are for minimal exudate or as secondary dressings.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 17,
+('a1100014-0000-0000-0000-000000000014', 17,
 'In pyoderma gangrenosum, aggressive debridement:',
 'Is the treatment of choice',
 'Should be avoided as it worsens the condition',
@@ -1056,11 +1040,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Is required to remove all necrotic tissue',
 'Has no effect on the condition',
 'B',
-'In pyoderma gangrenosum, aggressive debridement should be avoided as it can trigger pathergy (worsening of the ulcer due to trauma). Primary treatment is medical with immunosuppression (corticosteroids, cyclosporine). Gentle wound care is acceptable.',
-'1');
+'In pyoderma gangrenosum, aggressive debridement should be avoided as it can trigger pathergy (worsening of the ulcer due to trauma). Primary treatment is medical with immunosuppression (corticosteroids, cyclosporine). Gentle wound care is acceptable.', '{1}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 18,
+('a1100014-0000-0000-0000-000000000014', 18,
 'The gold standard for offloading a plantar diabetic foot ulcer is:',
 'Bed rest',
 'Therapeutic sandals',
@@ -1068,11 +1051,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Regular walking shoes',
 'Wheelchair use',
 'C',
-'Total contact casting (TCC) is the gold standard for offloading plantar diabetic foot ulcers. It redistributes pressure across the entire foot, is irremovable (ensuring compliance), and promotes healing. Removable cast walkers are an alternative.',
-'3');
+'Total contact casting (TCC) is the gold standard for offloading plantar diabetic foot ulcers. It redistributes pressure across the entire foot, is irremovable (ensuring compliance), and promotes healing. Removable cast walkers are an alternative.', '{3}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 19,
+('a1100014-0000-0000-0000-000000000014', 19,
 'Dry, stable eschar on an ischemic heel should be:',
 'Aggressively debrided immediately',
 'Left intact unless signs of infection develop',
@@ -1080,11 +1062,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Surgically excised',
 'Treated with enzymatic debridement',
 'B',
-'Dry, stable eschar on an ischemic limb (especially the heel) should be left intact and kept dry unless signs of infection develop (erythema, drainage, odor). Debridement without adequate perfusion can lead to larger wounds and potential amputation.',
-'2');
+'Dry, stable eschar on an ischemic limb (especially the heel) should be left intact and kept dry unless signs of infection develop (erythema, drainage, odor). Debridement without adequate perfusion can lead to larger wounds and potential amputation.', '{2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00014-0000-0000-0000-000000000014', 20,
+('a1100014-0000-0000-0000-000000000014', 20,
 'The EVRA trial demonstrated that for venous leg ulcers with superficial reflux:',
 'Compression alone is adequate',
 'Early endovenous ablation improves healing rates',
@@ -1092,5 +1073,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Antibiotics improve outcomes',
 'Skin grafting is superior to compression',
 'B',
-'The EVRA trial (2018) demonstrated that early endovenous ablation of superficial venous reflux, combined with compression, leads to faster healing of venous leg ulcers compared to compression with deferred intervention. This supports early intervention for venous ulcers.',
-'4');
+'The EVRA trial (2018) demonstrated that early endovenous ablation of superficial venous reflux, combined with compression, leads to faster healing of venous leg ulcers compared to compression with deferred intervention. This supports early intervention for venous ulcers.', '{4}');

@@ -1,7 +1,7 @@
 -- Surgery 2 Article 3: Intestinal Obstruction - Sections and MCQs
 
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000003-0000-0000-0000-000000000003'::uuid, 'introduction', 1, 'Introduction to Intestinal Obstruction', 
+('d2000003-0000-0000-0000-000000000003'::uuid, 'introduction', 1, 'Introduction to Intestinal Obstruction', 
 'Intestinal obstruction is a common surgical emergency characterized by mechanical or functional impairment of the normal aboral passage of intestinal contents. It accounts for approximately 15-20% of all surgical admissions for acute abdomen.
 
 **Classification**
@@ -32,7 +32,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 - Hernias: Most common cause in developing countries and second most common in developed
 - Colorectal cancer: Most common cause of LBO (60-70%)'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 'learning_objectives', 2, 'Learning Objectives',
+('d2000003-0000-0000-0000-000000000003'::uuid, 'learning_objectives', 2, 'Learning Objectives',
 'After completing this module, you should be able to:
 
 1. Classify intestinal obstruction by mechanism, location, and blood supply status
@@ -46,7 +46,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 9. Recognize indications for surgical intervention
 10. Describe operative approaches for different causes'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 'content', 3, 'Pathophysiology',
+('d2000003-0000-0000-0000-000000000003'::uuid, 'content', 3, 'Pathophysiology',
 'Understanding the pathophysiology is essential for management.
 
 **Proximal Bowel Changes**
@@ -84,7 +84,7 @@ Compromised blood supply leads to:
 - Gangrene and necrosis
 - Perforation and peritonitis'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 'content', 4, 'Clinical Presentation',
+('d2000003-0000-0000-0000-000000000003'::uuid, 'content', 4, 'Clinical Presentation',
 '**Cardinal Symptoms of Obstruction**
 1. **Colicky abdominal pain**: Intermittent, cramping (every 3-5 min in SBO, every 10-15 min in LBO)
 2. **Vomiting**: Early and profuse in proximal SBO; late and feculent in distal/LBO
@@ -118,7 +118,7 @@ Compromised blood supply leads to:
 - Elevated WBC, lactate, metabolic acidosis
 - Bloody aspirate or stool'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 'content', 5, 'Investigations',
+('d2000003-0000-0000-0000-000000000003'::uuid, 'content', 5, 'Investigations',
 '**Laboratory Tests**
 - FBC: Leukocytosis (infection, strangulation), hemoconcentration
 - Electrolytes: Hypokalemia, hypochloremia, hyponatremia
@@ -155,7 +155,7 @@ Compromised blood supply leads to:
 - Failure of contrast to reach colon in 24 hours suggests complete obstruction
 - May promote resolution of adhesive SBO'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 'content', 6, 'Management',
+('d2000003-0000-0000-0000-000000000003'::uuid, 'content', 6, 'Management',
 '**Initial Resuscitation**
 "Drip and Suck" - foundation of conservative management
 1. **IV Fluid Resuscitation**: Aggressive crystalloid replacement
@@ -203,7 +203,7 @@ Success predictors:
   - Stenting as bridge to surgery (for malignancy)
   - Decompressive cecostomy/loop colostomy (rarely)'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 'key_points', 7, 'Key Points',
+('d2000003-0000-0000-0000-000000000003'::uuid, 'key_points', 7, 'Key Points',
 '1. Adhesions are the most common cause of SBO; colorectal cancer is the most common cause of LBO
 2. Cardinal features: Colicky pain, vomiting, distension, absolute constipation
 3. Always examine hernial orifices - incarcerated hernia is easily missed
@@ -217,102 +217,102 @@ Success predictors:
 
 -- MCQs
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation) VALUES
-('d0000003-0000-0000-0000-000000000003'::uuid, 1,
+('d2000003-0000-0000-0000-000000000003'::uuid, 1,
 'What is the most common cause of small bowel obstruction in developed countries?',
 'Incarcerated hernia', 'Adhesions from previous surgery', 'Malignancy', 'Crohn disease', 'Intussusception',
 'B', 'Adhesions from previous abdominal surgery are the most common cause of small bowel obstruction in developed countries, accounting for 60-70% of cases. Hernias are the second most common cause in developed nations but remain the leading cause in developing countries.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 2,
+('d2000003-0000-0000-0000-000000000003'::uuid, 2,
 'What is the most common cause of large bowel obstruction?',
 'Volvulus', 'Diverticular stricture', 'Colorectal carcinoma', 'Fecal impaction', 'Adhesions',
 'C', 'Colorectal carcinoma is the most common cause of large bowel obstruction, accounting for 60-70% of cases. Volvulus (particularly sigmoid) is the second most common cause, followed by diverticular stricture. Left-sided tumors are more likely to cause obstruction than right-sided tumors.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 3,
+('d2000003-0000-0000-0000-000000000003'::uuid, 3,
 'Vomiting is early and profuse in which type of obstruction?',
 'Distal small bowel obstruction', 'Large bowel obstruction', 'Proximal small bowel obstruction', 'Sigmoid volvulus', 'Cecal volvulus',
 'C', 'Vomiting is early and profuse in proximal small bowel obstruction because there is little intestinal capacity proximal to the obstruction to store secretions. The vomit is typically bilious. In distal SBO and LBO, vomiting is late and may become feculent.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 4,
+('d2000003-0000-0000-0000-000000000003'::uuid, 4,
 'On plain abdominal X-ray, which feature distinguishes small bowel from large bowel?',
 'Location of dilated loops', 'Valvulae conniventes cross entire width of bowel', 'Size of loops', 'Presence of air-fluid levels', 'Amount of gas present',
 'B', 'Valvulae conniventes (plicae circulares) in the small bowel cross the entire width of the bowel wall. Haustral folds in the large bowel are thicker and do NOT cross the entire bowel width. This is a key distinguishing feature on plain X-ray.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 5,
+('d2000003-0000-0000-0000-000000000003'::uuid, 5,
 'At what cecal diameter does the risk of perforation become critical, requiring emergency intervention?',
 '6 cm', '9 cm', '12 cm', '15 cm', '20 cm',
 'C', 'Cecal diameter >12 cm is considered critical with high risk of perforation (Laplace law - tension in wall proportional to diameter). A diameter of 9 cm is concerning and requires close monitoring. Emergency decompression (surgery or cecostomy) is indicated at >12 cm.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 6,
+('d2000003-0000-0000-0000-000000000003'::uuid, 6,
 'Which of the following is NOT a sign of strangulated obstruction?',
 'Constant severe pain', 'Fever and tachycardia', 'Colicky intermittent pain', 'Peritonitis', 'Elevated serum lactate',
 'C', 'In strangulated obstruction, pain becomes CONSTANT and severe rather than colicky. The loss of colicky character indicates that the bowel is no longer contracting normally due to ischemia. Other signs include fever, tachycardia, localized tenderness, peritonitis, and elevated lactate.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 7,
+('d2000003-0000-0000-0000-000000000003'::uuid, 7,
 'What is the "Drip and Suck" approach in managing intestinal obstruction?',
 'IV contrast and NG aspiration for diagnosis', 'IV fluids resuscitation and NG decompression', 'Oral rehydration and rectal suction', 'IV antibiotics and peritoneal lavage', 'Enteral feeding and gastric drainage',
 'B', 'Drip and Suck refers to aggressive IV fluid resuscitation (drip) and nasogastric decompression (suck). This is the foundation of conservative management for intestinal obstruction, addressing fluid/electrolyte losses and decompressing the distended bowel.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 8,
+('d2000003-0000-0000-0000-000000000003'::uuid, 8,
 'A closed-loop obstruction is characterized by:',
 'Only proximal obstruction', 'Only distal obstruction', 'Obstruction of both ends of a bowel segment', 'Obstruction with intact blood supply', 'Partial bowel obstruction',
 'C', 'A closed-loop obstruction occurs when both ends of a bowel segment are obstructed (e.g., sigmoid volvulus, incarcerated hernia). This prevents decompression in either direction, causes rapid pressure rise, and leads to early strangulation. It is a surgical emergency.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 9,
+('d2000003-0000-0000-0000-000000000003'::uuid, 9,
 'What is the investigation of choice for intestinal obstruction?',
 'Plain abdominal X-ray', 'Abdominal ultrasound', 'CT scan of abdomen', 'Barium enema', 'Colonoscopy',
 'C', 'CT scan of the abdomen is the gold standard investigation for intestinal obstruction. It has >90% sensitivity, identifies the site and cause of obstruction, detects signs of strangulation, and identifies closed-loop obstruction. Plain X-ray is useful for initial assessment but less sensitive.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 10,
+('d2000003-0000-0000-0000-000000000003'::uuid, 10,
 'What is the role of water-soluble contrast (Gastrografin) in adhesive small bowel obstruction?',
 'It is contraindicated', 'Diagnostic only', 'Diagnostic and potentially therapeutic', 'Therapeutic only', 'Used only for large bowel obstruction',
 'C', 'Water-soluble contrast (Gastrografin) is both diagnostic and potentially therapeutic in adhesive SBO. Failure of contrast to reach the colon in 24 hours indicates complete obstruction requiring surgery. The hypertonic contrast may also promote resolution by drawing fluid into the lumen and stimulating peristalsis.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 11,
+('d2000003-0000-0000-0000-000000000003'::uuid, 11,
 'Which physical examination should NEVER be omitted in a patient with suspected intestinal obstruction?',
 'Auscultation of heart', 'Examination of hernial orifices', 'Neurological examination', 'Breast examination', 'Thyroid examination',
 'B', 'Examination of all hernial orifices (inguinal, femoral, umbilical, incisional) should NEVER be omitted in suspected intestinal obstruction. Incarcerated hernias are a common and easily treatable cause of obstruction that can be missed if not specifically examined.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 12,
+('d2000003-0000-0000-0000-000000000003'::uuid, 12,
 'How long is an appropriate trial of conservative management for uncomplicated adhesive SBO?',
 '6 hours', '12 hours', '24-72 hours', '1 week', '2 weeks',
 'C', 'A trial of conservative management for uncomplicated adhesive SBO is typically 24-72 hours. During this time, the patient should be closely monitored for signs of improvement (resolution of symptoms, passage of flatus) or deterioration (signs of strangulation).'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 13,
+('d2000003-0000-0000-0000-000000000003'::uuid, 13,
 'The "string of beads" sign on abdominal X-ray is seen in:',
 'Large bowel obstruction', 'Paralytic ileus', 'Small bowel obstruction', 'Volvulus', 'Intussusception',
 'C', 'The string of beads sign refers to small pockets of air trapped between valvulae conniventes in fluid-filled small bowel loops on an erect abdominal X-ray. It is characteristic of small bowel obstruction and indicates almost complete fluid-filling of the obstructed loops.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 14,
+('d2000003-0000-0000-0000-000000000003'::uuid, 14,
 'What is the preferred surgical procedure for obstructing left-sided colon cancer?',
 'Right hemicolectomy', 'Transverse colectomy', 'Hartmann procedure', 'Total colectomy', 'Subtotal colectomy',
 'C', 'The Hartmann procedure (resection of the sigmoid/rectosigmoid with end colostomy and rectal stump closure) is often preferred for obstructing left-sided colon cancer. Primary anastomosis in the setting of obstruction carries high leak risk. Some surgeons perform primary anastomosis with defunctioning stoma.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 15,
+('d2000003-0000-0000-0000-000000000003'::uuid, 15,
 'Paralytic ileus is most commonly seen after:',
 'Cardiac surgery', 'Abdominal surgery', 'Thoracic surgery', 'Orthopedic surgery', 'Neurosurgery',
 'B', 'Paralytic ileus is most commonly seen after abdominal surgery. It typically lasts 24-72 hours postoperatively. Prolonged ileus beyond 3-5 days should prompt investigation for complications (anastomotic leak, abscess) or other causes (electrolyte disturbance, medications).'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 16,
+('d2000003-0000-0000-0000-000000000003'::uuid, 16,
 'Which metabolic abnormality is most commonly associated with vomiting in proximal small bowel obstruction?',
 'Metabolic acidosis', 'Metabolic alkalosis', 'Respiratory acidosis', 'Respiratory alkalosis', 'Mixed acidosis',
 'B', 'Proximal small bowel obstruction with profuse vomiting leads to loss of gastric hydrochloric acid, resulting in metabolic alkalosis (hypochloremic, hypokalemic). In distal obstruction or strangulation with sepsis, metabolic acidosis may predominate.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 17,
+('d2000003-0000-0000-0000-000000000003'::uuid, 17,
 'Ogilvie syndrome refers to:',
 'Mechanical large bowel obstruction', 'Acute colonic pseudo-obstruction', 'Sigmoid volvulus', 'Paralytic ileus', 'Chronic intestinal pseudo-obstruction',
 'B', 'Ogilvie syndrome is acute colonic pseudo-obstruction - massive colonic dilatation without mechanical obstruction. It typically occurs in hospitalized, elderly patients with multiple comorbidities. Treatment includes correction of underlying cause, neostigmine, and colonoscopic decompression if needed.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 18,
+('d2000003-0000-0000-0000-000000000003'::uuid, 18,
 'What is the minimum urine output target indicating adequate resuscitation in intestinal obstruction?',
 '0.25 mL/kg/hour', '0.5 mL/kg/hour', '1.0 mL/kg/hour', '2.0 mL/kg/hour', '100 mL/hour',
 'B', 'The minimum target urine output is 0.5 mL/kg/hour (approximately 30-50 mL/hour in an adult), indicating adequate renal perfusion. Given the significant third-space losses in intestinal obstruction, aggressive fluid resuscitation is essential.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 19,
+('d2000003-0000-0000-0000-000000000003'::uuid, 19,
 'Which finding on CT scan suggests complete small bowel obstruction?',
 'Dilated loops only', 'Transition point identification', 'Small bowel feces sign', 'Free fluid', 'Mesenteric edema',
 'C', 'The small bowel feces sign (particulate feculent material in small bowel proximal to obstruction) suggests complete or high-grade small bowel obstruction with prolonged intestinal stasis. It indicates that contrast will unlikely pass and surgery may be needed.'),
 
-('d0000003-0000-0000-0000-000000000003'::uuid, 20,
+('d2000003-0000-0000-0000-000000000003'::uuid, 20,
 'Which is an absolute indication for emergency surgery in intestinal obstruction?',
 'Partial small bowel obstruction', 'Adhesive obstruction of 24 hours duration', 'Strangulated hernia', 'First episode of adhesive SBO', 'Postoperative ileus',
 'C', 'Strangulated hernia is an absolute indication for emergency surgery. The compromised blood supply will lead to bowel gangrene if not relieved urgently. Other absolute indications include complete obstruction with signs of strangulation, peritonitis, and closed-loop obstruction.');

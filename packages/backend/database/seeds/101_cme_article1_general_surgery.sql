@@ -6,7 +6,7 @@ INSERT INTO cme_articles (
     id, topic_id, category_id, title, subtitle, abstract, authors, 
     estimated_reading_minutes, cme_credits, difficulty_level, version, is_published
 ) VALUES (
-    'art00001-0000-0000-0000-000000000001',
+    'a1100001-0000-0000-0000-000000000001',
     'b0000001-0000-0000-0000-000000000001',
     'a0000001-0000-0000-0000-000000000001',
     'Fundamental Concepts and Terminology in General Surgery',
@@ -22,8 +22,8 @@ INSERT INTO cme_articles (
 
 -- Insert article sections
 -- Section 1: Introduction
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00001-0000-0000-0000-000000000001', 'introduction', 'Introduction', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100001-0000-0000-0000-000000000001', 'introduction', 'Introduction', 
 'Surgery, derived from the Greek words "cheir" (hand) and "ergon" (work), represents one of medicine''s oldest and most fundamental disciplines. The practice of surgery has evolved dramatically from ancient trepanation to modern minimally invasive techniques, yet the foundational terminology and principles remain essential for every surgical practitioner.
 
 Precise surgical terminology serves multiple critical functions in healthcare:
@@ -39,8 +39,8 @@ Precise surgical terminology serves multiple critical functions in healthcare:
 This article provides a comprehensive foundation in surgical terminology, covering the classification of surgical procedures, wound categorization, healing mechanisms, and fundamental surgical principles that guide clinical practice.', 1);
 
 -- Section 2: Learning Objectives
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00001-0000-0000-0000-000000000001', 'learning_objectives', 'Learning Objectives', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100001-0000-0000-0000-000000000001', 'learning_objectives', 'Learning Objectives', 
 'Upon completion of this article, participants should be able to:
 
 1. Define and correctly use fundamental surgical terminology in clinical documentation and communication
@@ -60,8 +60,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 8. Differentiate between various types of surgical procedures based on their defining characteristics', 2);
 
 -- Section 3: Main Content
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00001-0000-0000-0000-000000000001', 'content', 'Classification of Surgical Procedures', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100001-0000-0000-0000-000000000001', 'content', 'Classification of Surgical Procedures', 
 '## Classification by Urgency
 
 Understanding the urgency classification of surgical procedures is fundamental to surgical triage and resource allocation.
@@ -145,8 +145,8 @@ Procedures with lower risk:
 Examples: Simple excisions, minor wound repairs, incision and drainage', 3);
 
 -- Section 4: Wound Classification
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00001-0000-0000-0000-000000000001', 'content', 'Surgical Wound Classification', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100001-0000-0000-0000-000000000001', 'content', 'Surgical Wound Classification', 
 '## CDC Wound Classification System
 
 The Centers for Disease Control and Prevention (CDC) wound classification system is the standard for categorizing surgical wounds and predicting surgical site infection (SSI) risk.
@@ -205,8 +205,8 @@ Wound classification guides:
 5. **Risk stratification for surgical outcomes**', 4);
 
 -- Section 5: Wound Healing
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00001-0000-0000-0000-000000000001', 'content', 'Wound Healing Mechanisms', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100001-0000-0000-0000-000000000001', 'content', 'Wound Healing Mechanisms', 
 '## Types of Wound Closure
 
 ### Primary Intention (Primary Union)
@@ -290,8 +290,8 @@ Wound initially left open (for 4-7 days) to allow contamination to clear, then c
 - **Immunosuppression**: Impairs inflammatory response', 5);
 
 -- Section 6: Fundamental Surgical Principles
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00001-0000-0000-0000-000000000001', 'content', 'Fundamental Surgical Principles', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100001-0000-0000-0000-000000000001', 'content', 'Fundamental Surgical Principles', 
 '## Halsted''s Principles of Surgery
 
 William Stewart Halsted (1852-1922) established fundamental surgical principles that remain foundational today:
@@ -374,8 +374,8 @@ Dead space is any cavity within the wound that is not obliterated and may collec
 - Self-retaining retractors when appropriate', 6);
 
 -- Section 7: Key Points
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00001-0000-0000-0000-000000000001', 'key_points', 'Key Points', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100001-0000-0000-0000-000000000001', 'key_points', 'Key Points', 
 '1. **Surgical Classification by Urgency**: Emergency (immediate), Urgent (hours-days), Elective (scheduled)
 
 2. **CDC Wound Classification**: Class I (Clean) 1-3% SSI, Class II (Clean-Contaminated) 3-11% SSI, Class III (Contaminated) 10-17% SSI, Class IV (Dirty) >27% SSI
@@ -397,8 +397,8 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 10. **Macrophage Role**: Critical orchestrator of wound healing, releasing growth factors and cytokines', 7);
 
 -- Section 8: Clinical Pearls
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00001-0000-0000-0000-000000000001', 'clinical_pearls', 'Clinical Pearls', 
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100001-0000-0000-0000-000000000001', 'clinical_pearls', 'Clinical Pearls', 
 '💡 **Pearl 1**: "When in doubt, leave it out" - If wound contamination is suspected, consider delayed primary closure rather than risking deep space infection.
 
 💡 **Pearl 2**: The golden period for wound closure is traditionally 6-8 hours, but highly vascular areas like the face can often be closed up to 24 hours.
@@ -420,25 +420,25 @@ INSERT INTO article_sections (article_id, section_type, title, content, order_in
 💡 **Pearl 10**: Vitamin C deficiency (scurvy) leads to wound dehiscence because collagen requires vitamin C for hydroxylation of proline and lysine.', 8);
 
 -- Section 9: References
-INSERT INTO article_sections (article_id, section_type, title, content, order_index) VALUES
-('art00001-0000-0000-0000-000000000001', 'references', 'References', 'See reference list below.', 9);
+INSERT INTO article_sections (article_id, section_type, title, content, section_order) VALUES
+('a1100001-0000-0000-0000-000000000001', 'references', 'References', 'See reference list below.', 9);
 
 -- Insert References
 INSERT INTO article_references (article_id, reference_number, citation, doi, pubmed_id, url) VALUES
-('art00001-0000-0000-0000-000000000001', 1, 'Brunicardi FC, et al. Schwartz''s Principles of Surgery, 11th Edition. McGraw-Hill Education, 2019.', NULL, NULL, NULL),
-('art00001-0000-0000-0000-000000000001', 2, 'Townsend CM, et al. Sabiston Textbook of Surgery, 21st Edition. Elsevier, 2022.', NULL, NULL, NULL),
-('art00001-0000-0000-0000-000000000001', 3, 'Mangram AJ, Horan TC, Pearson ML, et al. Guideline for Prevention of Surgical Site Infection, 1999. Infect Control Hosp Epidemiol. 1999;20(4):250-278.', '10.1086/501620', '10219875', NULL),
-('art00001-0000-0000-0000-000000000001', 4, 'Guo S, DiPietro LA. Factors affecting wound healing. J Dent Res. 2010;89(3):219-229.', '10.1177/0022034509359125', '20139336', NULL),
-('art00001-0000-0000-0000-000000000001', 5, 'Gosain A, DiPietro LA. Aging and wound healing. World J Surg. 2004;28(3):321-326.', '10.1007/s00268-003-7397-6', '14961191', NULL),
-('art00001-0000-0000-0000-000000000001', 6, 'Halsted WS. The training of the surgeon. Bull Johns Hopkins Hosp. 1904;15:267-275.', NULL, NULL, NULL),
-('art00001-0000-0000-0000-000000000001', 7, 'Robson MC, Steed DL, Franz MG. Wound healing: biologic features and approaches to maximize healing trajectories. Curr Probl Surg. 2001;38(2):72-140.', '10.1067/msg.2001.111167', '11452260', NULL),
-('art00001-0000-0000-0000-000000000001', 8, 'Anderson DJ, et al. Strategies to prevent surgical site infections in acute care hospitals: 2014 update. Infect Control Hosp Epidemiol. 2014;35(6):605-627.', '10.1086/676022', '24799638', NULL),
-('art00001-0000-0000-0000-000000000001', 9, 'Singer AJ, Clark RA. Cutaneous wound healing. N Engl J Med. 1999;341(10):738-746.', '10.1056/NEJM199909023411006', '10471461', NULL),
-('art00001-0000-0000-0000-000000000001', 10, 'Sorensen LT. Wound healing and infection in surgery: the clinical impact of smoking and smoking cessation. Arch Surg. 2012;147(4):373-383.', '10.1001/archsurg.2012.5', '22508785', NULL);
+('a1100001-0000-0000-0000-000000000001', 1, 'Brunicardi FC, et al. Schwartz''s Principles of Surgery, 11th Edition. McGraw-Hill Education, 2019.', NULL, NULL, NULL),
+('a1100001-0000-0000-0000-000000000001', 2, 'Townsend CM, et al. Sabiston Textbook of Surgery, 21st Edition. Elsevier, 2022.', NULL, NULL, NULL),
+('a1100001-0000-0000-0000-000000000001', 3, 'Mangram AJ, Horan TC, Pearson ML, et al. Guideline for Prevention of Surgical Site Infection, 1999. Infect Control Hosp Epidemiol. 1999;20(4):250-278.', '10.1086/501620', '10219875', NULL),
+('a1100001-0000-0000-0000-000000000001', 4, 'Guo S, DiPietro LA. Factors affecting wound healing. J Dent Res. 2010;89(3):219-229.', '10.1177/0022034509359125', '20139336', NULL),
+('a1100001-0000-0000-0000-000000000001', 5, 'Gosain A, DiPietro LA. Aging and wound healing. World J Surg. 2004;28(3):321-326.', '10.1007/s00268-003-7397-6', '14961191', NULL),
+('a1100001-0000-0000-0000-000000000001', 6, 'Halsted WS. The training of the surgeon. Bull Johns Hopkins Hosp. 1904;15:267-275.', NULL, NULL, NULL),
+('a1100001-0000-0000-0000-000000000001', 7, 'Robson MC, Steed DL, Franz MG. Wound healing: biologic features and approaches to maximize healing trajectories. Curr Probl Surg. 2001;38(2):72-140.', '10.1067/msg.2001.111167', '11452260', NULL),
+('a1100001-0000-0000-0000-000000000001', 8, 'Anderson DJ, et al. Strategies to prevent surgical site infections in acute care hospitals: 2014 update. Infect Control Hosp Epidemiol. 2014;35(6):605-627.', '10.1086/676022', '24799638', NULL),
+('a1100001-0000-0000-0000-000000000001', 9, 'Singer AJ, Clark RA. Cutaneous wound healing. N Engl J Med. 1999;341(10):738-746.', '10.1056/NEJM199909023411006', '10471461', NULL),
+('a1100001-0000-0000-0000-000000000001', 10, 'Sorensen LT. Wound healing and infection in surgery: the clinical impact of smoking and smoking cessation. Arch Surg. 2012;147(4):373-383.', '10.1001/archsurg.2012.5', '22508785', NULL);
 
 -- Insert Self-Assessment Questions (20 questions)
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 1,
+('a1100001-0000-0000-0000-000000000001', 1,
 'A 45-year-old man presents with sudden onset severe abdominal pain and a rigid abdomen. CT scan reveals free air under the diaphragm. What is the most appropriate classification of the required surgery?',
 'Elective surgery',
 'Urgent surgery',
@@ -446,11 +446,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Preventive surgery',
 'Palliative surgery',
 'C',
-'Free air under the diaphragm indicates bowel perforation with peritonitis, which is a surgical emergency. Emergency surgery is performed immediately (within minutes to hours) to prevent death or permanent disability. Delay in surgical intervention for perforated viscus significantly increases mortality. This is not urgent surgery (which allows 24-72 hours) or elective (scheduled in advance).',
-'1,2');
+'Free air under the diaphragm indicates bowel perforation with peritonitis, which is a surgical emergency. Emergency surgery is performed immediately (within minutes to hours) to prevent death or permanent disability. Delay in surgical intervention for perforated viscus significantly increases mortality. This is not urgent surgery (which allows 24-72 hours) or elective (scheduled in advance).', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 2,
+('a1100001-0000-0000-0000-000000000001', 2,
 'According to the CDC classification, an elective cholecystectomy for symptomatic cholelithiasis is considered what type of wound?',
 'Class I - Clean',
 'Class II - Clean-Contaminated',
@@ -458,11 +457,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Class IV - Dirty',
 'Cannot be classified until surgery is complete',
 'B',
-'A cholecystectomy enters the biliary tract, which is part of the alimentary system. According to CDC classification, when the alimentary, respiratory, genital, or urinary tract is entered under controlled conditions without unusual contamination, the wound is classified as Class II (Clean-Contaminated). The expected SSI rate for Class II wounds is 3-11%.',
-'3,8');
+'A cholecystectomy enters the biliary tract, which is part of the alimentary system. According to CDC classification, when the alimentary, respiratory, genital, or urinary tract is entered under controlled conditions without unusual contamination, the wound is classified as Class II (Clean-Contaminated). The expected SSI rate for Class II wounds is 3-11%.', '{3,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 3,
+('a1100001-0000-0000-0000-000000000001', 3,
 'During which phase of wound healing do fibroblasts actively synthesize collagen and granulation tissue forms?',
 'Hemostasis phase',
 'Inflammatory phase',
@@ -470,11 +468,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Remodeling phase',
 'Resolution phase',
 'C',
-'The proliferative phase (days 4-21) is characterized by angiogenesis, fibroplasia (fibroblast proliferation and collagen synthesis), granulation tissue formation, epithelialization, and wound contraction. Type III collagen is predominantly synthesized during this phase. The inflammatory phase involves neutrophils and macrophages clearing debris, while the remodeling phase involves collagen cross-linking and conversion to Type I collagen.',
-'4,7,9');
+'The proliferative phase (days 4-21) is characterized by angiogenesis, fibroplasia (fibroblast proliferation and collagen synthesis), granulation tissue formation, epithelialization, and wound contraction. Type III collagen is predominantly synthesized during this phase. The inflammatory phase involves neutrophils and macrophages clearing debris, while the remodeling phase involves collagen cross-linking and conversion to Type I collagen.', '{4,7,9}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 4,
+('a1100001-0000-0000-0000-000000000001', 4,
 'What is the maximum tensile strength that a healed wound can achieve compared to unwounded tissue?',
 '50% of original strength',
 '65% of original strength',
@@ -482,11 +479,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '95% of original strength',
 '100% of original strength',
 'C',
-'A healed wound achieves maximum tensile strength of approximately 80% of the original unwounded tissue strength. This maximum is reached during the remodeling phase as Type III collagen is replaced by stronger Type I collagen with increased cross-linking. Wounds never regain 100% of original tissue strength, which is why incisional hernias remain a risk at surgical sites.',
-'7,9');
+'A healed wound achieves maximum tensile strength of approximately 80% of the original unwounded tissue strength. This maximum is reached during the remodeling phase as Type III collagen is replaced by stronger Type I collagen with increased cross-linking. Wounds never regain 100% of original tissue strength, which is why incisional hernias remain a risk at surgical sites.', '{7,9}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 5,
+('a1100001-0000-0000-0000-000000000001', 5,
 'A patient with a heavily contaminated traumatic wound is brought to the emergency department. The surgeon decides to leave the wound open initially and close it after 5 days once the wound bed appears clean. This approach is called:',
 'Healing by primary intention',
 'Healing by secondary intention',
@@ -494,11 +490,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Healing by quaternary intention',
 'Spontaneous closure',
 'C',
-'Tertiary intention, also known as delayed primary closure, involves leaving a wound open initially (typically 4-7 days) to allow contamination and infection to clear, then closing it primarily. This approach is ideal for contaminated traumatic wounds, bites, and combat wounds. It combines the benefits of infection prevention with the advantages of primary closure.',
-'1,2');
+'Tertiary intention, also known as delayed primary closure, involves leaving a wound open initially (typically 4-7 days) to allow contamination and infection to clear, then closing it primarily. This approach is ideal for contaminated traumatic wounds, bites, and combat wounds. It combines the benefits of infection prevention with the advantages of primary closure.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 6,
+('a1100001-0000-0000-0000-000000000001', 6,
 'Which of Halsted''s principles of surgery specifically addresses the prevention of fluid collection and potential bacterial growth medium in wounds?',
 'Gentle handling of tissues',
 'Meticulous hemostasis',
@@ -506,11 +501,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Accurate tissue apposition',
 'Obliteration of dead space',
 'E',
-'Obliteration of dead space is the Halsted principle that prevents fluid collection. Dead space provides a medium for bacterial growth, delays wound healing, and can lead to seroma or hematoma formation. This principle is achieved through layered closure, quilting sutures, closed suction drains, or pressure dressings.',
-'6');
+'Obliteration of dead space is the Halsted principle that prevents fluid collection. Dead space provides a medium for bacterial growth, delays wound healing, and can lead to seroma or hematoma formation. This principle is achieved through layered closure, quilting sutures, closed suction drains, or pressure dressings.', '{6}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 7,
+('a1100001-0000-0000-0000-000000000001', 7,
 'What is the critical bacterial concentration per gram of tissue that typically prevents wound healing?',
 '10² organisms/gram',
 '10³ organisms/gram',
@@ -518,11 +512,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '10⁵ organisms/gram',
 '10⁶ organisms/gram',
 'D',
-'A bacterial load exceeding 10⁵ (100,000) organisms per gram of tissue typically prevents wound healing and leads to clinical infection. This threshold is important in determining wound management strategies, including the use of delayed primary closure for contaminated wounds. Below this threshold, host defenses can usually control bacterial proliferation.',
-'7');
+'A bacterial load exceeding 10⁵ (100,000) organisms per gram of tissue typically prevents wound healing and leads to clinical infection. This threshold is important in determining wound management strategies, including the use of delayed primary closure for contaminated wounds. Below this threshold, host defenses can usually control bacterial proliferation.', '{7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 8,
+('a1100001-0000-0000-0000-000000000001', 8,
 'A 60-year-old smoker undergoes elective hernia repair. When should smoking cessation ideally begin to significantly reduce wound complications?',
 '24 hours before surgery',
 '1 week before surgery',
@@ -530,11 +523,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '8 weeks before surgery',
 'Smoking cessation has no impact on wound healing',
 'C',
-'Smoking cessation for at least 4 weeks preoperatively significantly reduces wound complications. Smoking impairs wound healing through vasoconstriction, carbon monoxide binding to hemoglobin (reducing oxygen delivery), and impaired inflammatory response. While longer cessation periods provide additional benefit, 4 weeks is the minimum to see significant improvement.',
-'10');
+'Smoking cessation for at least 4 weeks preoperatively significantly reduces wound complications. Smoking impairs wound healing through vasoconstriction, carbon monoxide binding to hemoglobin (reducing oxygen delivery), and impaired inflammatory response. While longer cessation periods provide additional benefit, 4 weeks is the minimum to see significant improvement.', '{10}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 9,
+('a1100001-0000-0000-0000-000000000001', 9,
 'During wound healing, Type III collagen is predominantly synthesized during the proliferative phase and later replaced by which type of collagen during remodeling?',
 'Type I collagen',
 'Type II collagen',
@@ -542,11 +534,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Type V collagen',
 'Type VII collagen',
 'A',
-'Type III collagen is synthesized during the proliferative phase of wound healing. During the remodeling phase (day 21 to 2 years), Type III collagen is gradually replaced by Type I collagen, which is stronger and provides greater tensile strength. This replacement, along with collagen cross-linking, is responsible for the progressive increase in wound strength.',
-'7,9');
+'Type III collagen is synthesized during the proliferative phase of wound healing. During the remodeling phase (day 21 to 2 years), Type III collagen is gradually replaced by Type I collagen, which is stronger and provides greater tensile strength. This replacement, along with collagen cross-linking, is responsible for the progressive increase in wound strength.', '{7,9}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 10,
+('a1100001-0000-0000-0000-000000000001', 10,
 'Which cell type is considered the "master regulator" of wound healing, arriving at 48-96 hours and releasing essential growth factors?',
 'Neutrophils',
 'Macrophages',
@@ -554,11 +545,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Keratinocytes',
 'Platelets',
 'B',
-'Macrophages are the master regulators of wound healing. They arrive at the wound site 48-96 hours after injury, peaking during the inflammatory phase. Macrophages release numerous growth factors and cytokines essential for wound healing, including PDGF, TGF-β, VEGF, and FGF. They also phagocytose debris and apoptotic neutrophils, transitioning the wound from inflammation to proliferation.',
-'4,7,9');
+'Macrophages are the master regulators of wound healing. They arrive at the wound site 48-96 hours after injury, peaking during the inflammatory phase. Macrophages release numerous growth factors and cytokines essential for wound healing, including PDGF, TGF-β, VEGF, and FGF. They also phagocytose debris and apoptotic neutrophils, transitioning the wound from inflammation to proliferation.', '{4,7,9}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 11,
+('a1100001-0000-0000-0000-000000000001', 11,
 'A patient undergoing appendectomy for perforated appendicitis with peritonitis would have their wound classified as:',
 'Class I - Clean',
 'Class II - Clean-Contaminated',
@@ -566,11 +556,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Class IV - Dirty/Infected',
 'The classification depends on the surgeon''s technique',
 'D',
-'A perforated appendix with peritonitis is classified as Class IV (Dirty/Infected) because there is existing clinical infection and perforated viscera. This is different from an appendectomy for acute appendicitis without perforation, which would be Class II (Clean-Contaminated). Class IV wounds have the highest SSI rate (>27%).',
-'3,8');
+'A perforated appendix with peritonitis is classified as Class IV (Dirty/Infected) because there is existing clinical infection and perforated viscera. This is different from an appendectomy for acute appendicitis without perforation, which would be Class II (Clean-Contaminated). Class IV wounds have the highest SSI rate (>27%).', '{3,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 12,
+('a1100001-0000-0000-0000-000000000001', 12,
 'What is the expected surgical site infection rate for a Class I (Clean) wound?',
 '<0.5%',
 '1-3%',
@@ -578,11 +567,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '10-17%',
 '>20%',
 'B',
-'Class I (Clean) wounds have an expected surgical site infection rate of 1-3%. These are uninfected operative wounds where the respiratory, alimentary, genital, or urinary tracts are not entered, and there is no break in sterile technique. Examples include thyroidectomy, herniorrhaphy without mesh contamination, and most vascular surgery.',
-'3,8');
+'Class I (Clean) wounds have an expected surgical site infection rate of 1-3%. These are uninfected operative wounds where the respiratory, alimentary, genital, or urinary tracts are not entered, and there is no break in sterile technique. Examples include thyroidectomy, herniorrhaphy without mesh contamination, and most vascular surgery.', '{3,8}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 13,
+('a1100001-0000-0000-0000-000000000001', 13,
 'Surgery performed to relieve symptoms without curing the underlying disease, such as bypass surgery for an unresectable tumor, is classified as:',
 'Curative surgery',
 'Palliative surgery',
@@ -590,11 +578,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Diagnostic surgery',
 'Reconstructive surgery',
 'B',
-'Palliative surgery is performed to relieve symptoms without curing the underlying disease. Examples include bypass surgery for unresectable tumors causing obstruction, nerve blocks for intractable pain, debulking of advanced tumors, and ostomy creation for bowel obstruction from incurable malignancy. The goal is quality of life improvement, not cure.',
-'1,2');
+'Palliative surgery is performed to relieve symptoms without curing the underlying disease. Examples include bypass surgery for unresectable tumors causing obstruction, nerve blocks for intractable pain, debulking of advanced tumors, and ostomy creation for bowel obstruction from incurable malignancy. The goal is quality of life improvement, not cure.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 14,
+('a1100001-0000-0000-0000-000000000001', 14,
 'Standard steam sterilization (autoclaving) requires which temperature and pressure conditions?',
 '100°C at atmospheric pressure for 30 minutes',
 '121°C at 15 psi for 15-30 minutes',
@@ -602,11 +589,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '160°C at atmospheric pressure for 2 hours',
 '180°C at 20 psi for 10 minutes',
 'B',
-'Steam sterilization (autoclaving) is the most common method of sterilization in healthcare. It requires 121°C at 15 psi for 15-30 minutes. The combination of heat, pressure, and moisture denatures proteins and kills all microorganisms including spores. Dry heat sterilization (option D pattern) requires 160°C for 2 hours but at atmospheric pressure.',
-'1,2');
+'Steam sterilization (autoclaving) is the most common method of sterilization in healthcare. It requires 121°C at 15 psi for 15-30 minutes. The combination of heat, pressure, and moisture denatures proteins and kills all microorganisms including spores. Dry heat sterilization (option D pattern) requires 160°C for 2 hours but at atmospheric pressure.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 15,
+('a1100001-0000-0000-0000-000000000001', 15,
 'A malnourished patient with serum albumin of 2.5 g/dL requires surgery. Which statement is most accurate regarding this patient''s surgical risk?',
 'Low albumin has no impact on surgical outcomes',
 'The patient has increased risk of wound complications',
@@ -614,11 +600,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Only emergency surgery is affected by nutritional status',
 'Albumin levels below 4.0 g/dL contraindicate all surgery',
 'B',
-'A serum albumin level below 3.0 g/dL is associated with significantly higher surgical complications, including impaired wound healing, anastomotic leaks, and increased infection rates. Nutritional optimization should be considered when possible before elective surgery. Protein is essential for collagen synthesis and immune function during wound healing.',
-'1,2,4');
+'A serum albumin level below 3.0 g/dL is associated with significantly higher surgical complications, including impaired wound healing, anastomotic leaks, and increased infection rates. Nutritional optimization should be considered when possible before elective surgery. Protein is essential for collagen synthesis and immune function during wound healing.', '{1,2,4}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 16,
+('a1100001-0000-0000-0000-000000000001', 16,
 'Which vitamin deficiency leads to wound dehiscence due to impaired collagen synthesis through failure of proline and lysine hydroxylation?',
 'Vitamin A',
 'Vitamin B12',
@@ -626,11 +611,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Vitamin D',
 'Vitamin E',
 'C',
-'Vitamin C (ascorbic acid) is essential for collagen synthesis. It acts as a cofactor for prolyl hydroxylase and lysyl hydroxylase, enzymes that hydroxylate proline and lysine residues in procollagen. Without proper hydroxylation, collagen cannot form stable triple helices, leading to weak collagen and wound dehiscence. This is the basis of wound complications in scurvy.',
-'4,7');
+'Vitamin C (ascorbic acid) is essential for collagen synthesis. It acts as a cofactor for prolyl hydroxylase and lysyl hydroxylase, enzymes that hydroxylate proline and lysine residues in procollagen. Without proper hydroxylation, collagen cannot form stable triple helices, leading to weak collagen and wound dehiscence. This is the basis of wound complications in scurvy.', '{4,7}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 17,
+('a1100001-0000-0000-0000-000000000001', 17,
 'A woman with BRCA1 mutation elects to undergo bilateral mastectomy despite having no evidence of breast cancer. This surgery is classified as:',
 'Diagnostic surgery',
 'Curative surgery',
@@ -638,11 +622,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'Preventive (prophylactic) surgery',
 'Reconstructive surgery',
 'D',
-'Preventive or prophylactic surgery is performed to prevent disease development in high-risk individuals. Prophylactic mastectomy in BRCA carriers significantly reduces breast cancer risk. Other examples include prophylactic thyroidectomy in MEN syndromes and prophylactic colectomy in FAP. The surgery removes tissue before cancer develops.',
-'1,2');
+'Preventive or prophylactic surgery is performed to prevent disease development in high-risk individuals. Prophylactic mastectomy in BRCA carriers significantly reduces breast cancer risk. Other examples include prophylactic thyroidectomy in MEN syndromes and prophylactic colectomy in FAP. The surgery removes tissue before cancer develops.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 18,
+('a1100001-0000-0000-0000-000000000001', 18,
 'Neutrophils are the predominant cell type in a healing wound during which time period after injury?',
 '0-6 hours',
 '24-48 hours',
@@ -650,11 +633,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '2-3 weeks',
 '4-6 weeks',
 'B',
-'Neutrophils are the first inflammatory cells to arrive at a wound, with peak infiltration occurring at 24-48 hours after injury. They are responsible for killing bacteria and debriding dead tissue through phagocytosis and release of proteolytic enzymes. After 48-96 hours, macrophages become the predominant cell type as neutrophils undergo apoptosis.',
-'4,7,9');
+'Neutrophils are the first inflammatory cells to arrive at a wound, with peak infiltration occurring at 24-48 hours after injury. They are responsible for killing bacteria and debriding dead tissue through phagocytosis and release of proteolytic enzymes. After 48-96 hours, macrophages become the predominant cell type as neutrophils undergo apoptosis.', '{4,7,9}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 19,
+('a1100001-0000-0000-0000-000000000001', 19,
 'A laceration on the face can often be safely closed primarily up to how many hours after injury, compared to the traditional 6-8 hour "golden period" for other body areas?',
 '6 hours',
 '12 hours',
@@ -662,11 +644,10 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 '48 hours',
 '72 hours',
 'C',
-'While the traditional "golden period" for wound closure is 6-8 hours, highly vascular areas like the face have excellent blood supply that provides greater resistance to infection. Facial lacerations can often be safely closed primarily up to 24 hours after injury, provided the wound is properly cleaned and there are no signs of infection. This extended time frame is due to the rich blood supply of the face.',
-'1,2');
+'While the traditional "golden period" for wound closure is 6-8 hours, highly vascular areas like the face have excellent blood supply that provides greater resistance to infection. Facial lacerations can often be safely closed primarily up to 24 hours after injury, provided the wound is properly cleaned and there are no signs of infection. This extended time frame is due to the rich blood supply of the face.', '{1,2}');
 
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation, reference_numbers) VALUES
-('art00001-0000-0000-0000-000000000001', 20,
+('a1100001-0000-0000-0000-000000000001', 20,
 'When is the tensile strength of a surgical wound primarily derived from sutures rather than from the wound''s own collagen?',
 'First 1-2 days',
 'First 1-2 weeks',
@@ -674,5 +655,4 @@ INSERT INTO article_self_assessments (article_id, question_number, question_text
 'First 6 months',
 'The entire healing process',
 'B',
-'During the first 1-2 weeks after surgery, wound tensile strength is primarily provided by sutures because collagen synthesis and cross-linking have not yet provided significant structural support. Collagen synthesis peaks at around 3 weeks, and progressive remodeling continues for up to 2 years. This is why suture material selection and technique are critical for early wound integrity.',
-'7,9');
+'During the first 1-2 weeks after surgery, wound tensile strength is primarily provided by sutures because collagen synthesis and cross-linking have not yet provided significant structural support. Collagen synthesis peaks at around 3 weeks, and progressive remodeling continues for up to 2 years. This is why suture material selection and technique are critical for early wound integrity.', '{7,9}');

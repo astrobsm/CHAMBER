@@ -2,7 +2,7 @@
 
 -- ARTICLE 8: Surgical Salmonellosis (Typhoid Fever)
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000008-0000-0000-0000-000000000008'::uuid, 'introduction', 1, 'Introduction to Surgical Salmonellosis', 
+('d2000008-0000-0000-0000-000000000008'::uuid, 'introduction', 1, 'Introduction to Surgical Salmonellosis', 
 'Typhoid fever, caused by Salmonella typhi, remains a significant health burden in developing countries. While primarily a medical condition, surgical complications including intestinal perforation and hemorrhage make it relevant to surgical practice.
 
 **Epidemiology**
@@ -28,7 +28,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 
 Perforation typically occurs in the 3rd week of illness when ulcers in Peyer patches become transmural.'),
 
-('d0000008-0000-0000-0000-000000000008'::uuid, 'content', 2, 'Clinical Features and Diagnosis',
+('d2000008-0000-0000-0000-000000000008'::uuid, 'content', 2, 'Clinical Features and Diagnosis',
 '**Medical Presentation**
 Week 1: Gradual fever, headache, malaise, relative bradycardia
 Week 2: High sustained fever (stepladder pattern), rose spots, hepatosplenomegaly
@@ -57,7 +57,7 @@ Week 4: Resolution or death if untreated
 2. Antibiotics: Ceftriaxone + Metronidazole (or ciprofloxacin if sensitive)
 3. Surgery: Laparotomy is mandatory for perforation'),
 
-('d0000008-0000-0000-0000-000000000008'::uuid, 'content', 3, 'Surgical Management',
+('d2000008-0000-0000-0000-000000000008'::uuid, 'content', 3, 'Surgical Management',
 '**Operative Findings**
 - Perforations typically in terminal ileum (antimesenteric border)
 - Single perforation in 80%; multiple in 20%
@@ -95,7 +95,7 @@ Week 4: Resolution or death if untreated
 - Mortality with perforation: 10-30% (higher in developing countries)
 - Earlier surgery improves outcomes'),
 
-('d0000008-0000-0000-0000-000000000008'::uuid, 'key_points', 4, 'Key Points',
+('d2000008-0000-0000-0000-000000000008'::uuid, 'key_points', 4, 'Key Points',
 '1. Typhoid perforation occurs in week 3 of illness, typically in terminal ileum
 2. Perforation is the most common surgical complication (1-3%)
 3. Signs may be masked by ongoing illness and antibiotics
@@ -109,7 +109,7 @@ Week 4: Resolution or death if untreated
 
 -- ARTICLE 9: Surgical Parasitosis
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000009-0000-0000-0000-000000000009'::uuid, 'introduction', 1, 'Introduction to Surgical Parasitosis', 
+('d2000009-0000-0000-0000-000000000009'::uuid, 'introduction', 1, 'Introduction to Surgical Parasitosis', 
 'Parasitic diseases requiring surgical intervention are common in tropical and developing countries. Understanding these conditions is essential for surgeons in endemic areas.
 
 **Common Parasites Requiring Surgery**
@@ -129,7 +129,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
    - Clonorchis sinensis (liver fluke)
    - Fasciola hepatica'),
 
-('d0000009-0000-0000-0000-000000000009'::uuid, 'content', 2, 'Intestinal Ascariasis and Amoebiasis',
+('d2000009-0000-0000-0000-000000000009'::uuid, 'content', 2, 'Intestinal Ascariasis and Amoebiasis',
 '**Ascariasis**
 Most common helminthic infection worldwide (1 billion infected)
 
@@ -171,7 +171,7 @@ Management:
   - No response to medical treatment
   - Imminent rupture'),
 
-('d0000009-0000-0000-0000-000000000009'::uuid, 'content', 3, 'Hydatid Disease',
+('d2000009-0000-0000-0000-000000000009'::uuid, 'content', 3, 'Hydatid Disease',
 '**Etiology**
 Echinococcus granulosus (dog tapeworm)
 Life cycle: Dog (definitive host) → Sheep/humans (intermediate host)
@@ -218,7 +218,7 @@ Life cycle: Dog (definitive host) → Sheep/humans (intermediate host)
   4. Manage residual cavity (omentoplasty, capitonnage, marsupilization)
 - Never incise cyst before killing scolices (risk of spillage and anaphylaxis)'),
 
-('d0000009-0000-0000-0000-000000000009'::uuid, 'key_points', 4, 'Key Points',
+('d2000009-0000-0000-0000-000000000009'::uuid, 'key_points', 4, 'Key Points',
 '1. Ascariasis: Most common helminthic infection; obstruction managed conservatively first
 2. Biliary ascariasis: Worm in CBD causing cholangitis - ERCP may be needed
 3. Amoebic liver abscess: Metronidazole first; drain if large, left lobe, or not responding
@@ -232,7 +232,7 @@ Life cycle: Dog (definitive host) → Sheep/humans (intermediate host)
 
 -- ARTICLE 10: Abdominal Tuberculosis
 INSERT INTO article_sections (article_id, section_type, section_order, title, content) VALUES
-('d0000010-0000-0000-0000-000000000010'::uuid, 'introduction', 1, 'Introduction to Abdominal Tuberculosis', 
+('d2000010-0000-0000-0000-000000000010'::uuid, 'introduction', 1, 'Introduction to Abdominal Tuberculosis', 
 'Abdominal tuberculosis is a common extrapulmonary manifestation of TB, particularly in endemic regions. It can affect any part of the GI tract and peritoneum, often mimicking other conditions and presenting diagnostic challenges.
 
 **Epidemiology**
@@ -254,7 +254,7 @@ INSERT INTO article_sections (article_id, section_type, section_order, title, co
 - Solid organs (liver, spleen)
 - Esophagus, stomach (rare)'),
 
-('d0000010-0000-0000-0000-000000000010'::uuid, 'content', 2, 'Clinical Types and Presentation',
+('d2000010-0000-0000-0000-000000000010'::uuid, 'content', 2, 'Clinical Types and Presentation',
 '**Types of Intestinal TB**
 
 1. **Ulcerative Type**
@@ -293,7 +293,7 @@ Types:
 - Fistula formation
 - Malabsorption'),
 
-('d0000010-0000-0000-0000-000000000010'::uuid, 'content', 3, 'Diagnosis and Differential',
+('d2000010-0000-0000-0000-000000000010'::uuid, 'content', 3, 'Diagnosis and Differential',
 '**Laboratory Investigations**
 - ESR elevated
 - Anemia
@@ -329,7 +329,7 @@ Types:
 - Lymphoma
 - Amoebiasis'),
 
-('d0000010-0000-0000-0000-000000000010'::uuid, 'content', 4, 'Management',
+('d2000010-0000-0000-0000-000000000010'::uuid, 'content', 4, 'Management',
 '**Medical Treatment - Mainstay**
 Anti-tubercular therapy (ATT):
 - Intensive phase (2 months): HRZE (Isoniazid, Rifampicin, Pyrazinamide, Ethambutol)
@@ -364,7 +364,7 @@ Response assessment:
 - Conservative management preferred when possible
 - Surgery for complications only'),
 
-('d0000010-0000-0000-0000-000000000010'::uuid, 'key_points', 5, 'Key Points',
+('d2000010-0000-0000-0000-000000000010'::uuid, 'key_points', 5, 'Key Points',
 '1. Ileocecal region is the most common site (75%)
 2. Types: Ulcerative, hypertrophic, ulcerohypertrophic
 3. Chronic symptoms: Weight loss, fever, abdominal pain, mass
@@ -379,27 +379,27 @@ Response assessment:
 -- MCQs for Articles 8, 9, 10
 INSERT INTO article_self_assessments (article_id, question_number, question_text, option_a, option_b, option_c, option_d, option_e, correct_option, explanation) VALUES
 -- Article 8: Typhoid
-('d0000008-0000-0000-0000-000000000008'::uuid, 1, 'At what week of typhoid fever does intestinal perforation typically occur?', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 6', 'C', 'Typhoid perforation typically occurs in the third week of illness when ulcers in the Peyer patches become transmural and perforate. This is during the period of ulceration and necrosis.'),
-('d0000008-0000-0000-0000-000000000008'::uuid, 2, 'Where do typhoid perforations most commonly occur?', 'Duodenum', 'Jejunum', 'Terminal ileum', 'Cecum', 'Sigmoid colon', 'C', 'Typhoid perforations occur in the terminal ileum on the antimesenteric border where Peyer patches are concentrated. This is typically 20-40 cm from the ileocecal valve.'),
-('d0000008-0000-0000-0000-000000000008'::uuid, 3, 'What is the safest surgical option for typhoid perforation in a malnourished patient with severe peritoneal contamination?', 'Primary closure', 'Wedge excision', 'Resection with primary anastomosis', 'Resection with ileostomy', 'Conservative management', 'D', 'Resection with ileostomy is the safest option for high-risk patients (malnourished, severe contamination, hemodynamic instability). It avoids the risk of anastomotic leak in compromised patients.'),
-('d0000008-0000-0000-0000-000000000008'::uuid, 4, 'What is the mortality rate for typhoid perforation?', '1-5%', '10-30%', '50-60%', '70-80%', '90%', 'B', 'Mortality for typhoid perforation is 10-30%, higher in developing countries due to delayed presentation and limited resources. Early surgery improves outcomes.'),
-('d0000008-0000-0000-0000-000000000008'::uuid, 5, 'Which investigation shows air under the diaphragm in typhoid perforation?', 'Supine abdominal X-ray', 'Erect chest X-ray', 'CT without contrast', 'Ultrasound', 'Barium meal', 'B', 'Erect chest X-ray is the best plain film to detect pneumoperitoneum (air under the diaphragm). This indicates perforation of a hollow viscus.'),
+('d2000008-0000-0000-0000-000000000008'::uuid, 1, 'At what week of typhoid fever does intestinal perforation typically occur?', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 6', 'C', 'Typhoid perforation typically occurs in the third week of illness when ulcers in the Peyer patches become transmural and perforate. This is during the period of ulceration and necrosis.'),
+('d2000008-0000-0000-0000-000000000008'::uuid, 2, 'Where do typhoid perforations most commonly occur?', 'Duodenum', 'Jejunum', 'Terminal ileum', 'Cecum', 'Sigmoid colon', 'C', 'Typhoid perforations occur in the terminal ileum on the antimesenteric border where Peyer patches are concentrated. This is typically 20-40 cm from the ileocecal valve.'),
+('d2000008-0000-0000-0000-000000000008'::uuid, 3, 'What is the safest surgical option for typhoid perforation in a malnourished patient with severe peritoneal contamination?', 'Primary closure', 'Wedge excision', 'Resection with primary anastomosis', 'Resection with ileostomy', 'Conservative management', 'D', 'Resection with ileostomy is the safest option for high-risk patients (malnourished, severe contamination, hemodynamic instability). It avoids the risk of anastomotic leak in compromised patients.'),
+('d2000008-0000-0000-0000-000000000008'::uuid, 4, 'What is the mortality rate for typhoid perforation?', '1-5%', '10-30%', '50-60%', '70-80%', '90%', 'B', 'Mortality for typhoid perforation is 10-30%, higher in developing countries due to delayed presentation and limited resources. Early surgery improves outcomes.'),
+('d2000008-0000-0000-0000-000000000008'::uuid, 5, 'Which investigation shows air under the diaphragm in typhoid perforation?', 'Supine abdominal X-ray', 'Erect chest X-ray', 'CT without contrast', 'Ultrasound', 'Barium meal', 'B', 'Erect chest X-ray is the best plain film to detect pneumoperitoneum (air under the diaphragm). This indicates perforation of a hollow viscus.'),
 
 -- Article 9: Parasitosis
-('d0000009-0000-0000-0000-000000000009'::uuid, 1, 'What is the most common surgical complication of ascariasis?', 'Perforation', 'Hemorrhage', 'Intestinal obstruction', 'Appendicitis', 'Volvulus', 'C', 'Intestinal obstruction from a bolus of worms is the most common surgical complication of ascariasis. It typically presents with colicky pain and may be palpable as a mass.'),
-('d0000009-0000-0000-0000-000000000009'::uuid, 2, 'What is the initial management of ascaris intestinal obstruction?', 'Emergency surgery', 'Conservative management with anthelmintics', 'Endoscopic removal', 'Percutaneous drainage', 'Observation only', 'B', 'Initial management of ascaris obstruction is conservative: NG decompression, IV fluids, and anthelmintics (albendazole, mebendazole). Surgery is reserved for complete obstruction not responding to conservative measures.'),
-('d0000009-0000-0000-0000-000000000009'::uuid, 3, 'What is the first-line treatment for amoebic liver abscess?', 'Surgical drainage', 'Percutaneous drainage', 'Metronidazole', 'Albendazole', 'Chloroquine', 'C', 'Metronidazole is the first-line treatment for amoebic liver abscess. Most abscesses respond to medical treatment alone. Drainage is indicated for large abscesses, left lobe location, or failure to respond.'),
-('d0000009-0000-0000-0000-000000000009'::uuid, 4, 'What is the most common site of hydatid disease?', 'Lung', 'Liver', 'Brain', 'Bone', 'Kidney', 'B', 'The liver is the most common site of hydatid disease (70%), followed by lungs (20%). The cyst develops where the embryo lodges after passing through the intestinal wall.'),
-('d0000009-0000-0000-0000-000000000009'::uuid, 5, 'What precaution is essential before incising a hydatid cyst?', 'Giving antibiotics', 'Using diathermy', 'Protecting field with scolicidal agent', 'Fasting the patient', 'Placing drains', 'C', 'Before incising a hydatid cyst, the field must be protected with scolicidal agents (hypertonic saline, cetrimide). Spillage of viable scolices can cause anaphylaxis and peritoneal seeding with recurrence.'),
-('d0000009-0000-0000-0000-000000000009'::uuid, 6, 'What does PAIR stand for in hydatid management?', 'Puncture, Aspiration, Injection, Re-aspiration', 'Percutaneous, Aspiration, Incision, Resection', 'Puncture, Ablation, Irrigation, Removal', 'Primary, Aspiration, Injection, Removal', 'None of the above', 'A', 'PAIR stands for Puncture, Aspiration, Injection (of scolicidal agent), and Re-aspiration. It is a percutaneous technique for treating selected hydatid cysts without open surgery.'),
-('d0000009-0000-0000-0000-000000000009'::uuid, 7, 'What is the water lily sign seen in?', 'Amoebic abscess', 'Hydatid cyst', 'Tuberculous abscess', 'Pyogenic abscess', 'Ascariasis', 'B', 'The water lily sign (floating collapsed membrane within fluid) is pathognomonic of hydatid cyst. It represents separation of the endocyst membrane from the pericyst.'),
+('d2000009-0000-0000-0000-000000000009'::uuid, 1, 'What is the most common surgical complication of ascariasis?', 'Perforation', 'Hemorrhage', 'Intestinal obstruction', 'Appendicitis', 'Volvulus', 'C', 'Intestinal obstruction from a bolus of worms is the most common surgical complication of ascariasis. It typically presents with colicky pain and may be palpable as a mass.'),
+('d2000009-0000-0000-0000-000000000009'::uuid, 2, 'What is the initial management of ascaris intestinal obstruction?', 'Emergency surgery', 'Conservative management with anthelmintics', 'Endoscopic removal', 'Percutaneous drainage', 'Observation only', 'B', 'Initial management of ascaris obstruction is conservative: NG decompression, IV fluids, and anthelmintics (albendazole, mebendazole). Surgery is reserved for complete obstruction not responding to conservative measures.'),
+('d2000009-0000-0000-0000-000000000009'::uuid, 3, 'What is the first-line treatment for amoebic liver abscess?', 'Surgical drainage', 'Percutaneous drainage', 'Metronidazole', 'Albendazole', 'Chloroquine', 'C', 'Metronidazole is the first-line treatment for amoebic liver abscess. Most abscesses respond to medical treatment alone. Drainage is indicated for large abscesses, left lobe location, or failure to respond.'),
+('d2000009-0000-0000-0000-000000000009'::uuid, 4, 'What is the most common site of hydatid disease?', 'Lung', 'Liver', 'Brain', 'Bone', 'Kidney', 'B', 'The liver is the most common site of hydatid disease (70%), followed by lungs (20%). The cyst develops where the embryo lodges after passing through the intestinal wall.'),
+('d2000009-0000-0000-0000-000000000009'::uuid, 5, 'What precaution is essential before incising a hydatid cyst?', 'Giving antibiotics', 'Using diathermy', 'Protecting field with scolicidal agent', 'Fasting the patient', 'Placing drains', 'C', 'Before incising a hydatid cyst, the field must be protected with scolicidal agents (hypertonic saline, cetrimide). Spillage of viable scolices can cause anaphylaxis and peritoneal seeding with recurrence.'),
+('d2000009-0000-0000-0000-000000000009'::uuid, 6, 'What does PAIR stand for in hydatid management?', 'Puncture, Aspiration, Injection, Re-aspiration', 'Percutaneous, Aspiration, Incision, Resection', 'Puncture, Ablation, Irrigation, Removal', 'Primary, Aspiration, Injection, Removal', 'None of the above', 'A', 'PAIR stands for Puncture, Aspiration, Injection (of scolicidal agent), and Re-aspiration. It is a percutaneous technique for treating selected hydatid cysts without open surgery.'),
+('d2000009-0000-0000-0000-000000000009'::uuid, 7, 'What is the water lily sign seen in?', 'Amoebic abscess', 'Hydatid cyst', 'Tuberculous abscess', 'Pyogenic abscess', 'Ascariasis', 'B', 'The water lily sign (floating collapsed membrane within fluid) is pathognomonic of hydatid cyst. It represents separation of the endocyst membrane from the pericyst.'),
 
 -- Article 10: Abdominal TB
-('d0000010-0000-0000-0000-000000000010'::uuid, 1, 'What is the most common site of intestinal tuberculosis?', 'Esophagus', 'Stomach', 'Jejunum', 'Ileocecal region', 'Rectum', 'D', 'The ileocecal region is the most common site of intestinal TB (75% of cases). This is because of abundant lymphoid tissue, physiological stasis, and increased contact time with bacilli.'),
-('d0000010-0000-0000-0000-000000000010'::uuid, 2, 'What is the main differential diagnosis for ileocecal tuberculosis?', 'Ulcerative colitis', 'Appendicitis', 'Crohn disease', 'Diverticulitis', 'Colorectal cancer only', 'C', 'Crohn disease is the main differential diagnosis for ileocecal TB. Both can cause strictures, fistulae, and skip lesions. Histology (caseating vs non-caseating granulomas) helps differentiate.'),
-('d0000010-0000-0000-0000-000000000010'::uuid, 3, 'What histological finding is characteristic of intestinal TB?', 'Non-caseating granulomas', 'Caseating granulomas with Langerhans giant cells', 'Crypt abscesses', 'Reed-Sternberg cells', 'Signet ring cells', 'B', 'Caseating granulomas with Langerhans giant cells are characteristic of TB. Non-caseating granulomas are seen in Crohn disease. Central caseation (cheese-like necrosis) is the key differentiating feature.'),
-('d0000010-0000-0000-0000-000000000010'::uuid, 4, 'What is the mainstay of treatment for abdominal TB?', 'Surgery', 'Steroids', 'Anti-tubercular therapy (ATT)', 'Antibiotics', 'Immunotherapy', 'C', 'Anti-tubercular therapy (ATT) is the mainstay of treatment for abdominal TB. Surgery is reserved for complications (obstruction, perforation, hemorrhage) or diagnostic uncertainty. Most patients respond to medical treatment.'),
-('d0000010-0000-0000-0000-000000000010'::uuid, 5, 'What level of ascitic fluid ADA suggests tuberculous peritonitis?', 'Greater than 10 U/L', 'Greater than 20 U/L', 'Greater than 36 U/L', 'Greater than 100 U/L', 'Greater than 500 U/L', 'C', 'Ascitic fluid ADA (adenosine deaminase) level >36 U/L has high sensitivity and specificity for tuberculous peritonitis. ADA is an enzyme released by activated T lymphocytes.'),
-('d0000010-0000-0000-0000-000000000010'::uuid, 6, 'What CT finding suggests tuberculous lymphadenopathy?', 'Uniformly enhancing nodes', 'Lymph nodes with central necrosis', 'Calcified nodes only', 'No visible nodes', 'Small non-enhancing nodes', 'B', 'Lymph nodes with central necrosis (low attenuation center with peripheral enhancement) are characteristic of tuberculous lymphadenopathy. This represents central caseation.'),
-('d0000010-0000-0000-0000-000000000010'::uuid, 7, 'What is the typical duration of ATT for abdominal TB?', '2 months', '4 months', '6-12 months', '18 months', '24 months', 'C', 'ATT for abdominal TB is typically given for 6-12 months (usually 6 months for uncomplicated cases). Strictures may require longer treatment. The intensive phase is 2 months (HRZE), followed by continuation phase.'),
-('d0000010-0000-0000-0000-000000000010'::uuid, 8, 'Which surgical indication is most common in abdominal TB?', 'Perforation', 'Hemorrhage', 'Intestinal obstruction', 'Fistula', 'Diagnostic biopsy', 'C', 'Intestinal obstruction not responding to medical treatment is the most common surgical indication in abdominal TB. It may be due to strictures, adhesions, or hypertrophic disease.');
+('d2000010-0000-0000-0000-000000000010'::uuid, 1, 'What is the most common site of intestinal tuberculosis?', 'Esophagus', 'Stomach', 'Jejunum', 'Ileocecal region', 'Rectum', 'D', 'The ileocecal region is the most common site of intestinal TB (75% of cases). This is because of abundant lymphoid tissue, physiological stasis, and increased contact time with bacilli.'),
+('d2000010-0000-0000-0000-000000000010'::uuid, 2, 'What is the main differential diagnosis for ileocecal tuberculosis?', 'Ulcerative colitis', 'Appendicitis', 'Crohn disease', 'Diverticulitis', 'Colorectal cancer only', 'C', 'Crohn disease is the main differential diagnosis for ileocecal TB. Both can cause strictures, fistulae, and skip lesions. Histology (caseating vs non-caseating granulomas) helps differentiate.'),
+('d2000010-0000-0000-0000-000000000010'::uuid, 3, 'What histological finding is characteristic of intestinal TB?', 'Non-caseating granulomas', 'Caseating granulomas with Langerhans giant cells', 'Crypt abscesses', 'Reed-Sternberg cells', 'Signet ring cells', 'B', 'Caseating granulomas with Langerhans giant cells are characteristic of TB. Non-caseating granulomas are seen in Crohn disease. Central caseation (cheese-like necrosis) is the key differentiating feature.'),
+('d2000010-0000-0000-0000-000000000010'::uuid, 4, 'What is the mainstay of treatment for abdominal TB?', 'Surgery', 'Steroids', 'Anti-tubercular therapy (ATT)', 'Antibiotics', 'Immunotherapy', 'C', 'Anti-tubercular therapy (ATT) is the mainstay of treatment for abdominal TB. Surgery is reserved for complications (obstruction, perforation, hemorrhage) or diagnostic uncertainty. Most patients respond to medical treatment.'),
+('d2000010-0000-0000-0000-000000000010'::uuid, 5, 'What level of ascitic fluid ADA suggests tuberculous peritonitis?', 'Greater than 10 U/L', 'Greater than 20 U/L', 'Greater than 36 U/L', 'Greater than 100 U/L', 'Greater than 500 U/L', 'C', 'Ascitic fluid ADA (adenosine deaminase) level >36 U/L has high sensitivity and specificity for tuberculous peritonitis. ADA is an enzyme released by activated T lymphocytes.'),
+('d2000010-0000-0000-0000-000000000010'::uuid, 6, 'What CT finding suggests tuberculous lymphadenopathy?', 'Uniformly enhancing nodes', 'Lymph nodes with central necrosis', 'Calcified nodes only', 'No visible nodes', 'Small non-enhancing nodes', 'B', 'Lymph nodes with central necrosis (low attenuation center with peripheral enhancement) are characteristic of tuberculous lymphadenopathy. This represents central caseation.'),
+('d2000010-0000-0000-0000-000000000010'::uuid, 7, 'What is the typical duration of ATT for abdominal TB?', '2 months', '4 months', '6-12 months', '18 months', '24 months', 'C', 'ATT for abdominal TB is typically given for 6-12 months (usually 6 months for uncomplicated cases). Strictures may require longer treatment. The intensive phase is 2 months (HRZE), followed by continuation phase.'),
+('d2000010-0000-0000-0000-000000000010'::uuid, 8, 'Which surgical indication is most common in abdominal TB?', 'Perforation', 'Hemorrhage', 'Intestinal obstruction', 'Fistula', 'Diagnostic biopsy', 'C', 'Intestinal obstruction not responding to medical treatment is the most common surgical indication in abdominal TB. It may be due to strictures, adhesions, or hypertrophic disease.');

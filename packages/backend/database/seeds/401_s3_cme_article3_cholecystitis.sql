@@ -74,7 +74,7 @@ INSERT INTO article_self_assessments (id, article_id, question_number, question_
 ('e0000303-0010-0000-0000-000000000010', 'd0000303-0000-0000-0000-000000000003', 10,
 'The critical view of safety during laparoscopic cholecystectomy requires visualization of:',
 'The cystic artery only', 'Only the cystic duct and artery entering the gallbladder with the hepatocystic triangle cleared', 'The common bile duct throughout', 'The portal vein', NULL,
-'B', 'The critical view of safety (CVS) requires: (1) Hepatocystic triangle cleared of fat and fibrous tissue, (2) Lower third of gallbladder separated from liver to expose cystic plate, (3) Only two structures (cystic duct and cystic artery) entering the gallbladder. This ensures correct identification before clipping and cutting, preventing bile duct injuries.')
+'B', 'The critical view of safety (CVS) requires: (1) Hepatocystic triangle cleared of fat and fibrous tissue, (2) Lower third of gallbladder separated from liver to expose cystic plate, (3) Only two structures (cystic duct and cystic artery) entering the gallbladder. This ensures correct identification before clipping and cutting, preventing bile duct injuries.', 'easy')
 
 ON CONFLICT DO NOTHING;
 

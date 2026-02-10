@@ -55,7 +55,7 @@ export default function AssessorQuestions() {
     queryKey: ['rotations'],
     queryFn: async () => {
       const response = await rotationsApi.getAll();
-      return response.data;
+      return response.data?.data || response.data || [];
     },
   });
 

@@ -1,197 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Offline - Clinical Rotation Platform</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1e3a5f" />
+  <title>Offline — Clinical Rotation Platform</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+      color: #e2e8f0;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
-      color: white;
-      padding: 20px;
-    }
-    
-    .container {
+      padding: 24px;
       text-align: center;
-      max-width: 500px;
     }
-    
+
+    .container {
+      max-width: 440px;
+      width: 100%;
+    }
+
     .icon {
       width: 120px;
       height: 120px;
-      margin: 0 auto 30px;
-      background: rgba(255, 255, 255, 0.1);
+      margin: 0 auto 32px;
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      animation: pulse 3s ease-in-out infinite;
     }
-    
+
     .icon svg {
-      width: 60px;
-      height: 60px;
-      stroke: white;
+      width: 56px;
+      height: 56px;
+      stroke: #94a3b8;
     }
-    
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+
     h1 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      font-weight: 600;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #f1f5f9;
     }
-    
+
     p {
-      font-size: 1.1rem;
-      opacity: 0.9;
+      font-size: 16px;
+      color: #94a3b8;
+      margin-bottom: 16px;
       line-height: 1.6;
-      margin-bottom: 20px;
     }
-    
+
     .features {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 30px 0;
+      margin: 32px 0;
       text-align: left;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 24px;
     }
-    
+
     .features h3 {
-      font-size: 1rem;
-      margin-bottom: 15px;
-      opacity: 0.9;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #64748b;
+      margin-bottom: 16px;
     }
-    
-    .feature-item {
+
+    .feature {
       display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
     }
-    
-    .feature-item:last-child {
-      border-bottom: none;
-    }
-    
-    .feature-item svg {
-      width: 20px;
-      height: 20px;
-      stroke: #4ade80;
+
+    .feature:last-child { margin-bottom: 0; }
+
+    .feature-icon {
+      width: 24px;
+      height: 24px;
       flex-shrink: 0;
+      font-size: 16px;
+      line-height: 24px;
     }
-    
-    .retry-btn {
+
+    .feature-text {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: white;
-      color: #1e3a5f;
+      gap: 8px;
+      margin-top: 24px;
       padding: 14px 28px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: white;
       border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: all 0.2s;
+      text-decoration: none;
     }
-    
-    .retry-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,0.4); }
+    .btn:active { transform: translateY(0); }
+
+    .status {
+      margin-top: 32px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
     }
-    
-    .retry-btn svg {
-      width: 20px;
-      height: 20px;
+
+    .status.offline {
+      background: rgba(239, 68, 68, 0.15);
+      color: #fca5a5;
     }
-    
-    .logo {
-      margin-top: 40px;
-      opacity: 0.7;
-      font-size: 0.9rem;
+
+    .status.online {
+      background: rgba(34, 197, 94, 0.15);
+      color: #86efac;
     }
-    
-    .pulse {
-      animation: pulse 2s infinite;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
     }
-    
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.5;
-      }
+
+    .dot.offline { background: #ef4444; animation: blink 2s infinite; }
+    .dot.online { background: #22c55e; }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .brand {
+      margin-top: 48px;
+      font-size: 12px;
+      color: #475569;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" />
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+          d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414" />
       </svg>
     </div>
-    
+
     <h1>You're Offline</h1>
-    <p>Don't worry! Your data is safe. The Clinical Rotation Platform works offline so you can continue your work.</p>
-    
+    <p>Don't worry — your data is safe. All changes are saved locally and will sync automatically when you reconnect.</p>
+
     <div class="features">
-      <h3>Available Offline:</h3>
-      <div class="feature-item">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-        </svg>
-        <span>View your dashboard and progress</span>
+      <h3>What works offline</h3>
+      <div class="feature">
+        <span class="feature-icon">✅</span>
+        <span class="feature-text">View cached dashboard, rotations, and test results</span>
       </div>
-      <div class="feature-item">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-        </svg>
-        <span>Take tests (syncs when online)</span>
+      <div class="feature">
+        <span class="feature-icon">✅</span>
+        <span class="feature-text">Mark attendance (syncs when back online)</span>
       </div>
-      <div class="feature-item">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-        </svg>
-        <span>View rotation schedules</span>
+      <div class="feature">
+        <span class="feature-icon">✅</span>
+        <span class="feature-text">Submit test answers (queued for sync)</span>
       </div>
-      <div class="feature-item">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-        </svg>
-        <span>Check your attendance history</span>
+      <div class="feature">
+        <span class="feature-icon">✅</span>
+        <span class="feature-text">Track CME progress offline</span>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">✅</span>
+        <span class="feature-text">All pending changes auto-sync on reconnection</span>
       </div>
     </div>
-    
-    <button class="retry-btn" onclick="window.location.reload()">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+
+    <button class="btn" onclick="window.location.reload()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M1 4v6h6M23 20v-6h-6"/>
+        <path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/>
       </svg>
       Try Again
     </button>
-    
-    <p class="logo">
-      <span class="pulse">●</span> Clinical Rotation Platform<br>
-      University of Nigeria Teaching Hospital
-    </p>
+
+    <div class="status offline" id="statusBar">
+      <span class="dot offline" id="statusDot"></span>
+      <span id="statusText">No internet connection</span>
+    </div>
+
+    <div class="brand">
+      🏥 Clinical Rotation Platform — University of Nigeria Teaching Hospital
+    </div>
   </div>
-  
+
   <script>
-    // Auto-retry when back online
+    // Auto-redirect when back online
     window.addEventListener('online', () => {
-      window.location.reload();
+      document.getElementById('statusBar').className = 'status online';
+      document.getElementById('statusDot').className = 'dot online';
+      document.getElementById('statusText').textContent = 'Connected! Redirecting...';
+      setTimeout(() => window.location.reload(), 1500);
     });
+
+    // Periodic check
+    setInterval(() => {
+      if (navigator.onLine) {
+        document.getElementById('statusBar').className = 'status online';
+        document.getElementById('statusDot').className = 'dot online';
+        document.getElementById('statusText').textContent = 'Connected! Redirecting...';
+        setTimeout(() => window.location.reload(), 1000);
+      }
+    }, 3000);
   </script>
 </body>
 </html>

@@ -17,7 +17,8 @@ interface HeaderProps {
 
 export function Header({ onMenuClick }: HeaderProps) {
   const { user, logout } = useAuth();
-  const { isOnline, pendingSyncItems, syncNow } = useOffline();
+  const { isOnline, syncStatus, syncNow } = useOffline();
+  const pendingSyncItems = syncStatus.pendingPush;
 
   return (
     <header className="sticky top-0 z-30 bg-white border-b border-gray-200">
