@@ -49,6 +49,7 @@ interface ClinicalSyncDB {
 
 class SyncService {
   private db: IDBPDatabase<ClinicalSyncDB> | null = null;
+  private initPromise: Promise<void> | null = null;
   private readonly DB_NAME = 'clinical-rotation-sync';
   private readonly DB_VERSION = 3;
   private syncInProgress = false;
@@ -59,40 +60,59 @@ class SyncService {
 
   async init(): Promise<void> {
     if (this.db) return;
+    if (this.initPromise) return this.initPromise;
 
-    this.db = await openDB<ClinicalSyncDB>(this.DB_NAME, this.DB_VERSION, {
-      upgrade(db) {
-        // Sync queue store
-        if (!db.objectStoreNames.contains('syncQueue')) {
-          const syncStore = db.createObjectStore('syncQueue', { keyPath: 'id' });
-          syncStore.createIndex('by-synced', 'synced');
-          syncStore.createIndex('by-type', 'type');
-          syncStore.createIndex('by-created', 'createdAt');
-        }
+    this.initPromise = (async () => {
+      try {
+        this.db = await openDB<ClinicalSyncDB>(this.DB_NAME, this.DB_VERSION, {
+          upgrade(db) {
+            // Sync queue store
+            if (!db.objectStoreNames.contains('syncQueue')) {
+              const syncStore = db.createObjectStore('syncQueue', { keyPath: 'id' });
+              syncStore.createIndex('by-synced', 'synced');
+              syncStore.createIndex('by-type', 'type');
+              syncStore.createIndex('by-created', 'createdAt');
+            }
 
-        // Cached data store (generic TTL-based cache)
-        if (!db.objectStoreNames.contains('cachedData')) {
-          db.createObjectStore('cachedData', { keyPath: 'key' });
-        }
+            // Cached data store (generic TTL-based cache)
+            if (!db.objectStoreNames.contains('cachedData')) {
+              db.createObjectStore('cachedData', { keyPath: 'key' });
+            }
 
-        // Pull cache store (entity-based cache for pulled server data)
-        if (!db.objectStoreNames.contains('pullCache')) {
-          db.createObjectStore('pullCache', { keyPath: 'entity' });
-        }
+            // Pull cache store (entity-based cache for pulled server data)
+            if (!db.objectStoreNames.contains('pullCache')) {
+              db.createObjectStore('pullCache', { keyPath: 'entity' });
+            }
 
-        // Sync metadata store
-        if (!db.objectStoreNames.contains('syncMeta')) {
-          db.createObjectStore('syncMeta', { keyPath: 'key' });
-        }
-      },
-    });
+            // Sync metadata store
+            if (!db.objectStoreNames.contains('syncMeta')) {
+              db.createObjectStore('syncMeta', { keyPath: 'key' });
+            }
+          },
+        });
 
-    // Initialize device ID
-    await this.initDeviceId();
+        // Initialize device ID
+        await this.initDeviceId();
+      } catch (err) {
+        this.initPromise = null;
+        throw err;
+      }
+    })();
+
+    return this.initPromise;
   }
 
   private async ensureDb(): Promise<IDBPDatabase<ClinicalSyncDB>> {
     if (!this.db) await this.init();
+    // If the connection was closed (e.g. by a version change), reopen it
+    try {
+      // Quick liveness check — accessing .objectStoreNames throws if closed
+      this.db!.objectStoreNames;
+    } catch {
+      this.db = null;
+      this.initPromise = null;
+      await this.init();
+    }
     return this.db!;
   }
 

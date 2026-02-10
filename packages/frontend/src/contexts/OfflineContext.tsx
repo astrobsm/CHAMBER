@@ -147,8 +147,18 @@ export function OfflineProvider({ children }: { children: ReactNode }) {
         performPull();
       }, PULL_INTERVAL_MS);
 
-      // Also do a pull right now
-      performPull();
+      // Delay first pull slightly to let init() finish
+      const initPullTimeout = setTimeout(() => {
+        performPull();
+      }, 2000);
+
+      return () => {
+        clearTimeout(initPullTimeout);
+        if (pullIntervalRef.current) {
+          clearInterval(pullIntervalRef.current);
+          pullIntervalRef.current = null;
+        }
+      };
     } else {
       // Stop periodic pull when offline
       if (pullIntervalRef.current) {
