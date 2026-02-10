@@ -620,6 +620,22 @@ app.delete('/api/admin/users/:id', async (req, res) => {
   }
 });
 
+// Reset user password
+app.post('/api/admin/users/:id/reset-password', async (req, res) => {
+  try {
+    const bcrypt = require('bcryptjs');
+    const defaultPassword = 'changeme123';
+    const hashed = await bcrypt.hash(defaultPassword, 10);
+    const result = await query('UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2 RETURNING id, email', [hashed, req.params.id]);
+    if (result.rows.length === 0) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+    res.json({ success: true, message: 'Password reset successfully. New password: ' + defaultPassword, data: result.rows[0] });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 // ============== SYNC ENDPOINTS ==============
 
 app.post('/api/sync/upload', (req, res) => {

@@ -20,16 +20,18 @@ import { rotationsApi, adminApi } from '../../services/api';
 interface Rotation {
   id: string;
   name: string;
-  description: string;
-  duration_weeks: number;
-  level: string;
+  description?: string;
+  duration_weeks?: number;
+  level?: string;
   start_date: string;
   end_date: string;
   assessor_id?: string;
   assessor_name?: string;
-  student_count: number;
-  is_active: boolean;
-  requirements: {
+  student_count?: number;
+  is_active?: boolean;
+  category?: string;
+  category_id?: string;
+  requirements?: {
     min_attendance: number;
     min_tests: number;
     min_participation: number;
@@ -147,16 +149,16 @@ export default function AdminRotations() {
   const openModal = (rotation?: Rotation) => {
     if (rotation) {
       setEditingRotation(rotation);
-      setValue('name', rotation.name);
-      setValue('description', rotation.description);
-      setValue('duration_weeks', rotation.duration_weeks);
-      setValue('level', rotation.level);
-      setValue('start_date', rotation.start_date.split('T')[0]);
-      setValue('end_date', rotation.end_date.split('T')[0]);
+      setValue('name', rotation.name || '');
+      setValue('description', rotation.description || '');
+      setValue('duration_weeks', rotation.duration_weeks ?? 4);
+      setValue('level', rotation.level || '');
+      setValue('start_date', rotation.start_date?.split('T')[0] || '');
+      setValue('end_date', rotation.end_date?.split('T')[0] || '');
       setValue('assessor_id', rotation.assessor_id || '');
-      setValue('min_attendance', rotation.requirements.min_attendance);
-      setValue('min_tests', rotation.requirements.min_tests);
-      setValue('min_participation', rotation.requirements.min_participation);
+      setValue('min_attendance', rotation.requirements?.min_attendance ?? 75);
+      setValue('min_tests', rotation.requirements?.min_tests ?? 75);
+      setValue('min_participation', rotation.requirements?.min_participation ?? 75);
     } else {
       reset({
         min_attendance: 75,

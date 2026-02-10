@@ -380,9 +380,37 @@ app.get('/api/students/profile', (req, res) => {
 app.get('/api/rotations', async (req, res) => {
   try {
     const result = await query(`SELECT r.*, rc.name as category_name FROM rotations r LEFT JOIN rotation_categories rc ON r.category_id = rc.id WHERE r.is_active = true ORDER BY r.start_date DESC`);
-    res.json({ success: true, data: { rotations: result.rows.map(r => ({ id: r.id, name: r.name, category: r.category_name, startDate: r.start_date, endDate: r.end_date, status: new Date(r.start_date) <= new Date() && new Date(r.end_date) >= new Date() ? 'active' : new Date(r.start_date) > new Date() ? 'upcoming' : 'completed' })) } });
+    res.json({ success: true, data: { rotations: result.rows.map(r => {
+      const now = new Date();
+      const start = new Date(r.start_date);
+      const end = new Date(r.end_date);
+      const status = start <= now && end >= now ? 'active' : start > now ? 'upcoming' : 'completed';
+      return {
+        id: r.id,
+        name: r.name,
+        description: r.description || '',
+        category: r.category_name,
+        category_id: r.category_id,
+        level: r.level || '',
+        duration_weeks: r.duration_weeks || Math.round((end - start) / (7 * 24 * 60 * 60 * 1000)),
+        start_date: r.start_date,
+        end_date: r.end_date,
+        startDate: r.start_date,
+        endDate: r.end_date,
+        is_active: r.is_active,
+        status,
+        assessor_id: r.assessor_id || null,
+        assessor_name: r.assessor_name || null,
+        student_count: r.student_count || 0,
+        requirements: {
+          min_attendance: r.min_attendance || 75,
+          min_tests: r.min_tests || 75,
+          min_participation: r.min_participation || 75,
+        },
+      };
+    }) } });
   } catch (error) {
-    res.json({ success: true, data: { rotations: [{ id: '1', name: 'Surgery', duration: '8 weeks', startDate: '2026-01-06', endDate: '2026-03-01', status: 'active' }] } });
+    res.json({ success: true, data: { rotations: [{ id: '1', name: 'Surgery', duration: '8 weeks', startDate: '2026-01-06', endDate: '2026-03-01', status: 'active', requirements: { min_attendance: 75, min_tests: 75, min_participation: 75 } }] } });
   }
 });
 
@@ -622,7 +650,23 @@ app.delete('/api/admin/users/:id', async (req, res) => {
   }
 });
 
-// ============== SYNC ENDPOINTS ==============
+// Reset user password
+app.post('/api/admin/users/:id/reset-password', async (req, res) => {
+  try {
+    const bcrypt = require('bcryptjs');
+    const defaultPassword = 'changeme123';
+    const hashed = await bcrypt.hash(defaultPassword, 10);
+    const result = await query('UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2 RETURNING id, email', [hashed, req.params.id]);
+    if (result.rows.length === 0) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+    res.json({ success: true, message: 'Password reset successfully. New password: ' + defaultPassword, data: result.rows[0] });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// ============== SYNC ENDPOINTS ==
 
 app.post('/api/sync/upload', (req, res) => {
   res.json({ success: true, message: 'Data synced successfully', data: { synced: 0 } });
