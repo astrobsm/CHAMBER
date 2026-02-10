@@ -583,6 +583,12 @@ app.post('/api/admin/users', async (req, res) => {
     }
     res.json({ success: true, data: user });
   } catch (error) {
+    if (error.message && error.message.includes('duplicate key')) {
+      return res.status(409).json({ success: false, message: 'A user with this email already exists' });
+    }
+    if (error.message && error.message.includes('violates')) {
+      return res.status(400).json({ success: false, message: error.message });
+    }
     res.status(500).json({ success: false, message: error.message });
   }
 });

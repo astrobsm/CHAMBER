@@ -85,8 +85,9 @@ export default function AdminUsers() {
       toast.success('User created successfully');
       closeModal();
     },
-    onError: () => {
-      toast.error('Failed to create user');
+    onError: (error: unknown) => {
+      const msg = (error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Failed to create user';
+      toast.error(msg);
     },
   });
 
