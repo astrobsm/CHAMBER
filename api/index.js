@@ -259,6 +259,35 @@ app.post('/api/auth/logout', (req, res) => {
   res.json({ success: true, message: 'Logged out successfully' });
 });
 
+// Forgot password - resets to temp password
+app.post('/api/auth/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) {
+      return res.status(400).json({ success: false, message: 'Email is required' });
+    }
+    const userResult = await query('SELECT id, email, first_name, last_name FROM users WHERE LOWER(email) = LOWER($1)', [email]);
+    if (userResult.rows.length === 0) {
+      // Don't reveal whether email exists - always show success
+      return res.json({ success: true, message: 'If an account with that email exists, the password has been reset. Please contact your administrator for the new temporary password.' });
+    }
+    const bcrypt = require('bcryptjs');
+    const chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+    let tempPassword = '';
+    for (let i = 0; i < 8; i++) tempPassword += chars.charAt(Math.floor(Math.random() * chars.length));
+    const hashed = await bcrypt.hash(tempPassword, 10);
+    await query('UPDATE users SET password_hash = $1, password_reset_requested_at = NOW(), updated_at = NOW() WHERE id = $2', [hashed, userResult.rows[0].id]);
+    res.json({
+      success: true,
+      message: 'Your password has been reset.',
+      temporary_password: tempPassword
+    });
+  } catch (error) {
+    console.error('Forgot password error:', error);
+    res.status(500).json({ success: false, message: 'Failed to reset password. Please try again.' });
+  }
+});
+
 // ============== ADMIN ENDPOINTS ==============
 
 app.get('/api/admin/stats', async (req, res) => {
@@ -654,13 +683,15 @@ app.delete('/api/admin/users/:id', async (req, res) => {
 app.post('/api/admin/users/:id/reset-password', async (req, res) => {
   try {
     const bcrypt = require('bcryptjs');
-    const defaultPassword = 'changeme123';
-    const hashed = await bcrypt.hash(defaultPassword, 10);
-    const result = await query('UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2 RETURNING id, email', [hashed, req.params.id]);
+    const chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+    let tempPassword = '';
+    for (let i = 0; i < 8; i++) tempPassword += chars.charAt(Math.floor(Math.random() * chars.length));
+    const hashed = await bcrypt.hash(tempPassword, 10);
+    const result = await query('UPDATE users SET password_hash = $1, password_reset_requested_at = NULL, updated_at = NOW() WHERE id = $2 RETURNING id, email, first_name, last_name', [hashed, req.params.id]);
     if (result.rows.length === 0) {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
-    res.json({ success: true, message: 'Password reset successfully. New password: ' + defaultPassword, data: result.rows[0] });
+    res.json({ success: true, message: 'Password reset successfully', temporary_password: tempPassword, data: result.rows[0] });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }

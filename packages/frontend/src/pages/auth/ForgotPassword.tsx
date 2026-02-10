@@ -10,7 +10,9 @@ interface ForgotPasswordFormData {
 
 export function ForgotPassword() {
   const [isLoading, setIsLoading] = useState(false);
-  const [emailSent, setEmailSent] = useState(false);
+  const [resetDone, setResetDone] = useState(false);
+  const [tempPassword, setTempPassword] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
 
   const {
     register,
@@ -22,41 +24,89 @@ export function ForgotPassword() {
   const onSubmit = async (data: ForgotPasswordFormData) => {
     setIsLoading(true);
     try {
-      await authApi.forgotPassword(data.email);
-      setEmailSent(true);
-      toast.success('Password reset email sent!');
+      const response = await authApi.forgotPassword(data.email);
+      const result = response.data;
+      setResetDone(true);
+      if (result.temporary_password) {
+        setTempPassword(result.temporary_password);
+        toast.success('Password reset successfully!');
+      } else {
+        setTempPassword(null);
+        toast.success(result.message || 'Request submitted.');
+      }
     } catch {
-      toast.error('Failed to send reset email. Please try again.');
+      toast.error('Failed to reset password. Please try again.');
     } finally {
       setIsLoading(false);
     }
   };
 
-  if (emailSent) {
+  const copyToClipboard = () => {
+    if (tempPassword) {
+      navigator.clipboard.writeText(tempPassword);
+      setCopied(true);
+      toast.success('Password copied to clipboard!');
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
+  if (resetDone) {
     return (
       <div className="min-h-screen flex items-center justify-center p-6 bg-gray-50">
         <div className="w-full max-w-md text-center">
           <div className="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-6">
             <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Check your email</h2>
-          <p className="text-gray-600 mb-6">
-            We've sent a password reset link to <strong>{getValues('email')}</strong>
-          </p>
-          <p className="text-sm text-gray-500 mb-6">
-            Didn't receive the email? Check your spam folder or{' '}
+          {tempPassword ? (
+            <>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Password Reset</h2>
+              <p className="text-gray-600 mb-4">
+                Your password for <strong>{getValues('email')}</strong> has been reset.
+              </p>
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+                <p className="text-sm text-yellow-800 font-medium mb-2">Your new temporary password:</p>
+                <div className="flex items-center justify-center gap-2">
+                  <code className="text-lg font-mono font-bold text-yellow-900 bg-yellow-100 px-4 py-2 rounded select-all">
+                    {tempPassword}
+                  </code>
+                  <button
+                    onClick={copyToClipboard}
+                    className="p-2 text-yellow-700 hover:text-yellow-900 hover:bg-yellow-100 rounded-lg"
+                    title="Copy password"
+                  >
+                    {copied ? (
+                      <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    ) : (
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                    )}
+                  </button>
+                </div>
+              </div>
+              <p className="text-sm text-red-600 font-medium mb-6">
+                Please save this password now. You will need to change it after logging in.
+              </p>
+            </>
+          ) : (
+            <>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Request Submitted</h2>
+              <p className="text-gray-600 mb-6">
+                If an account with that email exists, the password has been reset. Please contact your administrator for the new temporary password.
+              </p>
+            </>
+          )}
+          <div className="flex flex-col gap-3">
+            <Link to="/login" className="btn-primary inline-flex justify-center">
+              Go to Login
+            </Link>
             <button
-              onClick={() => setEmailSent(false)}
-              className="text-primary-600 hover:text-primary-700 font-medium"
+              onClick={() => { setResetDone(false); setTempPassword(null); setCopied(false); }}
+              className="text-sm text-primary-600 hover:text-primary-700 font-medium"
             >
-              try again
+              Reset another account
             </button>
-          </p>
-          <Link to="/login" className="btn-primary inline-flex">
-            Back to login
-          </Link>
+          </div>
         </div>
       </div>
     );
@@ -73,7 +123,7 @@ export function ForgotPassword() {
           </div>
           <h2 className="text-2xl font-bold text-gray-900">Forgot password?</h2>
           <p className="text-gray-600 mt-2">
-            No worries, we'll send you reset instructions.
+            Enter your email and we'll reset your password instantly.
           </p>
         </div>
 
@@ -114,7 +164,7 @@ export function ForgotPassword() {
                 Sending...
               </span>
             ) : (
-              'Send reset link'
+              'Reset Password'
             )}
           </button>
         </form>

@@ -58,6 +58,8 @@ export default function AdminUsers() {
   const [statusFilter, setStatusFilter] = useState<string>('');
   const [bulkUploadData, setBulkUploadData] = useState<Record<string, string>[]>([]);
   const [bulkUploadResults, setBulkUploadResults] = useState<{ success: unknown[]; failed: unknown[] } | null>(null);
+  const [resetPasswordInfo, setResetPasswordInfo] = useState<{ email: string; name: string; tempPassword: string } | null>(null);
+  const [pwCopied, setPwCopied] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const queryClient = useQueryClient();
 
@@ -139,7 +141,13 @@ export default function AdminUsers() {
       return response.data;
     },
     onSuccess: (data) => {
-      toast.success(`Password reset. New password: ${data.temporary_password}`);
+      setResetPasswordInfo({
+        email: data.data?.email || '',
+        name: [data.data?.first_name, data.data?.last_name].filter(Boolean).join(' ') || data.data?.email || 'User',
+        tempPassword: data.temporary_password,
+      });
+      setPwCopied(false);
+      toast.success('Password reset successfully');
     },
     onError: () => {
       toast.error('Failed to reset password');
@@ -801,6 +809,72 @@ export default function AdminUsers() {
                 )}
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Reset Password Info Modal */}
+      {resetPasswordInfo && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <KeyIcon className="w-5 h-5 text-primary-600" />
+                Password Reset
+              </h3>
+              <button
+                onClick={() => { setResetPasswordInfo(null); setPwCopied(false); }}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                <XMarkIcon className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="mb-4">
+              <p className="text-sm text-gray-600 mb-1">User:</p>
+              <p className="font-medium text-gray-900">{resetPasswordInfo.name}</p>
+              <p className="text-sm text-gray-500">{resetPasswordInfo.email}</p>
+            </div>
+
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+              <p className="text-sm text-yellow-800 font-medium mb-2">New Temporary Password:</p>
+              <div className="flex items-center gap-2">
+                <code className="flex-1 text-lg font-mono font-bold text-yellow-900 bg-yellow-100 px-4 py-2 rounded select-all text-center">
+                  {resetPasswordInfo.tempPassword}
+                </code>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(resetPasswordInfo.tempPassword);
+                    setPwCopied(true);
+                    toast.success('Password copied!');
+                    setTimeout(() => setPwCopied(false), 2000);
+                  }}
+                  className="p-2 text-yellow-700 hover:text-yellow-900 hover:bg-yellow-100 rounded-lg transition-colors"
+                  title="Copy password"
+                >
+                  {pwCopied ? (
+                    <CheckCircleIcon className="w-5 h-5 text-green-600" />
+                  ) : (
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  )}
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
+              <p className="text-sm text-red-700 font-medium">
+                Please share this password securely with the user. They will need to change it after logging in.
+              </p>
+            </div>
+
+            <button
+              onClick={() => { setResetPasswordInfo(null); setPwCopied(false); }}
+              className="w-full btn btn-primary"
+            >
+              Done
+            </button>
           </div>
         </div>
       )}
