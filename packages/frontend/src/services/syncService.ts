@@ -58,42 +58,43 @@ class SyncService {
 
   // ── Database Init ──────────────────────────────────────────────────────────
 
+  private async openDatabase(): Promise<IDBPDatabase<ClinicalSyncDB>> {
+    return openDB<ClinicalSyncDB>(this.DB_NAME, this.DB_VERSION, {
+      upgrade(db) {
+        if (!db.objectStoreNames.contains('syncQueue')) {
+          const syncStore = db.createObjectStore('syncQueue', { keyPath: 'id' });
+          syncStore.createIndex('by-synced', 'synced');
+          syncStore.createIndex('by-type', 'type');
+          syncStore.createIndex('by-created', 'createdAt');
+        }
+        if (!db.objectStoreNames.contains('cachedData')) {
+          db.createObjectStore('cachedData', { keyPath: 'key' });
+        }
+        if (!db.objectStoreNames.contains('pullCache')) {
+          db.createObjectStore('pullCache', { keyPath: 'entity' });
+        }
+        if (!db.objectStoreNames.contains('syncMeta')) {
+          db.createObjectStore('syncMeta', { keyPath: 'key' });
+        }
+      },
+    });
+  }
+
   async init(): Promise<void> {
     if (this.db) return;
     if (this.initPromise) return this.initPromise;
 
     this.initPromise = (async () => {
       try {
-        this.db = await openDB<ClinicalSyncDB>(this.DB_NAME, this.DB_VERSION, {
-          upgrade(db) {
-            // Sync queue store
-            if (!db.objectStoreNames.contains('syncQueue')) {
-              const syncStore = db.createObjectStore('syncQueue', { keyPath: 'id' });
-              syncStore.createIndex('by-synced', 'synced');
-              syncStore.createIndex('by-type', 'type');
-              syncStore.createIndex('by-created', 'createdAt');
-            }
-
-            // Cached data store (generic TTL-based cache)
-            if (!db.objectStoreNames.contains('cachedData')) {
-              db.createObjectStore('cachedData', { keyPath: 'key' });
-            }
-
-            // Pull cache store (entity-based cache for pulled server data)
-            if (!db.objectStoreNames.contains('pullCache')) {
-              db.createObjectStore('pullCache', { keyPath: 'entity' });
-            }
-
-            // Sync metadata store
-            if (!db.objectStoreNames.contains('syncMeta')) {
-              db.createObjectStore('syncMeta', { keyPath: 'key' });
-            }
-          },
-        });
-
-        // Initialize device ID
+        // Close any lingering connection before opening a fresh one
+        if (this.db) {
+          try { this.db.close(); } catch { /* ignore */ }
+          this.db = null;
+        }
+        this.db = await this.openDatabase();
         await this.initDeviceId();
       } catch (err) {
+        this.db = null;
         this.initPromise = null;
         throw err;
       }
@@ -102,18 +103,33 @@ class SyncService {
     return this.initPromise;
   }
 
+  /** Get a live DB handle, reopening if the connection was closed/closing. */
   private async ensureDb(): Promise<IDBPDatabase<ClinicalSyncDB>> {
-    if (!this.db) await this.init();
-    // If the connection was closed (e.g. by a version change), reopen it
-    try {
-      // Quick liveness check — accessing .objectStoreNames throws if closed
-      this.db!.objectStoreNames;
-    } catch {
-      this.db = null;
-      this.initPromise = null;
-      await this.init();
-    }
+    await this.init();
     return this.db!;
+  }
+
+  /**
+   * Run an IDB operation with automatic retry on InvalidStateError.
+   * If the connection is closing/closed, reopen it and retry once.
+   */
+  private async withDb<T>(op: (db: IDBPDatabase<ClinicalSyncDB>) => Promise<T>): Promise<T> {
+    const db = await this.ensureDb();
+    try {
+      return await op(db);
+    } catch (err: unknown) {
+      const isClosing =
+        err instanceof DOMException && err.name === 'InvalidStateError';
+      if (isClosing) {
+        // Connection died — force reopen
+        try { this.db?.close(); } catch { /* ignore */ }
+        this.db = null;
+        this.initPromise = null;
+        const freshDb = await this.ensureDb();
+        return await op(freshDb);
+      }
+      throw err;
+    }
   }
 
   // ── Device Registration ────────────────────────────────────────────────────
@@ -186,11 +202,12 @@ class SyncService {
 
   async getPendingItems(): Promise<SyncItem[]> {
     try {
-      const db = await this.ensureDb();
-      const allItems = await db.getAll('syncQueue');
-      return allItems
-        .filter(item => !item.synced)
-        .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
+      return await this.withDb(async (db) => {
+        const allItems = await db.getAll('syncQueue');
+        return allItems
+          .filter(item => !item.synced)
+          .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
+      });
     } catch {
       return [];
     }
@@ -255,9 +272,14 @@ class SyncService {
   }
 
   async getConflicts(): Promise<SyncItem[]> {
-    const db = await this.ensureDb();
-    const allItems = await db.getAll('syncQueue');
-    return allItems.filter(item => item.conflictData);
+    try {
+      return await this.withDb(async (db) => {
+        const allItems = await db.getAll('syncQueue');
+        return allItems.filter(item => item.conflictData);
+      });
+    } catch {
+      return [];
+    }
   }
 
   /**
@@ -357,69 +379,69 @@ class SyncService {
       const response = await syncApi.pull(params);
       const pullData: PullData = response.data.data;
 
-      // Cache pulled data in IndexedDB
-      const db = await this.ensureDb();
+      // Cache pulled data in IndexedDB (with auto-retry on stale connection)
+      await this.withDb(async (db) => {
+        if (pullData.studentData) {
+          await db.put('pullCache', {
+            entity: 'studentData',
+            data: pullData.studentData,
+            lastPulled: pullData.syncTimestamp,
+            version: Date.now(),
+          });
 
-      if (pullData.studentData) {
-        await db.put('pullCache', {
-          entity: 'studentData',
-          data: pullData.studentData,
-          lastPulled: pullData.syncTimestamp,
-          version: Date.now(),
-        });
-
-        // Cache individual entities for quick access
-        const sd = pullData.studentData as Record<string, unknown>;
-        for (const [key, value] of Object.entries(sd)) {
-          if (value !== null && value !== undefined) {
-            await db.put('pullCache', {
-              entity: `student_${key}`,
-              data: value,
-              lastPulled: pullData.syncTimestamp,
-              version: Date.now(),
-            });
+          // Cache individual entities for quick access
+          const sd = pullData.studentData as Record<string, unknown>;
+          for (const [key, value] of Object.entries(sd)) {
+            if (value !== null && value !== undefined) {
+              await db.put('pullCache', {
+                entity: `student_${key}`,
+                data: value,
+                lastPulled: pullData.syncTimestamp,
+                version: Date.now(),
+              });
+            }
           }
         }
-      }
 
-      if (pullData.assessorData) {
-        await db.put('pullCache', {
-          entity: 'assessorData',
-          data: pullData.assessorData,
-          lastPulled: pullData.syncTimestamp,
-          version: Date.now(),
-        });
-      }
+        if (pullData.assessorData) {
+          await db.put('pullCache', {
+            entity: 'assessorData',
+            data: pullData.assessorData,
+            lastPulled: pullData.syncTimestamp,
+            version: Date.now(),
+          });
+        }
 
-      if (pullData.adminData) {
-        await db.put('pullCache', {
-          entity: 'adminData',
-          data: pullData.adminData,
-          lastPulled: pullData.syncTimestamp,
-          version: Date.now(),
-        });
-      }
+        if (pullData.adminData) {
+          await db.put('pullCache', {
+            entity: 'adminData',
+            data: pullData.adminData,
+            lastPulled: pullData.syncTimestamp,
+            version: Date.now(),
+          });
+        }
 
-      if (pullData.systemConfig) {
-        await db.put('pullCache', {
-          entity: 'systemConfig',
-          data: pullData.systemConfig,
-          lastPulled: pullData.syncTimestamp,
-          version: Date.now(),
-        });
-      }
+        if (pullData.systemConfig) {
+          await db.put('pullCache', {
+            entity: 'systemConfig',
+            data: pullData.systemConfig,
+            lastPulled: pullData.syncTimestamp,
+            version: Date.now(),
+          });
+        }
 
-      if (pullData.participationTypes) {
-        await db.put('pullCache', {
-          entity: 'participationTypes',
-          data: pullData.participationTypes,
-          lastPulled: pullData.syncTimestamp,
-          version: Date.now(),
-        });
-      }
+        if (pullData.participationTypes) {
+          await db.put('pullCache', {
+            entity: 'participationTypes',
+            data: pullData.participationTypes,
+            lastPulled: pullData.syncTimestamp,
+            version: Date.now(),
+          });
+        }
 
-      // Save last pull timestamp
-      await this.setMeta('lastPullSync', pullData.syncTimestamp);
+        // Save last pull timestamp
+        await db.put('syncMeta', { key: 'lastPullSync', value: pullData.syncTimestamp });
+      });
 
       console.log(`[Sync] Pull complete: ${pullData.isFullSync ? 'full' : 'delta'} sync at ${pullData.syncTimestamp}`);
       return pullData;
@@ -436,9 +458,10 @@ class SyncService {
    */
   async getCachedEntity<T>(entity: string): Promise<T | null> {
     try {
-      const db = await this.ensureDb();
-      const cached = await db.get('pullCache', entity);
-      return cached ? (cached.data as T) : null;
+      return await this.withDb(async (db) => {
+        const cached = await db.get('pullCache', entity);
+        return cached ? (cached.data as T) : null;
+      });
     } catch {
       return null;
     }
@@ -470,43 +493,48 @@ class SyncService {
   // ── Generic Cache Operations ───────────────────────────────────────────────
 
   async cacheData(key: string, data: unknown, ttl: number = 3600000): Promise<void> {
-    const db = await this.ensureDb();
-    await db.put('cachedData', { key, data, timestamp: Date.now(), ttl });
+    await this.withDb(async (db) => {
+      await db.put('cachedData', { key, data, timestamp: Date.now(), ttl });
+    });
   }
 
   async getCachedData<T>(key: string): Promise<T | null> {
     try {
-      const db = await this.ensureDb();
-      const cached = await db.get('cachedData', key);
-      if (!cached) return null;
-      if (Date.now() - cached.timestamp > cached.ttl) {
-        await db.delete('cachedData', key);
-        return null;
-      }
-      return cached.data as T;
+      return await this.withDb(async (db) => {
+        const cached = await db.get('cachedData', key);
+        if (!cached) return null;
+        if (Date.now() - cached.timestamp > cached.ttl) {
+          await db.delete('cachedData', key);
+          return null;
+        }
+        return cached.data as T;
+      });
     } catch {
       return null;
     }
   }
 
   async clearCache(): Promise<void> {
-    const db = await this.ensureDb();
-    await db.clear('cachedData');
-    await db.clear('pullCache');
+    await this.withDb(async (db) => {
+      await db.clear('cachedData');
+      await db.clear('pullCache');
+    });
   }
 
   // ── Metadata ───────────────────────────────────────────────────────────────
 
   async setMeta(key: string, value: string): Promise<void> {
-    const db = await this.ensureDb();
-    await db.put('syncMeta', { key, value });
+    await this.withDb(async (db) => {
+      await db.put('syncMeta', { key, value });
+    });
   }
 
   async getMeta(key: string): Promise<string | null> {
     try {
-      const db = await this.ensureDb();
-      const meta = await db.get('syncMeta', key);
-      return meta?.value || null;
+      return await this.withDb(async (db) => {
+        const meta = await db.get('syncMeta', key);
+        return meta?.value || null;
+      });
     } catch {
       return null;
     }
@@ -544,11 +572,12 @@ class SyncService {
   // ── Cleanup ────────────────────────────────────────────────────────────────
 
   async resetAll(): Promise<void> {
-    const db = await this.ensureDb();
-    await db.clear('syncQueue');
-    await db.clear('cachedData');
-    await db.clear('pullCache');
-    await db.clear('syncMeta');
+    await this.withDb(async (db) => {
+      await db.clear('syncQueue');
+      await db.clear('cachedData');
+      await db.clear('pullCache');
+      await db.clear('syncMeta');
+    });
     await this.initDeviceId();
   }
 }
