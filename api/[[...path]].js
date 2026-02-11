@@ -415,6 +415,91 @@ app.get('/api/rotations', async (req, res) => {
   }
 });
 
+// Get rotation categories
+app.get('/api/rotations/categories', async (req, res) => {
+  try {
+    const result = await query('SELECT id, name, description FROM rotation_categories ORDER BY name');
+    res.json({ success: true, data: result.rows });
+  } catch (error) {
+    res.json({ success: true, data: [] });
+  }
+});
+
+// Get single rotation by ID
+app.get('/api/rotations/:id', async (req, res) => {
+  try {
+    const result = await query(`SELECT r.*, rc.name as category_name FROM rotations r LEFT JOIN rotation_categories rc ON r.category_id = rc.id WHERE r.id = $1`, [req.params.id]);
+    if (result.rows.length === 0) {
+      return res.status(404).json({ success: false, message: 'Rotation not found' });
+    }
+    const r = result.rows[0];
+    const now = new Date();
+    const start = new Date(r.start_date);
+    const end = new Date(r.end_date);
+    const status = start <= now && end >= now ? 'active' : start > now ? 'upcoming' : 'completed';
+    res.json({ success: true, data: {
+      id: r.id, name: r.name, description: r.description || '', category: r.category_name, category_id: r.category_id,
+      level: r.level || '', duration_weeks: r.duration_weeks || Math.round((end - start) / (7 * 24 * 60 * 60 * 1000)),
+      start_date: r.start_date, end_date: r.end_date, startDate: r.start_date, endDate: r.end_date,
+      is_active: r.is_active, status, assessor_id: r.assessor_id || null, assessor_name: r.assessor_name || null,
+      student_count: r.student_count || 0,
+      requirements: { min_attendance: r.min_attendance || 75, min_tests: r.min_tests || 75, min_participation: r.min_participation || 75 },
+    } });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// Create rotation
+app.post('/api/rotations', async (req, res) => {
+  try {
+    const { name, category_id, start_date, end_date } = req.body;
+    if (!name || !start_date || !end_date) {
+      return res.status(400).json({ success: false, message: 'Name, start_date, and end_date are required' });
+    }
+    let catId = category_id;
+    if (!catId) {
+      const catResult = await query('SELECT id FROM rotation_categories LIMIT 1');
+      catId = catResult.rows[0]?.id;
+      if (!catId) return res.status(400).json({ success: false, message: 'No rotation categories exist. Create one first.' });
+    }
+    const result = await query(
+      'INSERT INTO rotations (name, category_id, start_date, end_date) VALUES ($1, $2, $3, $4) RETURNING *',
+      [name, catId, start_date, end_date]
+    );
+    res.json({ success: true, data: result.rows[0] });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// Update rotation
+app.put('/api/rotations/:id', async (req, res) => {
+  try {
+    const { name, category_id, start_date, end_date, is_active } = req.body;
+    const result = await query(
+      'UPDATE rotations SET name = COALESCE($1, name), category_id = COALESCE($2, category_id), start_date = COALESCE($3, start_date), end_date = COALESCE($4, end_date), is_active = COALESCE($5, is_active), updated_at = NOW() WHERE id = $6 RETURNING *',
+      [name, category_id, start_date, end_date, is_active, req.params.id]
+    );
+    if (result.rows.length === 0) {
+      return res.status(404).json({ success: false, message: 'Rotation not found' });
+    }
+    res.json({ success: true, data: result.rows[0] });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// Delete rotation
+app.delete('/api/rotations/:id', async (req, res) => {
+  try {
+    await query('UPDATE rotations SET is_active = false WHERE id = $1', [req.params.id]);
+    res.json({ success: true, message: 'Rotation deactivated' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 // ============== ATTENDANCE ENDPOINTS ==============
 
 app.get('/api/attendance', (req, res) => {
