@@ -13,10 +13,14 @@ import { format, differenceInDays } from 'date-fns';
 export function StudentRotations() {
   const { data, isLoading } = useQuery({
     queryKey: ['my-rotations'],
-    queryFn: rotationsApi.getMyRotations,
+    queryFn: async () => {
+      const response = await rotationsApi.getMyRotations();
+      return response.data;
+    },
   });
 
-  const rotations: StudentRotation[] = data?.data || [];
+  const raw = data?.data;
+  const rotations: StudentRotation[] = Array.isArray(raw) ? raw : [];
 
   const currentRotation = rotations.find(r => r.status === 'in_progress');
   const completedRotations = rotations.filter(r => r.status === 'completed');

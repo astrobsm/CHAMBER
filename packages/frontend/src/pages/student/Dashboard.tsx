@@ -78,7 +78,10 @@ const COLORS = ['#1e3a5f', '#2ab96e', '#f59e0b', '#ef4444'];
 export function StudentDashboard() {
   const { data, isLoading } = useQuery<{ data: DashboardData }>({
     queryKey: ['student-dashboard'],
-    queryFn: studentsApi.getDashboard,
+    queryFn: async () => {
+      const response = await studentsApi.getDashboard();
+      return response.data;
+    },
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
@@ -155,7 +158,7 @@ export function StudentDashboard() {
             <div>
               <p className="text-sm text-gray-500">Rotations</p>
               <p className="text-xl font-bold text-gray-900">
-                {dashboard?.stats.completedRotations}/{dashboard?.stats.totalRotations}
+                {dashboard?.stats?.completedRotations ?? 0}/{dashboard?.stats?.totalRotations ?? 0}
               </p>
             </div>
           </div>
@@ -168,7 +171,7 @@ export function StudentDashboard() {
             </div>
             <div>
               <p className="text-sm text-gray-500">Upcoming Tests</p>
-              <p className="text-xl font-bold text-gray-900">{dashboard?.stats.upcomingTests}</p>
+              <p className="text-xl font-bold text-gray-900">{dashboard?.stats?.upcomingTests ?? 0}</p>
             </div>
           </div>
         </Link>
@@ -180,7 +183,7 @@ export function StudentDashboard() {
             </div>
             <div>
               <p className="text-sm text-gray-500">Attendance</p>
-              <p className="text-xl font-bold text-gray-900">{dashboard?.stats.overallAttendance}%</p>
+              <p className="text-xl font-bold text-gray-900">{dashboard?.stats?.overallAttendance ?? 0}%</p>
             </div>
           </div>
         </Link>
@@ -192,7 +195,7 @@ export function StudentDashboard() {
             </div>
             <div>
               <p className="text-sm text-gray-500">CME Points</p>
-              <p className="text-xl font-bold text-gray-900">{dashboard?.stats.cmePoints}</p>
+              <p className="text-xl font-bold text-gray-900">{dashboard?.stats?.cmePoints ?? 0}</p>
             </div>
           </div>
         </Link>

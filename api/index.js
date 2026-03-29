@@ -147,6 +147,10 @@ app.post('/api/auth/login', async (req, res) => {
   
   console.log('Login attempt:', email);
   
+  if (!email || !password) {
+    return res.status(400).json({ success: false, message: 'Email and password are required' });
+  }
+  
   // Hardcoded admin logins for demo
   const adminEmails = ['admin@unth.edu.ng', 'emmanuelnnadi@unth.edu.ng'];
   
@@ -178,14 +182,29 @@ app.post('/api/auth/login', async (req, res) => {
   
   // Try database login
   try {
+    const bcrypt = require('bcryptjs');
     const result = await query(
-      'SELECT u.*, s.first_name, s.last_name, s.matriculation_number FROM users u LEFT JOIN students s ON u.id = s.user_id WHERE u.email = $1',
-      [email.toLowerCase()]
+      `SELECT u.*, 
+        COALESCE(s.first_name, a.first_name, adm.first_name) as first_name, 
+        COALESCE(s.last_name, a.last_name, adm.last_name) as last_name, 
+        s.matriculation_number 
+      FROM users u 
+      LEFT JOIN students s ON u.id = s.user_id 
+      LEFT JOIN assessors a ON u.id = a.user_id 
+      LEFT JOIN administrators adm ON u.id = adm.user_id 
+      WHERE LOWER(u.email) = LOWER($1)`,
+      [email]
     );
     
     if (result.rows.length > 0) {
       const user = result.rows[0];
-      const token = `user-token-${Date.now()}`;
+      const passwordMatch = await bcrypt.compare(password, user.password_hash);
+      
+      if (!passwordMatch) {
+        return res.status(401).json({ success: false, message: 'Invalid email or password' });
+      }
+      
+      const token = `user-token-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
       
       return res.json({
         success: true,
@@ -195,11 +214,11 @@ app.post('/api/auth/login', async (req, res) => {
             id: user.id,
             email: user.email,
             role: user.role,
-            firstName: user.first_name,
-            lastName: user.last_name,
+            firstName: user.first_name || '',
+            lastName: user.last_name || '',
           },
           profile: {
-            matricNumber: user.matriculation_number,
+            matricNumber: user.matriculation_number || null,
           },
           accessToken: token,
           refreshToken: `refresh-${token}`,
@@ -214,6 +233,68 @@ app.post('/api/auth/login', async (req, res) => {
     success: false,
     message: 'Invalid email or password',
   });
+});
+
+// Register endpoint
+app.post('/api/auth/register', async (req, res) => {
+  try {
+    const { firstName, lastName, email, password, matricNumber, level, phoneNumber } = req.body;
+    
+    if (!email || !password || !firstName || !lastName) {
+      return res.status(400).json({ success: false, message: 'First name, last name, email, and password are required' });
+    }
+    
+    // Check if user already exists
+    const existingUser = await query('SELECT id FROM users WHERE LOWER(email) = LOWER($1)', [email]);
+    if (existingUser.rows.length > 0) {
+      return res.status(409).json({ success: false, message: 'An account with this email already exists' });
+    }
+    
+    const bcrypt = require('bcryptjs');
+    const hashedPassword = await bcrypt.hash(password, 10);
+    
+    // Create user
+    const userResult = await query(
+      'INSERT INTO users (email, password_hash, role, is_active) VALUES (LOWER($1), $2, $3, true) RETURNING id, email, role',
+      [email, hashedPassword, 'student']
+    );
+    const user = userResult.rows[0];
+    
+    // Create student profile
+    const matric = matricNumber || ('MAT/' + Date.now());
+    const studentLevel = level || 'surgery_1';
+    await query(
+      'INSERT INTO students (user_id, first_name, last_name, matriculation_number, level, phone_number) VALUES ($1, $2, $3, $4, $5, $6)',
+      [user.id, firstName, lastName, matric, studentLevel, phoneNumber || '']
+    );
+    
+    const token = `user-token-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    
+    res.json({
+      success: true,
+      message: 'Registration successful',
+      data: {
+        user: {
+          id: user.id,
+          email: user.email,
+          role: user.role,
+          firstName,
+          lastName,
+        },
+        profile: {
+          matricNumber: matric,
+        },
+        accessToken: token,
+        refreshToken: `refresh-${token}`,
+      },
+    });
+  } catch (error) {
+    console.error('Registration error:', error);
+    if (error.message && error.message.includes('duplicate key')) {
+      return res.status(409).json({ success: false, message: 'An account with this email already exists' });
+    }
+    res.status(500).json({ success: false, message: 'Registration failed. Please try again.' });
+  }
 });
 
 // Demo login endpoint
@@ -404,7 +485,156 @@ app.get('/api/students/profile', (req, res) => {
   res.json({ success: true, data: { id: 'student-001', matricNumber: 'MED/2022/001', firstName: 'Demo', lastName: 'Student', level: '400', email: 'demo-student@unth.edu.ng', department: 'Medicine', currentRotation: 'Surgery', attendanceRate: 85, testAverage: 72 } });
 });
 
+// Student dashboard
+app.get('/api/students/dashboard', async (req, res) => {
+  try {
+    // Get actual student rotation enrollments (not just rotation definitions)
+    let totalRotations = 0, completedRotations = 0, overallAttendance = 0, overallScore = 0;
+    let currentRotation = null;
+
+    try {
+      const srResult = await query(
+        `SELECT sr.*, r.name as rotation_name, r.start_date as r_start, r.end_date as r_end,
+                r.duration_weeks, rc.name as department
+         FROM student_rotations sr
+         JOIN rotations r ON sr.rotation_id = r.id
+         LEFT JOIN rotation_categories rc ON r.category_id = rc.id
+         ORDER BY sr.start_date DESC`
+      );
+      totalRotations = srResult.rows.length;
+      completedRotations = srResult.rows.filter(r => r.is_cleared || r.status === 'cleared').length;
+
+      // Find active rotation
+      const now = new Date();
+      const active = srResult.rows.find(r => r.status === 'active');
+      if (active) {
+        const start = new Date(active.start_date);
+        const end = new Date(active.end_date);
+        const totalDays = Math.max((end - start) / (1000 * 60 * 60 * 24), 1);
+        const elapsed = Math.max((now - start) / (1000 * 60 * 60 * 24), 0);
+        const progress = Math.min(Math.round((elapsed / totalDays) * 100), 100);
+        const daysRemaining = Math.max(Math.ceil((end - now) / (1000 * 60 * 60 * 24)), 0);
+        currentRotation = {
+          id: active.rotation_id,
+          name: active.rotation_name,
+          department: active.department || 'Surgery',
+          progress,
+          daysRemaining,
+          attendanceRate: 0,
+          averageScore: parseFloat(active.final_score) || 0,
+        };
+      }
+
+      // Compute real averages from cleared rotations
+      const cleared = srResult.rows.filter(r => r.final_score);
+      if (cleared.length > 0) {
+        overallScore = Math.round(cleared.reduce((sum, r) => sum + parseFloat(r.final_score), 0) / cleared.length);
+      }
+    } catch (e) { /* student_rotations table may not exist yet */ }
+
+    // Get CME credits earned (from real user progress, not just article count)
+    let cmePoints = 0;
+    try {
+      const cmeResult = await query(`SELECT COALESCE(SUM(credits_earned), 0) as total FROM user_study_progress WHERE credits_earned > 0`);
+      cmePoints = parseInt(cmeResult.rows[0]?.total || '0');
+    } catch (e) { /* table may not exist */ }
+
+    res.json({
+      success: true,
+      data: {
+        currentRotation,
+        stats: {
+          totalRotations,
+          completedRotations,
+          upcomingTests: 0,
+          cmePoints,
+          overallAttendance,
+          overallScore,
+        },
+        weeklyProgress: [],
+        upcomingTests: [],
+        recentActivity: [],
+        clearanceStatus: {
+          isCleared: false,
+          percentage: 0,
+          requirements: [
+            { name: 'Attendance', met: false, current: overallAttendance, required: 75 },
+            { name: 'Tests Completed', met: false, current: 0, required: 5 },
+            { name: 'CME Credits', met: cmePoints >= 10, current: cmePoints, required: 10 },
+            { name: 'Clinical Hours', met: false, current: 0, required: 100 },
+          ],
+        },
+      },
+    });
+  } catch (error) {
+    console.error('Dashboard error:', error);
+    res.json({
+      success: true,
+      data: {
+        currentRotation: null,
+        stats: { totalRotations: 0, completedRotations: 0, upcomingTests: 0, cmePoints: 0, overallAttendance: 0, overallScore: 0 },
+        weeklyProgress: [],
+        upcomingTests: [],
+        recentActivity: [],
+        clearanceStatus: { isCleared: false, percentage: 0, requirements: [] },
+      },
+    });
+  }
+});
+
 // ============== ROTATIONS ENDPOINTS ==============
+
+// Student's rotations
+app.get('/api/rotations/my', async (req, res) => {
+  try {
+    // Query actual student_rotations enrollment table - only shows real enrollments
+    const result = await query(
+      `SELECT sr.*, r.name as rotation_name, r.description, r.start_date as r_start, r.end_date as r_end,
+              r.duration_weeks, rc.name as department,
+              COALESCE(sr.final_score, 0) as avg_score
+       FROM student_rotations sr
+       JOIN rotations r ON sr.rotation_id = r.id
+       LEFT JOIN rotation_categories rc ON r.category_id = rc.id
+       ORDER BY sr.start_date DESC`
+    );
+    const now = new Date();
+    const rotations = result.rows.map(sr => {
+      const start = new Date(sr.start_date);
+      const end = new Date(sr.end_date);
+      const durationWeeks = sr.duration_weeks || Math.round((end - start) / (7 * 24 * 60 * 60 * 1000));
+      const status = sr.status === 'cleared' ? 'completed' : sr.status === 'active' ? 'in_progress' : 'enrolled';
+      return {
+        id: sr.id,
+        rotationId: sr.rotation_id,
+        studentId: sr.student_id,
+        enrolledAt: sr.created_at,
+        status,
+        attendanceRate: 0,
+        averageScore: parseFloat(sr.avg_score) || 0,
+        isCleared: sr.is_cleared || false,
+        clearanceDate: sr.cleared_at || null,
+        rotation: {
+          id: sr.rotation_id,
+          name: sr.rotation_name,
+          description: sr.description || '',
+          department: sr.department || 'Surgery',
+          durationWeeks,
+          startDate: sr.r_start || sr.start_date,
+          endDate: sr.r_end || sr.end_date,
+          level: 'Surgery I',
+          isActive: true,
+          totalStudents: 0,
+          maxStudents: 30,
+        },
+        progress: status === 'completed' ? 100 : status === 'in_progress' ? Math.min(Math.round(((now - start) / (end - start)) * 100), 100) : 0,
+      };
+    });
+    res.json({ success: true, data: rotations });
+  } catch (error) {
+    console.error('Rotations my error:', error);
+    res.json({ success: true, data: [] });
+  }
+});
 
 app.get('/api/rotations', async (req, res) => {
   try {
@@ -541,41 +771,397 @@ app.post('/api/attendance/check-in', (req, res) => {
 
 // ============== TESTS ENDPOINTS ==============
 
-app.get('/api/tests', (req, res) => {
-  res.json({ success: true, data: { tests: [{ id: '1', name: 'Surgery Mid-Rotation Test', date: '2026-02-01', score: 78, status: 'completed' }, { id: '2', name: 'Surgery Final Test', date: '2026-02-28', score: null, status: 'upcoming' }] } });
+app.get('/api/tests', async (req, res) => {
+  try {
+    const result = await query(
+      `SELECT t.*, rc.name as category_name FROM tests t 
+       LEFT JOIN rotation_categories rc ON t.category_id = rc.id 
+       WHERE t.is_active = true ORDER BY t.scheduled_at DESC LIMIT 20`
+    );
+    res.json({ success: true, data: result.rows.map(t => ({
+      id: t.id,
+      title: t.title || t.name,
+      name: t.name || t.title,
+      description: t.description || '',
+      category: t.category_name,
+      scheduledAt: t.scheduled_at,
+      duration: t.duration_minutes || 60,
+      maxAttempts: t.max_attempts || 1,
+      isActive: t.is_active,
+      questionCount: t.question_count || 50,
+    })) });
+  } catch (error) {
+    // Return empty array instead of object to avoid .map errors
+    res.json({ success: true, data: [] });
+  }
+});
+
+app.get('/api/tests/my-attempts', async (req, res) => {
+  try {
+    const result = await query(
+      `SELECT ta.*, t.title as test_title, t.name as test_name 
+       FROM test_attempts ta 
+       LEFT JOIN tests t ON ta.test_id = t.id 
+       ORDER BY ta.started_at DESC LIMIT 20`
+    );
+    res.json({ success: true, data: result.rows.map(a => ({
+      id: a.id,
+      testId: a.test_id,
+      testTitle: a.test_title || a.test_name,
+      score: a.score,
+      totalQuestions: a.total_questions,
+      correctAnswers: a.correct_answers,
+      startedAt: a.started_at,
+      completedAt: a.completed_at,
+      status: a.status || 'completed',
+    })) });
+  } catch (error) {
+    // Return empty array on error
+    res.json({ success: true, data: [] });
+  }
+});
+
+// ============== STUDY MODULE ENDPOINTS ==============
+
+// Get all study articles with summary stats
+app.get('/api/study/articles', async (req, res) => {
+  try {
+    const result = await query(`
+      SELECT a.id, a.title, a.subtitle, a.authors, a.cme_credits, a.estimated_reading_minutes,
+             a.difficulty_level, a.is_published,
+             rc.name as topic_name,
+             COALESCE(qcount.cnt, 0) as question_count
+      FROM cme_articles a
+      LEFT JOIN rotation_categories rc ON a.category_id = rc.id
+      LEFT JOIN (
+        SELECT article_id, COUNT(*) as cnt FROM article_self_assessments GROUP BY article_id
+      ) qcount ON qcount.article_id = a.id
+      WHERE a.is_published = true
+      ORDER BY rc.name, a.title
+    `);
+
+    const articles = result.rows.map(a => ({
+      ...a,
+      difficulty_level: a.difficulty_level || 'medium',
+      topic_name: a.topic_name || 'General',
+      question_count: parseInt(a.question_count) || 0,
+      cme_credits: parseFloat(a.cme_credits) || 1,
+      started: false,
+      completed: false,
+      reading_progress: 0,
+      assessment_score: 0,
+    }));
+
+    const totalCredits = articles.reduce((sum, a) => sum + a.cme_credits, 0);
+
+    res.json({
+      success: true,
+      data: {
+        articles,
+        summary: {
+          totalArticles: articles.length,
+          completedArticles: 0,
+          earnedCredits: 0,
+          totalCredits,
+          progressPercent: 0,
+        }
+      }
+    });
+  } catch (error) {
+    console.error('Study articles error:', error.message);
+    res.json({ success: true, data: { articles: [], summary: { totalArticles: 0, completedArticles: 0, earnedCredits: 0, totalCredits: 0, progressPercent: 0 } } });
+  }
+});
+
+// Get overall study progress
+app.get('/api/study/progress', async (req, res) => {
+  try {
+    res.json({
+      success: true,
+      data: {
+        summary: {
+          total_time_seconds: 0,
+          articles_started: 0,
+          articles_completed: 0,
+          total_credits_earned: 0,
+        }
+      }
+    });
+  } catch (error) {
+    res.json({ success: true, data: { summary: { total_time_seconds: 0, articles_started: 0, articles_completed: 0, total_credits_earned: 0 } } });
+  }
+});
+
+// Get single article with sections and references
+app.get('/api/study/articles/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const articleResult = await query(
+      `SELECT a.*, rc.name as topic_name FROM cme_articles a
+       LEFT JOIN rotation_categories rc ON a.category_id = rc.id
+       WHERE a.id = $1`, [id]
+    );
+    if (articleResult.rows.length === 0) {
+      return res.status(404).json({ success: false, message: 'Article not found' });
+    }
+    const article = articleResult.rows[0];
+    article.topic_name = article.topic_name || 'General';
+
+    const sectionsResult = await query(
+      `SELECT id, section_type, title, content, section_order FROM article_sections WHERE article_id = $1 ORDER BY section_order`, [id]
+    );
+
+    const referencesResult = await query(
+      `SELECT id, reference_number, citation, doi, url FROM article_references WHERE article_id = $1 ORDER BY reference_number`, [id]
+    );
+
+    res.json({
+      success: true,
+      data: {
+        article,
+        sections: sectionsResult.rows,
+        references: referencesResult.rows,
+        progress: null,
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// Update article progress
+app.post('/api/study/articles/:id/progress', async (req, res) => {
+  try {
+    const { progress_percent } = req.body;
+    res.json({ success: true, data: { article_id: req.params.id, progress_percent } });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// Get assessment questions for an article
+app.get('/api/study/articles/:id/assessment', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await query(
+      `SELECT id, question_text, option_a, option_b, option_c, option_d, option_e
+       FROM article_self_assessments WHERE article_id = $1 ORDER BY id`, [id]
+    );
+    res.json({ success: true, data: { questions: result.rows } });
+  } catch (error) {
+    res.json({ success: true, data: { questions: [] } });
+  }
+});
+
+// Submit assessment answers
+app.post('/api/study/articles/:id/assessment/submit', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { answers } = req.body;
+
+    // Get correct answers
+    const questionsResult = await query(
+      `SELECT id, correct_option, explanation FROM article_self_assessments WHERE article_id = $1`, [id]
+    );
+
+    const questionMap = {};
+    questionsResult.rows.forEach(q => { questionMap[q.id] = q; });
+
+    let correctCount = 0;
+    const results = (answers || []).map(a => {
+      const q = questionMap[a.question_id];
+      const isCorrect = q && q.correct_option === a.selected_option;
+      if (isCorrect) correctCount++;
+      return {
+        question_id: a.question_id,
+        selected_option: a.selected_option,
+        correct_option: q?.correct_option || '',
+        is_correct: !!isCorrect,
+        explanation: q?.explanation || '',
+      };
+    });
+
+    const totalQuestions = answers?.length || 0;
+    const score = totalQuestions > 0 ? (correctCount / totalQuestions) * 100 : 0;
+    const passed = score >= 70;
+
+    // Get CME credits for this article
+    let cmeCreditsEarned = 0;
+    if (passed) {
+      const articleResult = await query(`SELECT cme_credits FROM cme_articles WHERE id = $1`, [id]);
+      cmeCreditsEarned = parseFloat(articleResult.rows[0]?.cme_credits || 0);
+    }
+
+    res.json({
+      success: true,
+      data: {
+        score,
+        correctCount,
+        totalQuestions,
+        passed,
+        cmeCreditsEarned,
+        results,
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
 });
 
 // ============== CME ENDPOINTS ==============
 
 app.get('/api/cme/articles', async (req, res) => {
   try {
-    const result = await query(`SELECT * FROM cme_articles WHERE is_active = true ORDER BY created_at DESC`);
-    res.json({ success: true, data: { articles: result.rows.map(a => ({ id: a.id, title: a.title, content: a.content, category: a.category, credits: a.credits, status: 'available' })) } });
+    const result = await query(`
+      SELECT a.*, rc.name as category_name
+      FROM cme_articles a
+      LEFT JOIN rotation_categories rc ON a.category_id = rc.id
+      WHERE a.is_published = true
+      ORDER BY a.created_at DESC
+    `);
+    res.json({ success: true, data: result.rows });
   } catch (error) {
-    res.json({ success: true, data: { articles: [{ id: '1', title: 'General Surgery Principles', category: 'Surgery', credits: 2, status: 'available' }] } });
+    console.error('CME articles error:', error.message);
+    res.json({ success: true, data: [] });
   }
 });
 
 app.get('/api/cme/admin/stats', async (req, res) => {
   try {
-    const articlesResult = await query('SELECT COUNT(*) FROM cme_articles WHERE is_active = true');
-    res.json({ success: true, data: { totalArticles: parseInt(articlesResult.rows[0]?.count || 0), totalCredits: 50, studentsCompleted: 45, averageScore: 82 } });
+    const articlesResult = await query('SELECT COUNT(*) FROM cme_articles WHERE is_published = true');
+    const totalArticles = parseInt(articlesResult.rows[0]?.count || 0);
+
+    // Get study progress stats
+    let totalStudentsEngaged = 0, totalCompletions = 0, totalCreditsAwarded = 0, avgScore = 0, totalStudyHours = 0, sessions24h = 0, sessions7d = 0;
+    try {
+      const engaged = await query('SELECT COUNT(DISTINCT student_id) FROM user_study_progress');
+      totalStudentsEngaged = parseInt(engaged.rows[0]?.count || 0);
+      const completions = await query('SELECT COUNT(*) FROM user_study_progress WHERE is_fully_completed = true');
+      totalCompletions = parseInt(completions.rows[0]?.count || 0);
+      const credits = await query('SELECT COALESCE(SUM(cme_credits_earned), 0) as total FROM user_study_progress');
+      totalCreditsAwarded = parseFloat(credits.rows[0]?.total || 0);
+      const score = await query('SELECT COALESCE(AVG(assessment_score), 0) as avg FROM user_study_progress WHERE assessment_completed = true');
+      avgScore = parseFloat(score.rows[0]?.avg || 0);
+      const hours = await query('SELECT COALESCE(SUM(time_spent_seconds), 0) as total FROM user_study_progress');
+      totalStudyHours = parseFloat(hours.rows[0]?.total || 0) / 3600;
+      const s24 = await query("SELECT COUNT(*) FROM study_session_logs WHERE session_start > NOW() - INTERVAL '24 hours'");
+      sessions24h = parseInt(s24.rows[0]?.count || 0);
+      const s7d = await query("SELECT COUNT(*) FROM study_session_logs WHERE session_start > NOW() - INTERVAL '7 days'");
+      sessions7d = parseInt(s7d.rows[0]?.count || 0);
+    } catch (e) { /* progress tables may be empty */ }
+
+    res.json({
+      success: true,
+      data: {
+        total_articles: totalArticles,
+        total_students_engaged: totalStudentsEngaged,
+        total_completions: totalCompletions,
+        total_credits_awarded: totalCreditsAwarded,
+        avg_assessment_score: avgScore,
+        total_study_hours: totalStudyHours,
+        sessions_last_24h: sessions24h,
+        sessions_last_7days: sessions7d,
+      }
+    });
   } catch (error) {
-    res.json({ success: true, data: { totalArticles: 16, totalCredits: 50, studentsCompleted: 45, averageScore: 82 } });
+    console.error('CME stats error:', error.message);
+    res.json({ success: true, data: { total_articles: 0, total_students_engaged: 0, total_completions: 0, total_credits_awarded: 0, avg_assessment_score: 0, total_study_hours: 0, sessions_last_24h: 0, sessions_last_7days: 0 } });
   }
 });
 
 app.get('/api/cme/admin/articles', async (req, res) => {
   try {
-    const result = await query(`SELECT * FROM cme_articles ORDER BY created_at DESC`);
-    res.json({ success: true, data: { articles: result.rows, total: result.rows.length } });
+    const result = await query(`
+      SELECT a.id, a.title, a.subtitle, a.cme_credits, a.estimated_reading_minutes,
+             a.is_published, a.difficulty_level as level, a.created_at,
+             rc.name as category_name,
+             COALESCE(stats.total_readers, 0) as total_readers,
+             COALESCE(stats.completed_readers, 0) as completed_readers,
+             COALESCE(stats.avg_score, 0) as avg_assessment_score,
+             COALESCE(stats.total_time, 0) as total_study_time_seconds,
+             COALESCE(qcount.cnt, 0) as total_questions
+      FROM cme_articles a
+      LEFT JOIN rotation_categories rc ON a.category_id = rc.id
+      LEFT JOIN (
+        SELECT article_id,
+               COUNT(DISTINCT student_id) as total_readers,
+               COUNT(DISTINCT CASE WHEN is_fully_completed THEN student_id END) as completed_readers,
+               AVG(CASE WHEN assessment_completed THEN assessment_score END) as avg_score,
+               SUM(time_spent_seconds) as total_time
+        FROM user_study_progress GROUP BY article_id
+      ) stats ON stats.article_id = a.id
+      LEFT JOIN (
+        SELECT article_id, COUNT(*) as cnt FROM article_self_assessments GROUP BY article_id
+      ) qcount ON qcount.article_id = a.id
+      ORDER BY a.created_at DESC
+    `);
+    res.json({ success: true, data: result.rows });
   } catch (error) {
-    res.json({ success: true, data: { articles: [{ id: '1', title: 'General Surgery Principles', category: 'Surgery', credits: 2, isActive: true }], total: 1 } });
+    console.error('CME admin articles error:', error.message);
+    res.json({ success: true, data: [] });
   }
 });
 
-app.get('/api/cme/admin/students', (req, res) => {
-  res.json({ success: true, data: { students: [], total: 0 } });
+app.get('/api/cme/admin/articles/:articleId/progress', async (req, res) => {
+  try {
+    const { articleId } = req.params;
+    const result = await query(`
+      SELECT usp.*, s.matriculation_number, s.first_name, s.last_name, s.level,
+             u.email
+      FROM user_study_progress usp
+      JOIN students s ON usp.student_id = s.id
+      JOIN users u ON s.user_id = u.id
+      WHERE usp.article_id = $1
+      ORDER BY usp.last_accessed_at DESC NULLS LAST
+    `, [articleId]);
+    res.json({ success: true, data: result.rows });
+  } catch (error) {
+    console.error('Article progress error:', error.message);
+    res.json({ success: true, data: [] });
+  }
+});
+
+app.get('/api/cme/admin/students', async (req, res) => {
+  try {
+    const result = await query(`
+      SELECT s.id as student_id, s.matriculation_number, s.first_name, s.last_name,
+             u.email, s.level,
+             COUNT(DISTINCT usp.article_id) FILTER (WHERE usp.started_at IS NOT NULL) as articles_started,
+             COUNT(DISTINCT usp.article_id) FILTER (WHERE usp.is_fully_completed) as articles_completed,
+             COALESCE(SUM(usp.cme_credits_earned), 0) as total_credits,
+             COALESCE(AVG(usp.assessment_score) FILTER (WHERE usp.assessment_completed), 0) as avg_assessment_score,
+             COALESCE(SUM(usp.time_spent_seconds), 0) as total_study_seconds,
+             MAX(usp.last_accessed_at) as last_study_activity
+      FROM students s
+      JOIN users u ON s.user_id = u.id
+      LEFT JOIN user_study_progress usp ON usp.student_id = s.id
+      GROUP BY s.id, s.matriculation_number, s.first_name, s.last_name, u.email, s.level
+      ORDER BY s.last_name, s.first_name
+    `);
+    res.json({ success: true, data: result.rows });
+  } catch (error) {
+    console.error('CME students error:', error.message);
+    res.json({ success: true, data: [] });
+  }
+});
+
+app.get('/api/cme/admin/students/:studentId/progress', async (req, res) => {
+  try {
+    const { studentId } = req.params;
+    const result = await query(`
+      SELECT usp.*, a.title as article_title, a.cme_credits,
+             rc.name as category_name, t.name as topic_name
+      FROM user_study_progress usp
+      JOIN cme_articles a ON usp.article_id = a.id
+      LEFT JOIN rotation_categories rc ON a.category_id = rc.id
+      WHERE usp.student_id = $1
+      ORDER BY usp.last_accessed_at DESC NULLS LAST
+    `, [studentId]);
+    res.json({ success: true, data: result.rows });
+  } catch (error) {
+    console.error('Student progress error:', error.message);
+    res.json({ success: true, data: [] });
+  }
 });
 
 // ============== TOPICS ENDPOINTS ==============

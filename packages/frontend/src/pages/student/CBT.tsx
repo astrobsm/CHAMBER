@@ -68,8 +68,9 @@ export default function StudentCBT() {
     enabled: !!selectedRotation,
   });
 
-  const rotations: StudentRotation[] = rotationsData?.rotations || rotationsData || [];
-  const tests = testsData?.tests || testsData || [];
+  const rawData = rotationsData?.data;
+  const rotations: StudentRotation[] = Array.isArray(rawData) ? rawData : Array.isArray(rotationsData) ? rotationsData : [];
+  const tests = Array.isArray(testsData?.data) ? testsData.data : Array.isArray(testsData?.tests) ? testsData.tests : Array.isArray(testsData) ? testsData : [];
 
   // Auto-select active rotation
   useEffect(() => {

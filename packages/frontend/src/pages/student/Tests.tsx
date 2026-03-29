@@ -29,8 +29,10 @@ export function StudentTests() {
     queryFn: testsApi.getMyAttempts,
   });
 
-  const tests: Test[] = testsData?.data || [];
-  const attempts: TestAttempt[] = attemptsData?.data || [];
+  const rawTests = testsData?.data?.data || testsData?.data || [];
+  const rawAttempts = attemptsData?.data?.data || attemptsData?.data || [];
+  const tests: Test[] = Array.isArray(rawTests) ? rawTests : [];
+  const attempts: TestAttempt[] = Array.isArray(rawAttempts) ? rawAttempts : [];
 
   // Merge tests with attempts
   const testsWithAttempts: TestWithAttempt[] = tests.map(test => {
