@@ -153,6 +153,10 @@ export const rotationsApi = {
       is_active: r.isActive !== undefined ? r.isActive : (r.is_active !== undefined ? r.is_active : (r.status === 'active')),
       status: r.status,
       student_count: r.studentCount || r.student_count || 0,
+      assessor_id: r.assessor_id || r.assessorId || null,
+      assessor_name: r.assessor_name || r.assessorName || null,
+      duration_weeks: r.duration_weeks || r.durationWeeks || 0,
+      requirements: r.requirements || { min_attendance: 75, min_tests: 75, min_participation: 75 },
     }));
     
     return { data: { data: transformedRotations } };
@@ -177,8 +181,8 @@ export const rotationsApi = {
 export const attendanceApi = {
   getSessions: (rotationId: string) =>
     api.get(`/attendance/sessions`, { params: { rotationId } }),
-  checkIn: (sessionId: string, qrCode: string, location?: { lat: number; lng: number }) =>
-    api.post(`/attendance/check-in`, { sessionId, qrCode, location }),
+  checkIn: (sessionId: string, qrCode: string, location?: { latitude: number; longitude: number; accuracy?: number }, studentId?: string) =>
+    api.post(`/attendance/check-in`, { sessionId, qrCode, location, studentId }),
   getMyAttendance: (rotationId?: string) =>
     api.get('/attendance/my-records', { params: { rotation_id: rotationId } }),
   getSummary: (studentId?: string, rotationId?: string) =>
@@ -189,8 +193,8 @@ export const attendanceApi = {
   // Assessor
   createSession: (data: Record<string, unknown>) => api.post('/attendance/sessions', data),
   generateQRCode: (sessionId: string) => api.get(`/attendance/sessions/${sessionId}/qr`),
-  markManual: (data: { student_id: string; date: string; status: string; rotation_id: string; notes?: string }) =>
-    api.post('/attendance/mark', { session_id: data.rotation_id, student_id: data.student_id, status: data.status, notes: data.notes }),
+  markManual: (data: { student_id: string; date: string; status: string; rotation_id: string; notes?: string; marked_by?: string }) =>
+    api.post('/attendance/mark', { rotation_id: data.rotation_id, student_id: data.student_id, status: data.status, notes: data.notes, date: data.date, marked_by: data.marked_by }),
   getSessionStudents: (sessionId: string) =>
     api.get(`/attendance/sessions/${sessionId}/students`),
 };
@@ -202,8 +206,15 @@ export const testsApi = {
   getMyTests: (rotationId?: string) => api.get('/tests/my-tests', { params: { rotation_id: rotationId } }),
   getMyAttempts: () => api.get('/tests/my-attempts'),
   getAvailableTests: () => api.get('/tests/available'),
-  start: (rotationId: string, testType: string) =>
-    api.post('/tests/start', { rotation_id: rotationId, test_type: testType }),
+  start: (rotationIdOrTestId: string, testTypeOrFingerprint?: string) => {
+    // If testTypeOrFingerprint looks like a test_type (pre_test, mid_test, post_test), use /tests/start
+    const testTypes = ['pre_test', 'mid_test', 'post_test'];
+    if (testTypeOrFingerprint && testTypes.includes(testTypeOrFingerprint)) {
+      return api.post('/tests/start', { rotation_id: rotationIdOrTestId, test_type: testTypeOrFingerprint });
+    }
+    // Otherwise, start by test ID (used by TestSession page)
+    return api.post(`/tests/${rotationIdOrTestId}/start`, { device_fingerprint: testTypeOrFingerprint });
+  },
   submitAnswer: (testId: string, questionId: string, selectedOption: string | string[], timeSpentSeconds: number) =>
     api.post(`/tests/${testId}/answer`, { 
       question_id: questionId, 

@@ -1,9 +1,8 @@
 {
   "version": 2,
-  "framework": "vite",
-  "buildCommand": "npm run build --workspace=packages/frontend",
+  "buildCommand": "cd packages/frontend && npm install && npx vite build",
   "outputDirectory": "packages/frontend/dist",
-  "installCommand": "npm install --include=dev",
+  "installCommand": "npm install",
   "headers": [
     {
       "source": "/api/:path*",

@@ -54,9 +54,9 @@ export default function AdminCBT() {
   const completedTests = Array.isArray(tests) ? tests.filter((t: any) => t.status === 'completed').length : 0;
   const inProgressTests = Array.isArray(tests) ? tests.filter((t: any) => t.status === 'in_progress').length : 0;
   const averageScore = Array.isArray(tests) && completedTests > 0
-    ? tests
-        .filter((t: any) => t.status === 'completed' && t.percentage)
-        .reduce((sum: number, t: any) => sum + (t.percentage || 0), 0) / completedTests
+    ? Number(tests
+        .filter((t: any) => t.status === 'completed' && t.percentage != null)
+        .reduce((sum: number, t: any) => sum + Number(parseFloat(String(t.percentage)) || 0), 0) / completedTests) || 0
     : 0;
 
   const isLoading = rotationsLoading || statsLoading;
@@ -133,7 +133,7 @@ export default function AdminCBT() {
             </div>
             <div>
               <p className="text-sm text-purple-600">Average Score</p>
-              <p className="text-2xl font-bold text-purple-900">{averageScore.toFixed(1)}%</p>
+              <p className="text-2xl font-bold text-purple-900">{Number(averageScore || 0).toFixed(1)}%</p>
             </div>
           </div>
         </div>
@@ -235,11 +235,11 @@ export default function AdminCBT() {
                     <td className="py-3 px-2">
                       {test.percentage !== undefined && test.percentage !== null ? (
                         <span className={`font-semibold ${
-                          test.percentage >= 75 ? 'text-green-600' 
-                            : test.percentage >= 50 ? 'text-yellow-600' 
+                          parseFloat(String(test.percentage)) >= 75 ? 'text-green-600' 
+                            : parseFloat(String(test.percentage)) >= 50 ? 'text-yellow-600' 
                             : 'text-red-600'
                         }`}>
-                          {test.percentage.toFixed(1)}%
+                          {(parseFloat(String(test.percentage)) || 0).toFixed(1)}%
                         </span>
                       ) : (
                         <span className="text-gray-400">—</span>
@@ -274,9 +274,9 @@ export default function AdminCBT() {
             : [];
           const completed = typeTests.filter((t: any) => t.status === 'completed');
           const avgScore = completed.length > 0
-            ? completed.reduce((sum: number, t: any) => sum + (t.percentage || 0), 0) / completed.length
+            ? Number(completed.reduce((sum: number, t: any) => sum + (parseFloat(String(t.percentage)) || 0), 0) / completed.length) || 0
             : 0;
-          const passing = completed.filter((t: any) => (t.percentage || 0) >= 75).length;
+          const passing = completed.filter((t: any) => (parseFloat(String(t.percentage)) || 0) >= 75).length;
 
           return (
             <div key={testType} className="card">
@@ -295,7 +295,7 @@ export default function AdminCBT() {
                 <div className="flex justify-between">
                   <span className="text-gray-600">Average Score:</span>
                   <span className={`font-medium ${avgScore >= 75 ? 'text-green-600' : avgScore >= 50 ? 'text-yellow-600' : 'text-red-600'}`}>
-                    {avgScore.toFixed(1)}%
+                    {Number(avgScore || 0).toFixed(1)}%
                   </span>
                 </div>
                 <div className="flex justify-between">

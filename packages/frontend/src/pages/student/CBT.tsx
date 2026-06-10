@@ -88,7 +88,8 @@ export default function StudentCBT() {
     },
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ['my-tests'] });
-      navigate(`/test/${data.testId || data.id}`);
+      const testId = data?.data?.testId || data?.data?.id || data?.testId || data?.id;
+      navigate(`/test/${testId}`);
     },
     onError: (error: any) => {
       toast.error(error.response?.data?.message || 'Failed to start test');
@@ -380,8 +381,8 @@ export default function StudentCBT() {
               {test.status === 'completed' && test.percentage !== undefined && (
                 <div className="mt-4 p-3 bg-white rounded-lg border border-gray-200">
                   <p className="text-xs font-medium text-gray-500 uppercase">Your Score</p>
-                  <p className={`text-2xl font-bold ${getScoreColor(test.percentage)}`}>
-                    {test.percentage.toFixed(1)}%
+                  <p className={`text-2xl font-bold ${getScoreColor(parseFloat(String(test.percentage)) || 0)}`}>
+                    {parseFloat(String(test.percentage || 0)).toFixed(1)}%
                   </p>
                   {test.completedAt && (
                     <p className="text-xs text-gray-500 mt-1">

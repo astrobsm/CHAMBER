@@ -250,6 +250,22 @@ self.addEventListener('install', (event) => {
   );
 });
 
+// Clean up stale background sync requests pointing to localhost
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    (async () => {
+      // Clear any IndexedDB entries from workbox background sync that point to localhost
+      const dbs = await indexedDB.databases?.() || [];
+      for (const db of dbs) {
+        if (db.name && db.name.includes('workbox-background-sync')) {
+          indexedDB.deleteDatabase(db.name);
+          console.log('[SW] Cleared stale background sync DB:', db.name);
+        }
+      }
+    })()
+  );
+});
+
 // ============================================================================
 // MESSAGE HANDLING — Communication with main thread
 // ============================================================================

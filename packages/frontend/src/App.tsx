@@ -39,6 +39,7 @@ const AdminRotations = lazy(() => import('./pages/admin/Rotations'));
 const AdminQuestions = lazy(() => import('./pages/admin/Questions'));
 const AdminAnalytics = lazy(() => import('./pages/admin/Analytics'));
 const AdminSettings = lazy(() => import('./pages/admin/Settings'));
+const AdminAttendance = lazy(() => import('./pages/assessor/Attendance'));
 
 function App() {
   const { isLoading, user } = useAuth();
@@ -132,6 +133,7 @@ function App() {
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="cbt" element={<AdminCBT />} />
           <Route path="cme" element={<AdminCME />} />
+          <Route path="attendance" element={<AdminAttendance />} />
           <Route path="users" element={<AdminUsers />} />
           <Route path="rotations" element={<AdminRotations />} />
           <Route path="questions" element={<AdminQuestions />} />

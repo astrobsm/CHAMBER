@@ -17,6 +17,7 @@ import {
 } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
 import { attendanceApi, rotationsApi } from '../../services/api';
+import { useAuth } from '../../contexts/AuthContext';
 
 interface AttendanceRecord {
   id: string;
@@ -37,6 +38,7 @@ interface QRSession {
 }
 
 export default function AssessorAttendance() {
+  const { user } = useAuth();
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedRotation, setSelectedRotation] = useState<string>('');
   const [qrSession, setQrSession] = useState<QRSession | null>(null);
@@ -67,8 +69,35 @@ export default function AssessorAttendance() {
 
   const generateQRMutation = useMutation({
     mutationFn: async () => {
-      const response = await attendanceApi.generateQRCode(selectedRotation);
-      return response.data;
+      // First create a session for today
+      const sessionRes = await attendanceApi.createSession({
+        rotation_id: selectedRotation,
+        session_date: format(selectedDate, 'yyyy-MM-dd'),
+        attendance_type: 'morning_ward_round',
+        created_by: user?.id,
+      });
+      const session = sessionRes.data?.data || sessionRes.data;
+      // Then get the QR code for that session
+      const qrRes = await attendanceApi.generateQRCode(session.id);
+      const qrData = qrRes.data?.data || qrRes.data;
+      // Build a proper expires_at datetime
+      let expiresAt = qrData?.expiresAt;
+      if (!expiresAt || new Date(expiresAt).toString() === 'Invalid Date') {
+        // Combine session_date + end_time into a full datetime, or default to 1 hour from now
+        const endTime = session.end_time; // e.g. "12:00:00"
+        const sessionDate = session.session_date ? new Date(session.session_date).toISOString().split('T')[0] : format(selectedDate, 'yyyy-MM-dd');
+        if (endTime && /^\d{2}:\d{2}/.test(endTime)) {
+          expiresAt = `${sessionDate}T${endTime}`;
+        } else {
+          expiresAt = new Date(Date.now() + 3600000).toISOString();
+        }
+      }
+      return {
+        id: session.id,
+        code: qrData?.qrCode || session.qr_code || session.id,
+        expires_at: expiresAt,
+        rotation_id: selectedRotation,
+      };
     },
     onSuccess: (data) => {
       setQrSession(data);
@@ -86,6 +115,7 @@ export default function AssessorAttendance() {
         date: format(selectedDate, 'yyyy-MM-dd'),
         status,
         rotation_id: selectedRotation,
+        marked_by: user?.id,
       });
       return response.data;
     },

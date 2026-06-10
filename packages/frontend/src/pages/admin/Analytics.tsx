@@ -60,9 +60,9 @@ export default function AdminAnalytics() {
     total_students: analyticsData?.totalStudents || 0,
     active_rotations: analyticsData?.activeRotations || 0,
     tests_taken: analyticsData?.totalTests || 0,
-    avg_attendance: analyticsData?.todayAttendance || 0,
+    avg_attendance: analyticsData?.todayAttendance || analyticsData?.attendanceRate || 0,
     clearance_rate: analyticsData?.clearanceRate || 0,
-    avg_test_score: 0,
+    avg_test_score: analyticsData?.averageTestScore || 0,
   };
 
   // Provide default data for charts to prevent Recharts SVG errors
@@ -85,9 +85,9 @@ export default function AdminAnalytics() {
   ];
   
   const defaultPerformanceRadar = [
-    { subject: 'Attendance', value: 0 },
-    { subject: 'Tests', value: 0 },
-    { subject: 'Participation', value: 0 },
+    { subject: 'Attendance', A: 0 },
+    { subject: 'Tests', A: 0 },
+    { subject: 'Participation', A: 0 },
   ];
 
   const enrollmentTrend = (analyticsData?.enrollmentTrend?.length > 0) 
@@ -100,7 +100,7 @@ export default function AdminAnalytics() {
 
   const rotationPerformance = (analyticsData?.rotationPerformance?.length > 0)
     ? analyticsData.rotationPerformance
-    : [{ name: 'Surgery', attendance: 0, tests: 0, clearance: 0 }];
+    : [{ rotation: 'Surgery', attendance: 0, tests: 0, participation: 0 }];
 
   const weeklyActivity = (analyticsData?.weeklyActivity?.length > 0)
     ? analyticsData.weeklyActivity

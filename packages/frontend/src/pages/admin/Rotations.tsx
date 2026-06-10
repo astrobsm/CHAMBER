@@ -13,9 +13,11 @@ import {
   ChartBarIcon,
   AcademicCapIcon,
   CheckCircleIcon,
+  UserPlusIcon,
 } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
 import { rotationsApi, adminApi } from '../../services/api';
+import api from '../../services/api';
 
 interface Rotation {
   id: string;
@@ -55,6 +57,8 @@ export default function AdminRotations() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingRotation, setEditingRotation] = useState<Rotation | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<string>('');
+  const [enrollModalRotation, setEnrollModalRotation] = useState<Rotation | null>(null);
+  const [selectedStudentIds, setSelectedStudentIds] = useState<string[]>([]);
   const queryClient = useQueryClient();
 
   const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm<RotationFormData>();
@@ -71,7 +75,8 @@ export default function AdminRotations() {
     queryKey: ['assessors'],
     queryFn: async () => {
       const response = await adminApi.getUsers({ role: 'assessor' });
-      return response.data?.users || [];
+      const data = response.data?.data || response.data;
+      return data?.users || [];
     },
   });
 
@@ -145,6 +150,60 @@ export default function AdminRotations() {
       toast.error('Failed to delete rotation');
     },
   });
+
+  // Enrollment queries
+  const { data: allStudents } = useQuery({
+    queryKey: ['all-students'],
+    queryFn: async () => {
+      const response = await adminApi.getUsers({ role: 'student' });
+      return response.data?.data?.users || [];
+    },
+    enabled: !!enrollModalRotation,
+  });
+
+  const { data: enrolledStudents, refetch: refetchEnrolled } = useQuery({
+    queryKey: ['rotation-students', enrollModalRotation?.id],
+    queryFn: async () => {
+      const response = await api.get(`/rotations/${enrollModalRotation!.id}/students`);
+      return response.data?.data?.students || [];
+    },
+    enabled: !!enrollModalRotation,
+  });
+
+  const enrollMutation = useMutation({
+    mutationFn: async ({ student_ids, rotation_id }: { student_ids: string[]; rotation_id: string }) => {
+      const response = await api.post('/admin/enroll-students', { student_ids, rotation_id });
+      return response.data;
+    },
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ['rotation-students'] });
+      queryClient.invalidateQueries({ queryKey: ['rotations'] });
+      refetchEnrolled();
+      setSelectedStudentIds([]);
+      toast.success(data.message || 'Students enrolled');
+    },
+    onError: () => {
+      toast.error('Failed to enroll students');
+    },
+  });
+
+  const unenrollMutation = useMutation({
+    mutationFn: async (enrollmentId: string) => {
+      await api.delete(`/admin/enrollments/${enrollmentId}`);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['rotation-students'] });
+      queryClient.invalidateQueries({ queryKey: ['rotations'] });
+      refetchEnrolled();
+      toast.success('Student removed from rotation');
+    },
+    onError: () => {
+      toast.error('Failed to remove student');
+    },
+  });
+
+  const enrolledStudentIds = (enrolledStudents || []).map((s: any) => s.user_id);
+  const availableStudents = (allStudents || []).filter((s: any) => !enrolledStudentIds.includes(s.id));
 
   const openModal = (rotation?: Rotation) => {
     if (rotation) {
@@ -370,6 +429,16 @@ export default function AdminRotations() {
                   </div>
                 </div>
               </div>
+
+              <div className="pt-3 mt-3 border-t border-gray-100">
+                <button
+                  onClick={() => { setEnrollModalRotation(rotation); setSelectedStudentIds([]); }}
+                  className="w-full btn bg-primary-50 text-primary-700 hover:bg-primary-100 flex items-center justify-center gap-2 py-2"
+                >
+                  <UserPlusIcon className="w-4 h-4" />
+                  Manage Students
+                </button>
+              </div>
             </div>
           ))
         )}
@@ -468,6 +537,127 @@ export default function AdminRotations() {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Enrollment Modal */}
+      {enrollModalRotation && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6 border-b border-gray-200">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-xl font-bold text-gray-900">Manage Students</h2>
+                  <p className="text-sm text-gray-500 mt-1">{enrollModalRotation.name}</p>
+                </div>
+                <button onClick={() => setEnrollModalRotation(null)} className="p-2 hover:bg-gray-100 rounded-lg">
+                  <XMarkIcon className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            <div className="p-6 space-y-6">
+              {/* Currently Enrolled */}
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <UserGroupIcon className="w-5 h-5" />
+                  Enrolled Students ({enrolledStudents?.length || 0})
+                </h3>
+                {(enrolledStudents || []).length === 0 ? (
+                  <p className="text-sm text-gray-500 bg-gray-50 rounded-lg p-4 text-center">No students enrolled yet</p>
+                ) : (
+                  <div className="space-y-2 max-h-48 overflow-y-auto">
+                    {(enrolledStudents || []).map((student: any) => (
+                      <div key={student.enrollment_id} className="flex items-center justify-between bg-green-50 rounded-lg px-4 py-2">
+                        <div>
+                          <span className="font-medium text-gray-900">{student.first_name} {student.last_name}</span>
+                          <span className="text-sm text-gray-500 ml-2">({student.email})</span>
+                          {student.matric_number && <span className="text-xs text-gray-400 ml-2">{student.matric_number}</span>}
+                        </div>
+                        <button
+                          onClick={() => {
+                            if (confirm(`Remove ${student.first_name} ${student.last_name} from this rotation?`)) {
+                              unenrollMutation.mutate(student.enrollment_id);
+                            }
+                          }}
+                          className="text-red-500 hover:text-red-700 text-sm font-medium"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Add Students */}
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <UserPlusIcon className="w-5 h-5" />
+                  Add Students
+                </h3>
+                {availableStudents.length === 0 ? (
+                  <p className="text-sm text-gray-500 bg-gray-50 rounded-lg p-4 text-center">
+                    {(allStudents || []).length === 0 ? 'No students in the system. Create students first in User Management.' : 'All students are already enrolled.'}
+                  </p>
+                ) : (
+                  <>
+                    <div className="flex items-center gap-2 mb-3">
+                      <button
+                        onClick={() => {
+                          if (selectedStudentIds.length === availableStudents.length) {
+                            setSelectedStudentIds([]);
+                          } else {
+                            setSelectedStudentIds(availableStudents.map((s: any) => s.id));
+                          }
+                        }}
+                        className="text-sm text-primary-600 hover:text-primary-800 font-medium"
+                      >
+                        {selectedStudentIds.length === availableStudents.length ? 'Deselect All' : 'Select All'}
+                      </button>
+                      <span className="text-sm text-gray-500">({selectedStudentIds.length} selected)</span>
+                    </div>
+                    <div className="space-y-1 max-h-48 overflow-y-auto border border-gray-200 rounded-lg">
+                      {availableStudents.map((student: any) => (
+                        <label key={student.id} className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={selectedStudentIds.includes(student.id)}
+                            onChange={(e) => {
+                              if (e.target.checked) {
+                                setSelectedStudentIds([...selectedStudentIds, student.id]);
+                              } else {
+                                setSelectedStudentIds(selectedStudentIds.filter(id => id !== student.id));
+                              }
+                            }}
+                            className="w-4 h-4 text-primary-600 rounded border-gray-300"
+                          />
+                          <div>
+                            <span className="font-medium text-gray-900">{student.first_name} {student.last_name}</span>
+                            <span className="text-sm text-gray-500 ml-2">({student.email})</span>
+                          </div>
+                        </label>
+                      ))}
+                    </div>
+                    <button
+                      onClick={() => {
+                        if (selectedStudentIds.length === 0) {
+                          toast.error('Select at least one student');
+                          return;
+                        }
+                        enrollMutation.mutate({ student_ids: selectedStudentIds, rotation_id: enrollModalRotation.id });
+                      }}
+                      disabled={selectedStudentIds.length === 0 || enrollMutation.isPending}
+                      className="btn btn-primary mt-3 w-full flex items-center justify-center gap-2"
+                    >
+                      <UserPlusIcon className="w-4 h-4" />
+                      {enrollMutation.isPending ? 'Enrolling...' : `Enroll ${selectedStudentIds.length} Student${selectedStudentIds.length !== 1 ? 's' : ''}`}
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       )}

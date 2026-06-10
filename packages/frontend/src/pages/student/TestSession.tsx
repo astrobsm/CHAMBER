@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { testsApi } from '../../services/api';
-import { Question, TestAttempt, AntiCheatFlag } from '../../types';
+import { AntiCheatFlag } from '../../types';
 import toast from 'react-hot-toast';
 import {
   ClockIcon,
@@ -14,16 +14,34 @@ import {
 } from '@heroicons/react/24/outline';
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
+interface TestQuestion {
+  id: string;
+  text: string;
+  question_text?: string;
+  options: { id: string; text: string }[];
+  option_a?: string;
+  option_b?: string;
+  option_c?: string;
+  option_d?: string;
+  option_e?: string;
+  type?: string;
+}
+
 interface TestData {
   test: {
     id: string;
-    title: string;
+    title?: string;
+    testType?: string;
     durationMinutes: number;
     totalQuestions: number;
     passingScore: number;
   };
-  questions: Question[];
-  attempt: TestAttempt;
+  questions: TestQuestion[];
+  attempt: {
+    id: string;
+    status: string;
+    startedAt?: string;
+  };
 }
 
 export function TestSession() {
@@ -55,18 +73,51 @@ export function TestSession() {
   }, []);
 
   // Fetch test data
-  const { data, isLoading } = useQuery({
+  const { data: rawData, isLoading } = useQuery({
     queryKey: ['test', testId],
     queryFn: () => testsApi.get(testId!),
     enabled: !!testId,
   });
 
+  // Normalize the backend response
+  const testInfo = rawData?.data?.data || rawData?.data;
+  const data = testInfo ? { data: testInfo } : undefined;
+
   // Start test mutation
   const startMutation = useMutation({
     mutationFn: () => testsApi.start(testId!, deviceFingerprint),
     onSuccess: (response) => {
-      setTestData(response.data);
-      setTimeRemaining(response.data.test.durationMinutes * 60);
+      const d = response.data?.data || response.data;
+      // Transform questions to have proper text and options
+      const questions = (d.questions || []).map((q: any) => ({
+        id: q.id,
+        text: q.text || q.question_text,
+        type: 'single_choice',
+        options: q.options || [
+          { id: 'A', text: q.option_a },
+          { id: 'B', text: q.option_b },
+          { id: 'C', text: q.option_c },
+          { id: 'D', text: q.option_d },
+          { id: 'E', text: q.option_e },
+        ].filter(o => o.text),
+      }));
+      const td: TestData = {
+        test: {
+          id: d.test?.id || d.id || testId!,
+          title: d.test?.title || d.testType || d.test?.testType || 'Test',
+          durationMinutes: d.test?.durationMinutes || d.durationMinutes || 10,
+          totalQuestions: d.test?.totalQuestions || d.totalQuestions || questions.length,
+          passingScore: d.test?.passingScore || d.passingScore || 50,
+        },
+        questions,
+        attempt: {
+          id: d.attempt?.id || d.test?.id || d.id || testId!,
+          status: d.attempt?.status || 'in_progress',
+          startedAt: d.attempt?.startedAt || new Date().toISOString(),
+        },
+      };
+      setTestData(td);
+      setTimeRemaining(td.test.durationMinutes * 60);
       setIsStarted(true);
       enterFullscreen();
     },
@@ -81,7 +132,7 @@ export function TestSession() {
       questionId: string; 
       optionIds: string[]; 
       timeTaken: number 
-    }) => testsApi.submitAnswer(testData!.attempt.id, questionId, optionIds, timeTaken),
+    }) => testsApi.submitAnswer(testData!.attempt.id, questionId, optionIds[0] || '', timeTaken),
   });
 
   // Complete test mutation
@@ -89,11 +140,12 @@ export function TestSession() {
     mutationFn: () => testsApi.complete(testData!.attempt.id),
     onSuccess: (response) => {
       exitFullscreen();
+      const d = response.data?.data || response.data;
       navigate(`/student/tests`, { 
         state: { 
           completed: true, 
-          score: response.data.percentageScore,
-          passed: response.data.passed,
+          score: d?.percentage || d?.score || d?.percentageScore || 0,
+          passed: (d?.percentage || d?.score || 0) >= 50,
         } 
       });
     },
@@ -318,6 +370,7 @@ export function TestSession() {
   // Pre-test screen
   if (!isStarted) {
     const test = data?.data;
+    const testTitle = test?.testType ? test.testType.replace('_', '-').replace(/\b\w/g, (c: string) => c.toUpperCase()) + ' — ' + (test?.rotationName || '') : (test?.rotationName || 'Test');
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
         <div className="card max-w-lg w-full">
@@ -325,8 +378,8 @@ export function TestSession() {
             <div className="w-16 h-16 mx-auto bg-primary-100 rounded-full flex items-center justify-center mb-4">
               <ClockIcon className="w-8 h-8 text-primary-600" />
             </div>
-            <h1 className="text-2xl font-bold text-gray-900">{test?.title}</h1>
-            <p className="text-gray-600 mt-2">{test?.description}</p>
+            <h1 className="text-2xl font-bold text-gray-900">{testTitle}</h1>
+            <p className="text-gray-600 mt-2">{test?.categoryName || ''}</p>
           </div>
 
           <div className="bg-gray-50 rounded-xl p-4 mb-6">
@@ -334,15 +387,15 @@ export function TestSession() {
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
                 <p className="text-gray-500">Questions</p>
-                <p className="font-semibold">{test?.totalQuestions}</p>
+                <p className="font-semibold">{test?.totalQuestions || 0}</p>
               </div>
               <div>
                 <p className="text-gray-500">Duration</p>
-                <p className="font-semibold">{test?.durationMinutes} minutes</p>
+                <p className="font-semibold">{test?.durationMinutes || 10} minutes</p>
               </div>
               <div>
                 <p className="text-gray-500">Passing Score</p>
-                <p className="font-semibold">{test?.passingScore}%</p>
+                <p className="font-semibold">{test?.passingScore || 50}%</p>
               </div>
               <div>
                 <p className="text-gray-500">Type</p>
@@ -393,7 +446,7 @@ export function TestSession() {
   const answeredCount = Object.keys(answers).length;
 
   return (
-    <div className="fullscreen-mode test-mode bg-gray-50">
+    <div className="fixed inset-0 bg-gray-50 flex flex-col overflow-hidden">
       {/* Warning overlay */}
       {showWarning && (
         <div className="fixed inset-0 z-50 bg-red-600 flex items-center justify-center">
@@ -407,28 +460,28 @@ export function TestSession() {
         </div>
       )}
 
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white border-b z-40 px-4 py-3">
+      {/* Header - compact */}
+      <header className="flex-shrink-0 bg-white border-b z-40 px-4 py-2">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div>
-            <h1 className="font-semibold text-gray-900">{testData?.test.title}</h1>
-            <p className="text-sm text-gray-500">
+            <h1 className="font-semibold text-gray-900 text-sm">{testData?.test.title}</h1>
+            <p className="text-xs text-gray-500">
               Question {currentQuestion + 1} of {testData?.questions.length}
             </p>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {/* Timer */}
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-lg font-mono text-lg ${
+            <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-mono text-base ${
               timeRemaining <= 60 ? 'bg-red-100 text-red-700' : 'bg-gray-100 text-gray-900'
             }`}>
-              <ClockIcon className="w-5 h-5" />
+              <ClockIcon className="w-4 h-4" />
               {formatTime(timeRemaining)}
             </div>
 
             {/* Anti-cheat flags indicator */}
             {antiCheatFlags.length > 0 && (
-              <div className="bg-red-100 text-red-700 px-3 py-1 rounded-lg text-sm">
+              <div className="bg-red-100 text-red-700 px-2 py-1 rounded-lg text-xs">
                 {antiCheatFlags.length} violation{antiCheatFlags.length !== 1 ? 's' : ''}
               </div>
             )}
@@ -436,12 +489,31 @@ export function TestSession() {
         </div>
       </header>
 
-      {/* Main content */}
-      <main className="pt-20 pb-24 px-4">
+      {/* Scrollable main content */}
+      <main className="flex-1 overflow-y-auto px-4 py-3">
         <div className="max-w-4xl mx-auto">
-          {/* Question navigator */}
-          <div className="card mb-4 p-3">
-            <div className="flex flex-wrap gap-2">
+          {/* Collapsible question navigator */}
+          <details className="card mb-3 p-2">
+            <summary className="cursor-pointer text-sm font-medium text-gray-700 flex items-center justify-between">
+              <span>Question Navigator</span>
+              <div className="flex items-center gap-3 text-xs text-gray-500">
+                <span className="flex items-center gap-1">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  {answeredCount}
+                </span>
+                <span className="flex items-center gap-1">
+                  <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                  {(testData?.questions.length || 0) - answeredCount}
+                </span>
+                {flaggedQuestions.size > 0 && (
+                  <span className="flex items-center gap-1">
+                    <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+                    {flaggedQuestions.size}
+                  </span>
+                )}
+              </div>
+            </summary>
+            <div className="flex flex-wrap gap-1.5 mt-2">
               {testData?.questions.map((q, index) => (
                 <button
                   key={q.id}
@@ -449,7 +521,7 @@ export function TestSession() {
                     setCurrentQuestion(index);
                     questionStartTime.current = Date.now();
                   }}
-                  className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
+                  className={`w-8 h-8 rounded text-xs font-medium transition-colors ${
                     index === currentQuestion
                       ? 'bg-primary-600 text-white'
                       : answers[q.id]
@@ -461,21 +533,7 @@ export function TestSession() {
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-4 mt-3 text-sm text-gray-500">
-              <span className="flex items-center gap-1">
-                <div className="w-3 h-3 bg-green-100 rounded"></div>
-                Answered ({answeredCount})
-              </span>
-              <span className="flex items-center gap-1">
-                <div className="w-3 h-3 bg-gray-100 rounded"></div>
-                Unanswered ({(testData?.questions.length || 0) - answeredCount})
-              </span>
-              <span className="flex items-center gap-1">
-                <div className="w-3 h-3 border-2 border-amber-500 rounded"></div>
-                Flagged ({flaggedQuestions.size})
-              </span>
-            </div>
-          </div>
+          </details>
 
           {/* Question */}
           <div className="card">
@@ -498,9 +556,9 @@ export function TestSession() {
               {question?.text}
             </h2>
 
-            {question?.imageUrl && (
+            {(question as any)?.imageUrl && (
               <img
-                src={question.imageUrl}
+                src={(question as any).imageUrl}
                 alt="Question illustration"
                 className="max-w-md mx-auto mb-6 rounded-lg"
               />
@@ -537,8 +595,8 @@ export function TestSession() {
         </div>
       </main>
 
-      {/* Footer navigation */}
-      <footer className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 z-40">
+      {/* Footer navigation - pinned to bottom */}
+      <footer className="flex-shrink-0 bg-white border-t px-4 py-3 z-40">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <button
             onClick={handlePrevQuestion}

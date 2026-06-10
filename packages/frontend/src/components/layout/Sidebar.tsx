@@ -51,6 +51,7 @@ const assessorNavItems: NavItem[] = [
 
 const adminNavItems: NavItem[] = [
   { name: 'Dashboard', href: '/admin/dashboard', icon: HomeIcon },
+  { name: 'Attendance', href: '/admin/attendance', icon: ClockIcon },
   { name: 'CBT Overview', href: '/admin/cbt', icon: ComputerDesktopIcon },
   { name: 'CME Articles', href: '/admin/cme', icon: BookOpenIcon },
   { name: 'Users', href: '/admin/users', icon: UsersIcon },

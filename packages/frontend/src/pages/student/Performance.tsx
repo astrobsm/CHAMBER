@@ -51,12 +51,13 @@ interface PerformanceData {
 
 export function StudentPerformance() {
   const { user } = useAuth();
-  const { data, isLoading } = useQuery<{ data: PerformanceData }>({
+  const { data, isLoading } = useQuery({
     queryKey: ['student-performance'],
     queryFn: () => studentsApi.getPerformance(),
   });
 
-  const performance = data?.data;
+  const raw = data?.data?.data || data?.data || {};
+  const performance: PerformanceData | undefined = raw?.overall ? raw as PerformanceData : undefined;
 
   const handleDownloadReport = () => {
     if (!performance || !user) return;
@@ -87,11 +88,11 @@ export function StudentPerformance() {
   }
 
   // Prepare radar chart data
-  const radarData = performance?.byTopic.map(t => ({
+  const radarData = (performance?.byTopic || []).map(t => ({
     subject: t.topic,
     score: t.score,
     fullMark: 100,
-  })) || [];
+  }));
 
   return (
     <div className="space-y-6">
@@ -163,7 +164,7 @@ export function StudentPerformance() {
             </div>
             <div>
               <p className="text-gray-500 text-sm">Topics Covered</p>
-              <p className="text-2xl font-bold text-gray-900">{performance?.byTopic.length || 0}</p>
+              <p className="text-2xl font-bold text-gray-900">{performance?.byTopic?.length || 0}</p>
             </div>
           </div>
         </div>
