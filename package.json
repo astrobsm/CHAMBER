@@ -28,7 +28,9 @@
     "test:users": "node scripts/test-user-creation.js",
     "test:api": "npm run test:auth && npm run test:cbme && npm run test:users && npm run audit:schema",
     "audit:schema": "node scripts/audit-schema.js",
-    "test:auth": "node scripts/test-auth-security.js"
+    "test:auth": "node scripts/test-auth-security.js",
+    "db:cbme-migrate": "node scripts/run-cbme-migration.js",
+    "db:cbme-check": "node scripts/run-cbme-migration.js --dry-run"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

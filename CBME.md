@@ -47,11 +47,22 @@ so rubrics of different lengths remain comparable.
 
 The schema is additive and idempotent. Two equivalent routes:
 
-**Automatic** — the API applies it on first CBME request per cold start, or on
-demand:
+> **Status: applied.** Verified against the live database (PostgreSQL 17.10) —
+> 13 tables, 31 added columns and 4 enum values, all present. Re-running is a
+> confirmed no-op.
+
+**Script** (recommended — connects, applies and verifies):
 
 ```bash
-curl -X POST https://<host>/api/cbme/migrate
+npm run db:cbme-check     # report current state, change nothing
+npm run db:cbme-migrate   # apply and verify
+```
+
+**Automatic** — the API applies it on first CBME request per cold start, or on
+demand (admin token required):
+
+```bash
+curl -X POST https://<host>/api/cbme/migrate -H "Authorization: Bearer <admin token>"
 ```
 
 **By hand** — for operators with psql access:
@@ -59,6 +70,18 @@ curl -X POST https://<host>/api/cbme/migrate
 ```bash
 psql "$DATABASE_URL" -f packages/backend/database/migrations/001_cbme_v2.sql
 ```
+
+### Schema note
+
+This deployment does **not** use the `public` schema. `search_path` is
+`crp, public` and the application's tables live in **`crp`**; `public` holds an
+unrelated application sharing the same database instance. Any query or probe
+that hardcodes `public.` will silently miss. Keep table references unqualified
+so they resolve through `search_path`.
+
+The instance allows only **25 connections** and is shared, so the API pool is
+deliberately capped at `max: 1`. Do not raise it or parallelise the scoring
+engine's query batch — it would exhaust the shared budget.
 
 The canonical DDL lives in `api/cbme-schema.js` (so the Vercel bundler traces it
 as a dependency). Regenerate the `.sql` file after editing it — never edit the

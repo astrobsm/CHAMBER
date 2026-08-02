@@ -241,7 +241,11 @@ module.exports = function registerCbmeRoutes(app, ctx) {
   async function ensureSchema() {
     if (schemaReady) return true;
     try {
-      const marker = await query("SELECT to_regclass('public.cbme_schema_version') AS t");
+      // Unqualified on purpose — the deployment resolves through search_path
+      // (the live database uses the "crp" schema, not "public"). Hardcoding a
+      // schema here makes the probe always miss and re-runs the DDL on every
+      // cold start.
+      const marker = await query("SELECT to_regclass('cbme_schema_version') AS t");
       if (marker.rows[0] && marker.rows[0].t) {
         schemaReady = true;
         return true;
