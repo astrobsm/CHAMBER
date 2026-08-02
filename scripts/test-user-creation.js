@@ -9,6 +9,7 @@ const Module = require('module');
 
 const ROOT = path.join(__dirname, '..');
 process.env.DATABASE_URL = 'postgres://stub/stub';
+process.env.JWT_SECRET = 'test-secret-not-used-anywhere-real-0123456789';
 
 const STUDENT_COLUMNS = new Set([
   'id', 'user_id', 'matriculation_number', 'first_name', 'last_name', 'middle_name',
@@ -95,12 +96,20 @@ Module._load = function (request) {
 const handler = require(path.join(ROOT, 'api', 'index.js'));
 const server = http.createServer(handler);
 
-function req(method, p, body) {
+const jwt = require(path.join(ROOT, 'node_modules', 'jsonwebtoken'));
+const ADMIN_TOKEN =
+  'Bearer ' +
+  jwt.sign({ sub: 'admin-001', role: 'admin', email: 'a@unth', typ: 'access' }, process.env.JWT_SECRET, {
+    issuer: 'unth-clinical-rotation-platform',
+    expiresIn: '1h',
+  });
+
+function req(method, p, body, headers = {}) {
   return new Promise((resolve) => {
     const payload = body ? JSON.stringify(body) : null;
     const r = http.request(
       { host: '127.0.0.1', port: server.address().port, method, path: p,
-        headers: { 'content-type': 'application/json', ...(payload ? { 'content-length': Buffer.byteLength(payload) } : {}) } },
+        headers: { 'content-type': 'application/json', ...headers, ...(payload ? { 'content-length': Buffer.byteLength(payload) } : {}) } },
       (res) => {
         let data = '';
         res.on('data', (c) => (data += c));
@@ -134,7 +143,7 @@ server.listen(0, async () => {
       { email: 'zoe@unth.edu.ng', role: 'wizard', first_name: 'Zoe', last_name: 'X' },
       { email: 'ken@unth.edu.ng', role: 'student', first_name: 'Ken', last_name: 'Ali', matric_number: 'MED/2024/001' },
     ],
-  });
+  }, { Authorization: ADMIN_TOKEN });
 
   check('bulk upload responds 200', bulk.status === 200, bulk);
   check('5 valid rows created', bulk.json?.data?.success?.length === 5, bulk.json?.data);

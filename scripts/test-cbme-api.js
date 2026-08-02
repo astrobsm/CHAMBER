@@ -5,6 +5,7 @@ const Module = require('module');
 const path = require('path');
 const ROOT = path.join(__dirname, '..');
 process.env.DATABASE_URL = 'postgres://stub/stub';
+process.env.JWT_SECRET = 'test-secret-not-used-anywhere-real-0123456789';
 
 // --- stub `pg` ------------------------------------------------------------
 const executed = [];
@@ -55,7 +56,13 @@ function req(method, path, body, headers = {}) {
   });
 }
 
-const tokenFor = (u) => 'Bearer usr.' + Buffer.from(JSON.stringify(u)).toString('base64url');
+const jwt = require(path.join(ROOT, 'node_modules', 'jsonwebtoken'));
+const tokenFor = (u) =>
+  'Bearer ' +
+  jwt.sign({ sub: u.id, role: u.role, email: u.email || null, typ: 'access' }, process.env.JWT_SECRET, {
+    issuer: 'unth-clinical-rotation-platform',
+    expiresIn: '1h',
+  });
 const ADMIN = { Authorization: tokenFor({ id: 'admin-001', role: 'admin', email: 'a@unth' }) };
 const STUDENT = { Authorization: tokenFor({ id: 'user-1', role: 'student', email: 's@unth' }) };
 
@@ -70,7 +77,7 @@ server.listen(0, async () => {
   const health = await req('GET', '/api/health');
   check('v1 /api/health still routes', health.status === 200 && health.json.status === 'healthy', health);
 
-  const fw = await req('GET', '/api/cbme/framework');
+  const fw = await req('GET', '/api/cbme/framework', null, ADMIN);
   check('framework weights sum to 100',
     fw.status === 200 && Object.values(fw.json.data.weights).reduce((a, b) => a + b, 0) === 100, fw);
   check('framework exposes 5 houses', fw.json?.data?.houses?.length === 5, fw.json?.data?.houses?.length);
@@ -136,7 +143,7 @@ server.listen(0, async () => {
   const lb = await req('GET', '/api/rotations/rot-1/leaderboard', null, ADMIN);
   check('leaderboard returns group standings', lb.status === 200 && lb.json.data.groups[0].code === 'spartans', lb.json?.data?.groups);
 
-  const unknown = await req('GET', '/api/cbme/does-not-exist');
+  const unknown = await req('GET', '/api/cbme/does-not-exist', null, ADMIN);
   check('unknown CBME path falls through to 404', unknown.status === 404, unknown);
 
   console.log(fails ? `\n${fails} FAILURE(S)` : '\nAll API smoke tests passed');
