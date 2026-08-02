@@ -15,6 +15,12 @@ import {
   XMarkIcon,
   DocumentTextIcon,
   ComputerDesktopIcon,
+  ShieldCheckIcon,
+  CheckBadgeIcon,
+  PresentationChartLineIcon,
+  TrophyIcon,
+  Squares2X2Icon,
+  ClipboardDocumentCheckIcon,
 } from '@heroicons/react/24/outline';
 
 interface SidebarProps {
@@ -30,27 +36,42 @@ interface NavItem {
 
 const studentNavItems: NavItem[] = [
   { name: 'Dashboard', href: '/student/dashboard', icon: HomeIcon },
+  { name: 'Competency', href: '/student/competency', icon: CheckBadgeIcon },
+  { name: 'My Team', href: '/student/team', icon: ShieldCheckIcon },
+  { name: 'Leaderboard', href: '/student/leaderboard', icon: TrophyIcon },
   { name: 'Rotations', href: '/student/rotations', icon: AcademicCapIcon },
+  { name: 'Seminars', href: '/student/seminars', icon: PresentationChartLineIcon },
+  { name: 'Clinic Patients', href: '/student/clinics', icon: ClipboardDocumentCheckIcon },
   { name: 'CBT', href: '/student/cbt', icon: ComputerDesktopIcon },
   { name: 'Tests', href: '/student/tests', icon: ClipboardDocumentListIcon },
   { name: 'Study Module', href: '/student/study', icon: DocumentTextIcon },
   { name: 'Attendance', href: '/student/attendance', icon: ClockIcon },
   { name: 'Performance', href: '/student/performance', icon: ChartBarIcon },
   { name: 'CME Activities', href: '/student/cme', icon: BookOpenIcon },
+  { name: 'Awards', href: '/student/awards', icon: TrophyIcon },
   { name: 'Profile', href: '/student/profile', icon: UserCircleIcon },
 ];
 
 const assessorNavItems: NavItem[] = [
   { name: 'Dashboard', href: '/assessor/dashboard', icon: HomeIcon },
+  { name: 'Record Assessment', href: '/assessor/assess', icon: ClipboardDocumentCheckIcon },
+  { name: 'Competency Board', href: '/assessor/competency', icon: CheckBadgeIcon },
   { name: 'CBT Management', href: '/assessor/cbt', icon: ComputerDesktopIcon },
   { name: 'Attendance', href: '/assessor/attendance', icon: ClockIcon },
   { name: 'Questions', href: '/assessor/questions', icon: QuestionMarkCircleIcon },
   { name: 'Students', href: '/assessor/students', icon: UsersIcon },
+  { name: 'Leaderboard', href: '/assessor/leaderboard', icon: TrophyIcon },
+  { name: 'Awards', href: '/assessor/awards', icon: TrophyIcon },
   { name: 'Reports', href: '/assessor/reports', icon: DocumentChartBarIcon },
 ];
 
 const adminNavItems: NavItem[] = [
   { name: 'Dashboard', href: '/admin/dashboard', icon: HomeIcon },
+  { name: 'Rotation Setup', href: '/admin/rotation-setup', icon: Squares2X2Icon },
+  { name: 'Competency Board', href: '/admin/competency', icon: CheckBadgeIcon },
+  { name: 'Record Assessment', href: '/admin/assess', icon: ClipboardDocumentCheckIcon },
+  { name: 'Leaderboard', href: '/admin/leaderboard', icon: TrophyIcon },
+  { name: 'Awards', href: '/admin/awards', icon: TrophyIcon },
   { name: 'Attendance', href: '/admin/attendance', icon: ClockIcon },
   { name: 'CBT Overview', href: '/admin/cbt', icon: ComputerDesktopIcon },
   { name: 'CME Articles', href: '/admin/cme', icon: BookOpenIcon },

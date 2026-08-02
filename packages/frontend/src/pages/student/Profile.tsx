@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../../contexts/AuthContext';
 import { authApi } from '../../services/api';
+import LearningPortfolio from '../../components/cbme/LearningPortfolio';
 import toast from 'react-hot-toast';
 import {
   UserCircleIcon,
@@ -246,6 +247,9 @@ export function StudentProfile() {
           </form>
         )}
       </div>
+
+      {/* Extended CBME record, rotation history, awards and feedback */}
+      <LearningPortfolio />
 
       {/* Account Info */}
       <div className="card bg-gray-50">

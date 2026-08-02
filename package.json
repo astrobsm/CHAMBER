@@ -16,13 +16,17 @@
     "build:api": "npm run build --workspace=packages/backend",
     "start": "npm run start --workspace=packages/backend",
     "db:migrate": "npm run migrate --workspace=packages/backend",
+    "db:cbme-sql": "node scripts/emit-cbme-schema.js",
     "db:seed": "npm run seed --workspace=packages/backend",
     "deploy": "powershell -ExecutionPolicy Bypass -File scripts/deploy-all.ps1",
     "deploy:vercel": "powershell -ExecutionPolicy Bypass -File scripts/deploy-vercel.ps1",
     "setup:env": "powershell -ExecutionPolicy Bypass -File scripts/setup-env.ps1",
     "setup:db": "powershell -ExecutionPolicy Bypass -File scripts/setup-database.ps1",
     "lint": "npm run lint --workspaces",
-    "test": "npm run test --workspaces"
+    "test": "npm run test --workspaces",
+    "test:cbme": "node scripts/test-cbme-scoring.js && node scripts/test-cbme-api.js",
+    "test:users": "node scripts/test-user-creation.js",
+    "test:api": "npm run test:cbme && npm run test:users"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

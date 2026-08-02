@@ -91,6 +91,26 @@ function getAuthUser(req) {
   }
 }
 
+// Map whatever level label the client sends onto the student_level enum.
+// The column is NOT NULL with no default, so this must always return a value.
+const STUDENT_LEVELS = ['surgery_1', 'surgery_2', 'surgery_3', 'surgery_4'];
+const STUDENT_LEVEL_ALIASES = {
+  'surgery i': 'surgery_1',
+  'surgery ii': 'surgery_2',
+  'surgery iii': 'surgery_3',
+  'surgery iv': 'surgery_4',
+  'surgery 1': 'surgery_1',
+  'surgery 2': 'surgery_2',
+  'surgery 3': 'surgery_3',
+  'surgery 4': 'surgery_4',
+};
+
+function normalizeStudentLevel(level) {
+  const raw = String(level || '').trim().toLowerCase();
+  if (STUDENT_LEVELS.includes(raw)) return raw;
+  return STUDENT_LEVEL_ALIASES[raw] || 'surgery_1';
+}
+
 // Resolve the students.id (primary key) for the authenticated user.
 // Returns the student PK string, or null if not a student / not found.
 async function resolveStudentId(req) {
@@ -349,32 +369,20 @@ app.post('/api/auth/register', async (req, res) => {
     
     // Create student profile
     const matric = matricNumber || ('MAT/' + Date.now());
-    // Map frontend level names to DB enum values
-    const levelMap = {
-      'Surgery I': 'surgery_1',
-      'Surgery II': 'surgery_2',
-      'Surgery III': 'surgery_3',
-      'Surgery IV': 'surgery_4',
-    };
-    const studentLevel = levelMap[level] || level || 'surgery_1';
-    
-    // Try both possible column names for matric number
+    const studentLevel = normalizeStudentLevel(level);
+
     try {
       await query(
         'INSERT INTO students (user_id, first_name, last_name, matriculation_number, level, phone_number) VALUES ($1, $2, $3, $4, $5, $6)',
         [user.id, firstName, lastName, matric, studentLevel, phoneNumber || '']
       );
-    } catch (colErr) {
-      if (colErr.message && colErr.message.includes('matriculation_number')) {
-        await query(
-          'INSERT INTO students (user_id, first_name, last_name, matric_number, level, phone_number) VALUES ($1, $2, $3, $4, $5, $6)',
-          [user.id, firstName, lastName, matric, studentLevel, phoneNumber || '']
-        );
-      } else {
-        throw colErr;
-      }
+    } catch (profileErr) {
+      // The users row already exists at this point — remove it so the address
+      // is not left with a login that has no student profile.
+      try { await query('DELETE FROM users WHERE id = $1', [user.id]); } catch (cleanupErr) { /* best effort */ }
+      throw profileErr;
     }
-    
+
     const token = makeToken({ id: user.id, role: user.role, email: user.email });
     
     res.json({
@@ -398,7 +406,15 @@ app.post('/api/auth/register', async (req, res) => {
   } catch (error) {
     console.error('Registration error:', error);
     if (error.message && error.message.includes('duplicate key')) {
-      return res.status(409).json({ success: false, message: 'An account with this email already exists' });
+      // Distinguish the two unique constraints — telling a student their email
+      // is taken when the real clash is their matric number sends them nowhere.
+      const isMatric = /matriculation_number/.test(error.message);
+      return res.status(409).json({
+        success: false,
+        message: isMatric
+          ? 'An account with this matriculation number already exists'
+          : 'An account with this email already exists',
+      });
     }
     res.status(500).json({ success: false, message: 'Registration failed. Please try again.' });
   }
@@ -2305,36 +2321,72 @@ app.post('/api/admin/users/bulk-upload', async (req, res) => {
     if (!users || !Array.isArray(users) || users.length === 0) {
       return res.status(400).json({ success: false, message: 'No users provided' });
     }
+    const bcrypt = require('bcryptjs');
     const results = { success: [], failed: [] };
+
     for (const u of users) {
+      let userId = null;
       try {
-        const email = u.email?.trim();
-        const role = u.role?.trim() || 'student';
+        // Emails are stored and compared lower-case everywhere else (login does
+        // LOWER(u.email) = LOWER($1)), so normalise here too — otherwise a
+        // mixed-case row slips past the duplicate check.
+        const email = u.email?.trim().toLowerCase();
+        const role = u.role?.trim().toLowerCase() || 'student';
         if (!email) { results.failed.push({ email: 'missing', reason: 'Email required' }); continue; }
-        const existing = await query('SELECT id FROM users WHERE email = $1', [email]);
+        if (!['student', 'assessor', 'admin'].includes(role)) {
+          results.failed.push({ email, reason: `Unknown role "${role}"` });
+          continue;
+        }
+
+        const existing = await query('SELECT id FROM users WHERE LOWER(email) = $1', [email]);
         if (existing.rows.length > 0) { results.failed.push({ email, reason: 'Already exists' }); continue; }
+
         const tempPassword = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-4).toUpperCase();
+        // Login verifies with bcrypt.compare, so the password must be hashed —
+        // a plaintext value here would make the account impossible to log into.
+        const hashed = await bcrypt.hash(tempPassword, 10);
         const userResult = await query(
           'INSERT INTO users (email, password_hash, role, is_active) VALUES ($1, $2, $3, true) RETURNING id',
-          [email, tempPassword, role]
+          [email, hashed, role]
         );
-        const userId = userResult.rows[0].id;
+        userId = userResult.rows[0].id;
+
+        const firstName = u.first_name?.trim() || '';
+        const lastName = u.last_name?.trim() || '';
+
         if (role === 'student') {
           await query(
-            'INSERT INTO students (user_id, first_name, last_name, matric_number, phone_number) VALUES ($1, $2, $3, $4, $5)',
-            [userId, u.first_name?.trim() || '', u.last_name?.trim() || '', u.matric_number?.trim() || u.matriculation_number?.trim() || '', u.phone_number?.trim() || '']
+            'INSERT INTO students (user_id, first_name, last_name, matriculation_number, level, phone_number) VALUES ($1, $2, $3, $4, $5, $6)',
+            [
+              userId, firstName, lastName,
+              u.matriculation_number?.trim() || u.matric_number?.trim() || ('MAT/' + Date.now()),
+              normalizeStudentLevel(u.level),
+              u.phone_number?.trim() || '',
+            ]
           );
         } else if (role === 'assessor') {
           await query(
             'INSERT INTO assessors (user_id, first_name, last_name, staff_id, department) VALUES ($1, $2, $3, $4, $5)',
-            [userId, u.first_name?.trim() || '', u.last_name?.trim() || '', u.staff_id?.trim() || '', u.department?.trim() || '']
+            [userId, firstName, lastName, u.staff_id?.trim() || ('STAFF/' + Date.now()), u.department?.trim() || '']
+          );
+        } else {
+          await query(
+            'INSERT INTO administrators (user_id, first_name, last_name, staff_id, department) VALUES ($1, $2, $3, $4, $5)',
+            [userId, firstName, lastName, u.staff_id?.trim() || ('ADM/' + Date.now()), u.department?.trim() || '']
           );
         }
-        results.success.push({ email, temporary_password: tempPassword });
+
+        results.success.push({ email, role, temporary_password: tempPassword });
       } catch (e) {
+        // The users row is written before the profile row; if the profile fails
+        // we must not leave a login with no profile behind.
+        if (userId) {
+          try { await query('DELETE FROM users WHERE id = $1', [userId]); } catch (cleanupErr) { /* best effort */ }
+        }
         results.failed.push({ email: u.email || 'unknown', reason: e.message });
       }
     }
+
     res.json({ success: true, message: `Created ${results.success.length} users, ${results.failed.length} failed`, data: results });
   } catch (error) {
     console.error('Bulk upload error:', error);
@@ -3191,6 +3243,12 @@ app.get('/api/sync/status', (req, res) => {
     },
   });
 });
+
+// ============== CBME v2 (competency framework) ==============
+// Groups, seminars, clinical assessment, competency scoring, sign-out
+// eligibility, awards and analytics. Registered last so it sits ahead of the
+// catch-all but behind every v1 route.
+require('./cbme')(app, { query, getAuthUser, resolveStudentId });
 
 // Catch-all for undefined routes
 app.all('/api/*', (req, res) => {
