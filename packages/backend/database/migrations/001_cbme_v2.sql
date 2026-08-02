@@ -37,6 +37,15 @@ ALTER TABLE students ADD COLUMN IF NOT EXISTS portfolio_notes TEXT;
 -- 2. EXTENDED ROTATION DEFINITION (Phase 2)
 -- ============================================================================
 
+-- Columns the v1 API already depends on (GET/PUT /api/rotations) but which
+-- never made it into schema.sql — they existed only if an operator remembered
+-- to hit the one-off GET /api/migrate-rotations endpoint. Declared here so a
+-- database built from schema.sql alone is not broken.
+ALTER TABLE rotations ADD COLUMN IF NOT EXISTS assessor_id UUID;
+ALTER TABLE rotations ADD COLUMN IF NOT EXISTS description TEXT DEFAULT '';
+ALTER TABLE rotations ADD COLUMN IF NOT EXISTS level VARCHAR(50) DEFAULT '';
+ALTER TABLE rotations ADD COLUMN IF NOT EXISTS duration_weeks INTEGER;
+
 ALTER TABLE rotations ADD COLUMN IF NOT EXISTS specialty VARCHAR(150);
 ALTER TABLE rotations ADD COLUMN IF NOT EXISTS unit VARCHAR(150);
 ALTER TABLE rotations ADD COLUMN IF NOT EXISTS academic_session VARCHAR(40);

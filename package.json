@@ -26,7 +26,8 @@
     "test": "npm run test --workspaces",
     "test:cbme": "node scripts/test-cbme-scoring.js && node scripts/test-cbme-api.js",
     "test:users": "node scripts/test-user-creation.js",
-    "test:api": "npm run test:cbme && npm run test:users"
+    "test:api": "npm run test:cbme && npm run test:users && npm run audit:schema",
+    "audit:schema": "node scripts/audit-schema.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
