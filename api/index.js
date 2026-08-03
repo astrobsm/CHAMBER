@@ -43,6 +43,74 @@ app.use((req, res, next) => {
   next();
 });
 
+// ============== ROUTE GUARD ==============
+// Applied ahead of every handler. Previously no v1 route checked the caller at
+// all — POST /api/admin/users would happily mint an administrator for an
+// anonymous request — so authorisation is enforced centrally here rather than
+// relying on each of ~90 handlers to remember.
+
+// Reachable without a token.
+const PUBLIC_ROUTES = [
+  /^\/api\/?$/,
+  /^\/api\/health$/,
+  /^\/api\/test$/,
+  /^\/api\/auth\/(login|register|refresh|forgot-password|reset-password)$/,
+];
+
+// Operational endpoints that expose schema/config detail or mutate it.
+const ADMIN_ROUTES = [
+  // Even when ENABLE_DEMO_LOGIN is on, only an administrator may mint a
+  // demo session — otherwise any logged-in student could request an
+  // admin-role token from it.
+  /^\/api\/auth\/demo-login$/,
+  /^\/api\/cbme\/migrate$/,
+  /^\/api\/migrate-rotations$/,
+  /^\/api\/debug-env$/,
+  /^\/debug-env$/,
+  /^\/api\/debug-request$/,
+  /^\/api\/db-status$/,
+];
+
+const STAFF_ROLES = ['admin', 'assessor'];
+
+function routeRequirement(method, pathname) {
+  if (PUBLIC_ROUTES.some((r) => r.test(pathname))) return null;
+  if (ADMIN_ROUTES.some((r) => r.test(pathname))) return ['admin'];
+  if (/^\/api\/admin\//.test(pathname)) {
+    // Assessors legitimately read the student roster through /api/admin/users;
+    // only administrators may create, edit, delete or reset accounts.
+    return method === 'GET' ? STAFF_ROLES : ['admin'];
+  }
+  return []; // any authenticated user
+}
+
+app.use((req, res, next) => {
+  if (req.method === 'OPTIONS') return next();
+
+  const pathname = (req.path || req.url || '').split('?')[0];
+  const required = routeRequirement(req.method, pathname);
+  if (required === null) return next();
+
+  if (!getJwtSecret()) {
+    console.error('JWT_SECRET is not set — refusing all authenticated requests.');
+    return res.status(503).json({
+      success: false,
+      message: 'Server authentication is not configured. Set JWT_SECRET and redeploy.',
+    });
+  }
+
+  const user = getAuthUser(req);
+  if (!user) {
+    return res.status(401).json({ success: false, message: 'Authentication required' });
+  }
+  if (required.length && !required.includes(user.role)) {
+    return res.status(403).json({ success: false, message: 'You do not have permission to perform this action' });
+  }
+
+  req.authUser = user;
+  return next();
+});
+
 // Helper function to run queries
 async function query(text, params) {
   const p = getPool();
@@ -59,36 +127,85 @@ async function query(text, params) {
 }
 
 // ============== AUTH TOKEN HELPERS ==============
-// Encode the user identity into the access token so subsequent requests can be
-// attributed to the correct user without a server-side session store.
-// Format: "usr.<base64url(JSON)>" — JSON contains { id, role, email, ts }.
-function makeToken(user) {
-  const payload = { id: user.id, role: user.role, email: user.email || null, ts: Date.now() };
-  const encoded = Buffer.from(JSON.stringify(payload)).toString('base64url');
-  return `usr.${encoded}`;
+// Tokens are HMAC-signed JWTs. The previous format encoded the identity as
+// plain base64 with no signature, which let any client rewrite its own role
+// and become an administrator — so nothing here may fall back to an unsigned
+// or unverified token, even when JWT_SECRET is missing.
+const jwt = require('jsonwebtoken');
+
+const TOKEN_ISSUER = 'unth-clinical-rotation-platform';
+const ACCESS_TOKEN_TTL = process.env.ACCESS_TOKEN_TTL || '12h';
+const REFRESH_TOKEN_TTL = process.env.REFRESH_TOKEN_TTL || '30d';
+
+function getJwtSecret() {
+  const secret = process.env.JWT_SECRET;
+  // Refuse the placeholder shipped in .env.example — a known secret is no
+  // better than no secret at all.
+  if (!secret || secret.length < 16 || secret === 'your-super-secret-jwt-key-change-in-production') {
+    return null;
+  }
+  return secret;
 }
 
-// Decode the authenticated user from the Authorization header (Bearer token).
-// Returns { id, role, email } or null. Tolerates legacy tokens gracefully.
-function getAuthUser(req) {
+function makeToken(user, options = {}) {
+  const secret = getJwtSecret();
+  if (!secret) throw new Error('JWT_SECRET is not configured');
+  return jwt.sign(
+    { sub: String(user.id), role: user.role, email: user.email || null, typ: options.type || 'access' },
+    secret,
+    { issuer: TOKEN_ISSUER, expiresIn: options.expiresIn || ACCESS_TOKEN_TTL }
+  );
+}
+
+function makeTokenPair(user) {
+  return {
+    accessToken: makeToken(user),
+    refreshToken: makeToken(user, { type: 'refresh', expiresIn: REFRESH_TOKEN_TTL }),
+  };
+}
+
+// Verify a bearer token and return { id, role, email } — or null if the
+// signature, issuer, expiry or token type does not check out.
+function verifyToken(token, expectedType = 'access') {
+  const secret = getJwtSecret();
+  if (!secret || !token) return null;
   try {
-    const header = req.headers.authorization || '';
-    const token = header.startsWith('Bearer ') ? header.slice(7).trim() : header.trim();
-    if (!token) return null;
-    if (token.startsWith('usr.')) {
-      const json = Buffer.from(token.slice(4), 'base64url').toString('utf8');
-      const payload = JSON.parse(json);
-      if (payload && payload.id) {
-        return { id: payload.id, role: payload.role || null, email: payload.email || null };
-      }
-    }
-    if (token.startsWith('admin-token-')) {
-      return { id: 'admin-001', role: 'admin', email: null };
-    }
-    return null;
+    const payload = jwt.verify(token, secret, { issuer: TOKEN_ISSUER });
+    if ((payload.typ || 'access') !== expectedType) return null;
+    if (!payload.sub) return null;
+    return { id: payload.sub, role: payload.role || null, email: payload.email || null };
   } catch (e) {
     return null;
   }
+}
+
+function bearerFrom(req) {
+  const header = req.headers.authorization || '';
+  return header.startsWith('Bearer ') ? header.slice(7).trim() : header.trim();
+}
+
+function getAuthUser(req) {
+  return verifyToken(bearerFrom(req), 'access');
+}
+
+// Map whatever level label the client sends onto the student_level enum.
+// The column is NOT NULL with no default, so this must always return a value.
+const STUDENT_LEVELS = ['surgery_1', 'surgery_2', 'surgery_3', 'surgery_4'];
+const STUDENT_LEVEL_ALIASES = {
+  'surgery i': 'surgery_1',
+  'surgery ii': 'surgery_2',
+  'surgery iii': 'surgery_3',
+  'surgery iv': 'surgery_4',
+  'surgery 1': 'surgery_1',
+  'surgery 2': 'surgery_2',
+  'surgery 3': 'surgery_3',
+  'surgery 4': 'surgery_4',
+};
+
+function normalizeStudentLevel(level) {
+  const raw = String(level || '').trim().toLowerCase();
+  if (STUDENT_LEVELS.includes(raw)) return raw;
+  return STUDENT_LEVEL_ALIASES[raw] || 'surgery_1';
 }
 
 // Resolve the students.id (primary key) for the authenticated user.
@@ -232,19 +349,38 @@ app.post('/api/auth/login', async (req, res) => {
     return res.status(400).json({ success: false, message: 'Email and password are required' });
   }
   
-  // Hardcoded admin logins for demo
-  const adminEmails = ['admin@unth.edu.ng', 'emmanuelnnadi@unth.edu.ng'];
-  
-  if (adminEmails.includes(email?.toLowerCase()) && password === 'blackvelvet') {
+  if (!getJwtSecret()) {
+    return res.status(503).json({
+      success: false,
+      message: 'Server authentication is not configured. Set JWT_SECRET and redeploy.',
+    });
+  }
+
+  // Break-glass administrator, configured entirely through the environment.
+  // This replaces a password that was hardcoded in source (and therefore in
+  // git history). Leave the variables unset to disable the path completely.
+  const bootstrapEmail = (process.env.ADMIN_BOOTSTRAP_EMAIL || '').toLowerCase();
+  const bootstrapHash = process.env.ADMIN_BOOTSTRAP_PASSWORD_HASH || '';
+
+  if (bootstrapEmail && bootstrapHash && email.toLowerCase() === bootstrapEmail) {
+    const bcrypt = require('bcryptjs');
+    let bootstrapOk = false;
+    try {
+      bootstrapOk = await bcrypt.compare(password, bootstrapHash);
+    } catch (e) {
+      console.error('ADMIN_BOOTSTRAP_PASSWORD_HASH is not a valid bcrypt hash');
+    }
+    if (!bootstrapOk) {
+      return res.status(401).json({ success: false, message: 'Invalid email or password' });
+    }
     const adminUser = {
       id: 'admin-001',
       email: email.toLowerCase(),
       role: 'admin',
-      firstName: email.includes('emmanuel') ? 'Emmanuel' : 'Admin',
-      lastName: email.includes('emmanuel') ? 'Nnadi' : 'User',
+      firstName: process.env.ADMIN_BOOTSTRAP_FIRST_NAME || 'Admin',
+      lastName: process.env.ADMIN_BOOTSTRAP_LAST_NAME || 'User',
     };
-    const token = makeToken(adminUser);
-    
+
     return res.json({
       success: true,
       message: 'Login successful',
@@ -255,8 +391,7 @@ app.post('/api/auth/login', async (req, res) => {
           department: 'Medical Education',
           accessLevel: 'full',
         },
-        accessToken: token,
-        refreshToken: `refresh-${token}`,
+        ...makeTokenPair(adminUser),
       },
     });
   }
@@ -285,8 +420,6 @@ app.post('/api/auth/login', async (req, res) => {
         return res.status(401).json({ success: false, message: 'Invalid email or password' });
       }
       
-      const token = makeToken({ id: user.id, role: user.role, email: user.email });
-      
       return res.json({
         success: true,
         message: 'Login successful',
@@ -301,8 +434,7 @@ app.post('/api/auth/login', async (req, res) => {
           profile: {
             matricNumber: user.matriculation_number || null,
           },
-          accessToken: token,
-          refreshToken: `refresh-${token}`,
+          ...makeTokenPair({ id: user.id, role: user.role, email: user.email }),
         },
       });
     }
@@ -349,34 +481,20 @@ app.post('/api/auth/register', async (req, res) => {
     
     // Create student profile
     const matric = matricNumber || ('MAT/' + Date.now());
-    // Map frontend level names to DB enum values
-    const levelMap = {
-      'Surgery I': 'surgery_1',
-      'Surgery II': 'surgery_2',
-      'Surgery III': 'surgery_3',
-      'Surgery IV': 'surgery_4',
-    };
-    const studentLevel = levelMap[level] || level || 'surgery_1';
-    
-    // Try both possible column names for matric number
+    const studentLevel = normalizeStudentLevel(level);
+
     try {
       await query(
         'INSERT INTO students (user_id, first_name, last_name, matriculation_number, level, phone_number) VALUES ($1, $2, $3, $4, $5, $6)',
         [user.id, firstName, lastName, matric, studentLevel, phoneNumber || '']
       );
-    } catch (colErr) {
-      if (colErr.message && colErr.message.includes('matriculation_number')) {
-        await query(
-          'INSERT INTO students (user_id, first_name, last_name, matric_number, level, phone_number) VALUES ($1, $2, $3, $4, $5, $6)',
-          [user.id, firstName, lastName, matric, studentLevel, phoneNumber || '']
-        );
-      } else {
-        throw colErr;
-      }
+    } catch (profileErr) {
+      // The users row already exists at this point — remove it so the address
+      // is not left with a login that has no student profile.
+      try { await query('DELETE FROM users WHERE id = $1', [user.id]); } catch (cleanupErr) { /* best effort */ }
+      throw profileErr;
     }
-    
-    const token = makeToken({ id: user.id, role: user.role, email: user.email });
-    
+
     res.json({
       success: true,
       message: 'Registration successful',
@@ -391,62 +509,74 @@ app.post('/api/auth/register', async (req, res) => {
         profile: {
           matricNumber: matric,
         },
-        accessToken: token,
-        refreshToken: `refresh-${token}`,
+        ...makeTokenPair({ id: user.id, role: user.role, email: user.email }),
       },
     });
   } catch (error) {
     console.error('Registration error:', error);
     if (error.message && error.message.includes('duplicate key')) {
-      return res.status(409).json({ success: false, message: 'An account with this email already exists' });
+      // Distinguish the two unique constraints — telling a student their email
+      // is taken when the real clash is their matric number sends them nowhere.
+      const isMatric = /matriculation_number/.test(error.message);
+      return res.status(409).json({
+        success: false,
+        message: isMatric
+          ? 'An account with this matriculation number already exists'
+          : 'An account with this email already exists',
+      });
     }
     res.status(500).json({ success: false, message: 'Registration failed. Please try again.' });
   }
 });
 
-// Demo login endpoint
+// Demo login endpoint — handed out an administrator session to anyone who
+// asked for one. Disabled unless ENABLE_DEMO_LOGIN is explicitly turned on,
+// which should never be the case in production.
 app.post('/api/auth/demo-login', (req, res) => {
+  if (process.env.ENABLE_DEMO_LOGIN !== 'true') {
+    return res.status(404).json({ success: false, message: 'Not found' });
+  }
+  if (!getJwtSecret()) {
+    return res.status(503).json({ success: false, message: 'Server authentication is not configured.' });
+  }
+
   const { role } = req.body;
-  
   const demoUsers = {
     admin: { id: 'demo-admin-001', email: 'demo-admin@unth.edu.ng', role: 'admin', firstName: 'Demo', lastName: 'Admin' },
     student: { id: 'demo-student-001', email: 'demo-student@unth.edu.ng', role: 'student', firstName: 'Demo', lastName: 'Student' },
     assessor: { id: 'demo-assessor-001', email: 'demo-assessor@unth.edu.ng', role: 'assessor', firstName: 'Demo', lastName: 'Assessor' },
   };
-  
+
   const user = demoUsers[role];
   if (!user) {
     return res.status(400).json({ success: false, message: 'Invalid role' });
   }
-  
-  const token = `demo-${role}-token-${Date.now()}`;
+
   return res.json({
     success: true,
     message: 'Demo login successful',
-    data: { user, profile: { id: `demo-${role}-profile`, department: 'Medical Education' }, accessToken: token, refreshToken: `refresh-${token}` },
+    data: { user, profile: { id: `demo-${role}-profile`, department: 'Medical Education' }, ...makeTokenPair(user) },
   });
 });
 
 app.post('/api/auth/refresh', (req, res) => {
   const { refreshToken } = req.body;
-  if (refreshToken) {
-    // Refresh tokens are issued as `refresh-<accessToken>`; recover the embedded
-    // access token so the refreshed token keeps the same user identity.
-    const inner = refreshToken.startsWith('refresh-') ? refreshToken.slice('refresh-'.length) : null;
-    if (inner && inner.startsWith('usr.')) {
-      return res.json({ success: true, data: { accessToken: inner, refreshToken: `refresh-${inner}` } });
-    }
-    return res.json({ success: true, data: { accessToken: `refreshed-token-${Date.now()}`, refreshToken: `new-refresh-${Date.now()}` } });
+  // The refresh token must itself be a valid signature of type "refresh".
+  // The previous implementation minted a fresh token for any input string.
+  const user = verifyToken(refreshToken, 'refresh');
+  if (!user) {
+    return res.status(401).json({ success: false, message: 'Invalid or expired refresh token' });
   }
-  return res.status(401).json({ success: false, message: 'Invalid refresh token' });
+  return res.json({ success: true, data: makeTokenPair(user) });
 });
 
 app.get('/api/auth/verify', (req, res) => {
-  const authHeader = req.headers.authorization;
-  if (authHeader && authHeader.startsWith('Bearer ')) {
-    return res.json({ success: true, data: { valid: true } });
+  // Previously returned valid:true for any Bearer header whatsoever.
+  const user = getAuthUser(req);
+  if (!user) {
+    return res.status(401).json({ success: false, message: 'Invalid token' });
   }
-  return res.status(401).json({ success: false, message: 'Invalid token' });
+  return res.json({ success: true, data: { valid: true, user } });
 });
 
 app.post('/api/auth/logout', (req, res) => {
@@ -460,21 +590,38 @@ app.post('/api/auth/forgot-password', async (req, res) => {
     if (!email) {
       return res.status(400).json({ success: false, message: 'Email is required' });
     }
+    // This endpoint used to reset the account immediately and return the new
+    // password in the response body. Anyone who knew a colleague's address
+    // could take over their account — or lock them out at will. It now only
+    // records the request; an administrator issues the reset from the Users
+    // screen and passes the temporary password to the owner directly.
     const userResult = await query('SELECT id, email FROM users WHERE LOWER(email) = LOWER($1)', [email]);
-    if (userResult.rows.length === 0) {
-      // Don't reveal whether email exists - always show success
-      return res.json({ success: true, message: 'If an account with that email exists, the password has been reset. Please contact your administrator for the new temporary password.' });
+
+    if (userResult.rows.length > 0) {
+      try {
+        await query(
+          'INSERT INTO audit_logs (user_id, action, entity_type, entity_id, new_values, ip_address, user_agent) VALUES ($1,$2,$3,$4,$5,$6,$7)',
+          [
+            userResult.rows[0].id,
+            'password_reset_requested',
+            'users',
+            userResult.rows[0].id,
+            JSON.stringify({ requestedAt: new Date().toISOString() }),
+            req.headers['x-forwarded-for'] || null,
+            req.headers['user-agent'] || null,
+          ]
+        );
+      } catch (logErr) {
+        console.error('Could not record password reset request:', logErr.message);
+      }
     }
-    const bcrypt = require('bcryptjs');
-    const chars = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
-    let tempPassword = '';
-    for (let i = 0; i < 8; i++) tempPassword += chars.charAt(Math.floor(Math.random() * chars.length));
-    const hashed = await bcrypt.hash(tempPassword, 10);
-    await query('UPDATE users SET password_hash = $1, updated_at = NOW() WHERE id = $2', [hashed, userResult.rows[0].id]);
+
+    // Identical response either way, so the endpoint cannot be used to probe
+    // which addresses have accounts.
     res.json({
       success: true,
-      message: 'Your password has been reset.',
-      temporary_password: tempPassword
+      message:
+        'If an account with that email exists, a password reset request has been logged. Please contact your administrator, who will issue a temporary password to you directly.',
     });
   } catch (error) {
     console.error('Forgot password error:', error);
@@ -2305,36 +2452,72 @@ app.post('/api/admin/users/bulk-upload', async (req, res) => {
     if (!users || !Array.isArray(users) || users.length === 0) {
       return res.status(400).json({ success: false, message: 'No users provided' });
     }
+    const bcrypt = require('bcryptjs');
     const results = { success: [], failed: [] };
+
     for (const u of users) {
+      let userId = null;
       try {
-        const email = u.email?.trim();
-        const role = u.role?.trim() || 'student';
+        // Emails are stored and compared lower-case everywhere else (login does
+        // LOWER(u.email) = LOWER($1)), so normalise here too — otherwise a
+        // mixed-case row slips past the duplicate check.
+        const email = u.email?.trim().toLowerCase();
+        const role = u.role?.trim().toLowerCase() || 'student';
         if (!email) { results.failed.push({ email: 'missing', reason: 'Email required' }); continue; }
-        const existing = await query('SELECT id FROM users WHERE email = $1', [email]);
+        if (!['student', 'assessor', 'admin'].includes(role)) {
+          results.failed.push({ email, reason: `Unknown role "${role}"` });
+          continue;
+        }
+
+        const existing = await query('SELECT id FROM users WHERE LOWER(email) = $1', [email]);
         if (existing.rows.length > 0) { results.failed.push({ email, reason: 'Already exists' }); continue; }
+
         const tempPassword = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-4).toUpperCase();
+        // Login verifies with bcrypt.compare, so the password must be hashed —
+        // a plaintext value here would make the account impossible to log into.
+        const hashed = await bcrypt.hash(tempPassword, 10);
         const userResult = await query(
           'INSERT INTO users (email, password_hash, role, is_active) VALUES ($1, $2, $3, true) RETURNING id',
-          [email, tempPassword, role]
+          [email, hashed, role]
         );
-        const userId = userResult.rows[0].id;
+        userId = userResult.rows[0].id;
+
+        const firstName = u.first_name?.trim() || '';
+        const lastName = u.last_name?.trim() || '';
+
         if (role === 'student') {
           await query(
-            'INSERT INTO students (user_id, first_name, last_name, matric_number, phone_number) VALUES ($1, $2, $3, $4, $5)',
-            [userId, u.first_name?.trim() || '', u.last_name?.trim() || '', u.matric_number?.trim() || u.matriculation_number?.trim() || '', u.phone_number?.trim() || '']
+            'INSERT INTO students (user_id, first_name, last_name, matriculation_number, level, phone_number) VALUES ($1, $2, $3, $4, $5, $6)',
+            [
+              userId, firstName, lastName,
+              u.matriculation_number?.trim() || u.matric_number?.trim() || ('MAT/' + Date.now()),
+              normalizeStudentLevel(u.level),
+              u.phone_number?.trim() || '',
+            ]
           );
         } else if (role === 'assessor') {
           await query(
             'INSERT INTO assessors (user_id, first_name, last_name, staff_id, department) VALUES ($1, $2, $3, $4, $5)',
-            [userId, u.first_name?.trim() || '', u.last_name?.trim() || '', u.staff_id?.trim() || '', u.department?.trim() || '']
+            [userId, firstName, lastName, u.staff_id?.trim() || ('STAFF/' + Date.now()), u.department?.trim() || '']
+          );
+        } else {
+          await query(
+            'INSERT INTO administrators (user_id, first_name, last_name, staff_id, department) VALUES ($1, $2, $3, $4, $5)',
+            [userId, firstName, lastName, u.staff_id?.trim() || ('ADM/' + Date.now()), u.department?.trim() || '']
           );
         }
-        results.success.push({ email, temporary_password: tempPassword });
+
+        results.success.push({ email, role, temporary_password: tempPassword });
       } catch (e) {
+        // The users row is written before the profile row; if the profile fails
+        // we must not leave a login with no profile behind.
+        if (userId) {
+          try { await query('DELETE FROM users WHERE id = $1', [userId]); } catch (cleanupErr) { /* best effort */ }
+        }
         results.failed.push({ email: u.email || 'unknown', reason: e.message });
       }
     }
+
     res.json({ success: true, message: `Created ${results.success.length} users, ${results.failed.length} failed`, data: results });
   } catch (error) {
     console.error('Bulk upload error:', error);
@@ -3191,6 +3374,12 @@ app.get('/api/sync/status', (req, res) => {
     },
   });
 });
+
+// ============== CBME v2 (competency framework) ==============
+// Groups, seminars, clinical assessment, competency scoring, sign-out
+// eligibility, awards and analytics. Registered last so it sits ahead of the
+// catch-all but behind every v1 route.
+require('./cbme')(app, { query, getAuthUser, resolveStudentId });
 
 // Catch-all for undefined routes
 app.all('/api/*', (req, res) => {

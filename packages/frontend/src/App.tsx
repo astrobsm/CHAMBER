@@ -22,6 +22,14 @@ const StudentCME = lazy(() => import('./pages/student/CME'));
 const StudentProfile = lazy(() => import('./pages/student/Profile'));
 const StudyModule = lazy(() => import('./pages/student/StudyModule').then(m => ({ default: m.StudyModule })));
 const ArticleViewer = lazy(() => import('./pages/student/StudyModule').then(m => ({ default: m.ArticleViewer })));
+const StudentMyTeam = lazy(() => import('./pages/student/MyTeam'));
+const StudentCompetency = lazy(() => import('./pages/student/Competency'));
+const StudentSeminars = lazy(() => import('./pages/student/Seminars'));
+const StudentClinicCases = lazy(() => import('./pages/student/ClinicCases'));
+
+// Shared pages (all roles)
+const Leaderboard = lazy(() => import('./pages/shared/Leaderboard'));
+const Awards = lazy(() => import('./pages/shared/Awards'));
 
 // Assessor pages
 const AssessorDashboard = lazy(() => import('./pages/assessor/Dashboard'));
@@ -29,6 +37,7 @@ const AssessorAttendance = lazy(() => import('./pages/assessor/Attendance'));
 const AssessorQuestions = lazy(() => import('./pages/assessor/Questions'));
 const AssessorStudents = lazy(() => import('./pages/assessor/Students'));
 const AssessorReports = lazy(() => import('./pages/assessor/Reports'));
+const AssessorAssess = lazy(() => import('./pages/assessor/Assess'));
 
 // Admin pages
 const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
@@ -40,6 +49,8 @@ const AdminQuestions = lazy(() => import('./pages/admin/Questions'));
 const AdminAnalytics = lazy(() => import('./pages/admin/Analytics'));
 const AdminSettings = lazy(() => import('./pages/admin/Settings'));
 const AdminAttendance = lazy(() => import('./pages/assessor/Attendance'));
+const AdminRotationSetup = lazy(() => import('./pages/admin/RotationSetup'));
+const AdminCompetencyBoard = lazy(() => import('./pages/admin/CompetencyBoard'));
 
 function App() {
   const { isLoading, user } = useAuth();
@@ -90,6 +101,12 @@ function App() {
           <Route path="cme" element={<StudentCME />} />
           <Route path="study" element={<StudyModule />} />
           <Route path="study/:id" element={<ArticleViewer />} />
+          <Route path="team" element={<StudentMyTeam />} />
+          <Route path="competency" element={<StudentCompetency />} />
+          <Route path="seminars" element={<StudentSeminars />} />
+          <Route path="clinics" element={<StudentClinicCases />} />
+          <Route path="leaderboard" element={<Leaderboard />} />
+          <Route path="awards" element={<Awards />} />
           <Route path="profile" element={<StudentProfile />} />
         </Route>
 
@@ -118,6 +135,10 @@ function App() {
           <Route path="questions" element={<AssessorQuestions />} />
           <Route path="students" element={<AssessorStudents />} />
           <Route path="reports" element={<AssessorReports />} />
+          <Route path="assess" element={<AssessorAssess />} />
+          <Route path="competency" element={<AdminCompetencyBoard />} />
+          <Route path="leaderboard" element={<Leaderboard />} />
+          <Route path="awards" element={<Awards />} />
         </Route>
 
         {/* Admin routes */}
@@ -138,6 +159,11 @@ function App() {
           <Route path="rotations" element={<AdminRotations />} />
           <Route path="questions" element={<AdminQuestions />} />
           <Route path="analytics" element={<AdminAnalytics />} />
+          <Route path="rotation-setup" element={<AdminRotationSetup />} />
+          <Route path="competency" element={<AdminCompetencyBoard />} />
+          <Route path="assess" element={<AssessorAssess />} />
+          <Route path="leaderboard" element={<Leaderboard />} />
+          <Route path="awards" element={<Awards />} />
           <Route path="settings" element={<AdminSettings />} />
         </Route>
 

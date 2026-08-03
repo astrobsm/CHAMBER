@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { studentsApi } from '../../services/api';
+import TeamBanner from '../../components/cbme/TeamBanner';
 import {
   AcademicCapIcon,
   ClipboardDocumentListIcon,
@@ -108,6 +109,9 @@ export function StudentDashboard() {
         <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
         <p className="text-gray-600">Welcome back! Here's your rotation overview.</p>
       </div>
+
+      {/* Team identity & sign-out eligibility */}
+      <TeamBanner />
 
       {/* Current Rotation Card */}
       {dashboard?.currentRotation && (

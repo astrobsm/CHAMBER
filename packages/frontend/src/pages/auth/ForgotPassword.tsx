@@ -92,7 +92,9 @@ export function ForgotPassword() {
             <>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Request Submitted</h2>
               <p className="text-gray-600 mb-6">
-                If an account with that email exists, the password has been reset. Please contact your administrator for the new temporary password.
+                If an account with that email exists, your request has been logged. Your
+                administrator will issue a temporary password and pass it to you directly — for
+                your security it cannot be shown on this page.
               </p>
             </>
           )}

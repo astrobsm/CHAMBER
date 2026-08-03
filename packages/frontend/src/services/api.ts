@@ -366,6 +366,97 @@ export const adminApi = {
     api.post('/admin/reports/generate', { type, ...params }),
 };
 
+// CBME API — competency framework, groups, seminars, assessment, awards
+export const cbmeApi = {
+  // Framework metadata (weights, thresholds, rubrics, houses, award catalogue)
+  getFramework: () => api.get('/cbme/framework'),
+  runMigration: () => api.post('/cbme/migrate'),
+
+  // Rotation setup (Phase 2)
+  getSetup: (rotationId: string) => api.get(`/rotations/${rotationId}/setup`),
+  updateSetup: (rotationId: string, data: Record<string, unknown>) =>
+    api.patch(`/rotations/${rotationId}/setup`, data),
+
+  // Groups & competition (Phase 3)
+  allocateGroups: (rotationId: string, options?: { reallocate?: boolean; houseCount?: number }) =>
+    api.post(`/rotations/${rotationId}/groups/allocate`, options || {}),
+  getGroups: (rotationId: string) => api.get(`/rotations/${rotationId}/groups`),
+  moveMember: (rotationId: string, data: { studentId: string; groupCode: string; isLeader?: boolean }) =>
+    api.patch(`/rotations/${rotationId}/groups/membership`, data),
+  getMyGroup: () => api.get('/cbme/my-group'),
+
+  // Seminars (Phase 4)
+  getSeminarTopics: (rotationId: string) => api.get(`/rotations/${rotationId}/seminar-topics`),
+  addSeminarTopics: (rotationId: string, topics: string[] | Array<{ title: string; description?: string }>, replace = false) =>
+    api.post(`/rotations/${rotationId}/seminar-topics`, { topics, replace }),
+  deleteSeminarTopic: (topicId: string) => api.delete(`/seminar-topics/${topicId}`),
+  allocateSeminars: (rotationId: string, options?: { startDate?: string; venue?: string; defaultTime?: string; reallocate?: boolean }) =>
+    api.post(`/rotations/${rotationId}/seminars/allocate`, options || {}),
+  updateSeminar: (assignmentId: string, data: Record<string, unknown>) =>
+    api.patch(`/seminars/${assignmentId}`, data),
+  withdrawSeminar: (assignmentId: string) => api.post(`/seminars/${assignmentId}/withdraw`),
+  getMySeminars: () => api.get('/cbme/my-seminars'),
+
+  // Structured assessment capture
+  createAssessment: (data: {
+    rotationId: string;
+    studentId: string;
+    assessmentType: string;
+    referenceId?: string;
+    assessmentDate?: string;
+    scores: Record<string, number>;
+    feedback?: string;
+  }) => api.post('/cbme/assessments', data),
+  getAssessments: (params?: { rotationId?: string; studentId?: string; type?: string }) =>
+    api.get('/cbme/assessments', { params }),
+  deleteAssessment: (id: string) => api.delete(`/cbme/assessments/${id}`),
+
+  // Clinic patients & digital clerking (Phase 6)
+  assignClinicPatients: (rotationId: string, data: {
+    clinicDate: string;
+    clinicName?: string;
+    consultantName?: string;
+    patients: Array<{ patientCode?: string; age?: number; sex?: string; diagnosis?: string; consultantName?: string }>;
+  }) => api.post(`/rotations/${rotationId}/clinic-assignments`, data),
+  getClinicAssignments: (rotationId: string, date?: string) =>
+    api.get(`/rotations/${rotationId}/clinic-assignments`, { params: { date } }),
+  getMyClinics: () => api.get('/cbme/my-clinics'),
+  saveClerking: (data: Record<string, unknown>) => api.post('/cbme/clerkings', data),
+  getClerking: (id: string) => api.get(`/cbme/clerkings/${id}`),
+
+  // Competency & sign-out
+  getMyCompetency: () => api.get('/cbme/my-competency'),
+  getRotationCompetency: (rotationId: string) => api.get(`/rotations/${rotationId}/competency`),
+  recomputeCompetency: (rotationId: string) => api.post(`/rotations/${rotationId}/competency/recompute`),
+  signOut: (rotationId: string, data: { studentId: string; remarks?: string; override?: boolean }) =>
+    api.post(`/rotations/${rotationId}/sign-out`, data),
+  getSignOuts: (rotationId: string) => api.get(`/rotations/${rotationId}/sign-outs`),
+
+  // Leaderboards
+  getLeaderboard: (rotationId?: string) =>
+    rotationId ? api.get(`/rotations/${rotationId}/leaderboard`) : api.get('/cbme/leaderboard'),
+
+  // Awards & certificates
+  computeAwards: (rotationId: string) => api.post(`/rotations/${rotationId}/awards/compute`),
+  getAwards: (rotationId: string) => api.get(`/rotations/${rotationId}/awards`),
+  getHallOfFame: () => api.get('/cbme/hall-of-fame'),
+  getCertificate: (rotationId: string, studentId?: string) =>
+    api.get('/cbme/certificate', { params: { rotationId, studentId } }),
+
+  // Analytics
+  getRotationAnalytics: (rotationId: string) => api.get(`/rotations/${rotationId}/analytics`),
+  getDepartmentAnalytics: () => api.get('/cbme/department-analytics'),
+
+  // Profile / portfolio (Phase 1)
+  getMyPortfolio: () => api.get('/cbme/my-portfolio'),
+  updateMyProfile: (data: Record<string, unknown>) => api.patch('/cbme/my-profile', data),
+
+  // Automation
+  sendReminders: (rotationId: string) => api.post(`/rotations/${rotationId}/reminders/send`),
+  getAuditLog: (params?: { rotationId?: string; studentId?: string; limit?: number }) =>
+    api.get('/cbme/audit-log', { params }),
+};
+
 // Sync API — full two-way push/pull
 export const syncApi = {
   // PUSH: Send offline changes to server
